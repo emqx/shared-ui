@@ -1,0 +1,12 @@
+{
+  "name": "@emqx/shared-ui-i18n",
+  "author": "EMQ FE Team",
+  "private": true,
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev:local": "tsc --watch",
+    "build:local": "tsc"
+  }
+}

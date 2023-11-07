@@ -1,0 +1,15 @@
+{
+  "name": "@emqx/shared-ui",
+  "author": "EMQ FE Team",
+  "private": true,
+  "description": "Provides Shared UI components, utils, i18n, and more for consistent interfaces and code reuse across EMQX apps.",
+  "scripts": {
+    "dev": "pnpm --filter './packages/*' --parallel run dev:local",
+    "build": "pnpm --filter './packages/*' run build:local",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  }
+}
