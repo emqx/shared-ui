@@ -5,12 +5,13 @@
   "private": true,
   "description": "Provides Shared UI components, utils, i18n, and more for consistent interfaces and code reuse across EMQX apps.",
   "scripts": {
-    "dev": "pnpm --filter './packages/*' --parallel run dev",
-    "build": "pnpm --filter './packages/*' run build",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
     "format": "prettier --write ."
   },
   "devDependencies": {
     "prettier": "^3.0.3",
+    "turbo": "^1.10.16",
     "typescript": "^5.2.2"
   }
 }
