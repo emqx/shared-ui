@@ -1,6 +1,7 @@
 {
   "name": "@emqx/shared-ui",
   "author": "EMQ FE Team",
+  "version": "0.0.1",
   "private": true,
   "description": "Provides Shared UI components, utils, i18n, and more for consistent interfaces and code reuse across EMQX apps.",
   "scripts": {
