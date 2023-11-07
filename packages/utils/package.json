@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "build:clean": "rimraf ./dist"
   }
 }
