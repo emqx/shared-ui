@@ -5,8 +5,11 @@
   "version": "0.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev:local": "tsc --watch",
-    "build:local": "tsc"
+    "dev": "tsc --watch",
+    "build": "tsc"
   }
 }

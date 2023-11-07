@@ -5,13 +5,7 @@
     "allowJs": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
-    "paths": {
-      "@shared/*": ["packages/*/src"]
-    },
-    "rootDirs": ["packages"],
     "moduleResolution": "node",
-    "outDir": "./dist",
     "declaration": true
   },
   "include": ["packages/**/*"],
