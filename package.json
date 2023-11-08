@@ -1,7 +1,6 @@
 {
   "name": "@emqx/shared-ui",
   "author": "EMQ FE Team",
-  "version": "0.0.1",
   "description": "Provides Shared UI components, utils, i18n, and more for consistent interfaces and code reuse across EMQX apps.",
   "homepage": "https://emqx.io",
   "license": "Apache-2.0",
@@ -15,7 +14,10 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "format": "prettier --write .",
-    "publish": "turbo run publish"
+    "publish": "turbo run publish",
+    "version:patch": "turbo run version:patch",
+    "version:minor": "turbo run version:minor",
+    "version:major": "turbo run version:major"
   },
   "devDependencies": {
     "@types/node": "^20.9.0",

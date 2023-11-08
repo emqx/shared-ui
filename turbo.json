@@ -13,6 +13,9 @@
     "test": {
       "cache": false
     },
-    "publish": {}
+    "publish": {},
+    "version:patch": {},
+    "version:minor": {},
+    "version:major": {}
   }
 }
