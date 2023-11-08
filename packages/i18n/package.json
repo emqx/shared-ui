@@ -1,16 +1,27 @@
 {
   "name": "@emqx/shared-ui-i18n",
-  "author": "EMQ FE Team",
-  "private": true,
   "version": "0.0.1",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    }
+  },
   "scripts": {
-    "dev": "tsc --watch",
-    "build": "tsc",
-    "build:clean": "rimraf ./dist"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.6.3"
   }
 }
