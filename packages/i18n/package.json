@@ -14,7 +14,6 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "package.json",
     "README.md"
   ],
   "main": "./dist/index.umd.cjs",
