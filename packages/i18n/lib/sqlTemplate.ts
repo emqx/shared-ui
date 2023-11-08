@@ -1,4 +1,4 @@
-export const sqlTemplate = [
+export const SQLTemplates = [
   {
     title: {
       zh: '选择指定主题的消息',

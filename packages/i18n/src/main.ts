@@ -1,3 +1,3 @@
-import { sqlTemplate } from '../lib'
+import { SQLTemplates } from '../lib'
 
-console.log(sqlTemplate)
+console.log(SQLTemplates)
