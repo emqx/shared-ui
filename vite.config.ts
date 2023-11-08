@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 // Shared base config in the root
 import { resolve } from 'path'
 import { UserConfigExport, PluginOption } from 'vite'
@@ -19,5 +20,12 @@ export function createViteConfig({ name, entry, fileName }: SharedConfigOptions)
       },
     },
     plugins: [dts() as PluginOption], // Cast as PluginOption if needed
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      coverage: {
+        provider: 'istanbul',
+      },
+    },
   }
 }
