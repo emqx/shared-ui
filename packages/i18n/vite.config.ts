@@ -1,14 +1,7 @@
-import { resolve } from 'path'
-import { defineConfig } from 'vite'
-import dts from 'vite-plugin-dts'
+import { createViteConfig } from '../../vite.config'
 
-export default defineConfig({
-  build: {
-    lib: {
-      entry: resolve(__dirname, 'lib/index.ts'),
-      name: '@emqx/shared-ui-utils',
-      fileName: 'index',
-    },
-  },
-  plugins: [dts()],
+export default createViteConfig({
+  name: '@emqx/shared-ui-i18n',
+  entry: 'packages/i18n/lib/index.ts',
+  fileName: 'index',
 })

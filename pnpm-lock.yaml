@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@types/node':
+        specifier: ^20.9.0
+        version: 20.9.0
       husky:
         specifier: ^8.0.3
         version: 8.0.3
@@ -26,12 +29,6 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
-
-  packages/i18n:
-    devDependencies:
-      '@types/node':
-        specifier: ^20.9.0
-        version: 20.9.0
       vite:
         specifier: ^4.4.5
         version: 4.5.0(@types/node@20.9.0)
@@ -39,17 +36,9 @@ importers:
         specifier: ^3.6.3
         version: 3.6.3(@types/node@20.9.0)(typescript@5.2.2)(vite@4.5.0)
 
-  packages/utils:
-    devDependencies:
-      '@types/node':
-        specifier: ^20.9.0
-        version: 20.9.0
-      vite:
-        specifier: ^4.4.5
-        version: 4.5.0(@types/node@20.9.0)
-      vite-plugin-dts:
-        specifier: ^3.6.3
-        version: 3.6.3(@types/node@20.9.0)(typescript@5.2.2)(vite@4.5.0)
+  packages/i18n: {}
+
+  packages/utils: {}
 
 packages:
 
