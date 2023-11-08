@@ -15,10 +15,9 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "format": "prettier --write .",
-    "release": "turbo run test build && changeset version && changeset publish"
+    "publish": "turbo run publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.2",
     "@types/node": "^20.9.0",
     "@vitest/coverage-istanbul": "^0.34.6",
     "husky": "^8.0.3",
