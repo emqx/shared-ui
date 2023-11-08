@@ -1,3 +1,4 @@
+// Shared base config in the root
 import { resolve } from 'path'
 import { UserConfigExport, PluginOption } from 'vite'
 import dts from 'vite-plugin-dts'
