@@ -27,6 +27,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest run --coverage"
+    "test": "vitest run --coverage",
+    "publish": "npm publish"
   }
 }
