@@ -1,3 +1,4 @@
 # Ignore files:
 dist
 node_modules
+*.yaml
