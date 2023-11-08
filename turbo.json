@@ -13,7 +13,7 @@
     "test": {
       "cache": false
     },
-    "publish": {},
+    "release": {},
     "version:patch": {},
     "version:minor": {},
     "version:major": {}

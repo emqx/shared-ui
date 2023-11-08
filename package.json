@@ -14,7 +14,7 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "format": "prettier --write .",
-    "publish": "turbo run publish",
+    "release": "turbo run release",
     "version:patch": "turbo run version:patch",
     "version:minor": "turbo run version:minor",
     "version:major": "turbo run version:major"
