@@ -1,10 +1,10 @@
 // sqlTemplate.test.ts
-import { sqlTemplate } from '../sqlTemplate'
+import { SQLTemplates } from '../sqlTemplate'
 import { describe, it, expect } from 'vitest'
 
 describe('sqlTemplate', () => {
   it('contains valid SQL templates', () => {
-    sqlTemplate.forEach((template) => {
+    SQLTemplates.forEach((template) => {
       // 测试基本属性
       expect(template).toHaveProperty('title')
       expect(template).toHaveProperty('scene')
