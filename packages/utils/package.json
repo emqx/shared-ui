@@ -1,6 +1,12 @@
 {
   "name": "@emqx/shared-ui-utils",
   "version": "0.0.1",
+  "homepage": "https://emqx.io",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emqx/shared-ui"
+  },
   "type": "module",
   "types": "./dist/index.d.ts",
   "files": [

@@ -3,6 +3,12 @@
   "author": "EMQ FE Team",
   "version": "0.0.1",
   "description": "Provides Shared UI components, utils, i18n, and more for consistent interfaces and code reuse across EMQX apps.",
+  "homepage": "https://emqx.io",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emqx/shared-ui"
+  },
   "scripts": {
     "prepare": "husky install",
     "dev": "turbo run dev",
@@ -17,7 +23,6 @@
     "jsdom": "^22.1.0",
     "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
-    "rimraf": "^5.0.5",
     "turbo": "^1.10.16",
     "typescript": "^5.2.2",
     "vite": "^4.4.5",
