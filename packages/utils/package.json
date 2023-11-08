@@ -13,7 +13,9 @@
   "type": "module",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "package.json",
+    "README.md"
   ],
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
