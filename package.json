@@ -17,6 +17,7 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@types/node": "^20.9.0",
     "@vitest/coverage-istanbul": "^0.34.6",
     "husky": "^8.0.3",
