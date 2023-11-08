@@ -47,6 +47,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Publish to npm
-        run: pnpm test && pnpm build && pnpm publish
+        run: pnpm test && pnpm build && pnpm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
