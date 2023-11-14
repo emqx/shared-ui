@@ -17,9 +17,13 @@
     "release": "turbo run release",
     "version:patch": "turbo run version:patch",
     "version:minor": "turbo run version:minor",
-    "version:major": "turbo run version:major"
+    "version:major": "turbo run version:major",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "publish-packages": "changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@types/node": "^20.9.0",
     "@vitest/coverage-istanbul": "^0.34.6",
     "husky": "^8.0.3",

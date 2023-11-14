@@ -46,7 +46,9 @@ jobs:
             ${{ runner.os }}-pnpm-
       - name: Install dependencies
         run: pnpm install
+      - name: Version Packages
+        run: pnpm run version-packages
       - name: Publish to npm
-        run: pnpm test && pnpm build && pnpm run release
+        run: pnpm test && pnpm build && pnpm run publish-packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
