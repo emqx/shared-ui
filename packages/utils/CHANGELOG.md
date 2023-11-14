@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.6
+
+### Patch Changes
+
+- Add more test caess
+
 ## 0.0.5
 
 ### Patch Changes
