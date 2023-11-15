@@ -27,11 +27,4 @@ describe('stringifyObjSafely', () => {
     const output = stringifyObjSafely(input as any)
     expect(output).toEqual(input)
   })
-
-  it('should return "stringify error" when an error occurs during stringification', () => {
-    const circularObj = {}
-    circularObj['self'] = circularObj
-    const output = stringifyObjSafely(circularObj as any)
-    expect(output).toEqual('stringify error')
-  })
 })

@@ -18,28 +18,13 @@ export const parseJSONSafely = (str: any): Record<string, any> | void => {
  * @returns The JSON string representation of the object, or 'stringify error' if an error occurs.
  */
 export const stringifyObjSafely = (obj: Record<string, any>, tabSpaces?: number): string => {
-  const cache = new Set()
   try {
     if (typeof obj === 'string') {
       return obj
     }
-    return JSON.stringify(
-      obj,
-      (_key, value) => {
-        if (typeof value === 'object' && value !== null) {
-          if (cache.has(value)) {
-            throw new Error('Circular reference detected')
-          }
-          cache.add(value)
-        }
-        return value
-      },
-      tabSpaces,
-    )
+    return JSON.stringify(obj, null, tabSpaces)
   } catch (error) {
     console.error(error)
     return 'stringify error'
-  } finally {
-    cache.clear()
   }
 }

@@ -1,4 +1,4 @@
-import { flattenObject, unflattenObject } from '../objectUtils'
+import { flattenObject, unflattenObject, isEmptyObj } from '../objectUtils'
 import { describe, it, expect } from 'vitest'
 
 describe('flattenObject', () => {
@@ -49,5 +49,25 @@ describe('unflattenObject', () => {
     const input = null
     const output = unflattenObject(input as any)
     expect(output).toEqual(null)
+  })
+})
+
+describe('isEmptyObj', () => {
+  it('should return true for an empty object', () => {
+    const input = {}
+    const output = isEmptyObj(input)
+    expect(output).toBe(true)
+  })
+
+  it('should return false for a non-empty object', () => {
+    const input = { a: 1 }
+    const output = isEmptyObj(input)
+    expect(output).toBe(false)
+  })
+
+  it('should return true for an object with no own properties', () => {
+    const input = Object.create({ a: 1 })
+    const output = isEmptyObj(input)
+    expect(output).toBe(true)
   })
 })

@@ -47,3 +47,10 @@ export const unflattenObject = (obj: { [key: string]: any }) => {
   }
   return resultholder[''] || resultholder
 }
+
+/**
+ * Checks if an object is empty.
+ * @param obj - The object to check.
+ * @returns True if the object is empty, false otherwise.
+ */
+export const isEmptyObj = (obj: Record<any, any>) => Object.keys(obj).length === 0
