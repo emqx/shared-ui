@@ -1,5 +1,12 @@
 # @emqx/shared-ui-utils
 
+## 0.0.8
+
+### Patch Changes
+
+- 874faac: Add isEmptyObj func and fix can not import json utils
+- 5a1924c: Add is json string func
+
 ## 0.0.7
 
 ### Patch Changes
