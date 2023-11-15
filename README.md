@@ -10,7 +10,7 @@ Our objective is to abstract common UI components, utilities, and theming variab
 
 Components from `@emqx/shared-ui` can be easily integrated into EMQX Dashboard, EMQX Cloud, or any other EMQX web applications, ensuring a coherent look and feel while allowing customization as needed.
 
-## 🚀 Included Packages
+## 🚀 Packages
 
 Currently, `@emqx/shared-ui` includes the following packages:
 
@@ -25,7 +25,7 @@ These packages are located in the `packages` directory and follow this naming co
 }
 ```
 
-## 🛠️ Development and Release Process
+## 🛠️ Release Process
 
 We use Changesets for managing the release process of individual packages:
 
@@ -37,7 +37,7 @@ pnpm run changeset
 pnpm run version-packages
 ```
 
-To release a new version, update the npm package version and tag it in Git, for example:
+To release a new version, update the `npm` package version and tag it in Git, for example:
 
 ```bash
 git tag 0.0.7-utils
@@ -64,7 +64,7 @@ To run tests:
 pnpm run test
 ```
 
-If you want to focus on developing, testing, or building a specific library, use the filter parameter:
+If you want to focus on developing, testing, or building a specific library, use the `--filter` parameter, For example:
 
 ```bash
 pnpm run dev --filter @emqx/shared-ui-i18n
@@ -94,4 +94,4 @@ import { SQLTemplate } from '@emqx/shared-ui-i18n'
 
 ## 📄 License
 
-Apache License 2.0, see [LICENSE](https://github.com/emqx/MQTTX/blob/main/LICENSE).
+Apache License 2.0, see [LICENSE](https://github.com/emqx/shared-ui/blob/main/LICENSE).
