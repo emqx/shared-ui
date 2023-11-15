@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.7
+
+### Patch Changes
+
+- 846a6fb: Update JSON utils
+
 ## 0.0.6
 
 ### Patch Changes
