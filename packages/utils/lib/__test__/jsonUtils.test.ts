@@ -1,4 +1,4 @@
-import { parseJSONSafely, stringifyObjSafely } from '../jsonUtils'
+import { parseJSONSafely, stringifyObjSafely, isJSONString } from '../jsonUtils'
 import { describe, it, expect } from 'vitest'
 
 describe('parseJSONSafely', () => {
@@ -26,5 +26,31 @@ describe('stringifyObjSafely', () => {
     const input = 'a string'
     const output = stringifyObjSafely(input as any)
     expect(output).toEqual(input)
+  })
+})
+
+describe('isJSONString', () => {
+  it('should return true for valid JSON strings', () => {
+    const input = '{"a":1,"b":2,"c":3}'
+    const output = isJSONString(input)
+    expect(output).toEqual(true)
+  })
+
+  it('should return false for invalid JSON strings', () => {
+    const input = '{a:1,b:2,c:3}'
+    const output = isJSONString(input)
+    expect(output).toEqual(false)
+  })
+
+  it('should return false for non-string inputs', () => {
+    const input = 123
+    const output = isJSONString(input as any)
+    expect(output).toEqual(false)
+  })
+
+  it('should return false for null', () => {
+    const input = null
+    const output = isJSONString(input as any)
+    expect(output).toEqual(false)
   })
 })

@@ -28,3 +28,18 @@ export const stringifyObjSafely = (obj: Record<string, any>, tabSpaces?: number)
     return 'stringify error'
   }
 }
+
+/**
+ * Checks if a given string is a valid JSON string.
+ * @param str - The string to be checked.
+ * @returns A boolean indicating whether the string is a valid JSON string or not.
+ */
+export const isJSONString = (str: string): boolean => {
+  if (typeof str !== 'string') return false
+  try {
+    const obj = JSON.parse(str)
+    return typeof obj === 'object' && obj !== null
+  } catch (e) {
+    return false
+  }
+}
