@@ -1,4 +1,6 @@
-import { flattenObject, unflattenObject } from '../lib'
+import { formatSizeUnit, flattenObject, unflattenObject } from '../lib'
+
+console.log(formatSizeUnit(12969))
 
 console.log('Output of flattenObject function: ', flattenObject({ a: { b: { c: 1 } } }))
 
