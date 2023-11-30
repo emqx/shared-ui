@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.11
+
+### Patch Changes
+
+- ca4ee85: Fix can not export the download util
+
 ## 0.0.10
 
 ### Patch Changes
