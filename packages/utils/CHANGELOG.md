@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.10
+
+### Patch Changes
+
+- Add download utils function
+
 ## 0.0.9
 
 ### Patch Changes
