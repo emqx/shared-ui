@@ -11,9 +11,11 @@ describe('formatSizeUnit', () => {
 
   it('should throw an error for invalid input', () => {
     expect(() => formatSizeUnit(-1)).toThrow('Invalid input: input should be a non-negative number')
+    // @ts-ignore
     expect(() => formatSizeUnit(null)).toThrow(
       'Invalid input: input should be a non-negative number',
     )
+    // @ts-ignore
     expect(() => formatSizeUnit(undefined)).toThrow(
       'Invalid input: input should be a non-negative number',
     )
