@@ -1,4 +1,8 @@
 export const zhActionsLabel: Record<string, Record<string, string>> = {
+  common: {
+    health_check_interval: '健康检查间隔',
+    query_mode: '请求模式',
+  },
   kafka_producer: {
     topic: 'Kafka 主题名称',
     key: '消息的键',
@@ -19,8 +23,19 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     per_partition_limit: 'Kafka 分区缓存上限',
     segment_bytes: '缓存文件大小',
     memory_overload_protection: '内存过载保护',
-    query_mode: '请求模式',
     sync_query_timeout: '同步查询超时时间',
-    health_check_interval: '健康检查间隔',
+  },
+  http: {
+    body: '请求体',
+    headers: '请求头',
+    method: '请求方法',
+    path: 'URL 路径',
+    max_retries: '最大重试次数',
+    worker_pool_size: '缓存池大小',
+    start_after_created: '资源自动启动',
+    start_timeout: '启动超时时间',
+    request_ttl: '请求超期',
+    inflight_window: '请求飞行队列窗口',
+    max_buffer_bytes: '缓存队列最大长度',
   },
 }

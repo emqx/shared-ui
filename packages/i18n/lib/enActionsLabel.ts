@@ -1,4 +1,8 @@
 export const enActionsLabel: Record<string, Record<string, string>> = {
+  common: {
+    health_check_interval: 'Health Check Interval',
+    query_mode: 'Query Mode',
+  },
   kafka_producer: {
     topic: 'Kafka Topic',
     key: 'Message Key',
@@ -19,8 +23,19 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     per_partition_limit: 'Per-partition Buffer Limit',
     segment_bytes: 'Segment File Bytes',
     memory_overload_protection: 'Memory Overload Protection',
-    query_mode: 'Query Mode',
     sync_query_timeout: 'Synchronous Query Timeout',
-    health_check_interval: 'Health Check Interval',
+  },
+  http: {
+    body: 'Body',
+    headers: 'Headers',
+    method: 'Method',
+    path: 'URL Path',
+    max_retries: 'Max Retries',
+    worker_pool_size: 'Buffer Pool Size',
+    start_after_created: 'Start After Created',
+    start_timeout: 'Start Timeout',
+    request_ttl: 'Request TTL',
+    inflight_window: 'Inflight Window',
+    max_buffer_bytes: 'Max Buffer Queue Size',
   },
 }
