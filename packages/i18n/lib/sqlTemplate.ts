@@ -2,7 +2,7 @@ export const SQLTemplates = [
   {
     title: {
       zh: '选择指定主题的消息',
-      en: 'Select messages from a topic.',
+      en: 'Select messages from a topic',
     },
     scene: {
       zh: '使用 SQL 选择特定主题，将命中主题的消息载荷筛选出来，可以使用通配符。',
