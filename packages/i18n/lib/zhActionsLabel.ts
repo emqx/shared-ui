@@ -32,7 +32,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     path: 'URL 路径',
     max_retries: '最大重试次数',
     worker_pool_size: '缓存池大小',
-    start_after_created: '资源自动启动',
+    start_after_created: '创建后立即启动',
     start_timeout: '启动超时时间',
     request_ttl: '请求超期',
     inflight_window: '请求飞行队列窗口',
