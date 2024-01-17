@@ -1,8 +1,6 @@
 export const enConnectorsLabel: Record<string, Record<string, string>> = {
   common: {
     connect_timeout: 'Connect Timeout',
-  },
-  kafka_producer: {
     bootstrap_hosts: 'Bootstrap Hosts',
     min_metadata_refresh_interval: 'Min Metadata Refresh Interval',
     metadata_request_timeout: 'Metadata Request Timeout',
@@ -10,17 +8,41 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     sndbuf: 'Socket Send Buffer Size',
     recbuf: 'Socket Receive Buffer Size',
     nodelay: 'No Delay',
+    username: 'Username',
+    password: 'Password',
+    pool_size: 'Connection Pool Size',
+    pool_type: 'Pool Type',
+    server: 'Server Host',
+    database: 'Database Name',
+    health_check_interval: 'Health Check Interval',
+    start_timeout: 'Start Timeout',
+    max_retries: 'Max Retries',
+    worker_pool_size: 'Buffer Pool Size',
+    request_ttl: 'Request TTL',
+    max_buffer_bytes: 'Max Buffer Queue Size',
+    inflight_window: 'Inflight Window',
+  },
+  kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
     kerberos_keytab_file: 'Kerberos keytab file',
     mechanism: 'Mechanism',
-    username: 'Username',
-    password: 'Password',
   },
   http: {
     url: 'URL',
     headers: 'Headers',
     enable_pipelining: 'HTTP Pipelining',
-    pool_size: 'Connection Pool Size',
-    pool_type: 'Pool Type',
+  },
+  gcp_pubsub_producer: {
+    pipelining: 'HTTP Pipelining',
+    service_account_json: 'GCP Service Account Credentials',
+    query_mode: 'Query Mode',
+    batch_size: 'Batch Size',
+  },
+  azure_event_hub_producer: {
+    bootstrap_hosts: 'Bootstrap Hosts',
+  },
+  syskeeper_forwarder: {
+    ack_mode: 'ACK Mode',
+    ack_timeout: 'ACK Timeout',
   },
 }

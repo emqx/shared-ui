@@ -1,8 +1,6 @@
 export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   common: {
     connect_timeout: '连接超时',
-  },
-  kafka_producer: {
     bootstrap_hosts: '主机列表',
     min_metadata_refresh_interval: '元数据刷新最小间隔',
     metadata_request_timeout: '元数据请求超时',
@@ -10,17 +8,41 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     sndbuf: 'Socket 发送缓存大小',
     recbuf: 'Socket 收包缓存大小',
     nodelay: '是否关闭延迟发送',
+    username: '用户名',
+    password: '密码',
+    pool_size: '连接池大小',
+    pool_type: '连接池类型',
+    server: '服务器地址',
+    database: '数据库名字',
+    health_check_interval: '健康检查间隔',
+    start_timeout: '启动超时时间',
+    max_retries: '最大重试次数',
+    worker_pool_size: '缓存池大小',
+    request_ttl: '请求超期',
+    max_buffer_bytes: '缓存队列最大长度',
+    inflight_window: '请求飞行队列窗口',
+  },
+  kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
     kerberos_keytab_file: 'Kerberos keytab 文件',
     mechanism: '认证方法',
-    username: '用户名',
-    password: '密码',
   },
   http: {
     url: 'URL',
     headers: '请求头',
     enable_pipelining: 'HTTP 管道',
-    pool_size: '连接池大小',
-    pool_type: '连接池类型',
+  },
+  gcp_pubsub_producer: {
+    pipelining: 'HTTP 流水线',
+    service_account_json: 'GCP 服务账户凭证',
+    query_mode: '请求模式',
+    batch_size: '最大批量请求大小',
+  },
+  azure_event_hub_producer: {
+    bootstrap_hosts: '引导主机',
+  },
+  syskeeper_forwarder: {
+    ack_mode: 'ACK 模式',
+    ack_timeout: 'ACK 超时',
   },
 }

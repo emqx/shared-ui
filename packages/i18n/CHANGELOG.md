@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.7
+
+### Patch Changes
+
+- add auth code help files & adapt more connectors i18n
+
 ## 0.0.6
 
 ### Patch Changes
