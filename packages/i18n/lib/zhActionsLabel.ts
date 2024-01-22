@@ -71,4 +71,11 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     target_qos: 'QoS',
     template: '消息模板',
   },
+  redis: {
+    command_template: 'Redis 命令模板',
+  },
+  mongodb: {
+    collection: '集合（Collection）',
+    payload_template: '有效载荷模板',
+  },
 }

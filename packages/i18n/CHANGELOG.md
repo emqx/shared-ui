@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.9
+
+### Patch Changes
+
+- add redis & mongodb label i18n
+
 ## 0.0.8
 
 ### Patch Changes
