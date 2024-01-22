@@ -21,6 +21,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     request_ttl: 'Request TTL',
     max_buffer_bytes: 'Max Buffer Queue Size',
     inflight_window: 'Inflight Window',
+    servers: 'Servers',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -44,5 +45,28 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   syskeeper_forwarder: {
     ack_mode: 'ACK Mode',
     ack_timeout: 'ACK Timeout',
+  },
+  redis: {
+    parameters: 'Redis Mode',
+    sentinel: 'Sentinel Mode',
+  },
+  mongodb: {
+    parameters: 'MongoDB Mode',
+    w_mode: 'Write Mode',
+    r_mode: 'Read Mode',
+    srv_record: 'Srv Record',
+    use_legacy_protocol: 'Use Legacy Protocol',
+    auth_source: 'Auth Source',
+    replica_set_name: 'Replica Set Name',
+    max_overflow: 'Max Overflow Workers',
+    overflow_ttl: 'Overflow TTL',
+    overflow_check_period: 'Overflow Check Period',
+    local_threshold_ms: 'Local Threshold',
+    connect_timeout_ms: 'Connect Timeout',
+    socket_timeout_ms: 'Socket Timeout',
+    server_selection_timeout_ms: 'Server Selection Timeout',
+    wait_queue_timeout_ms: 'Wait Queue Timeout',
+    heartbeat_frequency_ms: 'Heartbeat period',
+    min_heartbeat_frequency_ms: 'Minimum Heartbeat Period',
   },
 }

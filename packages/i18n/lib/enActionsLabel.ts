@@ -71,4 +71,11 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     target_qos: 'QoS',
     template: '"Message Template',
   },
+  redis: {
+    command_template: 'Redis Command Template',
+  },
+  mongodb: {
+    collection: 'Collection',
+    payload_template: 'Payload template',
+  },
 }

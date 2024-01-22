@@ -21,6 +21,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     request_ttl: '请求超期',
     max_buffer_bytes: '缓存队列最大长度',
     inflight_window: '请求飞行队列窗口',
+    servers: '服务器列表',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -44,5 +45,28 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   syskeeper_forwarder: {
     ack_mode: 'ACK 模式',
     ack_timeout: 'ACK 超时',
+  },
+  redis: {
+    parameters: '部署模式',
+    sentinel: '哨兵模式',
+  },
+  mongodb: {
+    parameters: '部署模式',
+    w_mode: '写模式',
+    r_mode: '读模式',
+    srv_record: 'SRV 记录',
+    use_legacy_protocol: '使用旧协议',
+    auth_source: '认证源',
+    replica_set_name: '副本集名称',
+    max_overflow: '最大溢出',
+    overflow_ttl: '溢出 TTL',
+    overflow_check_period: '溢出检查周期',
+    local_threshold_ms: '本地阈值',
+    connect_timeout_ms: '连接超时',
+    socket_timeout_ms: '套接字操作超时',
+    server_selection_timeout_ms: '服务器选择超时',
+    wait_queue_timeout_ms: '等待队列超时',
+    heartbeat_frequency_ms: '心跳期',
+    min_heartbeat_frequency_ms: '最小心跳周期',
   },
 }
