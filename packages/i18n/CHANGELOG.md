@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.8
+
+### Patch Changes
+
+- add label i18n for some action types
+
 ## 0.0.7
 
 ### Patch Changes
