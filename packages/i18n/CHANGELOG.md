@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.10
+
+### Patch Changes
+
+- add mqtt/influxdb/iotdb/elasticsearch label i18n
+
 ## 0.0.9
 
 ### Patch Changes

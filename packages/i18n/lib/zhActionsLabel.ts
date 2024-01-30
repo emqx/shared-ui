@@ -78,4 +78,32 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     collection: '集合（Collection）',
     payload_template: '有效载荷模板',
   },
+  iotdb: {
+    device_id: '设备 ID',
+    is_aligned: '对齐时间序列',
+    data: '写入数据',
+    timestamp: '时间戳',
+    measurement: '字段',
+    data_type: '数据类型',
+    value: '值',
+  },
+  influxdb: {
+    precision: '时间精度',
+    write_syntax: '写语句',
+  },
+  mqtt: {
+    topic: '主题',
+    qos: 'QoS',
+    retain: 'Retain',
+    payload: '消息模版',
+  },
+  elasticsearch: {
+    parameters: '操作',
+    index: '索引名称',
+    id: '文档 ID',
+    doc: '文档模版',
+    routing: '路由',
+    overwrite: '是否覆盖文档',
+    doc_as_upsert: '启用更新插入',
+  },
 }

@@ -22,11 +22,13 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     max_buffer_bytes: 'Max Buffer Queue Size',
     inflight_window: 'Inflight Window',
     servers: 'Servers',
+    enable_pipelining: 'HTTP Pipelining',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
     kerberos_keytab_file: 'Kerberos keytab file',
     mechanism: 'Mechanism',
+    authentication: 'Authentication',
   },
   http: {
     url: 'URL',
@@ -68,5 +70,28 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     wait_queue_timeout_ms: 'Wait Queue Timeout',
     heartbeat_frequency_ms: 'Heartbeat period',
     min_heartbeat_frequency_ms: 'Minimum Heartbeat Period',
+  },
+  influxdb: {
+    parameters: 'Version of InfluxDB',
+    bucket: 'Bucket',
+    org: 'Organization',
+    token: 'Token',
+  },
+  iotdb: {
+    base_url: 'IoTDB REST Service Base URL',
+    iotdb_version: 'IoTDB Version',
+  },
+  elasticsearch: {
+    server: 'Server',
+  },
+  mqtt: {
+    server: 'MQTT Broker',
+    clientid_prefix: 'ClientID Prefix',
+    proto_ver: 'MQTT Version',
+    bridge_mode: 'Bridge Mode',
+    clean_start: 'Clean start',
+    keepalive: 'Keepalive',
+    retry_interval: 'Message Retry Interval',
+    max_inflight: 'Max Inflight',
   },
 }
