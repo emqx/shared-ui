@@ -22,11 +22,13 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     max_buffer_bytes: '缓存队列最大长度',
     inflight_window: '请求飞行队列窗口',
     servers: '服务器列表',
+    enable_pipelining: 'HTTP 流水线',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
     kerberos_keytab_file: 'Kerberos keytab 文件',
     mechanism: '认证方法',
+    authentication: '认证',
   },
   http: {
     url: 'URL',
@@ -68,5 +70,28 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     wait_queue_timeout_ms: '等待队列超时',
     heartbeat_frequency_ms: '心跳期',
     min_heartbeat_frequency_ms: '最小心跳周期',
+  },
+  influxdb: {
+    parameters: 'InfluxDB 版本',
+    bucket: 'Bucket',
+    org: '组织',
+    token: 'Token',
+  },
+  iotdb: {
+    base_url: 'IoTDB REST 服务基础 URL',
+    iotdb_version: 'IoTDB 版本',
+  },
+  elasticsearch: {
+    server: '服务器地址',
+  },
+  mqtt: {
+    server: 'MQTT 服务地址',
+    clientid_prefix: '客户端 ID 前缀',
+    proto_ver: 'MQTT 协议版本',
+    bridge_mode: '桥接模式',
+    clean_start: '清除会话',
+    keepalive: 'Keepalive',
+    retry_interval: '消息重发间隔',
+    max_inflight: '飞行窗口',
   },
 }

@@ -78,4 +78,32 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     collection: 'Collection',
     payload_template: 'Payload template',
   },
+  iotdb: {
+    device_id: 'Device ID',
+    is_aligned: 'Align Timeseries',
+    data: 'Write Data',
+    timestamp: 'Timestamp',
+    measurement: 'Measurement',
+    data_type: 'Data Type',
+    value: 'Value',
+  },
+  influxdb: {
+    precision: 'Time Precision',
+    write_syntax: 'Write Syntax',
+  },
+  mqtt: {
+    topic: 'Topic',
+    qos: 'QoS',
+    retain: 'Retain',
+    payload: 'Payload',
+  },
+  elasticsearch: {
+    parameters: 'Action',
+    index: 'Index Name',
+    id: 'Document ID',
+    doc: 'Document Template',
+    routing: 'Routing',
+    overwrite: 'Overwrite Document',
+    doc_as_upsert: 'Enable Upsert',
+  },
 }
