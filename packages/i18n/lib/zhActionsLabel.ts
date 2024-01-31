@@ -9,7 +9,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     request_ttl: '请求超期',
     inflight_window: '请求飞行队列窗口',
     max_buffer_bytes: '缓存队列最大长度',
-    sql: 'SQL',
+    sql: 'SQL 模板',
     batch_size: '最大批量请求大小',
     topic: 'Kafka 主题名称',
     key: '消息的键',
@@ -30,6 +30,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     segment_bytes: '缓存文件大小',
     memory_overload_protection: '内存过载保护',
     sync_query_timeout: '同步查询超时时间',
+    template: '消息模板',
   },
   kafka_producer: {
     timestamp: '消息的时间戳',
@@ -69,7 +70,6 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   syskeeper_forwarder: {
     target_topic: '主题',
     target_qos: 'QoS',
-    template: '消息模板',
   },
   redis: {
     command_template: 'Redis 命令模板',
@@ -105,5 +105,37 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     routing: '路由',
     overwrite: '是否覆盖文档',
     doc_as_upsert: '启用更新插入',
+  },
+  cassandra: {
+    cql: 'CQL 模板',
+  },
+  opents: {
+    timestamp: '时间戳',
+    metric: '度量',
+    tags: '标签',
+    value: '值',
+    data: '写入数据',
+  },
+  gcp_pubsub_consumer: {
+    payload_template: 'HTTP 请求消息体模板',
+  },
+  hstreamdb: {
+    record_template: 'HStream Record 模板',
+  },
+  kafka_consumer: {
+    payload_template: 'MQTT Payload Template',
+  },
+  rabbitmq: {
+    payload_template: '有效载荷模板',
+  },
+  pulsar: {
+    message_key: '消息的 Key',
+    message_value: '消息的 Value',
+  },
+  kinesis: {
+    payload_template: '载荷模板',
+  },
+  greptimedb: {
+    write_syntax: '写语法',
   },
 }

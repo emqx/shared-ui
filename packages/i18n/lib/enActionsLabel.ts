@@ -9,7 +9,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     request_ttl: 'Request TTL',
     inflight_window: 'Inflight Window',
     max_buffer_bytes: 'Max Buffer Queue Size',
-    sql: 'SQL',
+    sql: 'SQL Template',
     batch_size: 'Batch Size',
     topic: 'Kafka Topic',
     key: 'Message Key',
@@ -30,6 +30,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     segment_bytes: 'Segment File Bytes',
     memory_overload_protection: 'Memory Overload Protection',
     sync_query_timeout: 'Synchronous Query Timeout',
+    template: 'Message Template',
   },
   kafka_producer: {
     timestamp: 'Message Timestamp',
@@ -69,7 +70,6 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   syskeeper_forwarder: {
     target_topic: 'Topic',
     target_qos: 'QoS',
-    template: '"Message Template',
   },
   redis: {
     command_template: 'Redis Command Template',
@@ -105,5 +105,37 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     routing: 'Routing',
     overwrite: 'Overwrite Document',
     doc_as_upsert: 'Enable Upsert',
+  },
+  cassandra: {
+    cql: 'CQL Template',
+  },
+  opents: {
+    timestamp: 'Timestamp',
+    metric: 'Metric',
+    tags: 'Tags',
+    value: 'Value',
+    data: 'Write Data',
+  },
+  gcp_pubsub_consumer: {
+    payload_template: 'Payload Template',
+  },
+  hstreamdb: {
+    record_template: 'HStream Record Template',
+  },
+  kafka_consumer: {
+    payload_template: 'MQTT Payload Template',
+  },
+  rabbitmq: {
+    payload_template: 'Payload Template',
+  },
+  pulsar: {
+    message_key: 'Message Key',
+    message_value: 'Message Value',
+  },
+  kinesis: {
+    payload_template: 'Payload template',
+  },
+  greptimedb: {
+    write_syntax: 'Write Syntax',
   },
 }
