@@ -134,8 +134,11 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   },
   kinesis: {
     payload_template: 'Payload template',
+    stream_name: 'Amazon Kinesis Stream',
+    partition_key: 'Partition key',
   },
   greptimedb: {
     write_syntax: 'Write Syntax',
+    precision: 'Time Precision',
   },
 }

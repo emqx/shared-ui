@@ -190,11 +190,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     aws_access_key_id: 'AWS Access Key ID',
     aws_secret_access_key: 'AWS Secret Access Key',
     endpoint: 'Amazon Kinesis Endpoint',
-    stream_name: 'Amazon Kinesis Stream',
-    partition_key: 'Partition key',
   },
   greptimedb: {
     dbname: 'Database',
-    precision: 'Time Precision',
   },
 }

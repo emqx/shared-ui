@@ -190,11 +190,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     aws_access_key_id: 'AWS 访问密钥 ID',
     aws_secret_access_key: 'AWS 秘密访问密钥',
     endpoint: 'Amazon Kinesis 端点',
-    stream_name: 'Amazon Kinesis 流',
-    partition_key: '分区键',
   },
   greptimedb: {
     dbname: '数据库',
-    precision: '时间精度',
   },
 }

@@ -134,8 +134,11 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   },
   kinesis: {
     payload_template: '载荷模板',
+    stream_name: 'Amazon Kinesis 流',
+    partition_key: '分区键',
   },
   greptimedb: {
     write_syntax: '写语法',
+    precision: '时间精度',
   },
 }
