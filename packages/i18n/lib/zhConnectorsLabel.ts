@@ -160,15 +160,10 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     sid: 'Oracle Database SID',
     service_name: 'Oracle 数据库服务名称',
   },
-  rabbitmq: {
+  rabbitmq_: {
     port: '端口',
-    exchange: '交换机',
-    routing_key: '路由键',
     virtual_host: '虚拟主机',
     heartbeat: '心跳',
-    delivery_mode: '消息传递模式',
-    wait_for_publish_confirmations: '等待发布确认',
-    publish_confirmation_timeout: '发布确认超时时间',
     timeout: '连接超时时间',
   },
   pulsar: {

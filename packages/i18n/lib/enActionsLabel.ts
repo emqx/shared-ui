@@ -127,6 +127,11 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     payload_template: 'MQTT Payload Template',
   },
   rabbitmq: {
+    exchange: 'Exchange',
+    routing_key: 'Routing Key',
+    delivery_mode: 'Message Delivery Mode',
+    wait_for_publish_confirmations: 'Wait for Publish Confirmations',
+    publish_confirmation_timeout: 'Publish Confirmation Timeout',
     payload_template: 'Payload Template',
   },
   pulsar: {
