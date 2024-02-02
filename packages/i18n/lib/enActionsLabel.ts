@@ -31,6 +31,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     memory_overload_protection: 'Memory Overload Protection',
     sync_query_timeout: 'Synchronous Query Timeout',
     template: 'Message Template',
+    partitions_limit: 'Partitions Limit',
   },
   kafka_producer: {
     timestamp: 'Message Timestamp',

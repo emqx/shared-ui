@@ -31,6 +31,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     memory_overload_protection: '内存过载保护',
     sync_query_timeout: '同步查询超时时间',
     template: '消息模板',
+    partitions_limit: '分区限制',
   },
   kafka_producer: {
     timestamp: '消息的时间戳',
