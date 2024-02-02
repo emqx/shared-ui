@@ -162,13 +162,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   rabbitmq: {
     port: 'Port',
-    exchange: 'Exchange',
-    routing_key: 'Routing Key',
     virtual_host: 'Virtual Host',
     heartbeat: 'Heartbeat',
-    delivery_mode: 'Message Delivery Mode',
-    wait_for_publish_confirmations: 'Wait for Publish Confirmations',
-    publish_confirmation_timeout: 'Publish Confirmation Timeout',
     timeout: 'Connection Timeout',
   },
   pulsar: {

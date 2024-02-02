@@ -126,7 +126,12 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   kafka_consumer: {
     payload_template: 'MQTT Payload Template',
   },
-  rabbitmq: {
+  rabbitmq_: {
+    exchange: '交换机',
+    routing_key: '路由键',
+    delivery_mode: '消息传递模式',
+    wait_for_publish_confirmations: '等待发布确认',
+    publish_confirmation_timeout: '发布确认超时时间',
     payload_template: '有效载荷模板',
   },
   pulsar: {
