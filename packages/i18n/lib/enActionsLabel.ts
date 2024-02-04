@@ -147,4 +147,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     write_syntax: 'Write Syntax',
     precision: 'Time Precision',
   },
+  tdengine: {
+    database: 'Database Name',
+  }
 }
