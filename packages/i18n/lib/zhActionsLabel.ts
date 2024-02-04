@@ -126,7 +126,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   kafka_consumer: {
     payload_template: 'MQTT Payload Template',
   },
-  rabbitmq_: {
+  rabbitmq: {
     exchange: '交换机',
     routing_key: '路由键',
     delivery_mode: '消息传递模式',
@@ -147,4 +147,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     write_syntax: '写语法',
     precision: '时间精度',
   },
+  tdengine: {
+    database: '数据库名字',
+  }
 }
