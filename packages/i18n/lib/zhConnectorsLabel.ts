@@ -121,8 +121,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   },
   hstreamdb: {
     url: 'HStreamDB 服务器 URL',
-    stream: 'HStreamDB 流名称',
-    partition_key: 'HStreamDB 分区键',
     grpc_timeout: 'HStreamDB gRPC 超时',
   },
   kafka_consumer: {

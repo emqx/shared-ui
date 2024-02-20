@@ -121,6 +121,13 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     payload_template: 'Payload Template',
   },
   hstreamdb: {
+    stream: 'HStreamDB Stream Name',
+    partition_key: 'HStreamDB Partition Key',
+    grpc_flush_timeout: 'gRPC Flush Interval',
+    aggregation_pool_size: 'Aggregation Pool Size',
+    max_batches: 'Max Batches',
+    writer_pool_size: 'Writer Pool Size',
+    batch_interval: 'Max Batch Interval',
     record_template: 'HStream Record Template',
   },
   kafka_consumer: {
