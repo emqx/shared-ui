@@ -149,5 +149,19 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   },
   tdengine: {
     database: 'Database Name',
-  }
+  },
+  rocketmq: {
+    topic: 'RocketMQ Topic',
+    refresh_interval: 'Topic Route Refresh Interval',
+    send_buffer: 'Send Buffer Size',
+    sync_timeout: 'Sync Timeout',
+  },
+  clickhouse: {
+    batch_value_separator: 'Batch Value Separator',
+  },
+  s3: {
+    bucket: 'Bucket',
+    acl: 'ACL',
+    content: 'Content',
+  },
 }
