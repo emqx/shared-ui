@@ -102,8 +102,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     details: '详细信息',
   },
   clickhouse: {
-    batch_value_separator: '分隔符',
-    connect_timeout: '连接超时',
     url: '服务器 URL',
   },
   dynamo: {
@@ -120,7 +118,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     service_account_json: 'GCP 服务账户凭证',
     topic_mapping: '主题映射',
     pull_max_messages: '拉取的最大消息数',
-    connect_timeout: '连接超时',
   },
   hstreamdb: {
     url: 'HStreamDB 服务器 URL',
@@ -137,7 +134,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     consumer_mqtt_topic: 'MQTT 主题',
     min_metadata_refresh_interval: '元数据刷新最小间隔',
     metadata_request_timeout: '元数据请求超时',
-    connect_timeout: '连接超时',
     consumer_max_batch_bytes: '拉取字节数',
     consumer_offset_commit_interval_seconds: '偏移提交间隔',
     topic: 'Kafka 主题名称',
@@ -148,10 +144,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     access_key: 'AccessKey',
     secret_key: 'SecretKey',
     security_token: '安全令牌',
-    topic: 'RocketMQ 主题',
-    refresh_interval: '主题路由更新间隔',
-    send_buffer: '发送消息的缓冲区大小',
-    sync_timeout: '同步调用超时时间',
   },
   sqlserver: {
     driver: 'SQL Server Driver 名称',
@@ -174,7 +166,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     retention_period: '保留期',
     send_buffer: 'Socket 发送缓存大小',
     max_batch_bytes: '最大批量字节数',
-    connect_timeout: '连接超时',
     buffer_mode: '缓存模式',
     buffer_per_partition_limit: 'Pulsar 分区缓存上限',
     buffer_segment_bytes: '缓存文件大小',
@@ -188,5 +179,14 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   },
   greptimedb: {
     dbname: '数据库',
+  },
+  s3: {
+    access_key_id: '访问密钥 ID',
+    secret_access_key: '访问密钥',
+    host: '地址',
+    port: '端口',
+    ipv6_probe: 'IPv6 探针',
+    headers: '请求头',
+    request_timeout: 'HTTP 请求超时',
   },
 }

@@ -149,5 +149,19 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   },
   tdengine: {
     database: '数据库名字',
-  }
+  },
+  rocketmq: {
+    topic: 'RocketMQ 主题',
+    refresh_interval: '主题路由更新间隔',
+    send_buffer: '发送消息的缓冲区大小',
+    sync_timeout: '同步调用超时时间',
+  },
+  clickhouse: {
+    batch_value_separator: '分隔符',
+  },
+  s3: {
+    bucket: '存储桶',
+    acl: 'ACL',
+    content: '内容',
+  },
 }

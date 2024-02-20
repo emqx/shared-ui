@@ -102,8 +102,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     details: 'Details',
   },
   clickhouse: {
-    batch_value_separator: 'Batch Value Separator',
-    connect_timeout: 'Clickhouse Timeout',
     url: 'Server URL',
   },
   dynamo: {
@@ -120,7 +118,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     service_account_json: 'GCP Service Account Credentials',
     topic_mapping: 'Topic Mapping',
     pull_max_messages: 'Maximum Messages to Pull',
-    connect_timeout: 'Connect Timeout',
   },
   hstreamdb: {
     url: 'HStreamDB Server URL',
@@ -137,7 +134,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     consumer_mqtt_topic: 'MQTT Topic',
     min_metadata_refresh_interval: 'Min Metadata Refresh Interval',
     metadata_request_timeout: 'Metadata Request Timeout',
-    connect_timeout: 'Connect Timeout',
     consumer_max_batch_bytes: 'Fetch Bytes',
     consumer_offset_commit_interval_seconds: 'Offset Commit Interval',
     topic: 'Kafka Topic',
@@ -148,10 +144,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     access_key: 'AccessKey',
     secret_key: 'SecretKey',
     security_token: 'Security Token',
-    topic: 'RocketMQ Topic',
-    refresh_interval: 'Topic Route Refresh Interval',
-    send_buffer: 'Send Buffer Size',
-    sync_timeout: 'Sync Timeout',
   },
   sqlserver: {
     driver: 'SQL Server Driver Name',
@@ -174,7 +166,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     retention_period: 'Retention Period',
     send_buffer: 'Socket Send Buffer Size',
     max_batch_bytes: 'Max Batch Bytes',
-    connect_timeout: 'Connect Timeout',
     buffer_mode: 'Buffer Mode',
     buffer_per_partition_limit: 'Per-partition Buffer Limit',
     buffer_segment_bytes: 'Segment File Bytes',
@@ -188,5 +179,14 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   greptimedb: {
     dbname: 'Database',
+  },
+  s3: {
+    access_key_id: 'Access Key ID',
+    secret_access_key: 'Secret Access Key',
+    host: 'Host',
+    port: 'Port',
+    ipv6_probe: 'IPv6 Probe',
+    headers: 'HTTP Headers',
+    request_timeout: 'Request Timeout',
   },
 }
