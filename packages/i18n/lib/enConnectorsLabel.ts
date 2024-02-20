@@ -121,8 +121,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   hstreamdb: {
     url: 'HStreamDB Server URL',
-    stream: 'HStreamDB Stream Name',
-    partition_key: 'HStreamDB Partition Key',
     grpc_timeout: 'HStreamDB gRPC Timeout',
   },
   kafka_consumer: {
