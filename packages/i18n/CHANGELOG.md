@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.11
+
+### Patch Changes
+
+- Add label for type S3
+
 ## 0.0.10
 
 ### Patch Changes
