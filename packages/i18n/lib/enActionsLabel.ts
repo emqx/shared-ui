@@ -169,6 +169,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   s3: {
     bucket: 'Bucket',
     acl: 'ACL',
-    content: 'Content',
+    content: 'Object Content',
+    key: 'Object Key',
   },
 }
