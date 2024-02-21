@@ -185,6 +185,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     port: '端口',
     ipv6_probe: 'IPv6 探针',
     headers: '请求头',
-    request_timeout: 'HTTP 请求超时',
+    request_timeout: '请求超时',
   },
 }

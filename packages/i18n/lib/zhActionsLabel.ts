@@ -169,6 +169,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   s3: {
     bucket: '存储桶',
     acl: 'ACL',
-    content: '内容',
+    content: '对象内容',
+    key: '对象键',
   },
 }
