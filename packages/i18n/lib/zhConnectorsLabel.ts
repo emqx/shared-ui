@@ -23,6 +23,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     inflight_window: '请求飞行队列窗口',
     servers: '服务器列表',
     enable_pipelining: 'HTTP 流水线',
+    url: '服务器地址',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -120,8 +121,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     pull_max_messages: '拉取的最大消息数',
   },
   hstreamdb: {
-    url: 'HStreamDB 服务器 URL',
-    grpc_timeout: 'HStreamDB gRPC 超时',
+    grpc_timeout: 'gRPC 超时',
   },
   kafka_consumer: {
     bootstrap_hosts: '主机列表',
