@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.12
+
+### Patch Changes
+
+- Add label for HStream
+
 ## 0.0.11
 
 ### Patch Changes
