@@ -121,14 +121,14 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     payload_template: 'HTTP 请求消息体模板',
   },
   hstreamdb: {
-    stream: 'HStreamDB 流名称',
-    partition_key: 'HStreamDB 分区键',
+    stream: 'Stream',
+    partition_key: '分区键',
     grpc_flush_timeout: 'gRPC 刷新间隔',
-    aggregation_pool_size: '聚合池大小',
+    aggregation_pool_size: 'Record 聚合池大小',
     max_batches: '最大批次',
     writer_pool_size: '写入池大小',
     batch_interval: '最大批处理间隔',
-    record_template: 'HStream Record 模板',
+    record_template: 'Record 模板',
   },
   kafka_consumer: {
     payload_template: 'MQTT Payload Template',

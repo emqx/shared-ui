@@ -23,6 +23,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     inflight_window: 'Inflight Window',
     servers: 'Servers',
     enable_pipelining: 'HTTP Pipelining',
+    url: 'Server URL',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -120,8 +121,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     pull_max_messages: 'Maximum Messages to Pull',
   },
   hstreamdb: {
-    url: 'HStreamDB Server URL',
-    grpc_timeout: 'HStreamDB gRPC Timeout',
+    grpc_timeout: 'gRPC Timeout',
   },
   kafka_consumer: {
     bootstrap_hosts: 'Bootstrap Hosts',
