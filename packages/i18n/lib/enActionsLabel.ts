@@ -68,6 +68,9 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     ordering_key_template: 'Ordering Key template',
     payload_template: 'Payload Template',
   },
+  gcp_pubsub_consumer: {
+    topic: 'GCP PubSub Topic',
+  },
   syskeeper_forwarder: {
     target_topic: 'Topic',
     target_qos: 'QoS',
@@ -116,9 +119,6 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     tags: 'Tags',
     value: 'Value',
     data: 'Write Data',
-  },
-  gcp_pubsub_consumer: {
-    payload_template: 'Payload Template',
   },
   hstreamdb: {
     stream: 'Stream',
