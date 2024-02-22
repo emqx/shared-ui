@@ -112,12 +112,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     aws_secret_access_key: '连接访问密钥',
   },
   gcp_pubsub_consumer: {
-    consumer_pubsub_topic: 'GCP PubSub 主题',
-    consumer_mqtt_topic: 'MQTT 主题',
-    consumer_qos: 'QoS',
     pipelining: 'HTTP 流水线',
     service_account_json: 'GCP 服务账户凭证',
-    topic_mapping: '主题映射',
     pull_max_messages: '拉取的最大消息数',
   },
   hstreamdb: {

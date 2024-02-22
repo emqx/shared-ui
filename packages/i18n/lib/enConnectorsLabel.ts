@@ -112,12 +112,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     aws_secret_access_key: 'AWS Secret Access Key',
   },
   gcp_pubsub_consumer: {
-    consumer_pubsub_topic: 'GCP PubSub Topic',
-    consumer_mqtt_topic: 'MQTT Topic',
-    consumer_qos: 'QoS',
     pipelining: 'HTTP Pipelining',
     service_account_json: 'GCP Service Account Credentials',
-    topic_mapping: 'Topic Mapping',
     pull_max_messages: 'Maximum Messages to Pull',
   },
   hstreamdb: {

@@ -68,6 +68,9 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     ordering_key_template: '排序键模板',
     payload_template: 'HTTP 请求消息体模板',
   },
+  gcp_pubsub_consumer: {
+    topic: 'GCP PubSub 主题',
+  },
   syskeeper_forwarder: {
     target_topic: '主题',
     target_qos: 'QoS',
@@ -116,9 +119,6 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     tags: '标签',
     value: '值',
     data: '写入数据',
-  },
-  gcp_pubsub_consumer: {
-    payload_template: 'HTTP 请求消息体模板',
   },
   hstreamdb: {
     stream: 'Stream',
