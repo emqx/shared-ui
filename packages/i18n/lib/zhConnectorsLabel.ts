@@ -107,7 +107,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   },
   dynamo: {
     url: 'DynamoDB 地址',
-    table: '表',
     aws_access_key_id: '连接访问 ID',
     aws_secret_access_key: '连接访问密钥',
   },

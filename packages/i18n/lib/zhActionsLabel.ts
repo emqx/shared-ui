@@ -172,4 +172,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     content: '对象内容',
     key: '对象键',
   },
+  dynamo: {
+    table: '表',
+  },
 }
