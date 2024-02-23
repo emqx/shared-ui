@@ -107,7 +107,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   dynamo: {
     url: 'DynamoDB Endpoint',
-    table: 'Table ',
     aws_access_key_id: 'AWS Access Key ID',
     aws_secret_access_key: 'AWS Secret Access Key',
   },

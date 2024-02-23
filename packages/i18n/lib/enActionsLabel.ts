@@ -172,4 +172,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     content: 'Object Content',
     key: 'Object Key',
   },
+  dynamo: {
+    table: 'Table ',
+  },
 }
