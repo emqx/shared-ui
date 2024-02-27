@@ -142,6 +142,13 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     payload_template: '有效载荷模板',
   },
   pulsar: {
+    pulsar_topic: 'Pulsar 主题名称',
+    strategy: '分区选择策略',
+    retention_period: '消息保留时间',
+    compression: '压缩',
+    sync_timeout: '同步发布超时',
+    send_buffer: 'Socket 发送缓存大小',
+    per_partition_limit: '分区缓存上限',
     message_key: '消息的 Key',
     message_value: '消息的 Value',
   },
