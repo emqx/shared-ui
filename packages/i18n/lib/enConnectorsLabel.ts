@@ -24,12 +24,12 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     servers: 'Servers',
     enable_pipelining: 'HTTP Pipelining',
     url: 'Server URL',
+    authentication: 'Authentication',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
     kerberos_keytab_file: 'Kerberos keytab file',
     mechanism: 'Mechanism',
-    authentication: 'Authentication',
   },
   http: {
     url: 'URL',
@@ -119,19 +119,9 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     grpc_timeout: 'gRPC Timeout',
   },
   kafka_consumer: {
-    bootstrap_hosts: 'Bootstrap Hosts',
-    consumer_key_encoding_mode: 'Key Encoding Mode',
-    consumer_value_encoding_mode: 'Value Encoding Mode',
-    consumer_topic_mapping: 'Topic Mapping',
-    consumer_offset_reset_policy: 'Offset Reset Policy',
-    consumer_mqtt_topic: 'MQTT Topic',
-    min_metadata_refresh_interval: 'Min Metadata Refresh Interval',
-    metadata_request_timeout: 'Metadata Request Timeout',
-    consumer_max_batch_bytes: 'Fetch Bytes',
-    consumer_offset_commit_interval_seconds: 'Offset Commit Interval',
-    topic: 'Kafka Topic',
-    mqtt_topic: 'MQTT Topic',
-    qos: 'QoS',
+    kerberos_principal: 'Kerberos Principal',
+    kerberos_keytab_file: 'Kerberos keytab file',
+    mechanism: 'Mechanism',
   },
   rocketmq: {
     access_key: 'AccessKey',
@@ -153,7 +143,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   pulsar: {
     jwt: 'JWT',
-    authentication: 'Authentication',
   },
   kinesis: {
     aws_access_key_id: 'AWS Access Key ID',
