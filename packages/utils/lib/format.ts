@@ -16,3 +16,36 @@ export const formatSizeUnit = (val: number) => {
   const size = (val / 1024 ** index).toFixed(1)
   return `${size} ${unitArr[index]}`
 }
+
+/**
+ * Converts a given value from one unit to its equivalent in the smallest unit of the same type.
+ *
+ * For example, it converts a value in kilobytes (KB) to bytes (B), or a value in hours (h) to milliseconds (ms).
+ * The smallest unit for time is millisecond (ms), and for size is byte (B).
+ *
+ * @param {number} value - The numeric value to be converted.
+ * @param {string} unit - The unit of the value, which is a key of the SizeOrTimeUnit enum.
+ * @returns {number} The input value converted to the smallest unit.
+ * @throws {Error} If the provided unit is not a key in the SizeOrTimeUnit enum.
+ *
+ * @example
+ * // returns 1024, converts 1 kilobyte to bytes
+ * formatValueToMinUnit(1, 'KB');
+ */
+enum SizeOrTimeUnit {
+  ms = 1,
+  s = 1000,
+  m = 1000 * 60,
+  h = 1000 * 60 * 60,
+  d = 1000 * 60 * 60 * 24,
+  B = 1,
+  KB = 1024,
+  MB = 1024 * 1024,
+  GB = 1024 * 1024 * 1024,
+}
+export const formatValueToMinUnit = (value: number, unit: keyof typeof SizeOrTimeUnit) => {
+  if (!(unit in SizeOrTimeUnit)) {
+    throw new Error(`Invalid unit: ${unit}`)
+  }
+  return value * SizeOrTimeUnit[unit]
+}
