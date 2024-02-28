@@ -131,7 +131,11 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     record_template: 'Record 模板',
   },
   kafka_consumer: {
-    payload_template: 'MQTT Payload Template',
+    key_encoding_mode: 'Key 编码模式',
+    value_encoding_mode: 'Value 编码模式',
+    offset_reset_policy: '偏移重置策略',
+    offset_commit_interval_seconds: '偏移提交间隔',
+    topic: 'Kafka 主题名称',
   },
   rabbitmq: {
     exchange: '交换机',

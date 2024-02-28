@@ -131,7 +131,11 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     record_template: 'Record Template',
   },
   kafka_consumer: {
-    payload_template: 'MQTT Payload Template',
+    key_encoding_mode: 'Key Encoding Mode',
+    value_encoding_mode: 'Value Encoding Mode',
+    offset_reset_policy: 'Offset Reset Policy',
+    offset_commit_interval_seconds: 'Offset Commit Interval',
+    topic: 'Kafka Topic',
   },
   rabbitmq: {
     exchange: 'Exchange',

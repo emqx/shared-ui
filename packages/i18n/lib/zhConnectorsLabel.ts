@@ -24,12 +24,12 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     servers: '服务器列表',
     enable_pipelining: 'HTTP 流水线',
     url: '服务器地址',
+    authentication: '认证',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
     kerberos_keytab_file: 'Kerberos Keytab 文件',
     mechanism: '认证方法',
-    authentication: '认证',
   },
   http: {
     url: 'URL',
@@ -119,19 +119,9 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     grpc_timeout: 'gRPC 超时',
   },
   kafka_consumer: {
-    bootstrap_hosts: '主机列表',
-    consumer_key_encoding_mode: 'Key 编码模式',
-    consumer_value_encoding_mode: 'Value 编码模式',
-    consumer_topic_mapping: '主题映射关系',
-    consumer_offset_reset_policy: '偏移重置策略',
-    consumer_mqtt_topic: 'MQTT 主题',
-    min_metadata_refresh_interval: '元数据刷新最小间隔',
-    metadata_request_timeout: '元数据请求超时',
-    consumer_max_batch_bytes: '拉取字节数',
-    consumer_offset_commit_interval_seconds: '偏移提交间隔',
-    topic: 'Kafka 主题名称',
-    mqtt_topic: 'MQTT 主题',
-    qos: 'QoS',
+    kerberos_principal: 'Kerberos Principal',
+    kerberos_keytab_file: 'Kerberos Keytab 文件',
+    mechanism: '认证方法',
   },
   rocketmq: {
     access_key: 'AccessKey',
@@ -153,7 +143,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   },
   pulsar: {
     jwt: 'JWT',
-    authentication: '认证',
   },
   kinesis: {
     aws_access_key_id: 'AWS 访问密钥 ID',
