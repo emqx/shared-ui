@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { formatSizeUnit } from '../format.ts'
+import { formatSizeUnit, formatValueToMinUnit } from '../format'
 
 describe('formatSizeUnit', () => {
   it('should correctly format bytes', () => {
@@ -19,5 +19,22 @@ describe('formatSizeUnit', () => {
     expect(() => formatSizeUnit(undefined)).toThrow(
       'Invalid input: input should be a non-negative number',
     )
+  })
+})
+
+describe('formatValueToMinUnit', () => {
+  it('should correctly format value with unit', () => {
+    expect(formatValueToMinUnit(10, 'KB')).toBe(10240)
+    expect(formatValueToMinUnit(5, 'MB')).toBe(5242880)
+    expect(formatValueToMinUnit(1, 's')).toBe(1000)
+  })
+
+  it('should throw an error for invalid unit', () => {
+    // @ts-ignore
+    expect(() => formatValueToMinUnit(10, 'TB')).toThrow('Invalid unit: TB')
+    // @ts-ignore
+    expect(() => formatValueToMinUnit(5, 'PB')).toThrow('Invalid unit: PB')
+    // @ts-ignore
+    expect(() => formatValueToMinUnit(10, 'S')).toThrow('Invalid unit: S')
   })
 })
