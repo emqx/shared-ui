@@ -28,7 +28,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
-    kerberos_keytab_file: 'Kerberos keytab file',
+    kerberos_keytab_file: 'Kerberos Keytab File',
     mechanism: 'Mechanism',
   },
   http: {
@@ -120,7 +120,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   kafka_consumer: {
     kerberos_principal: 'Kerberos Principal',
-    kerberos_keytab_file: 'Kerberos keytab file',
+    kerberos_keytab_file: 'Kerberos Keytab File',
     mechanism: 'Mechanism',
   },
   rocketmq: {
