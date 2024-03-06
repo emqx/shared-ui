@@ -4,6 +4,8 @@ import {
   zhActionsLabel,
   enActionsLabel,
   enConnectorsLabel,
+  zhSymbolLabel,
+  enSymbolLabel,
 } from '../lib'
 
 console.log(
@@ -17,4 +19,8 @@ console.log(
   enActionsLabel,
   'enConnectorsLabel',
   enConnectorsLabel,
+  'zhSymbolLabel',
+  zhSymbolLabel,
+  'enSymbolLabel',
+  enSymbolLabel,
 )
