@@ -44,6 +44,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   },
   azure_event_hub_producer: {
     bootstrap_hosts: '引导主机',
+    password: '连接字符串',
   },
   syskeeper_forwarder: {
     ack_mode: 'ACK 模式',
