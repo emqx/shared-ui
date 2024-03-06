@@ -44,6 +44,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   azure_event_hub_producer: {
     bootstrap_hosts: 'Bootstrap Hosts',
+    password: 'Connection String',
   },
   syskeeper_forwarder: {
     ack_mode: 'ACK Mode',

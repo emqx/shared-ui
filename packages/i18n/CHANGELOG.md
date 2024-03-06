@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.14
+
+### Patch Changes
+
+- change azure connector label i18n
+
 ## 0.0.13
 
 ### Patch Changes
