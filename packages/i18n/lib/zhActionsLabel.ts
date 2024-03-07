@@ -152,7 +152,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     compression: '压缩',
     sync_timeout: '同步发布超时',
     send_buffer: 'Socket 发送缓存大小',
-    per_partition_limit: '分区缓存上限',
+    per_partition_limit: 'Pulsar 分区缓存上限',
     message_key: '消息的 Key',
     message_value: '消息的 Value',
   },

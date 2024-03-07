@@ -152,7 +152,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     compression: 'Compression',
     sync_timeout: 'Sync Publish Timeout',
     send_buffer: 'Socket Send Buffer Size',
-    per_partition_limit: 'Per-partition Buffer Limit',
+    per_partition_limit: 'Pulsar Per-partition Buffer Limit',
     message_key: 'Message Key',
     message_value: 'Message Value',
   },
