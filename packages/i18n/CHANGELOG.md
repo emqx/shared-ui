@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.15
+
+### Patch Changes
+
+- Correct some label
+
 ## 0.0.14
 
 ### Patch Changes
