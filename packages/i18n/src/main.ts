@@ -6,6 +6,8 @@ import {
   enConnectorsLabel,
   zhSymbolLabel,
   enSymbolLabel,
+  zhIntegrationDesc,
+  enIntegrationDesc,
 } from '../lib'
 
 console.log(
@@ -23,4 +25,8 @@ console.log(
   zhSymbolLabel,
   'enSymbolLabel',
   enSymbolLabel,
+  'zhIntegrationDesc',
+  zhIntegrationDesc,
+  'enIntegrationDesc',
+  enIntegrationDesc,
 )
