@@ -1,7 +1,7 @@
 export const zhIntegrationDesc: Record<string, Record<string, string>> = {
   common: {
     auto_restart_interval: '资源断开以后，自动重连的时间间隔。',
-    batch_size: '最大批量请求大小。如果设为1，则无批处理。',
+    batch_size: '最大批量请求大小。如果设为 1，则无批处理。',
     batch_time: '在较低消息率情况下尝试累积批量输出时的最大等待间隔，以提高资源的利用率。',
     enable_queue: '启用磁盘缓存队列（仅对 egress 方向桥接有用）。',
     health_check_interval: '健康检查间隔。',
@@ -57,12 +57,12 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     batch_value_separator:
       "默认为逗号 ','，适用于 VALUES 格式。您也可以使用其他分隔符， 请参考 [INSERT INTO 语句](https://clickhouse.com/docs/zh/sql-reference/statements/insert-into)。",
     connect_timeout: '连接 HTTP 服务器的超时时间。',
-    url: '你想连接到的Clickhouse服务器的HTTP URL（例如http://myhostname:8123）。',
+    url: '你想连接到的 Clickhouse 服务器的 HTTP URL（例如 http://myhostname:8123）。',
     sql: "可以使用 ${'{'}field{'}'} 占位符来引用消息与客户端上下文中的变量，请确保对应字段存在且数据格式符合预期。此处不支持 [SQL 预处理](https://docs.emqx.com/zh/enterprise/v5.0/data-integration/data-bridges.html#sql-预处理)。",
   },
   dynamo: {
     template:
-      "模板，默认值为空。当此值为空时，整个消息将存储在数据库中。<br />模板可以是任何带有占位符的有效json，并确保表中所有的键都在这里，例如：<br />  `{'{'}\"id\" : \"${'{'}id{'}'}\", \"clientid\" : \"${'{'}clientid{'}'}\", \"data\" : \"${'{'}payload.data{'}'}\"{'}'}`",
+      "模板，默认值为空。当此值为空时，整个消息将存储在数据库中。<br/>模板可以是任何带有占位符的有效 JSON，并确保表中所有的键都在这里，例如：<br/>  `{'{'}\"id\" : \"${'{'}id{'}'}\", \"clientid\" : \"${'{'}clientid{'}'}\", \"data\" : \"${'{'}payload.data{'}'}\"{'}'}`",
     url: 'DynamoDB 的地址。',
     table: 'DynamoDB 的表。',
     aws_access_key_id: 'DynamoDB 的访问 ID。',
@@ -73,9 +73,9 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '正整数，设置最大可发送的异步 HTTP 请求数量。当设置为 1 时，表示每次发送完成 HTTP 请求后都需要等待服务器返回，再继续发送下一个请求。',
     connect_timeout: '连接 HTTP 服务器的超时时间。',
     service_account_json:
-      '包含将与 PubSub 一起使用的 GCP 服务账户凭证的 JSON。<br/>当创建GCP服务账户时（如 https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount ），可以选择下载 JSON 形式的凭证，然后在该配置项中使用。',
-    pubsub_topic: '要发布消息的GCP PubSub主题。',
-    payload_template: '用于格式化外发信息的模板。 如果未定义，将以JSON格式发送所有可用的上下文。',
+      '包含将与 PubSub 一起使用的 GCP 服务账户凭证的 JSON。<br/>当创建 GCP 服务账户时（如 https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount ），可以选择下载 JSON 形式的凭证，然后在该配置项中使用。',
+    pubsub_topic: '要发布消息的 GCP PubSub 主题。',
+    payload_template: '用于格式化外发信息的模板。 如果未定义，将以 JSON 格式发送所有可用的上下文。',
     attributes_template:
       '用于格式化消息属性的模板。未定义的值将被渲染为空字符串。空键将从属性映射中删除。',
     ordering_key_template:
@@ -86,13 +86,13 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     pipelining:
       '正整数，设置最大可发送的异步 HTTP 请求数量。当设置为 1 时，表示每次发送完成 HTTP 请求后都需要等待服务器返回，再继续发送下一个请求。',
     service_account_json:
-      '包含将与 PubSub 一起使用的 GCP 服务账户凭证的 JSON。<br/>当创建GCP服务账户时（如 https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount ），可以选择下载 JSON 形式的凭证，然后在该配置项中使用。',
+      '包含将与 PubSub 一起使用的 GCP 服务账户凭证的 JSON。<br/>当创建 GCP 服务账户时（如 https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount ），可以选择下载 JSON 形式的凭证，然后在该配置项中使用。',
     pull_max_messages:
       '从 GCP PubSub 中在一个拉取请求里检索的最大消息数。\n实际数量可能小于指定的值。',
     connect_timeout: '连接 HTTP 服务器的超时时间。',
   },
   hstreamdb: {
-    url: 'HStreamDB 服务器的URL。使用 gRPC HTTP 服务器地址。',
+    url: 'HStreamDB 服务器的 URL。使用 gRPC HTTP 服务器地址。',
     partition_key: 'HStreamDB 分区键。支持占位符。',
     grpc_flush_timeout: '刷新 gRPC 调用到 HStreamDB 服务器的时间间隔。',
     aggregation_pool_size:
@@ -102,12 +102,12 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '写入池大小。扩大池规模可增加并行化和同时写入操作，可能提升吞吐量。但需权衡内存消耗和资源竞争。',
     batch_interval: '两个连续（批量）请求之间的最大间隔。',
     record_template:
-      '将被转发到 HStreamDB 的 HStream record 模板。支持占位符。<br />注意：当使用 `raw record` 模板（意味着数据不是有效的JSON）时，应该在 HStream 中使用 `read` 或 `subscription` 来获取数据。',
+      '将被转发到 HStreamDB 的 HStream record 模板。支持占位符。<br/>注意：当使用 `raw record` 模板（意味着数据不是有效的 JSON）时，应该在 HStream 中使用 `read` 或 `subscription` 来获取数据。',
     parameters_batch_size: '单个请求中可发送的插入数据子句的最大数量。',
   },
   influxdb: {
     server:
-      '将要连接的 IPv4 或 IPv6 地址，或者主机名。</br><br/>主机名具有以下形式：`Host[:Port]`。</br><br/>如果未指定 `[:Port]`，则使用 InfluxDB 默认端口 8086。',
+      '将要连接的 IPv4 或 IPv6 地址，或者主机名。<br/><br/>主机名具有以下形式：`Host[:Port]`。<br/><br/>如果未指定 `[:Port]`，则使用 InfluxDB 默认端口 8086。',
     token: 'InfluxDB token。',
     org: 'InfluxDB 组织名称。',
     bucket: 'InfluxDB bucket 名称。',
@@ -231,13 +231,13 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '当连接池中所有线程都被占用时，可以创建的最大附加工作线程数。这有助于通过允许更多并发连接到 MongoDB 服务器来管理暂时的工作负载峰值。',
     overflow_ttl: '当池内工人太多时，等待多久清除多余工人。',
     overflow_check_period: '检查是否有超过配置的工人的周期（"溢出"）。',
-    local_threshold: '在多个合适的MongoDB实例中进行选择的延迟窗口的大小。',
+    local_threshold: '在多个合适的 MongoDB 实例中进行选择的延迟窗口的大小。',
     connect_timeout: '超时重连的等待时间。',
     socket_timeout: '在尝试超时之前，在套接字上尝试发送或接收的持续时间。',
     server_selection_timeout: '指定在抛出异常之前为服务器选择阻断多长时间。',
     wait_queue_timeout: '工作者等待连接可用的最长时间。',
     heartbeat_frequency:
-      '控制驱动程序何时检查MongoDB部署的状态。指定检查的间隔时间，从上一次检查结束到下一次检查开始计算。如果连接数增加（例如，如果你增加池子的大小，就会发生这种情况），你可能也需要增加这个周期，以避免在MongoDB日志文件中创建太多的日志条目。',
+      '控制驱动程序何时检查 MongoDB 部署的状态。指定检查的间隔时间，从上一次检查结束到下一次检查开始计算。如果连接数增加（例如，如果你增加池子的大小，就会发生这种情况），你可能也需要增加这个周期，以避免在 MongoDB 日志文件中创建太多的日志条目。',
     min_heartbeat_frequency: '心跳间的最小间隙',
     server:
       '将要连接的 IPv4 或 IPv6 地址，或者主机名。<br/>主机名具有以下形式：`Host[:Port]`。<br/>如果未指定 `[:Port]`，则使用 MongoDB 默认端口 27017。',
@@ -276,7 +276,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     refresh_interval: 'RocketMQ 主题路由更新间隔。',
     send_buffer: 'RocketMQ 驱动的套字节发送消息的缓冲区大小',
     template:
-      "模板, 默认为空，为空时将会将整个消息转发给 RocketMQ。 <br>模板可以是任意带有占位符的合法字符串, 例如:<br>- ${'{'}id{'}'}, ${'{'}username{'}'}, ${'{'}clientid{'}'}, ${'{'}timestamp{'}'}<br>- {'{'}\"id\" : ${'{'}id{'}'}, \"username\" : ${'{'}username{'}'}{'}'}",
+      "模板, 默认为空，为空时将会将整个消息转发给 RocketMQ。 <br/>模板可以是任意带有占位符的合法字符串, 例如:<br/>- ${'{'}id{'}'}, ${'{'}username{'}'}, ${'{'}clientid{'}'}, ${'{'}timestamp{'}'}<br/>- {'{'}\"id\" : ${'{'}id{'}'}, \"username\" : ${'{'}username{'}'}{'}'}",
     sync_timeout: 'RocketMQ 驱动同步调用的超时时间。',
   },
   tdengine: {
@@ -297,7 +297,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '一个正整数。是否连续发送 HTTP 请求，当设置为 1 时，这意味着每次发送 HTTP 请求后，您需要等待服务器返回，然后继续发送下一个请求。',
     connect_timeout: '连接到 HTTP 服务器时的超时时间。',
     timestamp:
-      "支持使用 ${'{'}var{'}'} 格式的占位符，要求是时间戳格式。也可以使用以下特殊字符插入系统时间：</br>- `now`: 当前毫秒级时间戳</br>- `now_ms`: 当前毫秒级时间戳</br>- `now_us`: 当前微秒级时间戳</br>- `now_ns`: 当前纳秒级时间戳",
+      "支持使用 ${'{'}var{'}'} 格式的占位符，要求是时间戳格式。也可以使用以下特殊字符插入系统时间：<br/>- `now`: 当前毫秒级时间戳<br/>- `now_ms`: 当前毫秒级时间戳<br/>- `now_us`: 当前微秒级时间戳<br/>- `now_ns`: 当前纳秒级时间戳",
     measurement: "也称 Measurement，支持使用 ${'{'}var{'}'} 格式的占位符。",
     data_type: "数据类型，支持使用 ${'{'}var{'}'} 格式的占位符。",
     value: "要插入的值，支持使用 ${'{'}var{'}'} 格式的占位符。",
@@ -315,7 +315,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     value: "数据点的值，支持 ${'{'}var{'}'} 格式的占位符。它代表实际的测量或观察值。",
   },
   oracle: {
-    sql: 'SQL模板。模板中描述消息元数据和有效载荷的字符串可以包含占位符。这些占位符在插入时不会做任何检查和格式转换，所以请务必确保插入值被正确地格式化和转义。',
+    sql: 'SQL 模板。模板中描述消息元数据和有效载荷的字符串可以包含占位符。这些占位符在插入时不会做任何检查和格式转换，所以请务必确保插入值被正确地格式化和转义。',
     sid: 'Oracle Database SID 名称',
     server:
       '将要连接的 IPv4 或 IPv6 地址，或者主机名。<br/>主机名具有以下形式：`Host[:Port]`。<br/>如果未指定 `[:Port]`，则使用 Oracle Database 默认端口 1521。',
@@ -333,7 +333,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     publish_confirmation_timeout: '使用发布者确认时等待 RabbitMQ 确认消息发布的超时时间。',
     timeout: '等待建立连接的超时时间。',
     payload_template:
-      "发送消息到 RabbitMQ 之前格式化消息有效载荷的模板。模板占位符（例如 ${'{'}field1.sub_field{'}'} ）将被替换为相应字段的值。如果为空，则整个输入消息将被用作有效载荷，格式化为JSON文本。此行为相当于将 ${'{'}.{'}'} 指定为有效载荷模板。",
+      "发送消息到 RabbitMQ 之前格式化消息有效载荷的模板。模板占位符（例如 ${'{'}field1.sub_field{'}'} ）将被替换为相应字段的值。如果为空，则整个输入消息将被用作有效载荷，格式化为 JSON 文本。此行为相当于将 ${'{'}.{'}'} 指定为有效载荷模板。",
     queue: 'RabbitMQ 队列名称。',
     no_ack: '在从 RabbitMQ 消费消息时是否使用 `no_ack` 模式。',
   },
@@ -351,7 +351,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '指定在与 Pulsar broker 断开连接时缓冲消息的持续时间。请合理设置该值，时间设置越久，需要的内存/磁盘的使用量越高。',
     send_buffer: 'TCP socket 的发送缓存调优，高吞吐量下建议保留默认值。',
     max_batch_bytes:
-      '每个批次可收集的最大消息字节数。EMQX 将默认值设为小于 5MB，以便补偿编码开销，特别是在处理较小的消息时。当单条消息的大小超过该限制时，会做为单独批次处理，即该批次中仅包含这条消息。',
+      '每个批次可收集的最大消息字节数。EMQX 将默认值设为小于 5 MB，以便补偿编码开销，特别是在处理较小的消息时。当单条消息的大小超过该限制时，会做为单独批次处理，即该批次中仅包含这条消息。',
     connect_timeout:
       '建立 TCP 连接时的最大等待时长（若启用认证，这个等待时长也包含完成认证所需时间）。',
     mode: '消息缓存模式。<br/><code>memory</code>: 所有的消息都缓存在内存里。如果 EMQX 服务重启，缓存的消息会丢失。<br/><code>disk</code>: 缓存到磁盘上。EMQX 重启后会继续发送重启前未发送完成的消息。<br/><code>hybrid</code>: 先将消息缓存在内存中，当内存中的消息堆积超过一定限制（配置项 <code>segment_bytes</code> 描述了该限制）后，后续的消息会缓存到磁盘上。如果 EMQX 服务重启，缓存消息会丢失。',
@@ -365,8 +365,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
   },
   azure_event_hub_producer: {
     bootstrap_hosts:
-      '用于引导客户端的 Azure Event Hubs Kafka <code>host[:port]</code>命名空间端点的逗号分隔列表。默认端口号为9093。',
-    connect_timeout: 'TCP连接建立的最大等待时间（包括启用身份验证的时间）。',
+      '用于引导客户端的 Azure Event Hubs Kafka <code>host[:port]</code>命名空间端点的逗号分隔列表。默认端口号为 9093。',
+    connect_timeout: 'TCP 连接建立的最大等待时间（包括启用身份验证的时间）。',
     min_metadata_refresh_interval:
       '客户端在刷新 Azure Event Hubs Kafka 代理和主题元数据之前必须等待的最小时间间隔。设置太小的值可能会对 Azure Event Hubs 造成额外的负载。',
     metadata_request_timeout: '从 Azure Event Hubs 获取元数据时的最大等待时间。',
@@ -374,7 +374,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '用于连接到 Azure Event Hubs 的连接字符串。应为命名空间共享访问策略的 “连接字符串 - 主键”。',
     topic: '事件中心名称',
     max_batch_bytes:
-      '在 Azure Event Hubs 消息批次中收集的最大字节数。大多数 Azure Event Hubs 代理的默认限制为 1MB 批次大小。EMQX 的默认值小于1 MB，以补偿 Azure Event Hubs 消息编码开销（特别是当每个单独消息非常小时）。当单个消息超过限制时，仍然会发送（作为单个元素批次）。',
+      '在 Azure Event Hubs 消息批次中收集的最大字节数。大多数 Azure Event Hubs 代理的默认限制为 1 MB 批次大小。EMQX 的默认值小于 1 MB，以补偿 Azure Event Hubs 消息编码开销（特别是当每个单独消息非常小时）。当单个消息超过限制时，仍然会发送（作为单个元素批次）。',
     partition_strategy:
       '分区策略用于告诉生产者如何将消息分派到 Azure Event Hubs 分区。\n\n<code>random</code>：随机选择每个消息的分区\n<code>key_dispatch</code>：将 Azure Event Hubs 消息键哈希到分区号',
     required_acks:
@@ -384,24 +384,24 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     kafka_ext_headers:
       '请为 Azure Event Hubs 提供更多的键值对头部信息<br/>此处的键值对将在发送到 Azure Event Hubs 之前与 <code>kafka_headers</code> 字段的值进行组合。',
     kafka_header_value_encode_mode:
-      'Azure Event Hubs 头部值编码模式<br/>\n - NONE：仅将二进制值添加到 Azure Event Hubs 头部；<br/>\n - JSON：仅将JSON值添加到Azure Event Hubs 头部，并在发送前将其编码为JSON字符串。',
+      'Azure Event Hubs 头部值编码模式<br/>\n - NONE：仅将二进制值添加到 Azure Event Hubs 头部；<br/>\n - JSON：仅将 JSON 值添加到 Azure Event Hubs 头部，并在发送前将其编码为 JSON 字符串。',
     partition_count_refresh_interval:
-      'Azure Event Hubs 生产者用于发现增加的分区数的时间间隔。\n在 Azure Event Hubs 中增加分区数后，EMQX将在根据<code>partition_strategy</code>分派消息时考虑已发现的分区。',
+      'Azure Event Hubs 生产者用于发现增加的分区数的时间间隔。\n在 Azure Event Hubs 中增加分区数后，EMQX 将在根据<code>partition_strategy</code>分派消息时考虑已发现的分区。',
     max_inflight:
-      'Azure Event Hubs 生产者（每个分区）允许发送的最大批次数，然后从 Azure Event Hubs 接收确认。较大的值通常意味着更高的吞吐量。但是，当该值大于1时，可能会有消息重新排序的风险。',
+      'Azure Event Hubs 生产者（每个分区）允许发送的最大批次数，然后从 Azure Event Hubs 接收确认。较大的值通常意味着更高的吞吐量。但是，当该值大于 1 时，可能会有消息重新排序的风险。',
     sync_query_timeout: "该参数定义同步查询的超时限制。仅在桥接查询模式配置为'同步'时适用。",
-    key: '用于呈现 Azure Event Hubs 消息键的模板。如果模板呈现为空值（即在规则引擎上下文中没有此类数据字段），则使用Azure Event Hubs 的<code>NULL</code>（而不是空字符串）。',
+    key: '用于呈现 Azure Event Hubs 消息键的模板。如果模板呈现为空值（即在规则引擎上下文中没有此类数据字段），则使用 Azure Event Hubs 的<code>NULL</code>（而不是空字符串）。',
     value:
-      '用于呈现 Azure Event Hubs 消息值的模板。如果模板呈现为空值（即在规则引擎上下文中没有此类数据字段），则使用Azure Event Hubs 的<code>NULL</code>（而不是空字符串）。',
-    kafka_ext_header_key: "Azure Event Hubs头部的键。支持格式为${'{'}var{'}'}的占位符。",
-    kafka_ext_header_value: "Azure Event Hubs头部的值。支持格式为${'{'}var{'}'}的占位符。",
-    mode: '消息缓冲区模式。\n\n<code>memory</code>：在内存中缓冲所有消息。在EMQX节点重启时，消息将会丢失\n<code>disk</code>：将所有消息缓冲到磁盘上。磁盘上的消息能够在EMQX节点重启时幸存下来。\n<code>hybrid</code>：首先在内存中缓冲消息，当达到一定限制时（有关更多信息，请参阅<code>segment_bytes</code>配置），然后开始将消息转移到磁盘上，与<code>memory</code>模式一样，消息将会在EMQX节点重启时丢失。',
+      '用于呈现 Azure Event Hubs 消息值的模板。如果模板呈现为空值（即在规则引擎上下文中没有此类数据字段），则使用 Azure Event Hubs 的<code>NULL</code>（而不是空字符串）。',
+    kafka_ext_header_key: "Azure Event Hubs 头部的键。支持格式为${'{'}var{'}'}的占位符。",
+    kafka_ext_header_value: "Azure Event Hubs 头部的值。支持格式为${'{'}var{'}'}的占位符。",
+    mode: '消息缓冲区模式。\n\n<code>memory</code>：在内存中缓冲所有消息。在 EMQX 节点重启时，消息将会丢失\n<code>disk</code>：将所有消息缓冲到磁盘上。磁盘上的消息能够在 EMQX 节点重启时幸存下来。\n<code>hybrid</code>：首先在内存中缓冲消息，当达到一定限制时（有关更多信息，请参阅<code>segment_bytes</code>配置），然后开始将消息转移到磁盘上，与<code>memory</code>模式一样，消息将会在 EMQX 节点重启时丢失。',
     per_partition_limit:
       '每个 Azure Event Hubs 分区允许缓冲的字节数。当超过此限制时，旧消息将被删除以获得新消息的缓冲区配额。',
     segment_bytes:
       '在缓冲区模式设置为<code>disk</code>或<code>hybrid</code>时适用。\n此值用于指定每个磁盘缓冲文件的大小。',
     memory_overload_protection:
-      '在缓冲区模式设置为<code>memory</code>时适用\n在内存压力较大时，EMQX将删除旧的缓冲消息。高内存阈值在配置<code>sysmon.os.sysmem_high_watermark</code>中定义。注意：此配置仅适用于Linux。',
+      '在缓冲区模式设置为<code>memory</code>时适用\n在内存压力较大时，EMQX 将删除旧的缓冲消息。高内存阈值在配置<code>sysmon.os.sysmem_high_watermark</code>中定义。注意：此配置仅适用于 Linux。',
     partitions_limit: '限制生产者能够发送消息的最大分区数量。',
   },
   kinesis: {
@@ -413,11 +413,11 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     partition_key: "与发布的消息关联的 Amazon Kinesis 分区键。支持 ${'{'}var{'}'} 格式的占位符。",
   },
   greptimedb: {
-    server: '要连接的 IPv4 或 IPv6 地址或主机名。</br>\n主机条目的格式为：`Host[:Port]`。',
+    server: '要连接的 IPv4 或 IPv6 地址或主机名。<br/>\n主机条目的格式为：`Host[:Port]`。',
     dbname: 'GreptimeDB 数据库名称。',
     precision: 'GreptimeDB 时间精度。',
     write_syntax:
-      "GreptimeDB gRPC 协议写数据点的配置。写语法是一种基于文本的格式，提供数据点的测量、标签集、字段集和时间戳，支持占位符，与 InfluxDB 行协议相同。\n参考 [InfluxDB 2.3 行协议](https://docs.influxdata.com/influxdb/v2.3/reference/syntax/line-protocol/) 和\n[InfluxDB 1.8 行协议](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_tutorial/) </br>\n简而言之：</br>\n```\n<measurement>[,<tag_key>=<tag_value>[,<tag_key>=<tag_value>]] <field_key>=<field_value>[,<field_key>=<field_value>] [<timestamp>]\n```\n请注意，整数值的占位符必须使用后缀 `i` 进行注释。例如 `${'{'}payload.int_value{'}'}i`。",
+      "GreptimeDB gRPC 协议写数据点的配置。写语法是一种基于文本的格式，提供数据点的测量、标签集、字段集和时间戳，支持占位符，与 InfluxDB 行协议相同。\n参考 [InfluxDB 2.3 行协议](https://docs.influxdata.com/influxdb/v2.3/reference/syntax/line-protocol/) 和\n[InfluxDB 1.8 行协议](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_tutorial/) <br/>\n简而言之：<br/>\n```\n<measurement>[,<tag_key>=<tag_value>[,<tag_key>=<tag_value>]] <field_key>=<field_value>[,<field_key>=<field_value>] [<timestamp>]\n```\n请注意，整数值的占位符必须使用后缀 `i` 进行注释。例如 `${'{'}payload.int_value{'}'}i`。",
   },
   syskeeper_proxy: {
     listen: 'Syskeeper 代理服务器的监听地址',
@@ -426,17 +426,17 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
   },
   syskeeper_forwarder: {
     server: 'Syskeeper 代理服务器的地址',
-    ack_mode: '指定代理服务器是否应该回复确认消息，可以是：<br>- need_ack <br>- no_ack <br>',
+    ack_mode: '指定代理服务器是否应该回复确认消息，可以是：<br/>- need_ack <br/>- no_ack <br/>',
     ack_timeout: '等待回复确认消息的最长时间',
     target_topic: '转发消息的主题',
-    target_qos: '转发消息的服务质量(QoS)，留空表示使用原始主题的 QoS',
+    target_qos: '转发消息的服务质量（QoS），留空表示使用原始主题的 QoS',
     template: '消息模板, 支持占位符',
   },
   elasticsearch: {
     server: 'ElasticSearch 服务的 REST 接口地址。',
     routing: '指定应将文档存储在索引的哪个分片中，留空则由 Elasticsearch 决定。',
     wait_for_active_shards:
-      '在继续操作之前必须激活的分片副本数。\n设置为all或任何正整数，最多为索引中的总分片数（number_of_replicas+1）。\n默认值：1，即主分片。',
+      '在继续操作之前必须激活的分片副本数。\n设置为 all 或任何正整数，最多为索引中的总分片数（number_of_replicas+1）。\n默认值：1，即主分片。',
     index: "要执行操作的索引或索引别名的名称，支持 ${'{'}var{'}'} 格式的占位符。",
     id: "索引内文档的唯一标识符，支持 ${'{'}var{'}'} 格式的占位符。如果未指定 ID，则由 Elasticsearch 自动生成。",
     doc: "自定义文档模板，支持 ${'{'}var{'}'} 格式的占位符，要求必须可以被转换为 JSON 对象。\n 例如 `{'{'} \"field\": \"${'{'}payload.field{'}'}\" {'}'}`，或 `${'{'}payload{'}'}`。",

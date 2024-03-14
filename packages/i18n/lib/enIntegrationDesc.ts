@@ -69,7 +69,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
   },
   dynamo: {
     template:
-      "Template, the default value is empty. When this value is empty the whole message will be stored in the database.<br>The template can be any valid json with placeholders and make sure all keys for table are here, example:<br>  `{'{'}\"id\" : \"${'{'}id{'}'}\", \"clientid\" : \"${'{'}clientid{'}'}\", \"data\" : \"${'{'}payload.data{'}'}\"{'}'}`",
+      "Template, the default value is empty. When this value is empty the whole message will be stored in the database.<br/>The template can be any valid JSON with placeholders and make sure all keys for table are here, example:<br/>  `{'{'}\"id\" : \"${'{'}id{'}'}\", \"clientid\" : \"${'{'}clientid{'}'}\", \"data\" : \"${'{'}payload.data{'}'}\"{'}'}`",
     url: 'The url of DynamoDB endpoint.',
     table: 'DynamoDB Table.',
     aws_access_key_id: 'Access Key ID for connecting to DynamoDB.',
@@ -110,13 +110,13 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'The size of the writer pool. A larger pool may increase parallelization and concurrent write operations, potentially boosting throughput. Trade-offs include greater memory consumption and possible resource contention.',
     batch_interval: 'Maximum interval that is allowed between two successive (batch) request.',
     record_template:
-      'The HStream record template to be forwarded to the HStreamDB. Placeholders supported.<br />NOTE: When you use `raw record` template (which means the data is not a valid JSON), you should use `read` or `subscription` in HStream to get the data.',
+      'The HStream record template to be forwarded to the HStreamDB. Placeholders supported.<br/>NOTE: When you use `raw record` template (which means the data is not a valid JSON), you should use `read` or `subscription` in HStream to get the data.',
     parameters_batch_size:
       'Maximum number of insert data clauses that can be sent in a single request.',
   },
   influxdb: {
     server:
-      'The IPv4 or IPv6 address or the hostname to connect to.</br><br/>A host entry has the following form: `Host[:Port]`.</br><br/>The InfluxDB default port 8086 is used if `[:Port]` is not specified.',
+      'The IPv4 or IPv6 address or the hostname to connect to.<br/><br/>A host entry has the following form: `Host[:Port]`.<br/><br/>The InfluxDB default port 8086 is used if `[:Port]` is not specified.',
     token: 'InfluxDB token.',
     org: 'Organization name of InfluxDB.',
     bucket: 'InfluxDB bucket name.',
@@ -304,7 +304,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     refresh_interval: 'RocketMQ Topic Route Refresh Interval.',
     send_buffer: 'The socket send buffer size of the RocketMQ driver client.',
     template:
-      "Template, the default value is empty. When this value is empty the whole message will be stored in the RocketMQ.<br>The template can be any valid string with placeholders, example:<br>- ${'{'}id{'}'}, ${'{'}username{'}'}, ${'{'}clientid{'}'}, ${'{'}timestamp{'}'}<br>- {'{'}\"id\" : ${'{'}id{'}'}, \"username\" : ${'{'}username{'}'}{'}'}",
+      "Template, the default value is empty. When this value is empty the whole message will be stored in the RocketMQ.<br/>The template can be any valid string with placeholders, example:<br/>- ${'{'}id{'}'}, ${'{'}username{'}'}, ${'{'}clientid{'}'}, ${'{'}timestamp{'}'}<br/>- {'{'}\"id\" : ${'{'}id{'}'}, \"username\" : ${'{'}username{'}'}{'}'}",
     sync_timeout: 'Timeout of RocketMQ driver synchronous call.',
   },
   tdengine: {
@@ -326,7 +326,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'A positive integer. Whether to send HTTP requests continuously, when set to 1, it means that after each HTTP request is sent, you need to wait for the server to return and then continue to send the next request.',
     connect_timeout: 'The timeout when connecting to the HTTP server.',
     timestamp:
-      "Supports the use of ${'{'}var{'}'} format as a placeholder, which should be in timestamp format. You can also use the following special characters to insert system time:</br>- `now`: Current millisecond-level timestamp</br>- `now_ms`: Current millisecond-level timestamp</br>- `now_us`: Current microsecond-level timestamp</br>- `now_ns`: Current nanosecond-level timestamp",
+      "Supports the use of ${'{'}var{'}'} format as a placeholder, which should be in timestamp format. You can also use the following special characters to insert system time:<br/>- `now`: Current millisecond-level timestamp<br/>- `now_ms`: Current millisecond-level timestamp<br/>- `now_us`: Current microsecond-level timestamp<br/>- `now_ns`: Current nanosecond-level timestamp",
     measurement: "Supports the use of ${'{'}var{'}'} format as a placeholder.",
     data_type: "Data Type, supports the use of ${'{'}var{'}'} format as a placeholder.",
     value: "The value to be inserted, supports the use of ${'{'}var{'}'} format as a placeholder.",
@@ -462,7 +462,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     dbname: 'GreptimeDB database.',
     precision: 'GreptimeDB time precision.',
     write_syntax:
-      "Conf of GreptimeDB gRPC protocol to write data points. Write syntax is a text-based format that provides the measurement, tag set, field set, and timestamp of a data point, and placeholder supported, which is the same as InfluxDB line protocol.\nSee also [InfluxDB 2.3 Line Protocol](https://docs.influxdata.com/influxdb/v2.3/reference/syntax/line-protocol/) and\n[InfluxDB 1.8 Line Protocol](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_tutorial/) </br>\nTLDR:</br>\n```\n<measurement>[,<tag_key>=<tag_value>[,<tag_key>=<tag_value>]] <field_key>=<field_value>[,<field_key>=<field_value>] [<timestamp>]\n```\nPlease note that a placeholder for an integer value must be annotated with a suffix `i`. For example `${'{'}payload.int_value{'}'}i`.",
+      "Conf of GreptimeDB gRPC protocol to write data points. Write syntax is a text-based format that provides the measurement, tag set, field set, and timestamp of a data point, and placeholder supported, which is the same as InfluxDB line protocol.\nSee also [InfluxDB 2.3 Line Protocol](https://docs.influxdata.com/influxdb/v2.3/reference/syntax/line-protocol/) and\n[InfluxDB 1.8 Line Protocol](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_tutorial/) <br/>\nTLDR:<br/>\n```\n<measurement>[,<tag_key>=<tag_value>[,<tag_key>=<tag_value>]] <field_key>=<field_value>[,<field_key>=<field_value>] [<timestamp>]\n```\nPlease note that a placeholder for an integer value must be annotated with a suffix `i`. For example `${'{'}payload.int_value{'}'}i`.",
   },
   syskeeper_proxy: {
     listen: 'The listening address for this Syskeeper proxy server',
@@ -472,7 +472,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
   syskeeper_forwarder: {
     server: 'The address of the Syskeeper proxy server',
     ack_mode:
-      'Specify whether the proxy server should reply with an acknowledgement for the message forwarding, can be:<br>- need_ack <br>- no_ack <br>',
+      'Specify whether the proxy server should reply with an acknowledgement for the message forwarding, can be:<br/>- need_ack <br/>- no_ack <br/>',
     ack_timeout: 'The maximum time to wait for an acknowledgement from the proxy server',
     target_topic: 'The topic for the forwarded message',
     target_qos: 'The QoS for the forwarded message, left blank for the original topic',
