@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.16
+
+### Patch Changes
+
+- add integration config description i18n
+
 ## 0.0.15
 
 ### Patch Changes
