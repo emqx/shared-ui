@@ -129,6 +129,11 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     writer_pool_size: '写入池大小',
     batch_interval: '最大批处理间隔',
     record_template: 'Record 模板',
+    /**
+     * HStreamDB has two fields with 'batch_size' key, so we need to distinguish them.
+     * this one uses the path (snake case) of the field as the i18n keypath
+     */
+    parameters_batch_size: 'HStreamDB 最大批量请求大小',
   },
   kafka_consumer: {
     key_encoding_mode: 'Key 编码模式',
