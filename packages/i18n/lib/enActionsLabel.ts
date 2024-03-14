@@ -129,6 +129,11 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     writer_pool_size: 'Writer Pool Size',
     batch_interval: 'Max Batch Interval',
     record_template: 'Record Template',
+    /**
+     * HStreamDB has two fields with 'batch_size' key, so we need to distinguish them.
+     * this one uses the path (snake case) of the field as the i18n keypath
+     */
+    parameters_batch_size: 'HStreamDB Batch Size',
   },
   kafka_consumer: {
     key_encoding_mode: 'Key Encoding Mode',
