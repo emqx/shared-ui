@@ -13,6 +13,7 @@ describe('createDownloadBlobLink', () => {
       window.URL = new URL('http://example.com') as typeof window.URL
     }
     window.URL.createObjectURL = vi.fn(() => fakeURL)
+    window.URL.revokeObjectURL = vi.fn(() => {})
 
     // Mocking the necessary APIs
     const createElementSpy = vi.spyOn(document, 'createElement')
@@ -27,6 +28,7 @@ describe('createDownloadBlobLink', () => {
     expect(createElementSpy).toHaveBeenCalledWith('a')
     expect(appendChildSpy).toHaveBeenCalled()
     expect(removeChildSpy).toHaveBeenCalled()
+    expect(window.URL.revokeObjectURL).toHaveBeenCalledWith(fakeURL)
 
     // Clean up
     createElementSpy.mockRestore()

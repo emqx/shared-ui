@@ -33,5 +33,12 @@
     "version:minor": "npm version minor",
     "version:major": "npm version major",
     "release": "npm publish"
+  },
+  "dependencies": {
+    "papaparse": "^5.4.1",
+    "vue-i18n": "^9.10.2"
+  },
+  "devDependencies": {
+    "@types/papaparse": "^5.3.14"
   }
 }
