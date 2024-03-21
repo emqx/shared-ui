@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.12
+
+### Patch Changes
+
+- add batch settings
+
 ## 0.0.11
 
 ### Patch Changes
