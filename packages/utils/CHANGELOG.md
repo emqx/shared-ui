@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.13
+
+### Patch Changes
+
+- 7f32b99: Fix can not export useBatchSettings & formatValueToMinUnit type
+
 ## 0.0.12
 
 ### Patch Changes
