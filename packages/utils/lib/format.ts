@@ -43,9 +43,9 @@ enum SizeOrTimeUnit {
   MB = 1024 * 1024,
   GB = 1024 * 1024 * 1024,
 }
-export const formatValueToMinUnit = (value: number, unit: keyof typeof SizeOrTimeUnit) => {
+export const formatValueToMinUnit = (value: number, unit: string) => {
   if (!(unit in SizeOrTimeUnit)) {
     throw new Error(`Invalid unit: ${unit}`)
   }
-  return value * SizeOrTimeUnit[unit]
+  return value * SizeOrTimeUnit[unit as keyof typeof SizeOrTimeUnit]
 }

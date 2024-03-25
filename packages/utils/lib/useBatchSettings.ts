@@ -8,7 +8,7 @@ enum BatchSettingTypes {
   InfluxDB = 'influxdb',
 }
 
-export default (locale: 'zh' | 'en' = 'en') => {
+export const useBatchSettings = (locale: 'zh' | 'en' = 'en') => {
   const i18n = createI18n({
     locale,
     messages: {

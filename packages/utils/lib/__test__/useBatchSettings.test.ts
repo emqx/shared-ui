@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
-import useBatchSettings from '../useBatchSettings'
+import { useBatchSettings } from '../useBatchSettings'
 
 describe('useBatchSettings', () => {
   const {
