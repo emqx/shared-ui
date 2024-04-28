@@ -178,6 +178,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     refresh_interval: 'Topic Route Refresh Interval',
     send_buffer: 'Send Buffer Size',
     sync_timeout: 'Sync Timeout',
+    strategy: 'Produce Strategy',
   },
   clickhouse: {
     batch_value_separator: 'Batch Value Separator',
@@ -190,5 +191,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   },
   dynamo: {
     table: 'Table ',
+    hash_key: 'Hash Key',
+    range_key: 'Range Key',
   },
 }

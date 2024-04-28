@@ -74,6 +74,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     table: 'DynamoDB Table.',
     aws_access_key_id: 'Access Key ID for connecting to DynamoDB.',
     aws_secret_access_key: 'AWS Secret Access Key for connecting to DynamoDB.',
+    region: 'Region of the AWS dynamo',
   },
   gcp_pubsub_producer: {
     pipelining:
@@ -306,6 +307,10 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     template:
       "Template, the default value is empty. When this value is empty the whole message will be stored in the RocketMQ.<br/>The template can be any valid string with placeholders, example:<br/>- ${'{'}id{'}'}, ${'{'}username{'}'}, ${'{'}clientid{'}'}, ${'{'}timestamp{'}'}<br/>- {'{'}\"id\" : ${'{'}id{'}'}, \"username\" : ${'{'}username{'}'}{'}'}",
     sync_timeout: 'Timeout of RocketMQ driver synchronous call.',
+    namespace:
+      'The namespace field MUST be set if you are using the RocketMQ service in aliyun cloud and also the namespace is enabled, or if you have configured a namespace in your RocketMQ server. For RocketMQ in aliyun cloud, the namespace is the instance ID.',
+    strategy:
+      'Produce Strategy. NOTE: Do not use `key_dispatch` if `Message Key` option is set to `none`',
   },
   tdengine: {
     server:

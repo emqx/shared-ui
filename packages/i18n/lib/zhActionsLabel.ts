@@ -178,6 +178,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     refresh_interval: '主题路由更新间隔',
     send_buffer: '发送消息的缓冲区大小',
     sync_timeout: '同步调用超时时间',
+    strategy: 'Produce 策略',
   },
   clickhouse: {
     batch_value_separator: '分隔符',
@@ -190,5 +191,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   },
   dynamo: {
     table: '表',
+    hash_key: '哈希键',
+    range_key: '范围键',
   },
 }
