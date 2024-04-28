@@ -110,6 +110,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     url: 'DynamoDB 地址',
     aws_access_key_id: '连接访问 ID',
     aws_secret_access_key: '连接访问密钥',
+    region: 'DynamoDB 区域',
   },
   gcp_pubsub_consumer: {
     pipelining: 'HTTP 流水线',
@@ -128,6 +129,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     access_key: 'AccessKey',
     secret_key: 'SecretKey',
     security_token: '安全令牌',
+    namespace: '命名空间',
   },
   sqlserver: {
     driver: 'SQL Server Driver 名称',

@@ -67,6 +67,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     table: 'DynamoDB 的表。',
     aws_access_key_id: 'DynamoDB 的访问 ID。',
     aws_secret_access_key: 'DynamoDB 的访问密钥。',
+    region: 'AWS DynamoDB 所在的区域',
   },
   gcp_pubsub_producer: {
     pipelining:
@@ -278,6 +279,9 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     template:
       "模板, 默认为空，为空时将会将整个消息转发给 RocketMQ。 <br/>模板可以是任意带有占位符的合法字符串, 例如:<br/>- ${'{'}id{'}'}, ${'{'}username{'}'}, ${'{'}clientid{'}'}, ${'{'}timestamp{'}'}<br/>- {'{'}\"id\" : ${'{'}id{'}'}, \"username\" : ${'{'}username{'}'}{'}'}",
     sync_timeout: 'RocketMQ 驱动同步调用的超时时间。',
+    namespace:
+      '如果你正在使用阿里云的 RocketMQ 服务并且启用了命名空间，或者你在你自己的 RocketMQ 服务里配置了命名空间，那么你必须配置命名空间字段。对于阿里云的 RocketMQ 服务来说，命名空间就是实例 ID。',
+    strategy: 'Produce 策略，注意`Message Key`设置为`none`时，不可选用`key_dispatch`策略',
   },
   tdengine: {
     server:

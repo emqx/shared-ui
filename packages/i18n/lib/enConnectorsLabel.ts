@@ -110,6 +110,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     url: 'DynamoDB Endpoint',
     aws_access_key_id: 'AWS Access Key ID',
     aws_secret_access_key: 'AWS Secret Access Key',
+    region: 'DynamoDB Region',
   },
   gcp_pubsub_consumer: {
     pipelining: 'HTTP Pipelining',
@@ -128,6 +129,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     access_key: 'AccessKey',
     secret_key: 'SecretKey',
     security_token: 'Security Token',
+    namespace: 'Namespace',
   },
   sqlserver: {
     driver: 'SQL Server Driver Name',
