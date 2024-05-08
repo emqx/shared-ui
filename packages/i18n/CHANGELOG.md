@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.17
+
+### Patch Changes
+
+- Adapt new fields in RocketMQ & Dynamo
+
 ## 0.0.16
 
 ### Patch Changes
