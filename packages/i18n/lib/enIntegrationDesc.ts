@@ -310,7 +310,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     namespace:
       'The namespace field MUST be set if you are using the RocketMQ service in aliyun cloud and also the namespace is enabled, or if you have configured a namespace in your RocketMQ server. For RocketMQ in aliyun cloud, the namespace is the instance ID.',
     strategy:
-      'Produce Strategy. NOTE: Do not use `key_dispatch` if `Message Key` option is set to `none`',
+      'Producer key dispatch strategy, the default is `roundrobin`, also supports placeholders.',
   },
   tdengine: {
     server:
