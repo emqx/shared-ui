@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.18
+
+### Patch Changes
+
+- fix(i18n): desc of `strategy` in RocketMQ
+
 ## 0.0.17
 
 ### Patch Changes
