@@ -507,5 +507,10 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     bucket:
       'The name of the bucket to which files will be uploaded. Needs to be pre-created in S3. Supports the ${var} placeholder format.',
     key: 'The content of the object to be stored. By default, it is in JSON text format containing all fields. Supports placeholder settings such as ${payload}. The storage format depends on the format of the variable and can be stored in binary format.',
+    column_order: `Event fields that will be ordered first as columns in the resulting CSV file.<br/>Regardless of this setting, resulting CSV will contain all the fields of aggregated events, but all the columns not explicitly mentioned here will be ordered after the ones listed here in the lexicographical order.`,
+    time_interval: 'Amount of time events will be aggregated in a single object before uploading.',
+    max_records: `Number of records (events) allowed per each aggregated object. Each aggregated upload will contain no more than that number of events, but may contain less.<br/>If event rate is high enough, there obviously may be more than one aggregated upload during the same time interval. These uploads will have different, but consecutive sequence numbers, which will be a part of S3 object key.`,
+    min_part_size: `The minimum part size for multipart uploads.<br/>Uploaded data will be accumulated in memory until this size is reached.`,
+    max_part_size: `The maximum part size for multipart uploads.<br/>S3 uploader won't try to upload parts larger than this size.`,
   },
 }

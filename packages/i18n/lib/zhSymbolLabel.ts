@@ -30,6 +30,8 @@ export const zhSymbolLabel: Record<string, string> = {
   parameters_action_update: '更新',
   parameters_action_delete: '删除',
   parameters_action_create: '创建',
+  parameters_s_3_direct_upload_parameters: '直接上传',
+  parameters_s_3_aggregated_upload_parameters: '聚合上传',
   all_partitions: '所有分区',
   plain: 'Plain',
   scram_sha_256: 'SHA256',
