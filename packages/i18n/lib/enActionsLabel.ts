@@ -188,6 +188,13 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     acl: 'ACL',
     content: 'Object Content',
     key: 'Object Key',
+    parameters: 'Upload Mode',
+    type: 'Aggregation Type',
+    column_order: 'Column Order',
+    time_interval: 'Time Interval',
+    max_records: 'Max Records',
+    min_part_size: 'Min Part Size',
+    max_part_size: 'Max Part Size',
   },
   dynamo: {
     table: 'Table ',
