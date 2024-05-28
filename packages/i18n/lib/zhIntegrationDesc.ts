@@ -28,6 +28,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '设置 `true` 让系统内核立即发送。否则当需要发送的内容很少时，可能会有一定延迟（默认 40 毫秒）。',
     pool_type: '连接池的类型。可以是`random`、`hash`之一。',
     max_retries: '请求出错时的最大重试次数。',
+    memory_overload_protection:
+      '在缓冲区模式设置为 <code>memory</code> 时适用\n在内存压力较大时，EMQX 将删除旧的缓冲消息。高内存阈值在配置<code>sysmon.os.sysmem_high_watermark</code>中定义。注意：此配置仅适用于 Linux。',
   },
   mqtt: {
     bridge_mode:
@@ -149,8 +151,6 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '为每个 Kafka 分区设置的最大缓存字节数。当超过这个上限之后，老的消息会被丢弃，为新的消息腾出空间。',
     segment_bytes:
       '当缓存模式是 <code>disk</code> 或 <code>hybrid</code> 时适用。该配置用于指定缓存到磁盘上的文件的大小。',
-    memory_overload_protection:
-      '缓存模式是 <code>memory</code> 或 <code>hybrid</code> 时适用。当系统处于高内存压力时，从队列中丢弃旧的消息以减缓内存增长。内存压力值由配置项 <code>sysmon.os.sysmem_high_watermark</code> 决定。注意，该配置仅在 Linux 系统中有效。',
     compression: '压缩方法。',
     partitions_limit: '限制生产者能够发送消息的最大分区数量。',
   },
@@ -191,8 +191,6 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '为每个 Kafka 分区设置的最大缓存字节数。当超过这个上限之后，老的消息会被丢弃，为新的消息腾出空间。',
     segment_bytes:
       '当缓存模式是 <code>disk</code> 或 <code>hybrid</code> 时适用。该配置用于指定缓存到磁盘上的文件的大小。',
-    memory_overload_protection:
-      '缓存模式是 <code>memory</code> 或 <code>hybrid</code> 时适用。当系统处于高内存压力时，从队列中丢弃旧的消息以减缓内存增长。内存压力值由配置项 <code>sysmon.os.sysmem_high_watermark</code> 决定。注意，该配置仅在 Linux 系统中有效。',
     kafka_ext_header_key: "Kafka Headers 的键。支持使用 <code>${'{'}var{'}'}</code> 格式的占位符。",
     mechanism: 'SASL 认证方法名称。',
     kerberos_principal:
@@ -363,8 +361,6 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '为每个 Pulsar 分区设置的最大缓存字节数。当超过这个上限之后，老的消息会被丢弃，以便接收新的消息。',
     segment_bytes:
       '当缓存模式是 <code>disk</code> 或 <code>hybrid</code> 时适用。该配置用于指定缓存到磁盘上的文件的大小。',
-    memory_overload_protection:
-      '缓存模式是 <code>memory</code> 或 <code>hybrid</code> 时适用。当系统处于高内存压力时，从队列中丢弃旧的消息以减缓内存增长。内存压力值由配置项 <code>sysmon.os.sysmem_high_watermark</code> 决定。注意，该配置仅在 Linux 系统中有效。',
     authentication_jwt: 'JWT 认证令牌。',
   },
   azure_event_hub_producer: {
@@ -404,8 +400,6 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '每个 Azure Event Hubs 分区允许缓冲的字节数。当超过此限制时，旧消息将被删除以获得新消息的缓冲区配额。',
     segment_bytes:
       '在缓冲区模式设置为<code>disk</code>或<code>hybrid</code>时适用。\n此值用于指定每个磁盘缓冲文件的大小。',
-    memory_overload_protection:
-      '在缓冲区模式设置为<code>memory</code>时适用\n在内存压力较大时，EMQX 将删除旧的缓冲消息。高内存阈值在配置<code>sysmon.os.sysmem_high_watermark</code>中定义。注意：此配置仅适用于 Linux。',
     partitions_limit: '限制生产者能够发送消息的最大分区数量。',
   },
   kinesis: {

@@ -32,6 +32,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'When set to `true`, TCP buffer is sent as soon as possible. Otherwise, the OS kernel may buffer small TCP packets for a while (40 ms by default).',
     pool_type: 'The type of the pool. Can be one of `random`, `hash`.',
     max_retries: 'Max retry times if an error occurs when sending a request.',
+    memory_overload_protection:
+      'Applicable when buffer mode is set to <code>memory</code><br/>EMQX will drop old buffered messages under high memory pressure. The high memory threshold is defined in config <code>sysmon.os.sysmem_high_watermark</code>. NOTE: This config only works on Linux.',
   },
   mqtt: {
     bridge_mode:
@@ -161,8 +163,6 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Number of bytes allowed to buffer for each Kafka partition. When this limit is exceeded, old messages will be dropped in a trade for credits for new messages to be buffered.',
     segment_bytes:
       'Applicable when buffer mode is set to <code>disk</code> or <code>hybrid</code>.<br/>This value is to specify the size of each on-disk buffer file.',
-    memory_overload_protection:
-      'Applicable when buffer mode is set to <code>memory</code><br/>EMQX will drop old buffered messages under high memory pressure. The high memory threshold is defined in config <code>sysmon.os.sysmem_high_watermark</code>. NOTE: This config only works on Linux.',
     compression: 'Compression method.',
     partitions_limit:
       'Limits the maximum number of partitions to which a producer can send messages.',
@@ -207,8 +207,6 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Number of bytes allowed to buffer for each Kafka partition. When this limit is exceeded, old messages will be dropped in a trade for credits for new messages to be buffered.',
     segment_bytes:
       'Applicable when buffer mode is set to <code>disk</code> or <code>hybrid</code>.<br/>This value is to specify the size of each on-disk buffer file.',
-    memory_overload_protection:
-      'Applicable when buffer mode is set to <code>memory</code><br/>EMQX will drop old buffered messages under high memory pressure. The high memory threshold is defined in config <code>sysmon.os.sysmem_high_watermark</code>. NOTE: This config only works on Linux.',
     kafka_ext_header_key:
       "Key of the Kafka header. Placeholders in the format of <code>${'{'}var{'}'}</code> are supported.",
     mechanism: 'SASL authentication mechanism.',
@@ -400,8 +398,6 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Number of bytes allowed to buffer for each Pulsar partition. When the message limit is exceeded, older messages will be selectively dropped to allocate buffer space for new messages.',
     segment_bytes:
       'Applicable when buffer mode is set to <code>disk</code> or <code>hybrid</code>.<br/>This value is to specify the size of each on-disk buffer file.',
-    memory_overload_protection:
-      'Applicable when buffer mode is set to <code>memory</code><br/>EMQX will drop old buffered messages under high memory pressure. The high memory threshold is defined in config <code>sysmon.os.sysmem_high_watermark</code>. NOTE: This config only works on Linux.',
     authentication_jwt: 'JWT authentication token.',
   },
   azure_event_hub_producer: {
@@ -446,8 +442,6 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Number of bytes allowed to buffer for each Azure Event Hubs partition. When this limit is exceeded, old messages will be dropped in a trade for credits for new messages to be buffered.',
     segment_bytes:
       'Applicable when buffer mode is set to <code>disk</code> or <code>hybrid</code>.\nThis value is to specify the size of each on-disk buffer file.',
-    memory_overload_protection:
-      'Applicable when buffer mode is set to <code>memory</code>\nEMQX will drop old buffered messages under high memory pressure. The high memory threshold is defined in config <code>sysmon.os.sysmem_high_watermark</code>. NOTE: This config only works on Linux.',
     partitions_limit:
       'Limits the maximum number of partitions to which a producer can send messages.',
   },
