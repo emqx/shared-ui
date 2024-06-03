@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.19
+
+### Patch Changes
+
+- New fields for s3 action
+
 ## 0.0.18
 
 ### Patch Changes
