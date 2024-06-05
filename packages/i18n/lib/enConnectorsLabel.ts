@@ -25,6 +25,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     enable_pipelining: 'HTTP Pipelining',
     url: 'Server URL',
     authentication: 'Authentication',
+    disable_prepared_statements: 'Disable Prepared Statements',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
