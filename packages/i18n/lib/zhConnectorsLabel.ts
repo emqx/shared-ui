@@ -25,6 +25,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     enable_pipelining: 'HTTP 流水线',
     url: '服务器地址',
     authentication: '认证',
+    disable_prepared_statements: '禁用预处理语句',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
