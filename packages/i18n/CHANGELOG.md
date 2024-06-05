@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.20
+
+### Patch Changes
+
+- new field `disable_prepared_statements` in pgsql
+
 ## 0.0.19
 
 ### Patch Changes
