@@ -509,4 +509,12 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     min_part_size: `The minimum part size for multipart uploads.<br/>Uploaded data will be accumulated in memory until this size is reached.`,
     max_part_size: `The maximum part size for multipart uploads.<br/>S3 uploader won't try to upload parts larger than this size.`,
   },
+  azure_blob_storage: {
+    column_order: `Event fields that will be ordered first as columns in the resulting CSV file.<br/>Regardless of this setting, resulting CSV will contain all the fields of aggregated events, but all the columns not explicitly mentioned here will be ordered after the ones listed here in the lexicographical order.`,
+    time_interval: 'Amount of time events will be aggregated in a single object before uploading.',
+    max_records: `Number of records (events) allowed per each aggregated object. Each aggregated upload will contain no more than that number of events, but may contain less.<br/>If event rate is high enough, there obviously may be more than one aggregated upload during the same time interval. These uploads will have different, but consecutive sequence numbers, which will be a part of S3 object key.`,
+    content: 'The content of the object to be uploaded supports placeholders.',
+    blob: 'Azure Blob Storage blob name.',
+    container: 'Azure Blob Storage container name.',
+  },
 }

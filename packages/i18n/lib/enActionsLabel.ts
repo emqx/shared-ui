@@ -196,6 +196,16 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     min_part_size: 'Min Part Size',
     max_part_size: 'Max Part Size',
   },
+  azure_blob_storage: {
+    parameters: 'Upload Mode',
+    column_order: 'Column Order',
+    time_interval: 'Time Interval',
+    max_records: 'Max Records',
+    content: 'Object Content',
+    type: 'Aggregation Type',
+    blob: 'Blob Name',
+    container: 'Container',
+  },
   dynamo: {
     table: 'Table ',
     hash_key: 'Hash Key',

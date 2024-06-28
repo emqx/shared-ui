@@ -196,6 +196,16 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     min_part_size: '最小分块大小',
     max_part_size: '最大分块大小',
   },
+  azure_blob_storage: {
+    parameters: '上传方式',
+    column_order: '列排序',
+    time_interval: '时间间隔',
+    max_records: '最大记录数',
+    content: '对象内容',
+    type: '增强类型',
+    blob: 'Blob 名称',
+    container: '容器',
+  },
   dynamo: {
     table: '表',
     hash_key: '哈希键',
