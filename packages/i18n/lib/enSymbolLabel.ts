@@ -32,6 +32,8 @@ export const enSymbolLabel: Record<string, string> = {
   parameters_action_create: 'Create',
   parameters_s_3_direct_upload_parameters: 'Direct Upload',
   parameters_s_3_aggregated_upload_parameters: 'Aggregated Upload',
+  parameters_direct_parameters: 'Direct Upload',
+  parameters_aggreg_parameters: 'Aggregated Upload',
   all_partitions: 'All Partitions',
   plain: 'Plain',
   scram_sha_256: 'SHA256',

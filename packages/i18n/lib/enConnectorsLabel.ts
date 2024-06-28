@@ -165,4 +165,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     headers: 'HTTP Headers',
     request_timeout: 'Request Timeout',
   },
+  azure_blob_storage: {
+    account_name: 'Account Name',
+    account_key: 'Account Key',
+  },
 }

@@ -165,4 +165,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     headers: '请求头',
     request_timeout: '请求超时',
   },
+  azure_blob_storage: {
+    account_name: '账户名',
+    account_key: '账户密钥',
+  },
 }
