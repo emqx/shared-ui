@@ -204,7 +204,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     content: '对象内容',
     type: '增强类型',
     blob: 'Blob 名称',
-    container: '容器',
+    container: '容器名称',
   },
   dynamo: {
     table: '表',
