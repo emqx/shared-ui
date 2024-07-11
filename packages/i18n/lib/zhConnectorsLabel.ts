@@ -23,6 +23,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     inflight_window: '请求飞行队列窗口',
     servers: '服务器列表',
     enable_pipelining: 'HTTP 流水线',
+    pipelining: 'HTTP 流水线',
     url: '服务器地址',
     authentication: '认证',
     disable_prepared_statements: '禁用预处理语句',
@@ -38,7 +39,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     enable_pipelining: 'HTTP 管道',
   },
   gcp_pubsub_producer: {
-    pipelining: 'HTTP 流水线',
     service_account_json: 'GCP 服务账户凭证',
     query_mode: '请求模式',
     batch_size: '最大批量请求大小',
@@ -114,7 +114,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     region: 'DynamoDB 区域',
   },
   gcp_pubsub_consumer: {
-    pipelining: 'HTTP 流水线',
     service_account_json: 'GCP 服务账户凭证',
     pull_max_messages: '拉取的最大消息数',
   },

@@ -23,6 +23,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     inflight_window: 'Inflight Window',
     servers: 'Servers',
     enable_pipelining: 'HTTP Pipelining',
+    pipelining: 'HTTP Pipelining',
     url: 'Server URL',
     authentication: 'Authentication',
     disable_prepared_statements: 'Disable Prepared Statements',
@@ -38,7 +39,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     enable_pipelining: 'HTTP Pipelining',
   },
   gcp_pubsub_producer: {
-    pipelining: 'HTTP Pipelining',
     service_account_json: 'GCP Service Account Credentials',
     query_mode: 'Query Mode',
     batch_size: 'Batch Size',
@@ -114,7 +114,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     region: 'DynamoDB Region',
   },
   gcp_pubsub_consumer: {
-    pipelining: 'HTTP Pipelining',
     service_account_json: 'GCP Service Account Credentials',
     pull_max_messages: 'Maximum Messages to Pull',
   },
