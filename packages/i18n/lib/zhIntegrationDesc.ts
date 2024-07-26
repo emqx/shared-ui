@@ -32,6 +32,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '在缓冲区模式设置为 <code>memory</code> 时适用\n在内存压力较大时，EMQX 将删除旧的缓冲消息。高内存阈值在配置<code>sysmon.os.sysmem_high_watermark</code>中定义。注意：此配置仅适用于 Linux。',
     disable_prepared_statements:
       '在连接中禁用预处理语句。某些端点（如事务模式下的 PGBouncer 或 Supabase）不支持会话功能（如预处理语句）。对于此类连接，应启用此选项。',
+    health_check_topic: '专用于精确检查健康状态的主题名称。',
   },
   mqtt: {
     bridge_mode:
@@ -219,6 +220,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '设置每次从 Kafka 拉取数据的字节数。如该配置小于 Kafka 消息的大小，可能会影响消费性能。',
     offset_commit_interval_seconds: '指定 Kafka 消费组偏移量提交的时间间隔。',
     topic: 'Kafka 主题名称',
+    group_id: '用于此 Source 的消费者组 ID。如果未指定，系统将自动生成一个基于 Source 名称的 ID。',
   },
   mongodb: {
     collection: '数据将被存储到的集合',
