@@ -141,6 +141,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     offset_reset_policy: 'Offset Reset Policy',
     offset_commit_interval_seconds: 'Offset Commit Interval',
     topic: 'Kafka Topic',
+    group_id: 'Group ID',
   },
   rabbitmq: {
     exchange: 'Exchange',

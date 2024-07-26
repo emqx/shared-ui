@@ -36,6 +36,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Applicable when buffer mode is set to <code>memory</code><br/>EMQX will drop old buffered messages under high memory pressure. The high memory threshold is defined in config <code>sysmon.os.sysmem_high_watermark</code>. NOTE: This config only works on Linux.',
     disable_prepared_statements:
       'Disables the usage of prepared statements in the connections. Some endpoints, like PGBouncer or Supabase in Transaction mode, do not support session features such as prepared statements. For such connections, this option should be enabled.',
+    health_check_topic: 'Topic name used exclusively for more accurate health checks.',
   },
   mqtt: {
     bridge_mode:
@@ -240,6 +241,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     offset_commit_interval_seconds:
       'Defines the time interval between two offset commit requests sent for each consumer group.',
     topic: 'Kafka topic',
+    group_id:
+      'Consumer group identifier to be used for this source. If omitted, one based off the source name will be automatically generated.',
   },
   mongodb: {
     collection: 'The collection where data will be stored into',

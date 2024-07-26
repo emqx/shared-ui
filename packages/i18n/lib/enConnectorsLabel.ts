@@ -27,6 +27,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     url: 'Server URL',
     authentication: 'Authentication',
     disable_prepared_statements: 'Disable Prepared Statements',
+    health_check_topic: 'Health Check Topic',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
