@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.21
+
+### Patch Changes
+
+- new fields for Azure Blob Storage and Kafka
+
 ## 0.0.20
 
 ### Patch Changes
