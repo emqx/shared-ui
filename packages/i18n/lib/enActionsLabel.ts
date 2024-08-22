@@ -32,6 +32,8 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     sync_query_timeout: 'Synchronous Query Timeout',
     template: 'Message Template',
     partitions_limit: 'Partitions Limit',
+    precision: 'Time Precision',
+    write_syntax: 'Write Syntax',
   },
   kafka_producer: {
     timestamp: 'Message Timestamp',
@@ -90,10 +92,6 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     measurement: 'Measurement',
     data_type: 'Data Type',
     value: 'Value',
-  },
-  influxdb: {
-    precision: 'Time Precision',
-    write_syntax: 'Write Syntax',
   },
   mqtt: {
     topic: 'Topic',
@@ -166,10 +164,6 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     payload_template: 'Payload template',
     stream_name: 'Amazon Kinesis Stream',
     partition_key: 'Partition key',
-  },
-  greptimedb: {
-    write_syntax: 'Write Syntax',
-    precision: 'Time Precision',
   },
   tdengine: {
     database: 'Database Name',

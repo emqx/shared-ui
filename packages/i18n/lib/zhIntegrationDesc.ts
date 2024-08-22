@@ -121,6 +121,11 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       "使用 InfluxDB API Line Protocol 写入 InfluxDB 的数据，支持占位符，参考 [InfluxDB 2.3 Line Protocol](https://docs.influxdata.com/influxdb/v2.3/reference/syntax/line-protocol/) 及 [InfluxDB 1.8 Line Protocol](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_tutorial/) <br/>TLDR: <br/>```<measurement>[,<tag_key>=<tag_value>[,<tag_key>=<tag_value>]] <field_key>=<field_value>[,<field_key>=<field_value>] [<timestamp>]```<br/>注意，整形数值占位符后需要添加一个字符 `i` 类型标识。例如 `${'{'}payload.int_value{'}'}i`",
     precision: 'InfluxDB 时间精度。',
   },
+  datalayers: {
+    write_syntax:
+      'Datalayers 采用与 InfluxDB v1 完全兼容的行协议，为用户提供了熟悉且高效的数据写入方式。虽然兼容InfluxDB v1 的语法，但 Datalayers 在底层实现上有其独特之处，以优化性能和适应其特定的存储结构。参考 [InfluxDB Line Protocol](https://docs.datalayers.cn/datalayers/latest/development-guide/writing-with-influxdb-line-protocol.html)',
+    precision: 'Datalayers 时间精度。',
+  },
   confluent_producer: {
     connect_timeout:
       '建立 TCP 连接时的最大等待时长（若启用认证，这个等待时长也包含完成认证所需时间）。',

@@ -130,6 +130,11 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       "Conf of InfluxDB line protocol to write data points. It is a text-based format that provides the measurement, tag set, field set, and timestamp of a data point, and placeholder supported. See also [InfluxDB 2.3 Line Protocol](https://docs.influxdata.com/influxdb/v2.3/reference/syntax/line-protocol/) and [InfluxDB 1.8 Line Protocol](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_tutorial/) <br/>TLDR:<br/>```<measurement>[,<tag_key>=<tag_value>[,<tag_key>=<tag_value>]] <field_key>=<field_value>[,<field_key>=<field_value>] [<timestamp>]```<br/>Please note that a placeholder for an integer value must be annotated with a suffix `i`. For example `${'{'}payload.int_value{'}'}i`.",
     precision: 'InfluxDB time precision.',
   },
+  datalayers: {
+    write_syntax:
+      'Datalayers adopts a line protocol fully compatible with InfluxDB v1, providing users with a familiar and efficient method for data ingestion. While compatible with InfluxDB v1 syntax, Datalayers has its unique characteristics in its underlying implementation to optimize performance and adapt to its specific storage structure. For more information, refer to [InfluxDB Line Protocol](https://docs.datalayers.cn/datalayers/latest/development-guide/writing-with-influxdb-line-protocol.html).',
+    precision: 'Datalayers time precision.',
+  },
   confluent_producer: {
     connect_timeout:
       'Maximum wait time for TCP connection establishment (including authentication time if enabled).',

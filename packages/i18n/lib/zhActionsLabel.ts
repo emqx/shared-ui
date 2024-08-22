@@ -32,6 +32,8 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     sync_query_timeout: '同步查询超时时间',
     template: '消息模板',
     partitions_limit: '分区限制',
+    precision: '时间精度',
+    write_syntax: '写语句',
   },
   kafka_producer: {
     timestamp: '消息的时间戳',
@@ -90,10 +92,6 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     measurement: '字段',
     data_type: '数据类型',
     value: '值',
-  },
-  influxdb: {
-    precision: '时间精度',
-    write_syntax: '写语句',
   },
   mqtt: {
     topic: '主题',
@@ -166,10 +164,6 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     payload_template: '载荷模板',
     stream_name: 'Amazon Kinesis 流',
     partition_key: '分区键',
-  },
-  greptimedb: {
-    write_syntax: '写语法',
-    precision: '时间精度',
   },
   tdengine: {
     database: '数据库名字',
