@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.22
+
+### Patch Changes
+
+- refactor(i18n): add desc for Datalayers
+
 ## 0.0.21
 
 ### Patch Changes
