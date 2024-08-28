@@ -6,6 +6,7 @@ enum BatchSettingTypes {
   IoTDB = 'iotdb',
   TDengine = 'tdengine',
   InfluxDB = 'influxdb',
+  Datalayers = 'datalayers',
 }
 
 export const useBatchSettings = (locale: 'zh' | 'en' = 'en') => {
@@ -20,6 +21,8 @@ export const useBatchSettings = (locale: 'zh' | 'en' = 'en') => {
           'The number of rows in the CSV file exceeds the limit. Up to {max} rows of data are supported except for the header',
         influxdbTemplateRemark:
           'Append an i to the field value to tell InfluxDB to store the number as an integer.',
+        datalayersTemplateRemark:
+          'Append an i to the field value to tell Datalayers to store the number as an integer.',
       },
       zh: {
         iotdbTemplateRemark:
@@ -27,6 +30,7 @@ export const useBatchSettings = (locale: 'zh' | 'en' = 'en') => {
         invalidIsCharFlag: '无效的字符标识符值：{isChar}',
         uploadMaxRowsError: 'CSV 文件行数超过限制，除表头外，最多支持 {max} 行数据',
         influxdbTemplateRemark: '在字段值后追加 i，InfluxDB 则将该数值存储为整数类型。',
+        datalayersTemplateRemark: '在字段值后追加 i，Datalayers 则将该数值存储为整数类型。',
       },
     },
   })
@@ -36,6 +40,7 @@ export const useBatchSettings = (locale: 'zh' | 'en' = 'en') => {
     [BatchSettingTypes.InfluxDB]: 'InfluxDB',
     [BatchSettingTypes.TDengine]: 'TDengine',
     [BatchSettingTypes.IoTDB]: 'IoTDB',
+    [BatchSettingTypes.Datalayers]: 'Datalayers',
   }
 
   const templateContentMap = {
@@ -58,6 +63,11 @@ now,clientid,TEXT,\${clientid},
 temp,\${payload.temp},
 hum,\${payload.hum},
 precip,\${payload.precip}i,"${t('influxdbTemplateRemark')}"
+`,
+    [BatchSettingTypes.Datalayers]: `Field,Value,Remarks (Optional)
+temp,\${payload.temp},
+hum,\${payload.hum},
+precip,\${payload.precip}i,"${t('datalayersTemplateRemark')}"
 `,
   }
 
