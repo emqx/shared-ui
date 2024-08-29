@@ -131,7 +131,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '建立 TCP 连接时的最大等待时长（若启用认证，这个等待时长也包含完成认证所需时间）。',
     bootstrap_hosts: '用逗号分隔的 <code>host[:port]</code> 主机列表。默认端口号为 9092。',
     min_metadata_refresh_interval:
-      '刷新 Kafka broker 和 Kafka 主题元数据段最短时间间隔。设置太小可能会增加 Kafka 压力。',
+      '刷新 Kafka broker 和 Kafka 主题元数据的最短时间间隔。设置太小可能会增加 Kafka 压力。',
     metadata_request_timeout: '刷新元数据时最大等待时长。',
     topic: 'Kafka 主题名称',
     kafka_headers:
@@ -168,7 +168,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     connect_timeout:
       '建立 TCP 连接时的最大等待时长（若启用认证，这个等待时长也包含完成认证所需时间）。',
     min_metadata_refresh_interval:
-      '刷新 Kafka broker 和 Kafka 主题元数据段最短时间间隔。设置太小可能会增加 Kafka 压力。',
+      '刷新 Kafka broker 和 Kafka 主题元数据的最短时间间隔。设置太小可能会增加 Kafka 压力。',
     metadata_request_timeout: '刷新元数据时最大等待时长。',
     topic: 'Kafka 主题名称',
     kafka_headers:
@@ -217,7 +217,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '通过 MQTT 转发之前，如何处理 Kafka 消息的 Value。<code>none</code> 使用 Kafka 消息中的 Value 原始值，不进行编码。  注意：在这种情况下，Value 必须是一个有效的 UTF-8 字符串。<br/><code>base64</code> 对收到的 Value 使用 base-64 编码。',
     offset_reset_policy: '如不存在偏移量历史记录或历史记录失效，消费者应使用哪个偏移量开始消费。',
     min_metadata_refresh_interval:
-      '刷新 Kafka broker 和 Kafka 主题元数据段最短时间间隔。设置太小可能会增加 Kafka 压力。',
+      '刷新 Kafka broker 和 Kafka 主题元数据的最短时间间隔。设置太小可能会增加 Kafka 压力。',
     metadata_request_timeout: '刷新元数据时最大等待时长。',
     connect_timeout:
       '建立 TCP 连接时的最大等待时长（若启用认证，这个等待时长也包含完成认证所需时间）。',
