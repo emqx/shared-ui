@@ -2,11 +2,14 @@
   "name": "@emqx/shared-ui",
   "author": "EMQ FE Team",
   "description": "Provides Shared UI components, utils, i18n, and more for consistent interfaces and code reuse across EMQX apps.",
-  "homepage": "https://emqx.io",
+  "homepage": "https://emqx.com",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/emqx/shared-ui"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "scripts": {
     "prepare": "husky install",
