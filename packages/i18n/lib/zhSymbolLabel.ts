@@ -42,4 +42,9 @@ export const zhSymbolLabel: Record<string, string> = {
   h: '小时',
   d: '天',
   no_compression: '不压缩',
+  restapi: 'REST API',
+  thrift: 'Thrift 协议',
+  protocol_v1: 'v1',
+  protocol_v2: 'v2',
+  protocol_v3: 'v3',
 }

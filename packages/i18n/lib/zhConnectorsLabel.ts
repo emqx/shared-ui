@@ -84,6 +84,9 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   iotdb: {
     base_url: 'IoTDB REST 服务基础 URL',
     iotdb_version: 'IoTDB 版本',
+    driver: '驱动',
+    protocol_version: '协议版本',
+    zoneId: '时区 ID',
   },
   elasticsearch: {
     server: '服务器地址',
