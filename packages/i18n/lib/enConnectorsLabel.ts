@@ -84,6 +84,9 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   iotdb: {
     base_url: 'IoTDB REST Service Base URL',
     iotdb_version: 'IoTDB Version',
+    driver: 'Driver',
+    protocol_version: 'Protocol Version',
+    zoneId: 'Zone ID',
   },
   elasticsearch: {
     server: 'Server',
