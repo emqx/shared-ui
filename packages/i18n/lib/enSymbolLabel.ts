@@ -47,4 +47,5 @@ export const enSymbolLabel: Record<string, string> = {
   protocol_v1: 'v1',
   protocol_v2: 'v2',
   protocol_v3: 'v3',
+  influxdb_v1: 'InfluxDB Line Protocol',
 }

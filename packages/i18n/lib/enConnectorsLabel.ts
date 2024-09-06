@@ -172,4 +172,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     account_name: 'Account Name',
     account_key: 'Account Key',
   },
+  datalayers: {
+    driver_type: 'Driver Type',
+  },
 }

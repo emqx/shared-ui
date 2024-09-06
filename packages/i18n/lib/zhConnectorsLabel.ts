@@ -172,4 +172,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     account_name: '账户名称',
     account_key: '访问密钥',
   },
+  datalayers: {
+    driver_type: '驱动类型',
+  },
 }
