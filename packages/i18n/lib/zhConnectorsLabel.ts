@@ -175,4 +175,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   datalayers: {
     driver_type: '驱动类型',
   },
+  snowflake: {
+    account: '账户',
+    dsn: '数据源名称',
+  },
 }

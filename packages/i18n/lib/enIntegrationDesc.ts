@@ -37,6 +37,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     disable_prepared_statements:
       'Disables the usage of prepared statements in the connections. Some endpoints, like PGBouncer or Supabase in Transaction mode, do not support session features such as prepared statements. For such connections, this option should be enabled.',
     health_check_topic: 'Topic name used exclusively for more accurate health checks.',
+    max_records: `Number of records (events) allowed per each aggregated object. Each aggregated upload will contain no more than that number of events, but may contain less.<br/>If event rate is high enough, there obviously may be more than one aggregated upload during the same time interval. These uploads will have different, but consecutive sequence numbers, which will be a part of S3 object key.`,
   },
   mqtt: {
     bridge_mode:
@@ -513,16 +514,24 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     key: "The content of the object to be stored. By default, it is in JSON text format containing all fields. Supports placeholder settings such as ${'{'}payload{'}'}. The storage format depends on the format of the variable and can be stored in binary format.",
     column_order: `Event fields that will be ordered first as columns in the resulting CSV file.<br/>Regardless of this setting, resulting CSV will contain all the fields of aggregated events, but all the columns not explicitly mentioned here will be ordered after the ones listed here in the lexicographical order.`,
     time_interval: 'Amount of time events will be aggregated in a single object before uploading.',
-    max_records: `Number of records (events) allowed per each aggregated object. Each aggregated upload will contain no more than that number of events, but may contain less.<br/>If event rate is high enough, there obviously may be more than one aggregated upload during the same time interval. These uploads will have different, but consecutive sequence numbers, which will be a part of S3 object key.`,
     min_part_size: `The minimum part size for multipart uploads.<br/>Uploaded data will be accumulated in memory until this size is reached.`,
     max_part_size: `The maximum part size for multipart uploads.<br/>S3 uploader won't try to upload parts larger than this size.`,
   },
   azure_blob_storage: {
     column_order: `Event fields that will be ordered first as columns in the resulting CSV file.<br/>Regardless of this setting, resulting CSV will contain all the fields of aggregated events, but all the columns not explicitly mentioned here will be ordered after the ones listed here in the lexicographical order.`,
     time_interval: 'Amount of time events will be aggregated in a single object before uploading.',
-    max_records: `Number of records (events) allowed per each aggregated object. Each aggregated upload will contain no more than that number of events, but may contain less.<br/>  If event rate is high enough, there obviously may be more than one aggregated upload during the same time interval. These uploads will have different, but consecutive sequence numbers, which will be a part of Azure Blob Storage blob name.`,
     content: 'The content of the object to be uploaded supports placeholders.',
     blob: 'Azure Blob Storage blob name.',
     container: 'Azure Blob Storage container name.',
+  },
+  snowflake: {
+    private_key:
+      'The private key configured for the Pipe User. This supports the input formats below:\n- Plain key: Enter the private key contents in PEM format directly as a string value.\n- File Path: Specify the path to a file that contains the private key. Ensure the path starts with <code>file://</code>. The file path must be the same on all nodes in the cluster.',
+    database: 'Name of the Database that contains the Snowflake resources.',
+    schema: 'Name of the Schema that contains the Snowflake resources.',
+    stage: "Name of the Stage that'll be used for loading data files into Snowflake.",
+    pipe: "Name of the Pipe that'll be used to ingest data into the table.",
+    pipe_user:
+      'A username which has a role with permissions over the Pipe to be used. The minimum permissions are `operate` and `monitor`.',
   },
 }

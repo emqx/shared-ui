@@ -175,4 +175,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   datalayers: {
     driver_type: 'Driver Type',
   },
+  snowflake: {
+    account: 'Account',
+    dsn: 'Data Source Name(DSN)',
+  },
 }
