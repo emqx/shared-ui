@@ -177,6 +177,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   snowflake: {
     account: 'Account',
-    dsn: 'Data Source Name(DSN)',
+    dsn: 'Data Source Name (DSN)',
   },
 }
