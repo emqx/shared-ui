@@ -33,6 +33,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     disable_prepared_statements:
       '在连接中禁用预处理语句。某些端点（如事务模式下的 PGBouncer 或 Supabase）不支持会话功能（如预处理语句）。对于此类连接，应启用此选项。',
     health_check_topic: '专用于精确检查健康状态的主题名称。',
+    max_records: `每个聚合对象允许的记录（事件）数量。每次聚合上传包含的事件数量不会超过此数值，但可能会更少。<br/>如果事件速率足够高，在同一时间间隔内显然可能会有多个聚合上传。这些上传将具有不同但连续的序列号，这些序列号将是 S3 对象键的一部分。`,
   },
   mqtt: {
     bridge_mode:
@@ -463,17 +464,24 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     key: "要存储的对象的键。支持如 ${'{'}var{'}'} 的占位符设置。",
     column_order: `在生成的 CSV 文件中首先按列排序的事件字段。<br/>无论此设置如何，生成的 CSV 都将包含聚合事件的所有字段，但此处未明确提及的所有列将按字典顺序排在这里列出的字段之后。`,
     time_interval: '在上传前将事件聚合到单个对象中的时间量。',
-    max_records: `每个聚合对象允许的记录（事件）数量。每次聚合上传包含的事件数量不会超过此数值，但可能会更少。<br/>如果事件速率足够高，在同一时间间隔内显然可能会有多个聚合上传。这些上传将具有不同但连续的序列号，这些序列号将是 S3 对象键的一部分。`,
     min_part_size: `分块上传的最小分块大小。<br/>上传的数据将在内存中累积，直到达到此大小。`,
     max_part_size: `分块上传的最大分块大小。<br/>S3 上传程序不会尝试上传超过此大小的部分。`,
   },
   azure_blob_storage: {
     column_order: `在生成的 CSV 文件中首先按列排序的事件字段。<br/>无论此设置如何，生成的 CSV 都将包含聚合事件的所有字段，但此处未明确提及的所有列将按字典顺序排在这里列出的字段之后。`,
     time_interval: '在上传前将事件聚合到单个对象中的时间量。',
-    max_records: `每个聚合对象允许的记录（事件）数量。每次聚合上传包含的事件数量不会超过此数值，但可能会更少。<br/>如果事件速率足够高，在同一时间间隔内显然可能会有多个聚合上传。这些上传将具有不同但连续的序列号，这些序列号将是 Azure Blob Storage blob 名称的一部分。`,
     content:
       "要存储的对象的内容。默认情况下，它是包含所有字段的 JSON 文本格式。支持如 ${'{'}payload{'}'} 的占位符设置。存储格式取决于变量的格式，支持二进制内容。",
     blob: 'Azure Blob Storage blob 名称。',
     container: 'Azure Blob Storage 容器名称。',
+  },
+  snowflake: {
+    private_key:
+      '为 Pipe User 配置的私钥。支持以下输入格式：\n- 明文密钥：直接以字符串形式输入PEM格式的私钥内容。\n- 文件路径：指定包含私钥的文件路径。确保路径以<code>file://</code>开头。文件路径必须在集群的所有节点上相同。',
+    database: '包含 Snowflake 资源的数据库名称。',
+    schema: '包含 Snowflake 资源的模式名称。',
+    stage: '用于将数据文件加载到 Snowflake 的 Stage 名称。',
+    pipe: '用于将数据摄取到表中的 Pipe 名称。',
+    pipe_user: '具有使用 Pipe 权限的角色的用户名。最低要求的权限是`operate`和`monitor`。',
   },
 }
