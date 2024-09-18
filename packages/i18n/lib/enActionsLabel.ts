@@ -68,8 +68,6 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     memory_overload_protection: 'Memory Overload Protection',
     max_batch_bytes: 'Max Batch Bytes',
     query_mode: 'Query mode',
-    max_linger_time: 'Max Linger Time',
-    max_linger_bytes: 'Max Linger Bytes',
   },
   gcp_pubsub_producer: {
     attributes_template: 'Attributes Template',
