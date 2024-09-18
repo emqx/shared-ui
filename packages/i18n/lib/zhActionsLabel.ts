@@ -42,6 +42,8 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     timestamp: '消息的时间戳',
     kafka_ext_header_key: 'Kafka Headers 键',
     kafka_ext_header_value: 'Kafka Headers 值',
+    max_linger_time: '最大延迟时间',
+    max_linger_bytes: '最大延迟字节数',
   },
   http: {
     body: '请求体',
@@ -66,6 +68,8 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     memory_overload_protection: '内存过载保护',
     max_batch_bytes: '最大批次字节数',
     query_mode: '查询模式',
+    max_linger_time: '最大延迟时间',
+    max_linger_bytes: '最大延迟字节数',
   },
   gcp_pubsub_producer: {
     attributes_template: '属性模版',
