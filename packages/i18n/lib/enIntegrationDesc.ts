@@ -38,6 +38,10 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Disables the usage of prepared statements in the connections. Some endpoints, like PGBouncer or Supabase in Transaction mode, do not support session features such as prepared statements. For such connections, this option should be enabled.',
     health_check_topic: 'Topic name used exclusively for more accurate health checks.',
     max_records: `Number of records (events) allowed per each aggregated object. Each aggregated upload will contain no more than that number of events, but may contain less.<br/>If event rate is high enough, there obviously may be more than one aggregated upload during the same time interval. These uploads will have different, but consecutive sequence numbers, which will be a part of S3 object key.`,
+    max_linger_time:
+      "Maximum duration for a per-partition producer to wait for messages in order to collect a batch to buffer.<br/>The default value <code>0</code> means no wait. For non-memory buffer mode, it's advised to configure at least <code>5ms</code> for less IOPS.",
+    max_linger_bytes:
+      'Maximum number of bytes for a per-partition producer to wait for messages in order to collect a batch to buffer.',
   },
   mqtt: {
     bridge_mode:
@@ -175,10 +179,6 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     compression: 'Compression method.',
     partitions_limit:
       'Limits the maximum number of partitions to which a producer can send messages.',
-    max_linger_time:
-      "Maximum duration for a per-partition producer to wait for messages in order to collect a batch to buffer.<br/>The default value <code>0</code> means no wait. For non-memory buffer mode, it's advised to configure at least <code>5ms</code> for less IOPS.",
-    max_linger_bytes:
-      'Maximum number of bytes for a per-partition producer to wait for messages in order to collect a batch to buffer.',
   },
   kafka_producer: {
     bootstrap_hosts:
@@ -231,10 +231,6 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       "Value of the Kafka header. Placeholders in the format of <code>${'{'}var{'}'}</code> are supported.",
     partitions_limit:
       'Limits the maximum number of partitions to which a producer can send messages.',
-    max_linger_time:
-      "Maximum duration for a per-partition producer to wait for messages in order to collect a batch to buffer.<br/>The default value <code>0</code> means no wait. For non-memory buffer mode, it's advised to configure at least <code>5ms</code> for less IOPS.",
-    max_linger_bytes:
-      'Maximum number of bytes for a per-partition producer to wait for messages in order to collect a batch to buffer.',
   },
   kafka_consumer: {
     bootstrap_hosts:
@@ -463,10 +459,6 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Applicable when buffer mode is set to <code>disk</code> or <code>hybrid</code>.\nThis value is to specify the size of each on-disk buffer file.',
     partitions_limit:
       'Limits the maximum number of partitions to which a producer can send messages.',
-    max_linger_time:
-      "Maximum duration for a per-partition producer to wait for messages in order to collect a batch to buffer.<br/>The default value <code>0</code> means no wait. For non-memory buffer mode, it's advised to configure at least <code>5ms</code> for less IOPS.",
-    max_linger_bytes:
-      'Maximum number of bytes for a per-partition producer to wait for messages in order to collect a batch to buffer.',
   },
   kinesis: {
     payload_template:

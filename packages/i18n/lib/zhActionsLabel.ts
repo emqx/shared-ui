@@ -68,8 +68,6 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     memory_overload_protection: '内存过载保护',
     max_batch_bytes: '最大批次字节数',
     query_mode: '查询模式',
-    max_linger_time: '最大延迟时间',
-    max_linger_bytes: '最大延迟字节数',
   },
   gcp_pubsub_producer: {
     attributes_template: '属性模版',

@@ -34,6 +34,9 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '在连接中禁用预处理语句。某些端点（如事务模式下的 PGBouncer 或 Supabase）不支持会话功能（如预处理语句）。对于此类连接，应启用此选项。',
     health_check_topic: '专用于精确检查健康状态的主题名称。',
     max_records: `每个聚合对象允许的记录（事件）数量。每次聚合上传包含的事件数量不会超过此数值，但可能会更少。<br/>如果事件速率足够高，在同一时间间隔内显然可能会有多个聚合上传。这些上传将具有不同但连续的序列号，这些序列号将是 S3 对象键的一部分。`,
+    max_linger_time:
+      '每个分区生产者，等待收集消息以形成批次的最长时间。<br/>默认值 <code>0</code> 表示不等待。对于非内存缓冲模式，建议至少配置 <code>5ms</code> 以减少 I/O 操作。',
+    max_linger_bytes: '每个分区生产者，等待收集消息以形成批次的最大字节数。',
   },
   mqtt: {
     bridge_mode:
@@ -162,9 +165,6 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '当缓存模式是 <code>disk</code> 或 <code>hybrid</code> 时适用。该配置用于指定缓存到磁盘上的文件的大小。',
     compression: '压缩方法。',
     partitions_limit: '限制生产者能够发送消息的最大分区数量。',
-    max_linger_time:
-      '每个分区生产者，等待收集消息以形成批次的最长时间。<br/>默认值 <code>0</code> 表示不等待。对于非内存缓冲模式，建议至少配置 <code>5ms</code> 以减少 I/O 操作。',
-    max_linger_bytes: '每个分区生产者，等待收集消息以形成批次的最大字节数。',
   },
   kafka_producer: {
     bootstrap_hosts: '用逗号分隔的 <code>host[:port]</code> 主机列表。默认端口号为 9092。',
@@ -212,9 +212,6 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     kafka_ext_header_value:
       "Kafka Headers 的值。支持使用 <code>${'{'}var{'}'}</code> 格式的占位符。",
     partitions_limit: '限制生产者能够发送消息的最大分区数量。',
-    max_linger_time:
-      '每个分区生产者，等待收集消息以形成批次的最长时间。<br/>默认值 <code>0</code> 表示不等待。对于非内存缓冲模式，建议至少配置 <code>5ms</code> 以减少 I/O 操作。',
-    max_linger_bytes: '每个分区生产者，等待收集消息以形成批次的最大字节数。',
   },
   kafka_consumer: {
     bootstrap_hosts: '用逗号分隔的 <code>host[:port]</code> 主机列表。默认端口号为 9092。',
@@ -417,9 +414,6 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     segment_bytes:
       '在缓冲区模式设置为<code>disk</code>或<code>hybrid</code>时适用。\n此值用于指定每个磁盘缓冲文件的大小。',
     partitions_limit: '限制生产者能够发送消息的最大分区数量。',
-    max_linger_time:
-      '每个分区生产者，等待收集消息以形成批次的最长时间。<br/>默认值 <code>0</code> 表示不等待。对于非内存缓冲模式，建议至少配置 <code>5ms</code> 以减少 I/O 操作。',
-    max_linger_bytes: '每个分区生产者，等待收集消息以形成批次的最大字节数。',
   },
   kinesis: {
     payload_template: '用于格式化输出消息的模板。如果未定义，将以 JSON 格式发送所有可用上下文。',
