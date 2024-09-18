@@ -175,6 +175,10 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     compression: 'Compression method.',
     partitions_limit:
       'Limits the maximum number of partitions to which a producer can send messages.',
+    max_linger_time:
+      "Maximum duration for a per-partition producer to wait for messages in order to collect a batch to buffer.<br/>The default value <code>0</code> means no wait. For non-memory buffer mode, it's advised to configure at least <code>5ms</code> for less IOPS.",
+    max_linger_bytes:
+      'Maximum number of bytes for a per-partition producer to wait for messages in order to collect a batch to buffer.',
   },
   kafka_producer: {
     bootstrap_hosts:
@@ -227,6 +231,10 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       "Value of the Kafka header. Placeholders in the format of <code>${'{'}var{'}'}</code> are supported.",
     partitions_limit:
       'Limits the maximum number of partitions to which a producer can send messages.',
+    max_linger_time:
+      "Maximum duration for a per-partition producer to wait for messages in order to collect a batch to buffer.<br/>The default value <code>0</code> means no wait. For non-memory buffer mode, it's advised to configure at least <code>5ms</code> for less IOPS.",
+    max_linger_bytes:
+      'Maximum number of bytes for a per-partition producer to wait for messages in order to collect a batch to buffer.',
   },
   kafka_consumer: {
     bootstrap_hosts:
@@ -455,6 +463,10 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Applicable when buffer mode is set to <code>disk</code> or <code>hybrid</code>.\nThis value is to specify the size of each on-disk buffer file.',
     partitions_limit:
       'Limits the maximum number of partitions to which a producer can send messages.',
+    max_linger_time:
+      "Maximum duration for a per-partition producer to wait for messages in order to collect a batch to buffer.<br/>The default value <code>0</code> means no wait. For non-memory buffer mode, it's advised to configure at least <code>5ms</code> for less IOPS.",
+    max_linger_bytes:
+      'Maximum number of bytes for a per-partition producer to wait for messages in order to collect a batch to buffer.',
   },
   kinesis: {
     payload_template:

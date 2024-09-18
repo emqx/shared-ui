@@ -162,6 +162,9 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '当缓存模式是 <code>disk</code> 或 <code>hybrid</code> 时适用。该配置用于指定缓存到磁盘上的文件的大小。',
     compression: '压缩方法。',
     partitions_limit: '限制生产者能够发送消息的最大分区数量。',
+    max_linger_time:
+      '每个分区生产者，等待收集消息以形成批次的最长时间。<br/>默认值 <code>0</code> 表示不等待。对于非内存缓冲模式，建议至少配置 <code>5ms</code> 以减少 I/O 操作。',
+    max_linger_bytes: '每个分区生产者，等待收集消息以形成批次的最大字节数。',
   },
   kafka_producer: {
     bootstrap_hosts: '用逗号分隔的 <code>host[:port]</code> 主机列表。默认端口号为 9092。',
@@ -209,6 +212,9 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     kafka_ext_header_value:
       "Kafka Headers 的值。支持使用 <code>${'{'}var{'}'}</code> 格式的占位符。",
     partitions_limit: '限制生产者能够发送消息的最大分区数量。',
+    max_linger_time:
+      '每个分区生产者，等待收集消息以形成批次的最长时间。<br/>默认值 <code>0</code> 表示不等待。对于非内存缓冲模式，建议至少配置 <code>5ms</code> 以减少 I/O 操作。',
+    max_linger_bytes: '每个分区生产者，等待收集消息以形成批次的最大字节数。',
   },
   kafka_consumer: {
     bootstrap_hosts: '用逗号分隔的 <code>host[:port]</code> 主机列表。默认端口号为 9092。',
@@ -411,6 +417,9 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     segment_bytes:
       '在缓冲区模式设置为<code>disk</code>或<code>hybrid</code>时适用。\n此值用于指定每个磁盘缓冲文件的大小。',
     partitions_limit: '限制生产者能够发送消息的最大分区数量。',
+    max_linger_time:
+      '每个分区生产者，等待收集消息以形成批次的最长时间。<br/>默认值 <code>0</code> 表示不等待。对于非内存缓冲模式，建议至少配置 <code>5ms</code> 以减少 I/O 操作。',
+    max_linger_bytes: '每个分区生产者，等待收集消息以形成批次的最大字节数。',
   },
   kinesis: {
     payload_template: '用于格式化输出消息的模板。如果未定义，将以 JSON 格式发送所有可用上下文。',
