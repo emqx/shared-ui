@@ -37,13 +37,13 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     column_order: '列排序',
     time_interval: '时间间隔',
     max_records: '最大记录数',
+    max_linger_time: '最大延迟时间',
+    max_linger_bytes: '最大延迟字节数',
   },
   kafka_producer: {
     timestamp: '消息的时间戳',
     kafka_ext_header_key: 'Kafka Headers 键',
     kafka_ext_header_value: 'Kafka Headers 值',
-    max_linger_time: '最大延迟时间',
-    max_linger_bytes: '最大延迟字节数',
   },
   http: {
     body: '请求体',
