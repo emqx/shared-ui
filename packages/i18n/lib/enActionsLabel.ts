@@ -37,13 +37,13 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     column_order: 'Column Order',
     time_interval: 'Time Interval',
     max_records: 'Max Records',
+    max_linger_time: 'Max Linger Time',
+    max_linger_bytes: 'Max Linger Bytes',
   },
   kafka_producer: {
     timestamp: 'Message Timestamp',
     kafka_ext_header_key: 'Kafka Header Key',
     kafka_ext_header_value: 'Kafka Header Value',
-    max_linger_time: 'Max Linger Time',
-    max_linger_bytes: 'Max Linger Bytes',
   },
   http: {
     body: 'Body',
