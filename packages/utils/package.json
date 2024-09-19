@@ -35,10 +35,12 @@
     "release": "npm publish"
   },
   "dependencies": {
+    "json-bigint": "^1.0.0",
     "papaparse": "^5.4.1",
     "vue-i18n": "^9.10.2"
   },
   "devDependencies": {
+    "@types/json-bigint": "^1.0.4",
     "@types/papaparse": "^5.3.14"
   }
 }
