@@ -486,5 +486,6 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     stage: '用于将数据文件加载到 Snowflake 的 Stage 名称。',
     pipe: '用于将数据摄取到表中的 Pipe 名称。',
     pipe_user: '具有使用 Pipe 权限的角色的用户名。最低要求的权限是`operate`和`monitor`。',
+    proxy: '代理配置。当前仅支持 HTTP 代理（不支持 HTTPS）。',
   },
 }

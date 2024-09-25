@@ -178,5 +178,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   snowflake: {
     account: 'Account',
     dsn: 'Data Source Name (DSN)',
+    proxy: 'Proxy',
+    host: 'Proxy Host',
+    port: 'Proxy Port',
   },
 }

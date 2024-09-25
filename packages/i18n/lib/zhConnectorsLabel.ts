@@ -178,5 +178,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   snowflake: {
     account: '账户',
     dsn: '数据源名称',
+    proxy: '代理',
+    host: '代理主机',
+    port: '代理端口',
   },
 }
