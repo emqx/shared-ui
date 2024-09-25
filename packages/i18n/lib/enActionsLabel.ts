@@ -213,5 +213,8 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     stage: 'Stage',
     pipe: 'Pipe',
     pipe_user: 'Pipe User',
+    proxy: 'Proxy',
+    host: 'Proxy Host',
+    port: 'Proxy Port',
   },
 }

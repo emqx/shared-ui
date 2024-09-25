@@ -49,4 +49,6 @@ export const zhSymbolLabel: Record<string, string> = {
   protocol_v3: 'v3',
   influxdb_v1: 'InfluxDB 行协议',
   aggregated: '聚合上传',
+  parameters_proxy_none: '无',
+  parameters_proxy_proxy_config: '开启代理',
 }

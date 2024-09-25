@@ -49,4 +49,6 @@ export const enSymbolLabel: Record<string, string> = {
   protocol_v3: 'v3',
   influxdb_v1: 'InfluxDB Line Protocol',
   aggregated: 'Aggregated Upload',
+  parameters_proxy_none: 'None',
+  parameters_proxy_proxy_config: 'Enable Proxy',
 }

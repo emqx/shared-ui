@@ -213,5 +213,8 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     stage: '存储区',
     pipe: '管道',
     pipe_user: '管道用户',
+    proxy: '代理',
+    host: '代理主机',
+    port: '代理端口',
   },
 }

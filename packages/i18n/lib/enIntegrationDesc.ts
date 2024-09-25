@@ -537,5 +537,6 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     pipe: "Name of the Pipe that'll be used to ingest data into the table.",
     pipe_user:
       'A username which has a role with permissions over the Pipe to be used. The minimum permissions are `operate` and `monitor`.',
+    proxy: 'Proxy configuration. Only HTTP proxies are currently supported (no HTTPS).',
   },
 }
