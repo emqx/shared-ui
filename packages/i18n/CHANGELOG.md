@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.24
+
+### Patch Changes
+
+- New fields for Kafka and Snowflake
+
 ## 0.0.23
 
 ### Patch Changes
