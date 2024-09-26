@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.25
+
+### Patch Changes
+
+- Added missing symbol labels in snowflake connector
+
 ## 0.0.24
 
 ### Patch Changes
