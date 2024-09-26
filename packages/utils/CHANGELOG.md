@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.14
+
+### Patch Changes
+
+- Supported batch settings for datalayers
+
 ## 0.0.13
 
 ### Patch Changes
