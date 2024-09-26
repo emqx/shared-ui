@@ -51,4 +51,6 @@ export const enSymbolLabel: Record<string, string> = {
   aggregated: 'Aggregated Upload',
   parameters_proxy_none: 'None',
   parameters_proxy_proxy_config: 'Enable Proxy',
+  proxy_none: 'None',
+  proxy_proxy_config: 'Enable Proxy',
 }
