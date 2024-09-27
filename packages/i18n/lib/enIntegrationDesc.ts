@@ -42,6 +42,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       "Maximum duration for a per-partition producer to wait for messages in order to collect a batch to buffer.<br/>The default value <code>0</code> means no wait. For non-memory buffer mode, it's advised to configure at least <code>5ms</code> for less IOPS.",
     max_linger_bytes:
       'Maximum number of bytes for a per-partition producer to wait for messages in order to collect a batch to buffer.',
+    undefined_vars_as_null:
+      "When writing to databases, treat undefined variables as NULL.<br/>When this option is enabled, if undefined variables (like `${'{'}var{'}'}`) are used in templates, they will be replaced with `NULL` instead of the string `undefined`. If this option is not enabled (default), the string `undefined` might be inserted.<br/>This option should always be `true` if possible; the default value `false` is only to ensure backward compatibility.",
   },
   mqtt: {
     bridge_mode:

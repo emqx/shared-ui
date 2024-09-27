@@ -37,6 +37,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     max_linger_time:
       '每个分区生产者，等待收集消息以形成批次的最长时间。<br/>默认值 <code>0</code> 表示不等待。对于非内存缓冲模式，建议至少配置 <code>5ms</code> 以减少 I/O 操作。',
     max_linger_bytes: '每个分区生产者，等待收集消息以形成批次的最大字节数。',
+    undefined_vars_as_null:
+      "在写入数据库时，将未定义的变量视为 NULL。<br/>当启用此选项时，如果在模板中使用未定义的变量（例如 `${'{'}var{'}'}`），它们将被替换为 `NULL`，而不是字符串 `undefined`。如果此选项未启用（默认为关闭），可能会插入字符串 `undefined`。<br/>如果可能，此选项应始终设置为 `true`；默认值 `false` 仅用于确保向后兼容性。",
   },
   mqtt: {
     bridge_mode:
