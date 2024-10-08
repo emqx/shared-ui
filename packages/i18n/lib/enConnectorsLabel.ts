@@ -87,6 +87,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     driver: 'Driver',
     protocol_version: 'Protocol Version',
     zoneId: 'Zone ID',
+    recv_timeout: 'Receive Timeout',
   },
   elasticsearch: {
     server: 'Server',
