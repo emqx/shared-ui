@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.27
+
+### Patch Changes
+
+- New field in IoTDB connector
+
 ## 0.0.26
 
 ### Patch Changes
