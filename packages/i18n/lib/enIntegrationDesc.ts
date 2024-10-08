@@ -353,6 +353,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     device_id:
       'A fixed device name this data should be inserted for. If empty it must either be set in the rule action, the message itself, or it will be extracted from the topic.',
     is_aligned: 'Whether to align the timeseries',
+    recv_timeout: 'Timeout for receiving from IoTDB Thrift server.',
   },
   opents: {
     server: 'The URL of OpenTSDB endpoint.',
