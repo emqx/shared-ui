@@ -67,7 +67,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
   clickhouse: {
     batch_value_separator:
       "默认为逗号 ','，适用于 VALUES 格式。您也可以使用其他分隔符， 请参考 [INSERT INTO 语句](https://clickhouse.com/docs/zh/sql-reference/statements/insert-into)。",
-    connect_timeout: '连接 HTTP 服务器的超时时间。',
+    connect_timeout: '连接 Clickhouse 服务器的超时时间。',
     url: '你想连接到的 Clickhouse 服务器的 HTTP URL（例如 http://myhostname:8123）。',
     sql: "可以使用 ${'{'}field{'}'} 占位符来引用消息与客户端上下文中的变量，请确保对应字段存在且数据格式符合预期。此处不支持 [SQL 预处理](https://docs.emqx.com/zh/enterprise/v5.0/data-integration/data-bridges.html#sql-预处理)。",
   },
@@ -83,7 +83,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
   gcp_pubsub_producer: {
     pipelining:
       '正整数，设置最大可发送的异步 HTTP 请求数量。当设置为 1 时，表示每次发送完成 HTTP 请求后都需要等待服务器返回，再继续发送下一个请求。',
-    connect_timeout: '连接 HTTP 服务器的超时时间。',
+    connect_timeout: '连接 GCP 服务器的超时时间。',
     service_account_json:
       '包含将与 PubSub 一起使用的 GCP 服务账户凭证的 JSON。<br/>当创建 GCP 服务账户时（如 https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount ），可以选择下载 JSON 形式的凭证，然后在该配置项中使用。',
     pubsub_topic: '要发布消息的 GCP PubSub 主题。',
@@ -101,7 +101,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '包含将与 PubSub 一起使用的 GCP 服务账户凭证的 JSON。<br/>当创建 GCP 服务账户时（如 https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount ），可以选择下载 JSON 形式的凭证，然后在该配置项中使用。',
     pull_max_messages:
       '从 GCP PubSub 中在一个拉取请求里检索的最大消息数。\n实际数量可能小于指定的值。',
-    connect_timeout: '连接 HTTP 服务器的超时时间。',
+    connect_timeout: '连接 GCP 服务器的超时时间。',
   },
   hstreamdb: {
     url: 'HStreamDB 服务器的 URL。使用 gRPC HTTP 服务器地址。',
@@ -312,7 +312,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     iotdb_version: '要连接的 IoTDB 系统的版本。',
     enable_pipelining:
       '一个正整数。是否连续发送 HTTP 请求，当设置为 1 时，这意味着每次发送 HTTP 请求后，您需要等待服务器返回，然后继续发送下一个请求。',
-    connect_timeout: '连接到 HTTP 服务器时的超时时间。',
+    connect_timeout: '连接到 IoTDB 服务器时的超时时间。',
     timestamp:
       "支持使用 ${'{'}var{'}'} 格式的占位符，要求是时间戳格式。也可以使用以下特殊字符插入系统时间：<br/>- `now`: 当前毫秒级时间戳<br/>- `now_ms`: 当前毫秒级时间戳<br/>- `now_us`: 当前微秒级时间戳<br/>- `now_ns`: 当前纳秒级时间戳",
     measurement: "也称 Measurement，支持使用 ${'{'}var{'}'} 格式的占位符。",
@@ -457,7 +457,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     overwrite: '当文档已经存在时覆盖文档，否则文档将写入失败。',
     enable_pipelining:
       '一个正整数。是否连续发送 HTTP 请求，当设置为 1 时，这意味着每次发送 HTTP 请求后，您需要等待服务器返回，然后继续发送下一个请求。',
-    connect_timeout: '连接到 HTTP 服务器时的超时时间。',
+    connect_timeout: '连接到 ElasticSearch 服务器时的超时时间。',
     doc_as_upsert:
       '尝试更新的文档不存在时，将更新操作当作一个插入操作，并将提供的文档当作新文档插入。',
   },
