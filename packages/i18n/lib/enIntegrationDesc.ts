@@ -91,7 +91,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
   gcp_pubsub_producer: {
     pipelining:
       'A positive integer. Whether to send HTTP requests continuously, when set to 1, it means that after each HTTP request is sent, you need to wait for the server to return and then continue to send the next request.',
-    connect_timeout: 'The timeout when connecting to the HTTP server.',
+    connect_timeout: 'The timeout when connecting to the GCP server.',
     service_account_json:
       "JSON containing the GCP Service Account credentials to be used with PubSub.<br/>When a GCP Service Account is created (as described in https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount), you have the option of downloading the credentials in JSON form.  That's the file needed.",
     pubsub_topic: 'The GCP PubSub topic to publish messages to.',
@@ -110,7 +110,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       "JSON containing the GCP Service Account credentials to be used with PubSub.<br/>When a GCP Service Account is created (as described in https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount), you have the option of downloading the credentials in JSON form.  That's the file needed.",
     pull_max_messages:
       'The maximum number of messages to retrieve from GCP PubSub in a single pull request.\n The actual number may be less than the specified value.',
-    connect_timeout: 'The timeout when connecting to the HTTP server.',
+    connect_timeout: 'The timeout when connecting to the GCP server.',
   },
   hstreamdb: {
     url: 'HStreamDB Server URL. Using gRPC http server address.',
@@ -344,7 +344,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     iotdb_version: 'The version of the IoTDB system to connect to.',
     enable_pipelining:
       'A positive integer. Whether to send HTTP requests continuously, when set to 1, it means that after each HTTP request is sent, you need to wait for the server to return and then continue to send the next request.',
-    connect_timeout: 'The timeout when connecting to the HTTP server.',
+    connect_timeout: 'The timeout when connecting to the IoTDB server.',
     timestamp:
       "Supports the use of ${'{'}var{'}'} format as a placeholder, which should be in timestamp format. You can also use the following special characters to insert system time:<br/>- `now`: Current millisecond-level timestamp<br/>- `now_ms`: Current millisecond-level timestamp<br/>- `now_us`: Current microsecond-level timestamp<br/>- `now_ns`: Current nanosecond-level timestamp",
     measurement: "Supports the use of ${'{'}var{'}'} format as a placeholder.",
@@ -508,7 +508,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     overwrite: 'Overwrites the document if it already exists, otherwise the write will fail.',
     enable_pipelining:
       'A positive integer. Whether to send HTTP requests continuously, when set to 1, it means that after each HTTP request is sent, you need to wait for the server to return and then continue to send the next request.',
-    connect_timeout: 'The timeout when connecting to the HTTP server.',
+    connect_timeout: 'The timeout when connecting to the ElasticSearch server.',
     doc_as_upsert:
       'Treat the update operation as an insert operation when the document to be updated does not exist, and insert the provided document as a new document.',
   },
