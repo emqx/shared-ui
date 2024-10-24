@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.28
+
+### Patch Changes
+
+- Correct desc of `connect_timeout` under each type connector
+
 ## 0.0.27
 
 ### Patch Changes
