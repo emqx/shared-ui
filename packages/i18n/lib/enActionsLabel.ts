@@ -146,6 +146,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     offset_commit_interval_seconds: 'Offset Commit Interval',
     topic: 'Kafka Topic',
     group_id: 'Group ID',
+    max_wait_time: 'Max Wait Time',
   },
   rabbitmq: {
     exchange: 'Exchange',

@@ -228,10 +228,11 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     connect_timeout:
       '建立 TCP 连接时的最大等待时长（若启用认证，这个等待时长也包含完成认证所需时间）。',
     max_batch_bytes:
-      '设置每次从 Kafka 拉取数据的字节数。如该配置小于 Kafka 消息的大小，可能会影响消费性能。',
+      '设置每次从 Kafka 拉取数据的字节数。<br/>消费者按批次获取消息，如果获取的第一个非空分区中的第一个记录批次大小大于这个值，该记录批次仍会被返回，以确保消费者能够继续处理。因此，这并不是一个绝对的最大值限制。如果需要实现最小延迟，可将该值设为 `1`',
     offset_commit_interval_seconds: '指定 Kafka 消费组偏移量提交的时间间隔。',
     topic: 'Kafka 主题名称',
     group_id: '用于此 Source 的消费者组 ID。如果未指定，系统将自动生成一个基于 Source 名称的 ID。',
+    max_wait_time: '等待 Kafka broker 发送响应对象的最大时间。',
   },
   mongodb: {
     collection: '数据将被存储到的集合',

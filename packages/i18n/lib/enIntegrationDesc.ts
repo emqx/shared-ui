@@ -249,12 +249,14 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     connect_timeout:
       'Maximum wait time for TCP connection establishment (including authentication time if enabled).',
     max_batch_bytes:
-      'Set how many bytes to pull from Kafka in each fetch request. Please note that if the configured value is smaller than the message size in Kafka, it may negatively impact the fetch performance.',
+      'Set how many bytes to pull from Kafka in each fetch request.<br/>Messages are fetched in batches by the consumer, and if the first record batch in the first non-empty partition of the fetch is larger than this value, the record batch will still be returned to ensure that the consumer can make progress. As such, this is not an absolute maximum. Set `1` for minimal latency.',
     offset_commit_interval_seconds:
       'Defines the time interval between two offset commit requests sent for each consumer group.',
     topic: 'Kafka topic',
     group_id:
       'Consumer group identifier to be used for this source. If omitted, one based off the source name will be automatically generated.',
+    max_wait_time:
+      'Maximum amount of time that is waited for the Kafka broker to send a fetch response.',
   },
   mongodb: {
     collection: 'The collection where data will be stored into',
