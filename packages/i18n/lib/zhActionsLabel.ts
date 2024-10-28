@@ -146,6 +146,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     offset_commit_interval_seconds: '偏移提交间隔',
     topic: 'Kafka 主题名称',
     group_id: '消费组 ID',
+    max_wait_time: '最大等待时间',
   },
   rabbitmq: {
     exchange: '交换机',
