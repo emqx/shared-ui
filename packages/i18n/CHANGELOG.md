@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.29
+
+### Patch Changes
+
+- Add new field in kafka consumer
+
 ## 0.0.28
 
 ### Patch Changes
