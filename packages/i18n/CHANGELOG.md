@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.30
+
+### Patch Changes
+
+- New field in S3 connector
+
 ## 0.0.29
 
 ### Patch Changes
