@@ -168,6 +168,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     ipv6_probe: 'IPv6 Probe',
     headers: 'HTTP Headers',
     request_timeout: 'Request Timeout',
+    access_method: 'Access Method',
   },
   azure_blob_storage: {
     account_name: 'Account Name',

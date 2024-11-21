@@ -168,6 +168,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     ipv6_probe: 'IPv6 探针',
     headers: '请求头',
     request_timeout: '请求超时',
+    access_method: '访问模式',
   },
   azure_blob_storage: {
     account_name: '账户名称',

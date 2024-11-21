@@ -53,4 +53,6 @@ export const zhSymbolLabel: Record<string, string> = {
   parameters_proxy_proxy_config: '开启代理',
   proxy_none: '无',
   proxy_proxy_config: '开启代理',
+  vhost: '虚拟托管',
+  path: '路径',
 }
