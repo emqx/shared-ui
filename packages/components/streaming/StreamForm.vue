@@ -3,7 +3,6 @@
     <el-form-item prop="stream_name">
       <template #label>
         {{ t('streaming.streamName') }}
-        {{ t('Base.username') }}
         <component v-if="tipComponent" :is="tipComponent" :content="t('streaming.streamNameTip')" />
       </template>
       <el-input v-model="record.stream_name" />

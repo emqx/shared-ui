@@ -1,4 +1,11 @@
-import { jaStreaming, enStreaming, zhStreaming } from '@emqx/shared-ui-i18n'
+import {
+  jaStreaming,
+  enStreaming,
+  zhStreaming,
+  enCommon,
+  zhCommon,
+  jaCommon,
+} from '@emqx/shared-ui-i18n'
 import { createI18n } from 'vue-i18n'
 import type { ComposerTranslation } from 'vue-i18n'
 
@@ -9,12 +16,15 @@ export const useLocale = (locale: string): { t: ComposerTranslation } => {
     messages: {
       en: {
         streaming: enStreaming,
+        common: enCommon,
       },
       zh: {
         streaming: zhStreaming,
+        common: zhCommon,
       },
       ja: {
         streaming: jaStreaming,
+        common: jaCommon,
       },
     },
   }).global

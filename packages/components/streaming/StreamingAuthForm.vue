@@ -5,7 +5,7 @@
         <el-option v-for="item in authTypeList" :key="item" :label="item" :value="item" />
       </el-select>
     </el-form-item>
-    <el-form-item prop="user_name" :label="t('auth.username')">
+    <el-form-item prop="user_name" :label="t('common.username')">
       <el-input v-model="record.user_name" clearable :disabled="isEdit" />
     </el-form-item>
     <el-form-item prop="password" :label="t('common.password')">

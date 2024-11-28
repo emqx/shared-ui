@@ -1,6 +1,6 @@
 <template>
   <el-form :model="record" label-position="top">
-    <el-form-item prop="principal_name" :label="$t('auth.username')">
+    <el-form-item prop="principal_name" :label="t('common.username')">
       <el-input v-model="record.principal_name" />
     </el-form-item>
     <el-form-item prop="host" :label="tl('host')">
@@ -15,7 +15,12 @@
     </el-form-item>
     <el-form-item prop="resource_type" :label="tl('aclResourceType')">
       <el-radio-group v-model="record.resource_type" @change="changeResourceType">
-        <el-radio v-for="item in resourceTypeOptions" :key="item.value" :value="item.value">
+        <el-radio
+          v-for="item in resourceTypeOptions"
+          :key="item.value"
+          :value="item.value"
+          :label="item.value"
+        >
           {{ item.label }}
         </el-radio>
       </el-radio-group>
@@ -46,9 +51,14 @@
         />
       </el-select>
     </el-form-item>
-    <el-form-item prop="permission" :label="$t('acl.access')">
+    <el-form-item prop="permission" :label="t('common.access')">
       <el-radio-group v-model="record.permission">
-        <el-radio v-for="item in permissionOptions" :key="item.value" :value="item.value">
+        <el-radio
+          v-for="item in permissionOptions"
+          :key="item.value"
+          :value="item.value"
+          :label="item.value"
+        >
           {{ item.label }}
         </el-radio>
       </el-radio-group>
