@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { StreamAuthType } from '@emqx/shared-ui-constants'
 import { useLocale } from '@emqx/shared-ui-utils'
-import { Component, computed } from 'vue'
+import { computed } from 'vue'
 
 interface StreamRecord {
   user_name: string
@@ -32,7 +32,6 @@ interface StreamRecord {
 }
 
 const props = defineProps<{
-  tipComponent: Component
   modelValue: StreamRecord
   isEdit: boolean
   // TODO: try to optimize

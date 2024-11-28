@@ -82,6 +82,9 @@ importers:
 
   packages/utils:
     dependencies:
+      '@emqx/shared-ui-constants':
+        specifier: link:../constants
+        version: link:../constants
       '@emqx/shared-ui-i18n':
         specifier: link:../i18n
         version: link:../i18n
