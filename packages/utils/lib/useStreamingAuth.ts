@@ -1,45 +1,38 @@
 import { StreamOperation, StreamPermission, StreamResourceType } from '@emqx/shared-ui-constants'
-import { useLocale } from '@emqx/shared-ui-utils'
-import { computed } from 'vue'
+import { useLocale } from './useLocale'
 
-export default (lang: string) => {
+export const useStreamingAuth = (lang: string) => {
   const { t } = useLocale(lang)
 
-  const permissionOptions = computed(() => {
-    return [
-      {
-        label: t('streaming.allow'),
-        value: StreamPermission.Allow,
-      },
-      {
-        label: t('streaming.deny'),
-        value: StreamPermission.Deny,
-      },
-    ]
-  })
-  const resourceTypeOptions = computed(() => {
-    return [
-      {
-        label: t('acl.topic'),
-        value: StreamResourceType.Topic,
-      },
-      {
-        label: t('streaming.consumerGroupType'),
-        value: StreamResourceType.Group,
-      },
-      {
-        label: t('streaming.clusterType'),
-        value: StreamResourceType.Cluster,
-      },
-    ]
-  })
-  const operationOptions = computed(() => {
-    return Object.values(StreamOperation).map((value) => {
-      return {
-        label: t(`streaming.aclOperationLabelDic.${value}`),
-        value,
-      }
-    })
+  const permissionOptions = [
+    {
+      label: t('streaming.allow'),
+      value: StreamPermission.Allow,
+    },
+    {
+      label: t('streaming.deny'),
+      value: StreamPermission.Deny,
+    },
+  ]
+  const resourceTypeOptions = [
+    {
+      label: t('acl.topic'),
+      value: StreamResourceType.Topic,
+    },
+    {
+      label: t('streaming.consumerGroupType'),
+      value: StreamResourceType.Group,
+    },
+    {
+      label: t('streaming.clusterType'),
+      value: StreamResourceType.Cluster,
+    },
+  ]
+  const operationOptions = Object.values(StreamOperation).map((value) => {
+    return {
+      label: t(`streaming.aclOperationLabelDic.${value}`),
+      value,
+    }
   })
 
   const validOperationMap: Record<StreamResourceType, Array<StreamOperation>> = {
@@ -65,7 +58,7 @@ export default (lang: string) => {
     ],
   }
   const getValidOperations = (resourceType: StreamResourceType) => {
-    const list = validOperationMap[resourceType]
+    const list = validOperationMap[resourceType] || []
     return list.map((value) => {
       return {
         label: t(`streaming.aclOperationLabelDic.${value}`),

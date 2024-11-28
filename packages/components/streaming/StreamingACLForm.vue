@@ -65,9 +65,8 @@ import {
   StreamPermission,
   StreamResourceType,
 } from '@emqx/shared-ui-constants'
-import { useLocale } from '@emqx/shared-ui-utils'
-import { Component, computed } from 'vue'
-import useStreamingAuth from '../hooks/useStreamingAuth'
+import { useLocale, useStreamingAuth } from '@emqx/shared-ui-utils'
+import { computed } from 'vue'
 
 interface StreamACL {
   principal_type: string
@@ -82,7 +81,6 @@ interface StreamACL {
 }
 
 const props = defineProps<{
-  tipComponent: Component
   modelValue: StreamACL
   isEdit: boolean
   // TODO: try to optimize
