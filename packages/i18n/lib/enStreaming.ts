@@ -1,4 +1,4 @@
-export default {
+export const enStreaming = {
   title: 'Streaming (beta)',
   streams: 'Streams',
   streamName: 'Stream Name',

@@ -1,6 +1,6 @@
 {
-  "name": "@emqx/shared-ui-utils",
-  "version": "0.0.14",
+  "name": "@emqx/shared-ui-components",
+  "version": "0.0.1",
   "homepage": "https://emqx.io",
   "license": "Apache-2.0",
   "repository": {
@@ -26,7 +26,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "test": "vitest run --coverage",
     "version:patch": "npm version patch",
@@ -35,13 +35,21 @@
     "release": "npm publish"
   },
   "dependencies": {
-    "@emqx/shared-ui-i18n": "link:../i18n",
-    "json-bigint": "^1.0.0",
-    "papaparse": "^5.4.1",
-    "vue-i18n": "^9.10.2"
+    "@emqx/shared-ui-constants": "link:../constants"
   },
   "devDependencies": {
-    "@types/json-bigint": "^1.0.4",
-    "@types/papaparse": "^5.3.14"
+    "@emqx/shared-ui-utils": "link:../utils",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "element-plus": "^2.3.0",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "vue": "^3.2.0",
+    "vue-tsc": "^2.1.10"
+  },
+  "peerDependencies": {
+    "@emqx/shared-ui-utils": "link:../utils",
+    "element-plus": "^2.3.0",
+    "vue": "^3.2.0"
   }
 }
