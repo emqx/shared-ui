@@ -1,6 +1,6 @@
 {
-  "name": "@emqx/shared-ui-i18n",
-  "version": "0.0.30",
+  "name": "@emqx/shared-components",
+  "version": "0.0.1",
   "homepage": "https://emqx.io",
   "license": "Apache-2.0",
   "repository": {
@@ -11,19 +11,6 @@
     "access": "public"
   },
   "type": "module",
-  "types": "./lib/index.ts",
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "main": "./lib/index.ts",
-  "module": "./lib/index.ts",
-  "exports": {
-    ".": {
-      "import": "./lib/index.ts",
-      "require": "./dist/index.umd.cjs"
-    }
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -33,5 +20,17 @@
     "version:minor": "npm version minor",
     "version:major": "npm version major",
     "release": "npm publish"
+  },
+  "dependencies": {
+    "@emqx/shared-ui-constants": "link:../constants",
+    "@emqx/shared-ui-i18n": "link:../i18n",
+    "@emqx/shared-ui-utils": "link:../utils",
+    "element-plus": "^2.8.8",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0"
   }
 }

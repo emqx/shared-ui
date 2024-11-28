@@ -11,16 +11,16 @@
     "access": "public"
   },
   "type": "module",
-  "types": "./dist/index.d.ts",
+  "types": "./lib/index.ts",
   "files": [
     "dist",
     "README.md"
   ],
-  "main": "./dist/index.umd.cjs",
-  "module": "./dist/index.js",
+  "main": "./lib/index.ts",
+  "module": "./lib/index.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
+      "import": "./lib/index.ts",
       "require": "./dist/index.umd.cjs"
     }
   },
@@ -35,6 +35,7 @@
     "release": "npm publish"
   },
   "dependencies": {
+    "@emqx/shared-ui-i18n": "link:../i18n",
     "json-bigint": "^1.0.0",
     "papaparse": "^5.4.1",
     "vue-i18n": "^9.10.2"

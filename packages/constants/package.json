@@ -1,6 +1,6 @@
 {
-  "name": "@emqx/shared-ui-i18n",
-  "version": "0.0.30",
+  "name": "@emqx/shared-ui-constants",
+  "version": "0.0.1",
   "homepage": "https://emqx.io",
   "license": "Apache-2.0",
   "repository": {
@@ -11,19 +11,6 @@
     "access": "public"
   },
   "type": "module",
-  "types": "./lib/index.ts",
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "main": "./lib/index.ts",
-  "module": "./lib/index.ts",
-  "exports": {
-    ".": {
-      "import": "./lib/index.ts",
-      "require": "./dist/index.umd.cjs"
-    }
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

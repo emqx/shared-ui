@@ -1,4 +1,4 @@
-export default {
+export const zhStreaming = {
   title: 'Streaming (beta)',
   streams: 'Streams',
   streamName: 'Stream 名称',
