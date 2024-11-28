@@ -16,7 +16,7 @@ export const useStreamingAuth = (lang: string) => {
   ]
   const resourceTypeOptions = [
     {
-      label: t('acl.topic'),
+      label: t('common.topic'),
       value: StreamResourceType.Topic,
     },
     {
