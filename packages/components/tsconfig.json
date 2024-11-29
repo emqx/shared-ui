@@ -1,5 +1,12 @@
 {
   "extends": "../../tsconfig.json",
   "include": ["**/*.ts", "**/*.tsx", "**/*.vue"],
-  "exclude": ["node_modules", "dist", "__test__", "**/*.test.ts", "**/*.spec.ts"]
+  "exclude": ["node_modules", "dist", "__test__", "**/*.test.ts", "**/*.spec.ts", "vite.config.ts"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declarationDir": "./dist",
+    "allowImportingTsExtensions": false,
+    "emitDeclarationOnly": true,
+    "noEmit": false
+  }
 }
