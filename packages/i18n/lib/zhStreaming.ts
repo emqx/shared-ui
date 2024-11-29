@@ -67,4 +67,13 @@ export const zhStreaming = {
   usernameRule: `可包含字母、数字和部分特殊字符（_、-、/、+、#、$、%、{'@'}、& 和 .），最长 128 个字符`,
   aclDescription:
     '是指对 Kafka 客户端所能操作的资源，包括主题、消费者组和集群等的权限控制。采用黑名单模式，即对添加的条目进行特殊判断，没有添加则默认通过。',
+  networkType: '网络类型',
+  securityProtocol: '安全协议',
+  metricTitleDic: {
+    stream_count: 'Stream 数',
+    partition_count: '分区数',
+    group_count: '消费者群组数',
+    total_messages_in_rate: '消息流入速率',
+    total_messages_out_rate: '消息流出速率',
+  },
 }
