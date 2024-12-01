@@ -1,5 +1,14 @@
 # @emqx/shared-ui-utils
 
+## 0.0.15
+
+### Patch Changes
+
+- Add Streaming
+- Updated dependencies
+  - @emqx/shared-ui-constants@0.0.2
+  - @emqx/shared-ui-i18n@0.0.31
+
 ## 0.0.14
 
 ### Patch Changes
