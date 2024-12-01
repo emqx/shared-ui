@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.31
+
+### Patch Changes
+
+- Add Streaming
+
 ## 0.0.30
 
 ### Patch Changes
