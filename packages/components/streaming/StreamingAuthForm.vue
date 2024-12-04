@@ -1,5 +1,5 @@
 <template>
-  <el-form :model="record" label-position="top">
+  <el-form ref="FormCom" :model="record" label-position="top">
     <el-form-item prop="mechanism" :label="t('streaming.authType')">
       <el-select v-model="record.mechanism" :disabled="isEdit">
         <el-option v-for="item in authTypeList" :key="item" :label="item" :value="item" />
@@ -13,7 +13,7 @@
         type="password"
         v-model="record.password"
         show-password
-        autocomplete="new-password"
+        autocomplete="one-time-code"
         clearable
       />
     </el-form-item>
@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { StreamAuthType } from '@emqx/shared-ui-constants'
 import { useLocale } from '@emqx/shared-ui-utils'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 interface StreamRecord {
   user_name: string
@@ -53,6 +53,16 @@ const record = computed({
 })
 
 const authTypeList = [StreamAuthType.Plain, StreamAuthType.SHA256]
+
+const FormCom = ref()
+const validate = () => {
+  return FormCom.value.validate()
+}
+
+defineExpose({
+  FormCom,
+  validate,
+})
 </script>
 
 <style lang="scss" />

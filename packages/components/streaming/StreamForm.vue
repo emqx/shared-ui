@@ -1,5 +1,5 @@
 <template>
-  <el-form ref="form" :model="record" label-position="top">
+  <el-form ref="FormCom" :model="record" label-position="top">
     <el-form-item prop="stream_name">
       <template #label>
         {{ t('streaming.streamName') }}
@@ -17,7 +17,7 @@
           v-for="item in allStreamTypes"
           :key="item"
           :value="item"
-          :label="$t(`streaming.streamTypeLabel.${item}`)"
+          :label="t(`streaming.streamTypeLabel.${item}`)"
         />
       </el-select>
     </el-form-item>
@@ -43,7 +43,8 @@
 <script setup lang="ts">
 import { StreamType } from '@emqx/shared-ui-constants'
 import { useLocale } from '@emqx/shared-ui-utils'
-import { Component, computed, defineEmits, defineProps } from 'vue'
+import type { Component } from 'vue'
+import { computed, defineEmits, defineExpose, defineProps, ref } from 'vue'
 
 interface StreamRecord {
   stream_name: string
@@ -92,6 +93,16 @@ const handleStreamTypeChange = (val: StreamType) => {
     } as StreamRecord
   }
 }
+
+const FormCom = ref()
+const validate = () => {
+  return FormCom.value.validate()
+}
+
+defineExpose({
+  FormCom,
+  validate,
+})
 </script>
 
 <style lang="scss"></style>

@@ -1,10 +1,21 @@
 <template>
-  <el-form :model="record" label-position="top">
+  <el-form ref="FormCom" :model="record" label-position="top">
     <el-form-item prop="principal_name" :label="t('common.username')">
-      <el-input v-model="record.principal_name" />
+      <el-input v-model="record.principal_name" :disabled="matchAllUsers">
+        <template #prepend>
+          <el-select
+            class="prepend-select"
+            v-model="record.principal_name_type"
+            @change="changeNameType"
+          >
+            <el-option :label="t('streaming.matchAll')" :value="StreamPatternType.All" />
+            <el-option :label="t('streaming.literal')" :value="StreamPatternType.Literal" />
+          </el-select>
+        </template>
+      </el-input>
     </el-form-item>
     <el-form-item prop="host" :label="tl('host')">
-      <el-input v-model="record.host" :disabled="record.host_type === StreamPatternType.All">
+      <el-input v-model="record.host" :disabled="matchAllHost">
         <template #prepend>
           <el-select class="prepend-select" v-model="record.host_type" @change="changeHostType">
             <el-option :label="tl('matchAll')" :value="StreamPatternType.All" />
@@ -26,7 +37,7 @@
       </el-radio-group>
     </el-form-item>
     <el-form-item prop="resource_name" :label="tl('aclResourceName')">
-      <el-input v-model="record.resource_name" :disabled="matchAllResource || selectedCluster">
+      <el-input v-model="record.resource_name" :disabled="matchAllResources || selectedCluster">
         <template #prepend>
           <el-select
             class="prepend-select"
@@ -76,7 +87,7 @@ import {
   StreamResourceType,
 } from '@emqx/shared-ui-constants'
 import { useLocale, useStreamingAuth } from '@emqx/shared-ui-utils'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 interface StreamACL {
   principal_type: string
@@ -88,6 +99,7 @@ interface StreamACL {
   resource_name: string
   operation: StreamOperation
   permission: StreamPermission
+  principal_name_type: StreamPatternType
 }
 
 const props = defineProps<{
@@ -112,23 +124,36 @@ const record = computed({
   },
 })
 
+const matchAllUsers = computed(() => record.value.principal_name_type === StreamPatternType.All)
+const matchAllHost = computed(() => record.value.host_type === StreamPatternType.All)
+const matchAllResources = computed(() => record.value.pattern_type === StreamPatternType.All)
+
 const { permissionOptions, resourceTypeOptions, getValidOperations } = useStreamingAuth(props.lang)
 
 const selectedCluster = computed(() => record.value.resource_type === StreamResourceType.Cluster)
-const matchAllResource = computed(() => record.value.pattern_type === StreamPatternType.All)
 
-const changeHostType = () => {
-  if (record.value.host_type === StreamPatternType.All) {
+const changeHostType = async () => {
+  if (matchAllHost.value) {
     record.value.host = STREAMING_MATCH_ALL
-  } else if (record.value.host === STREAMING_MATCH_ALL) {
+  } else {
     record.value.host = ''
+    clearSpecialValidate('host')
   }
 }
-const changeResourcePattern = () => {
-  if (matchAllResource.value) {
+const changeNameType = async () => {
+  if (matchAllUsers.value) {
+    record.value.principal_name = STREAMING_MATCH_ALL
+  } else {
+    record.value.principal_name = ''
+    clearSpecialValidate('principal_name')
+  }
+}
+const changeResourcePattern = async () => {
+  if (matchAllResources.value) {
     record.value.resource_name = STREAMING_MATCH_ALL
   } else if (record.value.resource_name === STREAMING_MATCH_ALL) {
     record.value.resource_name = ''
+    clearSpecialValidate('resource_name')
   }
 }
 const changeResourceType = () => {
@@ -141,6 +166,20 @@ const changeResourceType = () => {
   }
   record.value.operation = StreamOperation.All
 }
+
+const clearSpecialValidate = (key: string) => {
+  window.setTimeout(() => FormCom.value.clearValidate([key]))
+}
+
+const FormCom = ref()
+const validate = () => {
+  return FormCom.value.validate()
+}
+
+defineExpose({
+  FormCom,
+  validate,
+})
 </script>
 
 <style lang="scss" />

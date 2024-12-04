@@ -35,7 +35,7 @@ export const enStreaming = {
   ],
   betaTip: 'This feature is in beta.',
   needVPCTip: 'Streaming requires intranet access, please create a {vpc} first.',
-  mqttTopicFormatTip: `Can contain letters, numbers, special characters (_, -, /, +, $, %, {'@'}, &, :, {'{'}{'}'} and .) and mid-string spaces (no leading/trailing spaces), up to 128 characters`,
+  mqttTopicFormatTip: `Can contain letters, numbers, special characters (_, -, /, +, #, $, %, {'@'}, &, :, {'{'}{'}'} and .) and mid-string spaces (no leading/trailing spaces), up to 128 characters`,
   streamType: 'Stream Type',
   streamTypeLabel: {
     default: 'Default',
