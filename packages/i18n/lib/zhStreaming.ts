@@ -35,7 +35,7 @@ export const zhStreaming = {
   ],
   betaTip: '此功能目前处于公测阶段。',
   needVPCTip: 'Streaming 功能需要内网访问，在开通前请先创建 {vpc}。',
-  mqttTopicFormatTip: `可包含字母、数字、部分特殊字符（_、-、/、+、$、%、{'@'}、&、:、{'{'}{'}'} 和 .）及中间空格（无首尾空格），最长 128 个字符`,
+  mqttTopicFormatTip: `可包含字母、数字、部分特殊字符（_、-、/、+、#、$、%、{'@'}、&、:、{'{'}{'}'} 和 .）及中间空格（无首尾空格），最长 128 个字符`,
   streamType: 'Stream 类型',
   streamTypeLabel: {
     default: 'Default',
