@@ -65,8 +65,9 @@ export const jaStreaming = {
     ALTER: '変更する',
   },
   usernameRule: `アルファベット、数字、「_」、「-」、「/」、「+」、「#」、「$」、「%」、「{'@'}」、「&」および「.」のみ使え、最長 128 文字です`,
-  aclDescription: `Kafka クライアントが操作できるリソース（トピック、コンシューマーグループ、クラスタなど）の権限制御を指します。デフォルトのモードはブラックリストであり、リストに追加されたエントリはルールによってフィルタリングされ、追加されていないものはデフォルトで許可されます。`,
   // TODO: ja
+  aclDescription: `It refers to the permission control of the resources that Kafka clients can manipulate, including topics, consumer groups and clusters.
+  The default mode is whitelist, meaning that entries added to the list are allowed through, while those not added are denied by default.`,
   networkType: 'Network Type',
   securityProtocol: 'Security Protocol',
   metricTitleDic: {

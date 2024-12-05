@@ -66,7 +66,7 @@ export const enStreaming = {
   },
   usernameRule: `Can contain letters, numbers and some special characters (_, -, /, +, #, $, %, {'@'}, & and .), up to 128 characters`,
   aclDescription: `It refers to the permission control of the resources that Kafka clients can manipulate, including topics, consumer groups and clusters.
-  The default mode is blacklist, meaning that entries added to the list are filtered by the rule, while those not added are allowed by default.`,
+  The default mode is whitelist, meaning that entries added to the list are allowed through, while those not added are denied by default.`,
   networkType: 'Network Type',
   securityProtocol: 'Security Protocol',
   metricTitleDic: {
