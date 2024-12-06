@@ -1,5 +1,11 @@
 # @emqx/shared-ui-components
 
+## 0.0.3
+
+### Patch Changes
+
+- Update Form Component to Adapt API Changed and Fixed Some Issues
+
 ## 0.0.2
 
 ### Patch Changes

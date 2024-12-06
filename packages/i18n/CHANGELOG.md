@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.32
+
+### Patch Changes
+
+- Update Form Component to Adapt API Changed and Fixed Some Issues
+
 ## 0.0.31
 
 ### Patch Changes
