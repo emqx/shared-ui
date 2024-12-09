@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.33
+
+### Patch Changes
+
+- Add labels to `proto_ver` opt for MQTT
+
 ## 0.0.32
 
 ### Patch Changes
