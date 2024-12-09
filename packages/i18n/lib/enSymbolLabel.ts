@@ -55,4 +55,7 @@ export const enSymbolLabel: Record<string, string> = {
   proxy_proxy_config: 'Enable Proxy',
   vhost: 'Virtual Hosted',
   path: 'Path',
+  v3: 'v3(3.1)',
+  v4: 'v4(3.1.1)',
+  v5: 'v5(5.0)',
 }
