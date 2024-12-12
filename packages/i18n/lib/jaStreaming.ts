@@ -44,7 +44,10 @@ export const jaStreaming = {
   streamTypeTip:
     '「Default」タイプのストリームは MQTT トピックフィルターと関連付けられており、そのフィルターに一致する MQTT メッセージがストリームに保存されます。Kafka クライアントからの「Free」タイプのストリームのは MQTT トピックフィルターと関連付けられていません。',
   authType: '認証方式',
-  host: 'IP アドレス',
+  // TODO: ja
+  host: 'Host',
+  hostTip:
+    'Fill in a Host IP address or use <code>*</code> to match all Hosts.<br/>If <code>Literal</code> pattern is selected, an IP address of a host should be provided.',
   aclResourceType: 'リソースタイプ',
   aclResourceName: 'リソース値',
   aclOperation: '操作',

@@ -44,7 +44,9 @@ export const enStreaming = {
   streamTypeTip:
     'The default type Stream is associated with an MQTT topic filter, and MQTT messages matching the topic filter are saved to the Stream. The free type Stream is not associated with an MQTT topic filter.',
   authType: 'Authentication Mechanism',
-  host: 'IP Address',
+  host: 'Host',
+  hostTip:
+    'Fill in a Host IP address or use <code>*</code> to match all Hosts.<br/>If <code>Literal</code> pattern is selected, an IP address of a host should be provided.',
   aclResourceType: 'Resource Type',
   aclResourceName: 'Resource Selector',
   aclOperation: 'Operation',

@@ -44,7 +44,9 @@ export const zhStreaming = {
   streamTypeTip:
     'Default 类型的 Stream 关联 MQTT 主题过滤器，且匹配主题过滤器的 MQTT 消息会被保存到 Stream 中。Free 类型的 Stream 不关联 MQTT 主题过滤器。',
   authType: '认证方式',
-  host: 'IP 地址',
+  host: 'Host',
+  hostTip:
+    '填写 Host IP 地址或者使用 <code>*</code> 匹配所有 Host。<br/>如果您选择了 <code>精确匹配</code> 模式，则应提供一个 Host IP 地址。',
   aclResourceType: '资源类型',
   aclResourceName: '目标值',
   aclOperation: '操作类型',
