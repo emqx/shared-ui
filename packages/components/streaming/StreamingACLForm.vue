@@ -15,6 +15,10 @@
       </el-input>
     </el-form-item>
     <el-form-item prop="host" :label="tl('host')">
+      <template #label>
+        {{ tl('host') }}
+        <component v-if="tipComponent" :is="tipComponent" :content="tl('hostTip')" />
+      </template>
       <el-input v-model="record.host" :disabled="matchAllHost">
         <template #prepend>
           <el-select class="prepend-select" v-model="record.host_type" @change="changeHostType">
@@ -103,6 +107,7 @@ interface StreamACL {
 }
 
 const props = defineProps<{
+  tipComponent?: Component
   modelValue: StreamACL
   isEdit: boolean
   // TODO: try to optimize
