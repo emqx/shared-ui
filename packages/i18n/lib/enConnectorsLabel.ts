@@ -184,4 +184,11 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     host: 'Proxy Host',
     port: 'Proxy Port',
   },
+  tablestore: {
+    endpoint: 'Endpoint',
+    access_key_id: 'Access Key ID',
+    access_key_secret: 'Access Key Secret',
+    instance_name: 'Instance Name',
+    storage_model_type: 'Storage Model Type',
+  },
 }

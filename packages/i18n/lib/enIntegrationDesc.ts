@@ -544,4 +544,10 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'A username which has a role with permissions over the Pipe to be used. The minimum permissions are `operate` and `monitor`.',
     proxy: 'Proxy configuration. Only HTTP proxies are currently supported (no HTTPS).',
   },
+  tablestore: {
+    isint:
+      'Whether try to write numeric value as integer. Defaults to false, means that write integers as floats.',
+    isbinary:
+      'Whether try to write binary values as binary type. Defaults to false, means that write binary values as strings.',
+  },
 }

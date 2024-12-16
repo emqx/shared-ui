@@ -184,4 +184,11 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     host: '代理主机',
     port: '代理端口',
   },
+  tablestore: {
+    endpoint: '端点',
+    access_key_id: '访问密钥 ID',
+    access_key_secret: '访问密钥',
+    instance_name: '实例名称',
+    storage_model_type: '存储模型类型',
+  },
 }

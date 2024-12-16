@@ -58,4 +58,5 @@ export const enSymbolLabel: Record<string, string> = {
   v3: 'v3(3.1)',
   v4: 'v4(3.1.1)',
   v5: 'v5(5.0)',
+  timeseries: 'TimeSeries',
 }
