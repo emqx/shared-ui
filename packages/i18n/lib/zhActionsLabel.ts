@@ -219,4 +219,17 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     host: '代理主机',
     port: '代理端口',
   },
+  tablestore: {
+    storage_model_type: '存储模型类型',
+    table_name: '表名',
+    measurement: '度量名称',
+    tags: '标签',
+    fields: '字段',
+    data_source: '数据源',
+    timestamp: '时间戳',
+    meta_update_model: '元数据更新模式',
+    column: '列',
+    isint: '是否为整数',
+    isbinary: '是否为二进制',
+  },
 }

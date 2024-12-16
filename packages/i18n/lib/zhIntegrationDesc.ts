@@ -492,4 +492,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     pipe_user: '具有使用 Pipe 权限的角色的用户名。最低要求的权限是`operate`和`monitor`。',
     proxy: '代理配置。当前仅支持 HTTP 代理（不支持 HTTPS）。',
   },
+  tablestore: {
+    isint: '是否尝试将数值写为整数。默认为 false，表示将整数写为浮点数。',
+    isbinary: '是否尝试将二进制值写为二进制类型。默认为 false，表示将二进制值写为字符串。',
+  },
 }

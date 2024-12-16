@@ -219,4 +219,17 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     host: 'Proxy Host',
     port: 'Proxy Port',
   },
+  tablestore: {
+    storage_model_type: 'Storage Model Type',
+    table_name: 'Table Name',
+    measurement: 'Measurement',
+    tags: 'Tags',
+    fields: 'Fields',
+    data_source: 'Data Source',
+    timestamp: 'Timestamp',
+    meta_update_model: 'Meta Update Model',
+    column: 'Column',
+    isint: 'Is Int',
+    isbinary: 'Is Binary',
+  },
 }
