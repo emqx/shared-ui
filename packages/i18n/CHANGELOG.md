@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.34
+
+### Patch Changes
+
+- Streaming texts and tablestore related texts
+
 ## 0.0.33
 
 ### Patch Changes
