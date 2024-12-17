@@ -1,5 +1,11 @@
 # @emqx/shared-ui-components
 
+## 0.0.4
+
+### Patch Changes
+
+- Tip for streaming host
+
 ## 0.0.3
 
 ### Patch Changes
