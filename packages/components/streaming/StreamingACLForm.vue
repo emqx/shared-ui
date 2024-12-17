@@ -91,6 +91,7 @@ import {
   StreamResourceType,
 } from '@emqx/shared-ui-constants'
 import { useLocale, useStreamingAuth } from '@emqx/shared-ui-utils'
+import type { Component } from 'vue'
 import { computed, ref } from 'vue'
 
 interface StreamACL {
