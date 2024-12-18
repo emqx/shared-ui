@@ -88,20 +88,20 @@ describe('useBatchSettings', () => {
     it('should process IoTDB data correctly', async () => {
       const data = [
         ['timestamp', 'measurement', 'data_type', 'value'],
-        ['2022-01-01', 'temperature', 'FLOAT', '25.5'],
-        ['2022-01-02', 'humidity', 'INT32', '60'],
+        ['2022-01-01', 'temperature', 'float', '25.5'],
+        ['2022-01-02', 'humidity', 'int32', '60'],
       ]
       const expectedOutput = [
         {
           timestamp: '2022-01-01',
           measurement: 'temperature',
-          data_type: 'FLOAT',
+          data_type: 'float',
           value: '25.5',
         },
         {
           timestamp: '2022-01-02',
           measurement: 'humidity',
-          data_type: 'INT32',
+          data_type: 'int32',
           value: '60',
         },
       ]
