@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.16
+
+### Patch Changes
+
+- Fixed IoTDB batch template issue
+
 ## 0.0.15
 
 ### Patch Changes
