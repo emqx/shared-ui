@@ -15,7 +15,7 @@ export const useBatchSettings = (locale: 'zh' | 'en' = 'en') => {
     messages: {
       en: {
         iotdbTemplateRemark:
-          'Measurement, Value, and Data Type are required fields. The Data Type can have the optional values BOOLEAN, INT32, INT64, FLOAT, DOUBLE, TEXT.',
+          'Measurement, Value, and Data Type are required fields. The Data Type can have the optional values boolean, int32, int64, float, double, text.',
         invalidIsCharFlag: 'Invalid Char Value field: {isChar}',
         uploadMaxRowsError:
           'The number of rows in the CSV file exceeds the limit. Up to {max} rows of data are supported except for the header',
@@ -26,7 +26,7 @@ export const useBatchSettings = (locale: 'zh' | 'en' = 'en') => {
       },
       zh: {
         iotdbTemplateRemark:
-          '字段、值、数据类型是必填选项，数据类型可选的值为 BOOLEAN、INT32、INT64、FLOAT、DOUBLE、TEXT',
+          '字段、值、数据类型是必填选项，数据类型可选的值为 boolean、int32、int64、float、double、text',
         invalidIsCharFlag: '无效的字符标识符值：{isChar}',
         uploadMaxRowsError: 'CSV 文件行数超过限制，除表头外，最多支持 {max} 行数据',
         influxdbTemplateRemark: '在字段值后追加 i，InfluxDB 则将该数值存储为整数类型。',
@@ -54,10 +54,10 @@ hum,\${payload.hum},FALSE,
 status,\${payload.status},FALSE,
 `,
     [BatchSettingTypes.IoTDB]: `Timestamp,Measurement,Data Type,Value,Remarks (Optional)
-now,temp,FLOAT,\${payload.temp},"${t('iotdbTemplateRemark')}"
-now,hum,FLOAT,\${payload.hum},
-now,status,BOOLEAN,\${payload.status},
-now,clientid,TEXT,\${clientid},
+now,temp,float,\${payload.temp},"${t('iotdbTemplateRemark')}"
+now,hum,float,\${payload.hum},
+now,status,boolean,\${payload.status},
+now,clientid,text,\${clientid},
 `,
     [BatchSettingTypes.InfluxDB]: `Field,Value,Remarks (Optional)
 temp,\${payload.temp},
@@ -118,7 +118,7 @@ precip,\${payload.precip}i,"${t('datalayersTemplateRemark')}"
   const processIoTDBData = (data: string[][]): Promise<Array<Record<string, any>>> => {
     return new Promise((resolve, reject) => {
       try {
-        const validDataTypes = ['BOOLEAN', 'INT32', 'INT64', 'FLOAT', 'DOUBLE', 'TEXT']
+        const validDataTypes = ['boolean', 'int32', 'int64', 'float', 'double', 'text']
 
         const result = data
           .slice(1)
