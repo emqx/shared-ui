@@ -317,7 +317,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     timestamp:
       "支持使用 ${'{'}var{'}'} 格式的占位符，要求是时间戳格式。也可以使用以下特殊字符插入系统时间：<br/>- `now`: 当前毫秒级时间戳<br/>- `now_ms`: 当前毫秒级时间戳<br/>- `now_us`: 当前微秒级时间戳<br/>- `now_ns`: 当前纳秒级时间戳",
     measurement: "也称 Measurement，支持使用 ${'{'}var{'}'} 格式的占位符。",
-    data_type: "数据类型，支持使用 ${'{'}var{'}'} 格式的占位符。",
+    data_type: '插入值的数据类型。支持的类型：boolean、int32、int64、float、double、text。',
     value: "要插入的值，支持使用 ${'{'}var{'}'} 格式的占位符。",
     device_id:
       '应插入此数据的固定设备名称。如果为空，则必须在规则操作中设置，消息本身中设置，或从主题中提取。',
