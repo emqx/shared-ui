@@ -350,7 +350,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     timestamp:
       "Supports the use of ${'{'}var{'}'} format as a placeholder, which should be in timestamp format. You can also use the following special characters to insert system time:<br/>- `now`: Current millisecond-level timestamp<br/>- `now_ms`: Current millisecond-level timestamp<br/>- `now_us`: Current microsecond-level timestamp<br/>- `now_ns`: Current nanosecond-level timestamp",
     measurement: "Supports the use of ${'{'}var{'}'} format as a placeholder.",
-    data_type: "Data Type, supports the use of ${'{'}var{'}'} format as a placeholder.",
+    data_type:
+      'The data type for the value. Supported types: boolean, int32, int64, float, double, text.',
     value: "The value to be inserted, supports the use of ${'{'}var{'}'} format as a placeholder.",
     device_id:
       'A fixed device name this data should be inserted for. If empty it must either be set in the rule action, the message itself, or it will be extracted from the topic.',
