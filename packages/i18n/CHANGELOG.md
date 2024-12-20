@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.35
+
+### Patch Changes
+
+- Update IoTDB Data Type desc
+
 ## 0.0.34
 
 ### Patch Changes
