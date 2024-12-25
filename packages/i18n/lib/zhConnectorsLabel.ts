@@ -101,6 +101,9 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     keepalive: 'Keepalive',
     retry_interval: '消息重发间隔',
     max_inflight: '飞行窗口',
+    static_clientids: '静态客户端 ID 映射表',
+    node: '节点名称',
+    ids: '客户端 ID 列表',
   },
   cassandra: {
     keyspace: 'Keyspace',

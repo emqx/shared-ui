@@ -101,6 +101,9 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     keepalive: 'Keepalive',
     retry_interval: 'Message Retry Interval',
     max_inflight: 'Max Inflight',
+    static_clientids: 'Static ClientId Entries',
+    node: 'EMQX Node',
+    ids: 'Static Client IDs',
   },
   cassandra: {
     keyspace: 'Keyspace',
