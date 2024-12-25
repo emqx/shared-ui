@@ -60,6 +60,10 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Message subscription topics support the use of + and # wildcards. When EMQX is running in cluster mode or the connector is configured with a connection pool, shared subscriptions must be used to avoid message duplication.',
     payload:
       "For example: ${'{'}payload{'}'}, ${'{'}clientid{'}'}, ${'{'}topic{'}'} , ${'{'}username{'}'}, etc. Use fields according to the action requirements of your business and forwards the message as it is if it is empty.Supports reading data using ${'{'}field{'}'} syntax.",
+    static_clientids:
+      'Entries mapping EMQX node names to static client IDs. If any entries are defined, then only EMQX nodes matching those entries will start MQTT clients with the corresponding clientids.',
+    node: 'EMQX node name, e.g.: <code>emqx@10.0.0.1</code>.',
+    ids: 'Array of static client IDs assigned to this node.',
   },
   http: {
     url: "The URL of the HTTP Connector.<br/>Template with variables is allowed in the path, but variables cannot be used in the host or port part.<br/>For example, `http://localhost:9901/${'{'}topic{'}'}` is allowed, but`http://${'{'}host{'}'}:9901/message` or `http://localhost:${'{'}port{'}'}/message`is not allowed.",
