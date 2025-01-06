@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.36
+
+### Patch Changes
+
+- Update static client ids
+
 ## 0.0.35
 
 ### Patch Changes
