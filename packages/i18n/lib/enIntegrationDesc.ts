@@ -33,7 +33,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     pool_type: 'The type of the pool. Can be one of `random`, `hash`.',
     max_retries: 'Max retry times if an error occurs when sending a request.',
     memory_overload_protection:
-      'Applicable when buffer mode is set to <code>memory</code><br/>EMQX will drop old buffered messages under high memory pressure. The high memory threshold is defined in config <code>sysmon.os.sysmem_high_watermark</code>. NOTE: This config only works on Linux.',
+      'This setting applies when the buffer mode is configured as <code>memory</code>. EMQX will automatically discard older buffered messages when it encounters high memory pressure. Note: This configuration is effective only on Linux systems.',
     disable_prepared_statements:
       'Disables the usage of prepared statements in the connections. Some endpoints, like PGBouncer or Supabase in Transaction mode, do not support session features such as prepared statements. For such connections, this option should be enabled.',
     health_check_topic: 'Topic name used exclusively for more accurate health checks.',
