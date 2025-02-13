@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.37
+
+### Patch Changes
+
+- Correct desc for `memory_overload_protection' in kafka
+
 ## 0.0.36
 
 ### Patch Changes
