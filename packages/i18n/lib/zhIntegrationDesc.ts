@@ -54,7 +54,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       "例如：${'{'}payload{'}'}, ${'{'}clientid{'}'}, ${'{'}topic{'}'}, ${'{'}username{'}'} 等。请根据使用动作的业务需求来选择字段，置空则原样转发消息。支持使用 ${'{'}field{'}'} 语法读取数据。",
     static_clientids:
       '配置 EMQX 节点与静态客户端 ID 的对应关系。当配置了映射关系后，只有在映射中指定的 EMQX 节点才会创建对应的 MQTT 客户端连接。',
-    node: 'EMQX 的节点名称，例如：<code>emqx@10.0.0.1</code>',
+    node: "EMQX 的节点名称，例如：<code>emqx{'@'}10.0.0.1</code>",
     ids: '指定给该节点的静态客户端 ID 列表',
   },
   http: {

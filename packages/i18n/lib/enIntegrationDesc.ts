@@ -62,7 +62,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       "For example: ${'{'}payload{'}'}, ${'{'}clientid{'}'}, ${'{'}topic{'}'} , ${'{'}username{'}'}, etc. Use fields according to the action requirements of your business and forwards the message as it is if it is empty.Supports reading data using ${'{'}field{'}'} syntax.",
     static_clientids:
       'Entries mapping EMQX node names to static client IDs. If any entries are defined, then only EMQX nodes matching those entries will start MQTT clients with the corresponding clientids.',
-    node: 'EMQX node name, e.g.: <code>emqx@10.0.0.1</code>.',
+    node: "EMQX node name, e.g.: <code>emqx{'@'}10.0.0.1</code>.",
     ids: 'Array of static client IDs assigned to this node.',
   },
   http: {
