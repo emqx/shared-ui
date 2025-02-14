@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.38
+
+### Patch Changes
+
+- New field in oracle connector
+
 ## 0.0.37
 
 ### Patch Changes
