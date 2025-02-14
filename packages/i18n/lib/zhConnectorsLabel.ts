@@ -145,6 +145,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   oracle: {
     sid: 'Oracle Database SID',
     service_name: 'Oracle 数据库服务名称',
+    role: '角色',
   },
   rabbitmq: {
     port: '端口',

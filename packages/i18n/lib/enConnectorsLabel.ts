@@ -145,6 +145,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   oracle: {
     sid: 'Oracle Database SID',
     service_name: 'Oracle Database Service Name',
+    role: 'Role',
   },
   rabbitmq: {
     port: 'Port',
