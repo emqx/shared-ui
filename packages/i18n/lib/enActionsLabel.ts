@@ -218,6 +218,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     proxy: 'Proxy',
     host: 'Proxy Host',
     port: 'Proxy Port',
+    max_inactive: 'Max Inactive',
   },
   tablestore: {
     storage_model_type: 'Storage Model Type',
