@@ -195,4 +195,9 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     instance_name: '实例名称',
     storage_model_type: '存储模型类型',
   },
+  disk_log: {
+    filepath: '日志文件路径',
+    max_file_size: '最大文件大小',
+    max_file_number: '最大文件数量',
+  },
 }

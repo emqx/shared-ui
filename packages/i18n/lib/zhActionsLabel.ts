@@ -232,4 +232,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     isint: '是否为整数',
     isbinary: '是否为二进制',
   },
+  disk_log: {
+    write_mode: '写入模式',
+  },
 }

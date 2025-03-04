@@ -394,7 +394,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '客户端在刷新 Azure Event Hubs Kafka 代理和主题元数据之前必须等待的最小时间间隔。设置太小的值可能会对 Azure Event Hubs 造成额外的负载。',
     metadata_request_timeout: '从 Azure Event Hubs 获取元数据时的最大等待时间。',
     password:
-      '用于连接到 Azure Event Hubs 的连接字符串。应为命名空间共享访问策略的 “连接字符串 - 主键”。',
+      '用于连接到 Azure Event Hubs 的连接字符串。应为命名空间共享访问策略的 "连接字符串 - 主键"。',
     topic: '事件中心名称',
     max_batch_bytes:
       '在 Azure Event Hubs 消息批次中收集的最大字节数。大多数 Azure Event Hubs 代理的默认限制为 1 MB 批次大小。EMQX 的默认值小于 1 MB，以补偿 Azure Event Hubs 消息编码开销（特别是当每个单独消息非常小时）。当单个消息超过限制时，仍然会发送（作为单个元素批次）。',
@@ -501,5 +501,15 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
   tablestore: {
     isint: '是否尝试将数值写为整数。默认为 false，表示将整数写为浮点数。',
     isbinary: '是否尝试将二进制值写为二进制类型。默认为 false，表示将二进制值写为字符串。',
+  },
+  disk_log: {
+    filepath:
+      '日志文件的基础路径。实际日志文件将采用 `filepath.N` 格式，其中 `N` 是 `1..max_file_number` 范围内的值。当前使用的文件可通过查找最近修改日期的文件来确定。注意，包含该文件的目录也必须对 EMQX 应用程序用户可写，因为目录中还会包含内部使用的额外文件（以 `.siz` 和 `.idx` 为后缀）。',
+    max_file_size:
+      '当前活动日志文件的最大大小。每个日志文件至少会写入一条记录，因此如果单条日志记录超过此值，最终文件大小可能会超过此最大值。',
+    max_file_number:
+      '要使用的最大日志文件数量。一旦达到最大文件数量且需要新的轮转时，最旧的文件将被截断并用作新的当前文件。',
+    write_mode: '同步或异步写入日志到磁盘。',
+    template: '写入的 JSON 对象的内容。支持模板。',
   },
 }
