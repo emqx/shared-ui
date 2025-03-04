@@ -424,6 +424,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     segment_bytes:
       'Applicable when buffer mode is set to <code>disk</code> or <code>hybrid</code>.<br/>This value is to specify the size of each on-disk buffer file.',
     authentication_jwt: 'JWT authentication token.',
+    max_inflight:
+      'The maximum number of message batches that the producer can send to each partition before it must wait for a receipt.<br/>Setting a higher number can enhance throughput.',
   },
   azure_event_hub_producer: {
     bootstrap_hosts:
