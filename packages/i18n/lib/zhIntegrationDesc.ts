@@ -383,6 +383,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     segment_bytes:
       '当缓存模式是 <code>disk</code> 或 <code>hybrid</code> 时适用。该配置用于指定缓存到磁盘上的文件的大小。',
     authentication_jwt: 'JWT 认证令牌。',
+    max_inflight:
+      '生产者在等待接收回执前可以发送给每个分区的最大消息批次数量。<br/>设置更高的值可以提高吞吐量。',
   },
   azure_event_hub_producer: {
     bootstrap_hosts:
