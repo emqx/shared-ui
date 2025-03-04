@@ -195,4 +195,9 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     instance_name: 'Instance Name',
     storage_model_type: 'Storage Model Type',
   },
+  disk_log: {
+    filepath: 'Log Filepath',
+    max_file_size: 'Maximum File Size',
+    max_file_number: 'Maximum Number of Files',
+  },
 }

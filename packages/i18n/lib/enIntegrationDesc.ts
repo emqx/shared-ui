@@ -557,4 +557,14 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     isbinary:
       'Whether try to write binary values as binary type. Defaults to false, means that write binary values as strings.',
   },
+  disk_log: {
+    filepath:
+      "Base file path to the log file to be written to.  Actual log files will have the format `filepath.N`, where `N` is `1..max_file_number`.  The currently used file can be found by taking the file with the most recent modification date.  Note that the directory containing it must also be writable by the EMQX application user, as it'll also contain extra files for internal use (ending in `.siz` and `.idx`).",
+    max_file_size:
+      'Maximum size for the currently active log file.  At least one entry is written to each log, so the final file size may exceed this maximum if a single log entry exceeds this value.',
+    max_file_number:
+      'Maximum number of log files to be used.  Once the maximum number of files is reached and a new rotation is required, the oldest such file is truncated and used as the new current file.',
+    write_mode: 'Whether to write logs synchronously or asynchronously to disk.',
+    template: 'Content of the JSON object to be written. Supports templates.',
+  },
 }

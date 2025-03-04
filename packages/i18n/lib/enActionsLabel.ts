@@ -232,4 +232,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     isint: 'Is Int',
     isbinary: 'Is Binary',
   },
+  disk_log: {
+    write_mode: 'Write Mode',
+  },
 }
