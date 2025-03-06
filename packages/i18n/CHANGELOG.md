@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.39
+
+### Patch Changes
+
+- Some new fields in connector and action
+
 ## 0.0.38
 
 ### Patch Changes
