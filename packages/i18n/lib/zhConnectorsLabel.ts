@@ -29,6 +29,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     disable_prepared_statements: '禁用预处理语句',
     health_check_topic: '健康检查主题',
     max_inactive: '最大空闲时间',
+    token: 'Token',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -80,7 +81,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     parameters: 'InfluxDB 版本',
     bucket: 'Bucket',
     org: '组织',
-    token: 'Token',
   },
   iotdb: {
     base_url: 'IoTDB REST 服务基础 URL',
