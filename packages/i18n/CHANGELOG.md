@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.40
+
+### Patch Changes
+
+- New config in TDEngine connector
+
 ## 0.0.39
 
 ### Patch Changes
