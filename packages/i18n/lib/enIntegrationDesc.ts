@@ -337,7 +337,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
   },
   tdengine: {
     server:
-      'The IPv4 or IPv6 address or the hostname to connect to.<br/>A host entry has the following form: `Host[:Port]`.<br/>The TDengine default port 6041 is used if `[:Port]` is not specified.',
+      'The IPv4 or IPv6 address or the hostname to connect to.<br/>A host entry has the following form: `[http[s]://]Host[:Port]`.<br/>The TDengine default port 6041 is used if `[:Port]` is not specified.',
     sql: 'SQL Template',
     token:
       'The token used when connecting to TDengine Cloud. <br/>If this value is provided, it will override the authentication method of Username and Password.',
