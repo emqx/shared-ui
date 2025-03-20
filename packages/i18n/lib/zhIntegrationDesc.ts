@@ -304,7 +304,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
   },
   tdengine: {
     server:
-      '将要连接的 IPv4 或 IPv6 地址，或者主机名。<br/>主机名具有以下形式：`Host[:Port]`。<br/>如果未指定 `[:Port]`，则使用 TDengine 默认端口 6041。',
+      '将要连接的 IPv4 或 IPv6 地址，或者主机名。<br/>主机名具有以下形式：`[http[s]://]Host[:Port]`。<br/>如果未指定 `[:Port]`，则使用 TDengine 默认端口 6041。',
     sql: 'SQL 模板',
     token:
       '连接到 TDengine Cloud 时使用的令牌。<br/>如果提供了令牌，它将覆盖用户名和密码的认证方式。',
