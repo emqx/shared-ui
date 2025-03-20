@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.41
+
+### Patch Changes
+
+- Update server connection format in TDEngine descriptions
+
 ## 0.0.40
 
 ### Patch Changes
