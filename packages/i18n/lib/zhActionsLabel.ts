@@ -40,6 +40,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     max_linger_time: '最大延迟时间',
     max_linger_bytes: '最大延迟字节数',
     undefined_vars_as_null: '未定义变量作为 NULL',
+    fallback_actions: '失败备选动作',
   },
   kafka_producer: {
     timestamp: '消息的时间戳',

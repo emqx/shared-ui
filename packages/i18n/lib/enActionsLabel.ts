@@ -40,6 +40,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     max_linger_time: 'Max Linger Time',
     max_linger_bytes: 'Max Linger Bytes',
     undefined_vars_as_null: 'Undefined Vars As Null',
+    fallback_actions: 'Fallback Actions',
   },
   kafka_producer: {
     timestamp: 'Message Timestamp',
