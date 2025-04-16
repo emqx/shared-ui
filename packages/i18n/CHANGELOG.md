@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.42
+
+### Patch Changes
+
+- New field `fallback_actions`
+
 ## 0.0.41
 
 ### Patch Changes
