@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.43
+
+### Patch Changes
+
+- Some new fields in Azure Blob Storage
+
 ## 0.0.42
 
 ### Patch Changes
