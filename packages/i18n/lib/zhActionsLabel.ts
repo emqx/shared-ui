@@ -195,6 +195,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     type: '增强类型',
     min_part_size: '最小分块大小',
     max_part_size: '最大分块大小',
+    container: '聚合上传文件格式',
   },
   azure_blob_storage: {
     parameters: '上传方式',
@@ -202,6 +203,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     type: '增强类型',
     blob: 'Blob 名称',
     container: '容器名称',
+    parameters_aggregation_container: '聚合上传文件格式',
   },
   dynamo: {
     table: '表',
