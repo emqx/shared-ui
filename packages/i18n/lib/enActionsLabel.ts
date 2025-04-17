@@ -195,6 +195,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     type: 'Aggregation Type',
     min_part_size: 'Min Part Size',
     max_part_size: 'Max Part Size',
+    container: 'Aggregation Upload Format',
   },
   azure_blob_storage: {
     parameters: 'Upload Mode',
@@ -202,6 +203,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     type: 'Aggregation Type',
     blob: 'Blob Name',
     container: 'Container',
+    parameters_aggregation_container: 'Aggregation Upload Format',
   },
   dynamo: {
     table: 'Table',

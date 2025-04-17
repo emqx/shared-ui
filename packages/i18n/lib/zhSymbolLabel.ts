@@ -59,4 +59,8 @@ export const zhSymbolLabel: Record<string, string> = {
   v4: 'v4(3.1.1)',
   v5: 'v5(5.0)',
   timeseries: '时序',
+  parameters_aggregation_container_container_json_lines: 'JSON Lines',
+  parameters_container_container_json_lines: 'JSON Lines',
+  parameters_aggregation_container_container_csv: 'CSV',
+  parameters_container_container_csv: 'CSV',
 }
