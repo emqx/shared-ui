@@ -554,6 +554,10 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     pipe_user:
       'A username which has a role with permissions over the Pipe to be used. The minimum permissions are `operate` and `monitor`.',
     proxy: 'Proxy configuration. Only HTTP proxies are currently supported (no HTTPS).',
+    private_key_path:
+      'Full file path to the private key to be used for the ODBC connection. This path must be the same on all nodes of the cluster.',
+    private_key_password:
+      'Password to decrypt the private key. Do not set this value if the private key is not encrypted.',
   },
   tablestore: {
     isint:

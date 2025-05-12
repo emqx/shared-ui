@@ -188,6 +188,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     proxy: 'Proxy',
     host: 'Proxy Host',
     port: 'Proxy Port',
+    private_key_path: 'Private Key Path',
+    private_key_password: 'Private Key Password',
   },
   tablestore: {
     endpoint: 'Endpoint',

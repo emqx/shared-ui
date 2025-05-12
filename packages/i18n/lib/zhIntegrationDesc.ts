@@ -500,6 +500,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     pipe: '用于将数据摄取到表中的 Pipe 名称。',
     pipe_user: '具有使用 Pipe 权限的角色的用户名。最低要求的权限是`operate`和`monitor`。',
     proxy: '代理配置。当前仅支持 HTTP 代理（不支持 HTTPS）。',
+    private_key_path: '用于 ODBC 连接的私钥的完整文件路径。此路径必须在集群的所有节点上保持一致。',
+    private_key_password: '用于解密私钥的密码。如果私钥未加密，请不要设置此值。',
   },
   tablestore: {
     isint: '是否尝试将数值写为整数。默认为 false，表示将整数写为浮点数。',
