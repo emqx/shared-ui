@@ -41,6 +41,8 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     max_linger_bytes: '最大延迟字节数',
     undefined_vars_as_null: '未定义变量作为 NULL',
     fallback_actions: '备选动作',
+    min_part_size: '最小分块大小',
+    max_part_size: '最大分块大小',
   },
   kafka_producer: {
     timestamp: '消息的时间戳',
@@ -193,8 +195,6 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     key: '对象键',
     parameters: '上传方式',
     type: '增强类型',
-    min_part_size: '最小分块大小',
-    max_part_size: '最大分块大小',
     container: '聚合上传文件格式',
   },
   azure_blob_storage: {
@@ -239,5 +239,9 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   },
   disk_log: {
     write_mode: '写入模式',
+  },
+  s3tables: {
+    namespace: '命名空间',
+    table: '表',
   },
 }

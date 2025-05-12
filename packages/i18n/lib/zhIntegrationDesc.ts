@@ -40,6 +40,9 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     undefined_vars_as_null:
       "在写入数据库时，将未定义的变量视为 NULL。<br/>当启用此选项时，如果在模板中使用未定义的变量（例如 `${'{'}var{'}'}`），它们将被替换为 `NULL`，而不是字符串 `undefined`。如果此选项未启用（默认为关闭），可能会插入字符串 `undefined`。<br/>如果可能，此选项应始终设置为 `true`；默认值 `false` 仅用于确保向后兼容性。",
     max_inactive: 'HTTP 驱动在无任何活动时，尝试重连前的最大等待时间。',
+    ipv6_probe: '是否探测 IPv6 支持。',
+    min_part_size: `分块上传的最小分块大小。<br/>上传的数据将在内存中累积，直到达到此大小。`,
+    max_part_size: `分块上传的最大分块大小。<br/>S3 上传程序不会尝试上传超过此大小的部分。`,
   },
   mqtt: {
     bridge_mode:
@@ -472,7 +475,6 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '尝试更新的文档不存在时，将更新操作当作一个插入操作，并将提供的文档当作新文档插入。',
   },
   s3: {
-    ipv6_probe: '是否探测 IPv6 支持。',
     acl: '上传的对象的访问权限。',
     content:
       "要存储的对象的内容。默认情况下，它是包含所有字段的 JSON 文本格式。支持如 ${'{'}payload{'}'} 的占位符设置。存储格式取决于变量的格式，支持二进制内容。",
@@ -480,8 +482,6 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     key: "要存储的对象的键。支持如 ${'{'}var{'}'} 的占位符设置。",
     column_order: `在生成的 CSV 文件中首先按列排序的事件字段。<br/>无论此设置如何，生成的 CSV 都将包含聚合事件的所有字段，但此处未明确提及的所有列将按字典顺序排在这里列出的字段之后。`,
     time_interval: '在上传前将事件聚合到单个对象中的时间量。',
-    min_part_size: `分块上传的最小分块大小。<br/>上传的数据将在内存中累积，直到达到此大小。`,
-    max_part_size: `分块上传的最大分块大小。<br/>S3 上传程序不会尝试上传超过此大小的部分。`,
   },
   azure_blob_storage: {
     column_order: `在生成的 CSV 文件中首先按列排序的事件字段。<br/>无论此设置如何，生成的 CSV 都将包含聚合事件的所有字段，但此处未明确提及的所有列将按字典顺序排在这里列出的字段之后。`,

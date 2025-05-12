@@ -41,6 +41,8 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     max_linger_bytes: 'Max Linger Bytes',
     undefined_vars_as_null: 'Undefined Vars As Null',
     fallback_actions: 'Fallback Actions',
+    min_part_size: 'Min Part Size',
+    max_part_size: 'Max Part Size',
   },
   kafka_producer: {
     timestamp: 'Message Timestamp',
@@ -193,8 +195,6 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     key: 'Object Key',
     parameters: 'Upload Mode',
     type: 'Aggregation Type',
-    min_part_size: 'Min Part Size',
-    max_part_size: 'Max Part Size',
     container: 'Aggregation Upload Format',
   },
   azure_blob_storage: {
@@ -239,5 +239,9 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   },
   disk_log: {
     write_mode: 'Write Mode',
+  },
+  s3tables: {
+    namespace: 'Namespace',
+    table: 'Table',
   },
 }
