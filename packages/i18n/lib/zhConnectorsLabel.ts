@@ -30,6 +30,12 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     health_check_topic: '健康检查主题',
     max_inactive: '最大空闲时间',
     token: 'Token',
+    access_key_id: '访问密钥 ID',
+    secret_access_key: '访问密钥',
+    ipv6_probe: 'IPv6 探针',
+    headers: '请求头',
+    request_timeout: '请求超时',
+    access_method: '访问模式',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -166,14 +172,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     dbname: '数据库',
   },
   s3: {
-    access_key_id: '访问密钥 ID',
-    secret_access_key: '访问密钥',
     host: '地址',
     port: '端口',
-    ipv6_probe: 'IPv6 探针',
-    headers: '请求头',
-    request_timeout: '请求超时',
-    access_method: '访问模式',
   },
   azure_blob_storage: {
     account_name: '账户名称',
@@ -202,5 +202,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     filepath: '日志文件路径',
     max_file_size: '最大文件大小',
     max_file_number: '最大文件数量',
+  },
+  s3tables: {
+    s3tables_arn: '表资源名称（ARN）',
   },
 }

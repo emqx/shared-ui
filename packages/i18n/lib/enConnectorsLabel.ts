@@ -30,6 +30,12 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     health_check_topic: 'Health Check Topic',
     max_inactive: 'Max Inactive',
     token: 'Token',
+    access_key_id: 'Access Key ID',
+    secret_access_key: 'Secret Access Key',
+    access_method: 'Access Method',
+    request_timeout: 'Request Timeout',
+    ipv6_probe: 'IPv6 Probe',
+    headers: 'HTTP Headers',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -166,14 +172,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     dbname: 'Database',
   },
   s3: {
-    access_key_id: 'Access Key ID',
-    secret_access_key: 'Secret Access Key',
     host: 'Host',
     port: 'Port',
-    ipv6_probe: 'IPv6 Probe',
-    headers: 'HTTP Headers',
-    request_timeout: 'Request Timeout',
-    access_method: 'Access Method',
   },
   azure_blob_storage: {
     account_name: 'Account Name',
@@ -202,5 +202,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     filepath: 'Log Filepath',
     max_file_size: 'Maximum File Size',
     max_file_number: 'Maximum Number of Files',
+  },
+  s3tables: {
+    s3tables_arn: 'Table ARN',
   },
 }

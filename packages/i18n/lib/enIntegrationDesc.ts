@@ -46,6 +46,9 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       "When writing to databases, treat undefined variables as NULL.<br/>When this option is enabled, if undefined variables (like `${'{'}var{'}'}`) are used in templates, they will be replaced with `NULL` instead of the string `undefined`. If this option is not enabled (default), the string `undefined` might be inserted.<br/>This option should always be `true` if possible; the default value `false` is only to ensure backward compatibility.",
     max_inactive:
       'Maximum amount of time without any activity that the HTTP driver will wait before attempting to reconnect.',
+    ipv6_probe: 'Whether to probe for IPv6 support.',
+    min_part_size: `The minimum part size for multipart uploads.<br/>Uploaded data will be accumulated in memory until this size is reached.`,
+    max_part_size: `The maximum part size for multipart uploads.<br/>S3 uploader won't try to upload parts larger than this size.`,
   },
   mqtt: {
     bridge_mode:
@@ -526,7 +529,6 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Treat the update operation as an insert operation when the document to be updated does not exist, and insert the provided document as a new document.',
   },
   s3: {
-    ipv6_probe: 'Whether to probe for IPv6 support.',
     acl: 'The Access Control List (ACL) to use for the uploaded objects.',
     content: 'The content of the object to be uploaded supports placeholders.',
     bucket:
@@ -534,8 +536,6 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     key: "The content of the object to be stored. By default, it is in JSON text format containing all fields. Supports placeholder settings such as ${'{'}payload{'}'}. The storage format depends on the format of the variable and can be stored in binary format.",
     column_order: `Event fields that will be ordered first as columns in the resulting CSV file.<br/>Regardless of this setting, resulting CSV will contain all the fields of aggregated events, but all the columns not explicitly mentioned here will be ordered after the ones listed here in the lexicographical order.`,
     time_interval: 'Amount of time events will be aggregated in a single object before uploading.',
-    min_part_size: `The minimum part size for multipart uploads.<br/>Uploaded data will be accumulated in memory until this size is reached.`,
-    max_part_size: `The maximum part size for multipart uploads.<br/>S3 uploader won't try to upload parts larger than this size.`,
   },
   azure_blob_storage: {
     column_order: `Event fields that will be ordered first as columns in the resulting CSV file.<br/>Regardless of this setting, resulting CSV will contain all the fields of aggregated events, but all the columns not explicitly mentioned here will be ordered after the ones listed here in the lexicographical order.`,
