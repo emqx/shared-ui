@@ -188,6 +188,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     proxy: '代理',
     host: '代理主机',
     port: '代理端口',
+    private_key_path: '私钥路径',
+    private_key_password: '私钥密码',
   },
   tablestore: {
     endpoint: '端点',

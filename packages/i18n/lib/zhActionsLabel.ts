@@ -222,6 +222,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     host: '代理主机',
     port: '代理端口',
     max_inactive: '最大空闲时间',
+    private_key_password: '私钥密码',
   },
   tablestore: {
     storage_model_type: '存储模型类型',
