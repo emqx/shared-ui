@@ -517,4 +517,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     write_mode: '同步或异步写入日志到磁盘。',
     template: '写入的 JSON 对象的内容。支持模板。',
   },
+  s3tables: {
+    s_3_client_transport_options_request_timeout:
+      '向 S3 服务发起单次 HTTP 请求的最大等待时间，超时后会重试或失败。',
+  },
 }

@@ -575,4 +575,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     write_mode: 'Whether to write logs synchronously or asynchronously to disk.',
     template: 'Content of the JSON object to be written. Supports templates.',
   },
+  s3tables: {
+    s_3_client_transport_options_request_timeout: '单次请求超时时间',
+  },
 }

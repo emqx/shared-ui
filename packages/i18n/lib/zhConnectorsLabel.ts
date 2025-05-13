@@ -205,5 +205,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   },
   s3tables: {
     s3tables_arn: '表资源名称（ARN）',
+    s_3_client_transport_options_request_timeout: '单次请求超时时间',
   },
 }

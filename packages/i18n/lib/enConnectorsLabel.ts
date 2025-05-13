@@ -205,5 +205,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   s3tables: {
     s3tables_arn: 'Table ARN',
+    s_3_client_transport_options_request_timeout:
+      'The maximum time allowed for a single HTTP request to the S3 service. If exceeded, the request will be retried or fail.',
   },
 }
