@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.44
+
+### Patch Changes
+
+- New action type s3 tables
+
 ## 0.0.43
 
 ### Patch Changes
