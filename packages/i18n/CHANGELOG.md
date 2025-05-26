@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.45
+
+### Patch Changes
+
+- Correct some text in S3Tables
+
 ## 0.0.44
 
 ### Patch Changes
