@@ -576,6 +576,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     template: 'Content of the JSON object to be written. Supports templates.',
   },
   s3tables: {
-    s_3_client_transport_options_request_timeout: '单次请求超时时间',
+    s_3_client_transport_options_request_timeout:
+      'The maximum time allowed for a single HTTP request to the S3 service. If exceeded, the request will be retried or fail.',
   },
 }
