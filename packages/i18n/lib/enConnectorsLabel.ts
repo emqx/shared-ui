@@ -15,6 +15,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     server: 'Server Host',
     database: 'Database Name',
     health_check_interval: 'Health Check Interval',
+    health_check_timeout: 'Health Check Timeout',
     start_timeout: 'Start Timeout',
     max_retries: 'Max Retries',
     worker_pool_size: 'Buffer Pool Size',

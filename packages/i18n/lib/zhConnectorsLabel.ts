@@ -15,6 +15,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     server: '服务器地址',
     database: '数据库名字',
     health_check_interval: '健康检查间隔',
+    health_check_timeout: '健康检查超时',
     start_timeout: '启动超时时间',
     max_retries: '最大重试次数',
     worker_pool_size: '缓存池大小',
