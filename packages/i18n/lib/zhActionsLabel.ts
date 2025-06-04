@@ -1,6 +1,7 @@
 export const zhActionsLabel: Record<string, Record<string, string>> = {
   common: {
     health_check_interval: '健康检查间隔',
+    health_check_timeout: '健康检查超时',
     query_mode: '请求模式',
     max_retries: '最大重试次数',
     worker_pool_size: '缓存池大小',

@@ -1,6 +1,7 @@
 export const enActionsLabel: Record<string, Record<string, string>> = {
   common: {
     health_check_interval: 'Health Check Interval',
+    health_check_timeout: 'Health Check Timeout',
     query_mode: 'Query Mode',
     max_retries: 'Max Retries',
     worker_pool_size: 'Buffer Pool Size',
