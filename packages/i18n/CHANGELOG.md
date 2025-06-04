@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.46
+
+### Patch Changes
+
+- New resource options in connector
+
 ## 0.0.45
 
 ### Patch Changes
