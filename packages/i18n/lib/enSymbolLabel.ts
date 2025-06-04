@@ -63,4 +63,5 @@ export const enSymbolLabel: Record<string, string> = {
   parameters_container_container_json_lines: 'JSON Lines',
   parameters_aggregation_container_container_csv: 'CSV',
   parameters_container_container_csv: 'CSV',
+  authentication_msk_iam: 'AWS IAM for MSK',
 }
