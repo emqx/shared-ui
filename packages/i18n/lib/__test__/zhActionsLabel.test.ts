@@ -1,4 +1,4 @@
-import { zhActionsLabel } from '../zhActionsLabel'
+import { zhActionsLabel } from '../zh/actionsLabel'
 import { describe, it, expect } from 'vitest'
 
 describe('zhActionsLabel', () => {

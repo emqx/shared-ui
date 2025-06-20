@@ -1,4 +1,4 @@
-import { zhConnectorsLabel } from '../zhConnectorsLabel'
+import { zhConnectorsLabel } from '../zh/connectorsLabel'
 import { describe, it, expect } from 'vitest'
 
 describe('zhConnectorsLabel', () => {

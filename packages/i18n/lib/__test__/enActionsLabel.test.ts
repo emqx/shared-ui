@@ -1,4 +1,4 @@
-import { enActionsLabel } from '../enActionsLabel'
+import { enActionsLabel } from '../en/actionsLabel'
 import { describe, it, expect } from 'vitest'
 
 describe('enActionsLabel', () => {

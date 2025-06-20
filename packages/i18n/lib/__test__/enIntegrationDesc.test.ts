@@ -1,4 +1,4 @@
-import { enIntegrationDesc } from '../enIntegrationDesc'
+import { enIntegrationDesc } from '../en/integrationDesc'
 import { describe, it, expect } from 'vitest'
 
 describe('enIntegrationDesc', () => {

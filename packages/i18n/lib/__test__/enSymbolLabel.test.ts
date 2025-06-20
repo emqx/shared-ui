@@ -1,4 +1,4 @@
-import { enSymbolLabel } from '../enSymbolLabel'
+import { enSymbolLabel } from '../en/symbolLabel'
 import { describe, it, expect } from 'vitest'
 
 describe('enSymbolLabel', () => {

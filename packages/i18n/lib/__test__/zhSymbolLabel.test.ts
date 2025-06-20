@@ -1,4 +1,4 @@
-import { zhSymbolLabel } from '../zhSymbolLabel'
+import { zhSymbolLabel } from '../zh/symbolLabel'
 import { describe, it, expect } from 'vitest'
 
 describe('zhSymbolLabel', () => {
