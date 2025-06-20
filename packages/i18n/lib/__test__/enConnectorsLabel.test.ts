@@ -1,4 +1,4 @@
-import { enConnectorsLabel } from '../enConnectorsLabel'
+import { enConnectorsLabel } from '../en/connectorsLabel'
 import { describe, it, expect } from 'vitest'
 
 describe('enConnectorsLabel', () => {

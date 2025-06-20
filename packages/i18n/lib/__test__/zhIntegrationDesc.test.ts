@@ -1,4 +1,4 @@
-import { zhIntegrationDesc } from '../zhIntegrationDesc'
+import { zhIntegrationDesc } from '../zh/integrationDesc'
 import { describe, it, expect } from 'vitest'
 
 describe('zhIntegrationDesc', () => {
