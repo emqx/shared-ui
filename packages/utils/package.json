@@ -39,6 +39,7 @@
     "@emqx/shared-ui-i18n": "link:../i18n",
     "json-bigint": "^1.0.0",
     "papaparse": "^5.4.1",
+    "vue": "^3.2.0",
     "vue-i18n": "^9.10.2"
   },
   "devDependencies": {
