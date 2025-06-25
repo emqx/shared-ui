@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.47
+
+### Patch Changes
+
+- add i18n & component & hook for rule
+
 ## 0.0.46
 
 ### Patch Changes

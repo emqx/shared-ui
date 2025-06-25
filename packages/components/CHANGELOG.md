@@ -1,5 +1,13 @@
 # @emqx/shared-ui-components
 
+## 0.0.5
+
+### Patch Changes
+
+- add i18n & component & hook for rule
+- Updated dependencies
+  - @emqx/shared-ui-utils@0.0.17
+
 ## 0.0.4
 
 ### Patch Changes
