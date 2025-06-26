@@ -1,5 +1,13 @@
 # @emqx/shared-ui-components
 
+## 0.0.6
+
+### Patch Changes
+
+- fix SQLGenerator component and add ruleSQL ja translations
+- Updated dependencies
+  - @emqx/shared-ui-utils@0.0.18
+
 ## 0.0.5
 
 ### Patch Changes
