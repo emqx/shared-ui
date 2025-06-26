@@ -32,6 +32,7 @@ const {
   isResponseConfirm,
   isErrorMessage,
   isRequestPermission,
+  isCancelledMessage,
   getStatusLabel,
   funcCallLabel,
 } = useDisplayAIResponse()
@@ -154,16 +155,17 @@ const isMessageUnderUserConfirm = (index: number) => {
             class="flex items-center mb-2 select-none cursor-pointer"
             @click="toggleExpanded($index)"
           >
-            <p class="mr-1">{{ funcCallLabel }}({{ item.type }})</p>
+            <p class="mr-1">
+              {{ funcCallLabel }}
+              <span class="text-text-secondary" v-if="item?.object?.tool_name">
+                ({{ t('Base.funcName') }}: {{ item?.object?.tool_name }})
+              </span>
+            </p>
             <el-icon :class="{ '-rotate-90': !isExpanded($index) }">
               <ArrowDown />
             </el-icon>
           </div>
           <div v-if="isExpanded($index)">
-            <div>
-              <p class="mb-1 text-text-secondary">{{ t('aiLog.funcName') }}</p>
-              <GrayContent :code="item?.object?.tool_name" />
-            </div>
             <div>
               <p class="mb-1 text-text-secondary">{{ t('aiLog.funcArgs') }}</p>
               <GrayContent :code="item?.object?.tool_kwargs" />
@@ -202,6 +204,13 @@ const isMessageUnderUserConfirm = (index: number) => {
           <slot :message="item.message"></slot>
         </template>
       </div>
+      <!-- CANCELLED -->
+      <GrayContent v-if="isCancelledMessage(item)">
+        <div class="flex items-center gap-3">
+          <el-icon class="text-text-tip" :size="16"><CircleCloseFilled /></el-icon>
+          <span>{{ t('Base.userCancelled') }}</span>
+        </div>
+      </GrayContent>
       <!-- RESPONSE CONFIRM -->
       <UserOperationContainer v-else-if="isResponseConfirm(item)">
         <p>{{ t('aiLog.responseConfirm') }}</p>

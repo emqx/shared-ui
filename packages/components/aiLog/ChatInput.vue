@@ -41,7 +41,9 @@ const stopResponse = () => {
           resize="none"
         />
       </div>
-      <div class="absolute right-0 bottom-0 flex justify-between w-full pb-3 px-3">
+      <div
+        class="chat-input-ft absolute left-px bottom-px flex justify-between bg-white rounded-bl-card rounded-br-card py-2 px-3"
+      >
         <el-button link @click="openMCPServersDrawer">
           <el-icon :size="28"><Setting /></el-icon>
         </el-button>
@@ -66,6 +68,9 @@ const stopResponse = () => {
     border-radius: var(--border-radius-card);
     border-color: var(--color-border-input);
     padding: 16px 16px 32px;
+  }
+  .chat-input-ft {
+    width: calc(100% - 10px);
   }
 }
 </style>

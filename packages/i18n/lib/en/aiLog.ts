@@ -44,4 +44,5 @@ export const enAiLog = {
   allowOnce: 'Allow Once',
   allowAlways: 'Allow Always',
   reportGenerationCompleted: 'Report generation completed.',
+  userCancelled: 'User cancelled the operation.',
 }
