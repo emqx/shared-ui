@@ -30,7 +30,7 @@ const useDisplayAIResponse = () => {
   const { t } = useAILogLocale()
   const getStatusLabel = (status: MessageStatus) => {
     const key = camelCase(status)
-    return t(`Base.${key}`)
+    return t(`aiLog.${key}`)
   }
 
   const funcCallLabel = t('aiLog.funcCall')
