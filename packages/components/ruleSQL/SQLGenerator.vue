@@ -61,7 +61,7 @@
         </el-form>
       </div>
       <div v-else-if="currentStep === 2">
-        <slot name="resultHeader"></slot>
+        <slot name="resultHeader" v-bind="{ generatedSQL }"></slot>
         <component
           :is="monacoComponent"
           :id="generatedSQLMonacoId"
@@ -90,6 +90,7 @@
 </template>
 
 <script lang="ts" setup>
+import { ElButton, ElDialog, ElForm, ElFormItem, ElInput } from 'element-plus'
 import { useLocale } from '@emqx/shared-ui-utils'
 import type { FormInstance, FormRules } from 'element-plus'
 import { type Component, reactive, ref } from 'vue'

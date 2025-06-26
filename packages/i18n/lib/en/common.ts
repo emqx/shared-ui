@@ -3,4 +3,7 @@ export const enCommon = {
   topic: 'Topic',
   username: 'Username',
   password: 'Password',
+  cancel: 'Cancel',
+  back: 'Back',
+  generate: 'Generate',
 }
