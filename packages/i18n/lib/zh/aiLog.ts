@@ -41,6 +41,7 @@ export const zhAiLog = {
   permissionRequest: '工具 "{tool}" 需要权限访问系统资源。',
   deny: '拒绝',
   allowOnce: '允许一次',
-  allowAlways: '允许始终',
+  allowAlways: '始终允许',
   reportGenerationCompleted: '报告生成完成。',
+  userCancelled: '用户取消操作。',
 }
