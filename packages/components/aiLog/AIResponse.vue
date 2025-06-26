@@ -4,6 +4,7 @@ import { computed, ref } from 'vue'
 import { useAILogLocale } from './composables/useAILogLocale'
 import useDisplayAIResponse from './composables/useDisplayAIResponse'
 import GrayContent from './GrayContent.vue'
+import StepDecoration from './StepDecoration.vue'
 import type {
   AIResponseItem,
   AIResponseRequestPermission,
@@ -35,7 +36,6 @@ const {
   funcCallLabel,
 } = useDisplayAIResponse()
 
-// 使用 AI Log 专用的 locale composable
 const { t } = useAILogLocale()
 
 const confirmResponse = (index: number, v: UserConfirmation) => {
