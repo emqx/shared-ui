@@ -6,4 +6,5 @@ export const jaCommon = {
   cancel: 'キャンセル',
   back: '戻り',
   generate: '生成',
+  field: 'フィールド',
 }

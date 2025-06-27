@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import RuleFunc from './ruleFunc.json'
+import { RuleFuncList, ArgumentType } from '@emqx/shared-ui-constants'
 import { useLocale } from '../useLocale'
 import type { ComputedRef, WritableComputedRef } from 'vue'
 
@@ -11,18 +11,6 @@ export interface FunctionItem {
     args: Array<string | number>
   }
   alias: string
-}
-
-export const enum ArgumentType {
-  Number = 'number',
-  Any = 'any',
-  Float = 'float',
-  Integer = 'integer',
-  String = 'string',
-  Enum = 'enum',
-  Object = 'object',
-  Array = 'array',
-  Binary = 'binary',
 }
 
 export interface ArgItem {
@@ -47,6 +35,16 @@ export interface FuncItem {
   args: Array<ArgItem>
 }
 
+export interface FunctionItem {
+  id: string
+  field: string
+  func: {
+    name: string
+    args: Array<string | number>
+  }
+  alias: string
+}
+
 interface GroupFuncData {
   groupLabel: string
   name: string
@@ -55,9 +53,9 @@ interface GroupFuncData {
 }
 
 type FuncData = Array<GroupFuncData>
-type FetchSuggestionsCallback = (result: Array<{ value: string }>) => void
+export type FetchSuggestionsCallback = (result: Array<{ value: string }>) => void
 
-const useRuleFunc = (
+export const useRuleFunc = (
   lang: string,
 ): {
   funcOptList: FuncData
@@ -67,7 +65,7 @@ const useRuleFunc = (
 } => {
   const { t } = useLocale(lang)
 
-  const funcOptList: FuncData = (RuleFunc as FuncData).map(({ groupLabel, list }) => ({
+  const funcOptList: FuncData = (RuleFuncList as FuncData).map(({ groupLabel, list }) => ({
     groupLabel,
     name: t(`ruleFunction.${groupLabel}`),
     value: groupLabel,
@@ -129,8 +127,6 @@ const useRuleFunc = (
     getArgIndex,
   }
 }
-
-export default useRuleFunc
 
 export const numberArgTypes = [ArgumentType.Number, ArgumentType.Float, ArgumentType.Integer]
 

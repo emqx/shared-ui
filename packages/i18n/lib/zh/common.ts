@@ -6,4 +6,5 @@ export const zhCommon = {
   cancel: '取消',
   back: '返回',
   generate: '生成',
+  field: '字段',
 }

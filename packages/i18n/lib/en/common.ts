@@ -6,4 +6,5 @@ export const enCommon = {
   cancel: 'Cancel',
   back: 'Back',
   generate: 'Generate',
+  field: 'Field',
 }

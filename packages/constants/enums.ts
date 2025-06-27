@@ -40,3 +40,20 @@ export enum StreamResourceType {
   Group = 'GROUP',
   Cluster = 'CLUSTER',
 }
+
+export enum FilterLogicalOperator {
+  And = 'and',
+  Or = 'or',
+}
+
+export enum ArgumentType {
+  Number = 'number',
+  Any = 'any',
+  Float = 'float',
+  Integer = 'integer',
+  String = 'string',
+  Enum = 'enum',
+  Object = 'object',
+  Array = 'array',
+  Binary = 'binary',
+}

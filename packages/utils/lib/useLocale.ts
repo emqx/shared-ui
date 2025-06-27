@@ -8,6 +8,9 @@ import {
   zhRuleSQL,
   enRuleSQL,
   jaRuleSQL,
+  zhRuleFunction,
+  enRuleFunction,
+  jaRuleFunction,
 } from '@emqx/shared-ui-i18n'
 import { createI18n } from 'vue-i18n'
 import type { ComposerTranslation } from 'vue-i18n'
@@ -21,16 +24,19 @@ export const useLocale = (locale: string): { t: ComposerTranslation } => {
         streaming: enStreaming,
         common: enCommon,
         ruleSQL: enRuleSQL,
+        ruleFunction: enRuleFunction,
       },
       zh: {
         streaming: zhStreaming,
         common: zhCommon,
         ruleSQL: zhRuleSQL,
+        ruleFunction: zhRuleFunction,
       },
       ja: {
         streaming: jaStreaming,
         common: jaCommon,
         ruleSQL: jaRuleSQL,
+        ruleFunction: jaRuleFunction,
       },
     },
   }).global
