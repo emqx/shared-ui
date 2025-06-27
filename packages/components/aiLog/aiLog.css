@@ -1,16 +1,13 @@
-/* EMQX Shared UI Components - Global Styles */
-
-/* CSS Custom Properties (CSS Variables) */
 :root {
   --shared-color-primary: #5e4eff;
   --shared-color-border-input: #d0d4dc;
   --shared-color-border-card: #e2e7ea;
   --shared-color-border-secondary-card: #b8b1ff;
-  --shared-color-text-normal: #343741;
   --shared-color-text-title: #1d1d1d;
   --shared-color-text-secondary: #707070;
   --shared-color-text-tip: #bac1cd;
   --shared-color-bg-gray-content: #bac1cd;
+  --shared-color-bg-primary-10: rgba(94, 78, 255, 0.1);
 
   --shared-radius-button: 4px;
   --shared-radius-card: 8px;
@@ -34,6 +31,10 @@
 
 .shared-text-tip {
   color: var(--shared-color-text-tip);
+}
+
+.shared-bg-primary-10 {
+  background-color: var(--shared-color-bg-primary-10);
 }
 
 .shared-bg-gray-content {

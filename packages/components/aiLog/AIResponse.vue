@@ -122,7 +122,7 @@ const isMessageUnderUserConfirm = (index: number) => {
       <div v-if="isStatusMessage(item)" class="flex gap-3">
         <StepDecoration />
         <div>
-          <p>{{ getStatusLabel(item.message) }}({{ item.message }})</p>
+          <p>{{ getStatusLabel(item.message) }}</p>
         </div>
       </div>
       <!-- REQUEST PERMISSION -->
@@ -158,7 +158,7 @@ const isMessageUnderUserConfirm = (index: number) => {
             <p class="mr-1">
               {{ funcCallLabel }}
               <span class="shared-text-secondary" v-if="item?.object?.tool_name">
-                ({{ t('Base.funcName') }}: {{ item?.object?.tool_name }})
+                ({{ t('aiLog.funcName') }}: {{ item?.object?.tool_name }})
               </span>
             </p>
             <el-icon :class="{ '-rotate-90': !isExpanded($index) }">
@@ -208,7 +208,7 @@ const isMessageUnderUserConfirm = (index: number) => {
       <GrayContent v-if="isCancelledMessage(item)">
         <div class="flex items-center gap-3">
           <el-icon class="shared-text-tip" :size="16"><CircleCloseFilled /></el-icon>
-          <span>{{ t('Base.userCancelled') }}</span>
+          <span>{{ t('aiLog.userCancelled') }}</span>
         </div>
       </GrayContent>
       <!-- RESPONSE CONFIRM -->

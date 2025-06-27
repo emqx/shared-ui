@@ -1,4 +1,5 @@
 import { App } from 'vue'
+import './aiLog.css'
 import AIResponse from './AIResponse.vue'
 import ChatGuidance from './ChatGuidance.vue'
 import ChatInput from './ChatInput.vue'
@@ -28,4 +29,12 @@ export default {
   },
 }
 
-export { ChatGuidance, ChatInput, ConnectionStatus, UserMessage }
+export {
+  ChatGuidance,
+  ChatInput,
+  ConnectionStatus,
+  UserMessage,
+  AIResponse,
+  MCPServerGatewayConfigDialog,
+  MCPServersDrawer,
+}

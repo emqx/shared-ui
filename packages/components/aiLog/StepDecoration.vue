@@ -1,13 +1,10 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { CircleCheckFilled } from '@element-plus/icons-vue'
-defineProps<{
-  iconClass?: string
-}>()
 </script>
 
 <template>
   <div class="step-line shrink-0 py-0.5 leading-none">
-    <el-icon :class="iconClass" :size="16"><CircleCheckFilled /></el-icon>
+    <el-icon class="shared-text-tip" :size="16"><CircleCheckFilled /></el-icon>
   </div>
 </template>
 
