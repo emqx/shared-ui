@@ -98,7 +98,7 @@ defineExpose({ openConfigDialog })
         <el-card shadow="never">
           <el-form ref="FormRef" :model="record" :rules="rules" hide-required-asterisk>
             <fieldset class="flex items-center gap-2">
-              <el-icon class="text-primary"><SuccessFilled /></el-icon>
+              <el-icon class="shared-text-primary"><SuccessFilled /></el-icon>
               <el-form-item prop="selectedCluster" class="flex-1 mb-0">
                 <el-select v-model="record.selectedCluster">
                   <el-option

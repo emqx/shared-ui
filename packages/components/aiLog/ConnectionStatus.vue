@@ -40,7 +40,7 @@ const openSettings = () => {
     <!-- TODO: move class to override -->
     <el-alert
       v-if="showAlert"
-      class="border rounded-button bg-white"
+      class="border shared-rounded-button bg-white"
       :type="alertType"
       :closable="false"
     >

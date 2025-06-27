@@ -1,6 +1,6 @@
 <template>
   <div
-    class="user-operation flex justify-between items-center rounded-card px-6 py-3 border border-solid"
+    class="user-operation flex justify-between items-center shared-rounded-card px-6 py-3 border border-solid shared-border-secondary-card"
   >
     <slot></slot>
   </div>

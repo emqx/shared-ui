@@ -1,0 +1,57 @@
+/* EMQX Shared UI Components - Global Styles */
+
+/* CSS Custom Properties (CSS Variables) */
+:root {
+  --shared-color-primary: #5e4eff;
+  --shared-color-border-input: #d0d4dc;
+  --shared-color-border-card: #e2e7ea;
+  --shared-color-border-secondary-card: #b8b1ff;
+  --shared-color-text-normal: #343741;
+  --shared-color-text-title: #1d1d1d;
+  --shared-color-text-secondary: #707070;
+  --shared-color-text-tip: #bac1cd;
+  --shared-color-bg-gray-content: #bac1cd;
+
+  --shared-radius-button: 4px;
+  --shared-radius-card: 8px;
+}
+
+.shared-text-primary {
+  color: var(--shared-color-primary);
+}
+
+.shared-border-secondary-card {
+  border-color: var(--shared-color-border-secondary-card);
+}
+
+.shared-text-title {
+  color: var(--shared-color-text-title);
+}
+
+.shared-text-secondary {
+  color: var(--shared-color-text-secondary);
+}
+
+.shared-text-tip {
+  color: var(--shared-color-text-tip);
+}
+
+.shared-bg-gray-content {
+  background-color: var(--shared-color-bg-gray-content);
+}
+
+.shared-rounded-button {
+  border-radius: var(--shared-radius-button);
+}
+
+.shared-rounded-card {
+  border-radius: var(--shared-radius-card);
+}
+
+.shared-rounded-bl-card {
+  border-bottom-left-radius: var(--shared-radius-card);
+}
+
+.shared-rounded-br-card {
+  border-bottom-right-radius: var(--shared-radius-card);
+}
