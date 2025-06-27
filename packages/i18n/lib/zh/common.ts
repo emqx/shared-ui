@@ -6,4 +6,11 @@ export const zhCommon = {
   cancel: '取消',
   back: '返回',
   generate: '生成',
+  field: '字段',
+  pleaseChoose: '请选择',
+  pleaseEnter: '请输入',
+  add: '添加',
+  actions: '操作',
+  transform: '转换',
+  alias: '别名',
 }

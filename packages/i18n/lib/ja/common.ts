@@ -6,4 +6,11 @@ export const jaCommon = {
   cancel: 'キャンセル',
   back: '戻り',
   generate: '生成',
+  field: 'フィールド',
+  pleaseChoose: '選択してください',
+  pleaseEnter: '入力してください',
+  add: '追加',
+  actions: '操作',
+  transform: '変換',
+  alias: 'エイリアス',
 }

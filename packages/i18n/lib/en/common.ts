@@ -6,4 +6,11 @@ export const enCommon = {
   cancel: 'Cancel',
   back: 'Back',
   generate: 'Generate',
+  field: 'Field',
+  pleaseChoose: 'Required',
+  pleaseEnter: 'Required',
+  add: 'Add',
+  actions: 'Actions',
+  transform: 'Transform',
+  alias: 'Alias',
 }
