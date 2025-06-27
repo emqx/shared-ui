@@ -57,4 +57,10 @@ export const jaRuleFunction = {
   SchemaName: 'スキーマ',
   Data: 'データ',
   Type: 'メッセージタイプ',
+  aliasDesc:
+    'エイリアスに英数字とアンダースコア以外の文字が含まれる場合、数字で始まる場合、または SQL キーワードの場合は、エイリアスを二重引用符で囲んでください',
+  inputFieldRequiredError: '{name} は必須項目です',
+  unusedField: '未使用のフィールド',
+  aliasRequired: 'エイリアスを指定する必要があります',
+  aliasFormatError: 'エイリアスの形式が正しくありません',
 }

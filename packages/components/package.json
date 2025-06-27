@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@emqx/shared-ui-constants": "link:../constants",
+    "async-validator": "^4.2.5",
     "lodash": "^4.17"
   },
   "devDependencies": {
@@ -44,6 +45,7 @@
     "@emqx/shared-ui-utils": "link:../utils",
     "@types/lodash": "^4.17.19",
     "@vitejs/plugin-vue": "^5.0.0",
+    "@vue-flow/core": "~1.20.1",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "element-plus": "^2.3.0",
@@ -59,6 +61,7 @@
     "@emqx/shared-ui-utils": "link:../utils",
     "element-plus": "^2.3.0",
     "tailwindcss": "^3.4",
-    "vue": "^3.2.0"
+    "vue": "^3.2.0",
+    "@vue-flow/core": "~1.20.1"
   }
 }

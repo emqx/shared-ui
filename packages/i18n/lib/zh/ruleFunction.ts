@@ -57,4 +57,10 @@ export const zhRuleFunction = {
   SchemaName: 'Schema',
   Data: '数据',
   Type: '消息类型',
+  aliasDesc:
+    '别名如包含除字母、数字和下划线以外的字符，或以数字开头，或为 SQL 关键字时，请为别名加上双引号',
+  inputFieldRequiredError: '请输入{name}',
+  unusedField: '未被使用的字段',
+  aliasRequired: '需指定一个别名',
+  aliasFormatError: '格式错误的别名',
 }

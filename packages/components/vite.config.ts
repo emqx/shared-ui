@@ -11,12 +11,13 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['vue', 'element-plus', '@emqx/shared-ui-utils'],
+      external: ['vue', 'element-plus', '@emqx/shared-ui-utils', '@vue-flow/core'],
       output: {
         globals: {
           vue: 'Vue',
           'element-plus': 'ElementPlus',
           '@emqx/shared-ui-utils': 'SharedUIUtils',
+          '@vue-flow/core': 'VueFlowCore',
         },
       },
     },
