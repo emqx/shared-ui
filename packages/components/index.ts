@@ -13,3 +13,6 @@ export {
   MCPServerGatewayConfigDialog,
   MCPServersDrawer,
 } from './aiLog/index'
+
+// Export aiLog types
+export * from './aiLog/types'
