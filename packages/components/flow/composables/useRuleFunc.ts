@@ -1,29 +1,8 @@
 import { computed } from 'vue'
-import RuleFunc from './ruleFunc.json'
-import { useLocale } from '../useLocale'
+import RuleFuncList from '../json/ruleFunc.json'
 import type { ComputedRef, WritableComputedRef } from 'vue'
-
-export interface FunctionItem {
-  id: string
-  field: string
-  func: {
-    name: string
-    args: Array<string | number>
-  }
-  alias: string
-}
-
-export const enum ArgumentType {
-  Number = 'number',
-  Any = 'any',
-  Float = 'float',
-  Integer = 'integer',
-  String = 'string',
-  Enum = 'enum',
-  Object = 'object',
-  Array = 'array',
-  Binary = 'binary',
-}
+import { type FetchSuggestionsCallback, ArgumentType, FunctionItem } from '../types'
+import { useFlowLocale } from './useFlowLocale'
 
 export interface ArgItem {
   name: string
@@ -55,19 +34,16 @@ interface GroupFuncData {
 }
 
 type FuncData = Array<GroupFuncData>
-type FetchSuggestionsCallback = (result: Array<{ value: string }>) => void
 
-const useRuleFunc = (
-  lang: string,
-): {
+export const useRuleFunc = (): {
   funcOptList: FuncData
   getFuncItemByName: (name: string) => FuncItem | null
   getFuncGroupByName: (name: string) => string | null
   getArgIndex: (func: FuncItem, groupLabel: string) => number
 } => {
-  const { t } = useLocale(lang)
+  const { t } = useFlowLocale()
 
-  const funcOptList: FuncData = (RuleFunc as FuncData).map(({ groupLabel, list }) => ({
+  const funcOptList: FuncData = (RuleFuncList as FuncData).map(({ groupLabel, list }) => ({
     groupLabel,
     name: t(`ruleFunction.${groupLabel}`),
     value: groupLabel,
@@ -130,8 +106,6 @@ const useRuleFunc = (
   }
 }
 
-export default useRuleFunc
-
 export const numberArgTypes = [ArgumentType.Number, ArgumentType.Float, ArgumentType.Integer]
 
 type FunctionItemProps = Readonly<{
@@ -142,7 +116,6 @@ type FunctionItemProps = Readonly<{
 export const useFunctionItemData = (
   props: FunctionItemProps,
   emit: { (e: 'update:modelValue', value: FunctionItem): void } & unknown,
-  lang: string,
 ): {
   record: WritableComputedRef<FunctionItem>
   getFieldList: (queryString: string, cb: FetchSuggestionsCallback) => void
@@ -152,7 +125,7 @@ export const useFunctionItemData = (
   handleSelectFunc: (funcName: string) => void
   handleArgChanged: (val: string, index: number, type: ArgumentType) => void
 } => {
-  const { funcOptList, getFuncItemByName, getFuncGroupByName, getArgIndex } = useRuleFunc(lang)
+  const { funcOptList, getFuncItemByName, getFuncGroupByName, getArgIndex } = useRuleFunc()
 
   const record = computed<FunctionItem>({
     get() {

@@ -57,4 +57,10 @@ export const enRuleFunction = {
   SchemaName: 'Schema',
   Data: 'Data',
   Type: 'Message Type',
+  aliasDesc:
+    'If the alias contains characters other than letters, numbers, and underscores, or starts with a number, or is a SQL keyword, please add double quotes to the alias',
+  inputFieldRequiredError: '{name} is required',
+  unusedField: 'Unused field',
+  aliasRequired: 'Need to specify an alias',
+  aliasFormatError: 'Invalid alias format',
 }
