@@ -61,5 +61,3 @@ const openSettings = () => {
     </el-alert>
   </div>
 </template>
-
-<style lang="scss"></style>

@@ -1,4 +1,4 @@
-export const enum MessageStatus {
+export enum MessageStatus {
   ParseUserIntention = 'parse_user_intention',
   LoadLogEntries = 'load_log_entries',
   GeneralConversation = 'general_conversation',
@@ -8,7 +8,7 @@ export const enum MessageStatus {
   CompleteReport = 'complete_report',
 }
 
-export const enum MessageType {
+export enum MessageType {
   FuncCall = 'func_call',
   Message = 'message',
   Status = 'status',
@@ -18,23 +18,23 @@ export const enum MessageType {
   PermissionRequest = 'permission_request',
 }
 
-export const enum ResponseStatus {
+export enum ResponseStatus {
   Success = 'success',
   Error = 'error',
   EmptyUpdate = 'empty_update',
 }
 
-export const enum ConversationDataFrom {
+export enum ConversationDataFrom {
   User = 'user',
   AI = 'ai',
 }
 
-export const enum UserConfirmation {
+export enum UserConfirmation {
   Yes = 'yes',
   No = 'no',
 }
 
-export const enum ExecutionPermission {
+export enum ExecutionPermission {
   Deny = 'deny',
   AllowOnce = 'allow_once',
   AllowAlways = 'allow_always',
@@ -58,13 +58,13 @@ export interface MCPServer {
   success: boolean
 }
 
-export interface ConnectionStatus {
+export interface ConnectionStatusData {
   app_id: string
   connected: boolean
   server_count: number
 }
 
-export type CustomConnectionStatus = ConnectionStatus & {
+export type CustomConnectionStatus = ConnectionStatusData & {
   is_configured: boolean
 }
 
