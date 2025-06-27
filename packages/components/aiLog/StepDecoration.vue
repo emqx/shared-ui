@@ -23,7 +23,7 @@ defineProps<{
     height: calc(100% - 8px);
     width: 1px;
     // TODO: Configurable line color
-    border-left: 1px dashed var(--color-text-tip);
+    border-left: 1px dashed var(--shared-color-text-tip);
   }
 }
 </style>

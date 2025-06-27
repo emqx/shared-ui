@@ -141,7 +141,7 @@ const isMessageUnderUserConfirm = (index: number) => {
             </el-button>
           </div>
           <div v-else class="flex items-center">
-            <span class="leading-8 text-text-secondary">
+            <span class="leading-8 shared-text-secondary">
               {{ getPermissionLabel(getPermissionResult($index)!) }}
             </span>
           </div>
@@ -157,7 +157,7 @@ const isMessageUnderUserConfirm = (index: number) => {
           >
             <p class="mr-1">
               {{ funcCallLabel }}
-              <span class="text-text-secondary" v-if="item?.object?.tool_name">
+              <span class="shared-text-secondary" v-if="item?.object?.tool_name">
                 ({{ t('Base.funcName') }}: {{ item?.object?.tool_name }})
               </span>
             </p>
@@ -167,11 +167,11 @@ const isMessageUnderUserConfirm = (index: number) => {
           </div>
           <div v-if="isExpanded($index)">
             <div>
-              <p class="mb-1 text-text-secondary">{{ t('aiLog.funcArgs') }}</p>
+              <p class="mb-1 shared-text-secondary">{{ t('aiLog.funcArgs') }}</p>
               <GrayContent :code="item?.object?.tool_kwargs" />
             </div>
             <div>
-              <p class="mb-1 text-text-secondary">{{ t('aiLog.funcOutput') }}</p>
+              <p class="mb-1 shared-text-secondary">{{ t('aiLog.funcOutput') }}</p>
               <div class="func-output-wrap relative">
                 <el-button
                   link
@@ -195,19 +195,19 @@ const isMessageUnderUserConfirm = (index: number) => {
       <div v-else-if="isAnalysisResultMessage(item)" class="mt-6">
         <GrayContent v-if="isMessageUnderUserConfirm($index)">
           <div class="flex items-center gap-3">
-            <el-icon class="text-text-tip" :size="16"><CircleCheckFilled /></el-icon>
+            <el-icon class="shared-text-tip" :size="16"><CircleCheckFilled /></el-icon>
             <span>{{ t('aiLog.reportGenerationCompleted') }}</span>
           </div>
         </GrayContent>
         <template v-else>
-          <p class="text-text-title font-semibold mb-4">{{ t('aiLog.analysisResultTip') }}</p>
+          <p class="shared-text-title font-semibold mb-4">{{ t('aiLog.analysisResultTip') }}</p>
           <slot :message="item.message"></slot>
         </template>
       </div>
       <!-- CANCELLED -->
       <GrayContent v-if="isCancelledMessage(item)">
         <div class="flex items-center gap-3">
-          <el-icon class="text-text-tip" :size="16"><CircleCloseFilled /></el-icon>
+          <el-icon class="shared-text-tip" :size="16"><CircleCloseFilled /></el-icon>
           <span>{{ t('Base.userCancelled') }}</span>
         </div>
       </GrayContent>
@@ -223,7 +223,7 @@ const isMessageUnderUserConfirm = (index: number) => {
           </el-button>
         </div>
         <div v-else class="flex items-center">
-          <span class="leading-8 text-text-secondary">
+          <span class="leading-8 shared-text-secondary">
             {{
               getConfirmedResult($index) === UserConfirmation.Yes ? t('aiLog.yes') : t('aiLog.no')
             }}
@@ -232,7 +232,7 @@ const isMessageUnderUserConfirm = (index: number) => {
       </UserOperationContainer>
       <!-- ERROR -->
       <div v-else-if="isErrorMessage(item)" class="flex">
-        <el-alert class="rounded-button w-auto" type="error" :closable="false">
+        <el-alert class="shared-rounded-button w-auto" type="error" :closable="false">
           <div class="flex items-center gap-2">
             <el-icon><WarningFilled /></el-icon>
             <span>{{ item.message }}</span>
