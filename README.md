@@ -92,6 +92,39 @@ To use it in your code:
 import { SQLTemplate } from '@emqx/shared-ui-i18n'
 ```
 
+## ⚠️ Component Usage Notes
+
+When using components from `@emqx/shared-ui`, please note the following important considerations:
+
+### Tailwind CSS Configuration
+
+If you need to use aiLog related components, **Tailwind CSS is required as a peer dependency**. You must add the `shared-ui-components` directory to your Tailwind CSS configuration:
+
+```js
+// tailwind.config.ts
+module.exports = {
+  content: [
+    // ... your existing content paths
+    './node_modules/@emqx/shared-ui-components/**/*.{vue,js,ts,jsx,tsx}',
+  ],
+  // ... rest of your config
+}
+```
+
+### Style Import Order
+
+When importing style files, **please ensure that shared-ui style files are imported after Element Plus style files**. Otherwise, icon colors may be affected:
+
+```js
+// ✅ Correct order
+import 'element-plus/dist/index.css'
+import '@emqx/shared-ui/packages/components/aiLog/aiLog.css'
+
+// ❌ Incorrect order - may affect icon colors
+import '@emqx/shared-ui/packages/components/aiLog/aiLog.css'
+import 'element-plus/dist/index.css'
+```
+
 ## 📄 License
 
 Apache License 2.0, see [LICENSE](https://github.com/emqx/shared-ui/blob/main/LICENSE).
