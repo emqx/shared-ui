@@ -42,7 +42,7 @@ const stopResponse = () => {
         />
       </div>
       <div
-        class="chat-input-ft absolute left-px bottom-px flex justify-between bg-white shared-rounded-bl-card shared-rounded-br-card py-2 px-3"
+        class="chat-input-ft absolute left-px bottom-px flex justify-between bg-white shared-rounded-bl-card shared-rounded-br-card py-2 pl-3 pr-1"
       >
         <el-button link @click="openMCPServersDrawer">
           <el-icon :size="28"><Setting /></el-icon>
@@ -65,7 +65,7 @@ const stopResponse = () => {
 .chat-input {
   box-shadow: 0px 4px 12px 0px rgba(136, 142, 191, 0.07);
   :deep(.el-textarea__inner) {
-    border-radius: var(--shared-color-border-card);
+    border-radius: var(--shared-radius-card);
     border-color: var(--shared-color-border-input);
     padding: 16px 16px 32px;
   }

@@ -20,6 +20,7 @@ export default defineConfig({
         },
       },
     },
+    cssCodeSplit: false,
   },
   plugins: [vue(), visualizer()],
   resolve: {

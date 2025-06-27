@@ -18,7 +18,10 @@ const roundedClass = computed(() => {
 </script>
 
 <template>
-  <div class="user-message inline-flex justify-end px-4 py-3 rounded-lg" :class="roundedClass">
+  <div
+    class="user-message inline-flex justify-end px-4 py-3 shared-bg-primary-10 rounded-lg"
+    :class="roundedClass"
+  >
     <template v-if="!$slots.default">
       {{ content }}
     </template>
