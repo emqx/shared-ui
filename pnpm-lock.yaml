@@ -66,12 +66,15 @@ importers:
       '@types/lodash':
         specifier: ^4.17.19
         version: 4.17.19
+      '@types/sortablejs':
+        specifier: ^1.15.8
+        version: 1.15.8
       '@vitejs/plugin-vue':
         specifier: ^5.0.0
         version: 5.2.1(vite@4.5.0(@types/node@20.9.0)(sass@1.89.2))(vue@3.5.13(typescript@5.6.3))
       '@vue-flow/core':
-        specifier: ~1.20.1
-        version: 1.20.2(vue@3.5.13(typescript@5.6.3))
+        specifier: ~1.42.5
+        version: 1.42.5(vue@3.5.13(typescript@5.6.3))
       '@vue/eslint-config-prettier':
         specifier: ^9.0.0
         version: 9.0.0(eslint@8.57.1)(prettier@3.0.3)
@@ -87,6 +90,9 @@ importers:
       sass:
         specifier: ^1.89.2
         version: 1.89.2
+      sortablejs:
+        specifier: ^1.15.6
+        version: 1.15.6
       tailwindcss:
         specifier: ^3.4
         version: 3.4.17
@@ -729,6 +735,9 @@ packages:
   '@types/semver@7.5.5':
     resolution: {integrity: sha512-+d+WYC1BxJ6yVOgUgzK8gWvp5qF8ssV5r4nsDcZWKRWcDQLQ619tvWAxJQYGgBrO1MnLJC7a5GtiYsAoQ47dJg==}
 
+  '@types/sortablejs@1.15.8':
+    resolution: {integrity: sha512-b79830lW+RZfwaztgs1aVPgbasJ8e7AXtZYHTELNXZPsERt4ymJdjV4OccDbHQAvHrCcFpbF78jkm0R6h/pZVg==}
+
   '@types/web-bluetooth@0.0.16':
     resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
 
@@ -841,10 +850,10 @@ packages:
   '@volar/typescript@2.4.10':
     resolution: {integrity: sha512-F8ZtBMhSXyYKuBfGpYwqA5rsONnOwAVvjyE7KPYJ7wgZqo2roASqNWUnianOomJX5u1cxeRooHV59N0PhvEOgw==}
 
-  '@vue-flow/core@1.20.2':
-    resolution: {integrity: sha512-bgcOjtaYC8/y9ZCpG8vBYEBNzUJmaXr0m1xnzSv2qFJKXgh1GeoldT8rDhqY0HXRyimEsaKbzkAf3kSl64pdsQ==}
+  '@vue-flow/core@1.42.5':
+    resolution: {integrity: sha512-fNaBzt5i/JYHIzfmR4wtT1TkpfZBgB+Pe/LjCG+aXdNOpeveuegv3AmEcU3GFqf/uYrd1rsma877Lncu1uwz1w==}
     peerDependencies:
-      vue: ^3.2.25
+      vue: ^3.3.0
 
   '@vue/compiler-core@3.5.13':
     resolution: {integrity: sha512-oOdAkwqUfW1WqpwSYJce06wvt6HljgY3fGeM9NcVA1HaYOij3mZG9Rkysn0OHuyUAGMbEbARIpsG+LPVlBJ5/Q==}
@@ -2648,6 +2657,9 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
+  sortablejs@1.15.6:
+    resolution: {integrity: sha512-aNfiuwMEpfBM/CN6LY0ibyhxPfPbyFeBTYJKCvzkJ2GkUpazIt3H+QIPAMHwqQ7tMKaHz1Qj+rJJCqljnf4p3A==}
+
   source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
@@ -3908,6 +3920,8 @@ snapshots:
 
   '@types/semver@7.5.5': {}
 
+  '@types/sortablejs@1.15.8': {}
+
   '@types/web-bluetooth@0.0.16': {}
 
   '@types/web-bluetooth@0.0.20': {}
@@ -4066,7 +4080,7 @@ snapshots:
       path-browserify: 1.0.1
       vscode-uri: 3.0.8
 
-  '@vue-flow/core@1.20.2(vue@3.5.13(typescript@5.6.3))':
+  '@vue-flow/core@1.42.5(vue@3.5.13(typescript@5.6.3))':
     dependencies:
       '@vueuse/core': 10.11.1(vue@3.5.13(typescript@5.6.3))
       d3-drag: 3.0.0
@@ -5989,6 +6003,8 @@ snapshots:
       strip-ansi: 6.0.1
       wcwidth: 1.0.1
       yargs: 15.4.1
+
+  sortablejs@1.15.6: {}
 
   source-map-js@1.0.2: {}
 
