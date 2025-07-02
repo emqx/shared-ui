@@ -1162,7 +1162,7 @@
             "required": true
           },
           {
-            "name": "Bin",
+            "name": "BinaryData",
             "type": "binary",
             "required": true,
             "isReference": true

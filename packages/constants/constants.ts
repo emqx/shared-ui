@@ -6,3 +6,4 @@ export const correctAliasReg = new RegExp(
   `^${correctAliasALevelReg.source}(\\.${correctAliasALevelReg.source})*$`,
 )
 export const DEFAULT_SELECT = '*'
+export const RULE_LOGICAL_OPERATORS = ['>', '<', '<=', '>=', '<>', '!=', '=', '=~']

@@ -1,9 +1,19 @@
 import { useRuleFunc, numberArgTypes } from './useRuleFunc'
-import { type FunctionFormType, type FunctionItem, ArgumentType, EditedWay } from '../types'
+import {
+  type FunctionFormType,
+  type FunctionItem,
+  ArgumentType,
+  EditedWay,
+  FilterFormData,
+  FilterFormType,
+  FilterItem,
+} from '../types'
 
 export const useHandleFlowDataUtils = (): {
   getFuncExpressionFromForm: (funcForm: FunctionFormType) => string
   getFuncExpressionFromFuncList: (funcList: Array<FunctionItem>) => string
+  getFilterExpressionFromFormData: (filterData: FilterFormData, level?: number) => string
+  getFilterExpressionFromForm: (filterData: FilterFormType, level?: number) => string
 } => {
   /* FUNCTION */
   const { getFuncItemByName } = useRuleFunc()
@@ -63,8 +73,39 @@ export const useHandleFlowDataUtils = (): {
     return getFuncExpressionFromFuncList(form)
   }
 
+  /* FILTER */
+  const checkIsStringType = (value: string | number): boolean => typeof value === 'string'
+  const getFilterExpressionFromFormData = (filterData: FilterFormData, level = 0) => {
+    if (Array.isArray(filterData.items)) {
+      const clauses: Array<string> = filterData.items.map((item) =>
+        getFilterExpressionFromFormData(item as FilterFormData, level + 1),
+      )
+      return `${level > 0 ? '(' : ''}${clauses.join(` ${filterData.groupOperator} `)}${
+        level > 0 ? ')' : ''
+      }`
+    }
+    const { field, operator, valueForComparison } = filterData as unknown as FilterItem
+    if (!field || !operator || (checkIsStringType(valueForComparison) && !valueForComparison)) {
+      return ''
+    }
+    const strForComparison = checkIsStringType(valueForComparison)
+      ? `'${valueForComparison}'`
+      : valueForComparison
+    return `${field} ${operator} ${strForComparison}`
+  }
+
+  const getFilterExpressionFromForm = (filterData: FilterFormType) => {
+    const { editedWay, form, sql } = filterData
+    if (editedWay === EditedWay.SQL) {
+      return sql
+    }
+    return getFilterExpressionFromFormData(form)
+  }
+
   return {
     getFuncExpressionFromForm,
     getFuncExpressionFromFuncList,
+    getFilterExpressionFromFormData,
+    getFilterExpressionFromForm,
   }
 }

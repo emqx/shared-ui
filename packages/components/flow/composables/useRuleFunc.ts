@@ -41,11 +41,11 @@ export const useRuleFunc = (): {
   getFuncGroupByName: (name: string) => string | null
   getArgIndex: (func: FuncItem, groupLabel: string) => number
 } => {
-  const { t } = useFlowLocale()
+  const { getValidI18nText } = useFlowLocale()
 
-  const funcOptList: FuncData = (RuleFuncList as FuncData).map(({ groupLabel, list }) => ({
+  const funcOptList: FuncData = RuleFuncList.map(({ groupLabel, list }) => ({
     groupLabel,
-    name: t(`ruleFunction.${groupLabel}`),
+    name: getValidI18nText(`ruleFunction.${groupLabel}`, groupLabel),
     value: groupLabel,
     list: list.filter((item) => item.args.length) as Array<FuncItem>,
   }))
