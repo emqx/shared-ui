@@ -13,7 +13,7 @@
               v-model="record.form[$index]"
               v-bind="columnContentProps"
               :ref="(el) => setFormCom(el, $index)"
-              @vue-before-unmount="delFormCom($index)"
+              @before-unmount="delFormCom($index)"
             />
           </template>
         </el-table-column>

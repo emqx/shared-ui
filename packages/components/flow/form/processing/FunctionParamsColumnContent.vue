@@ -39,7 +39,7 @@ import { ElInput, ElSelect, ElOption } from 'element-plus'
 import type { Rules, ValidateError } from 'async-validator'
 import Schema from 'async-validator'
 import { get, pick } from 'lodash'
-import { computed, ref } from 'vue'
+import { computed, ref, onBeforeUnmount } from 'vue'
 import { useFunctionItemData } from '../../composables/useRuleFunc'
 import { useFlowLocale } from '../../composables/useFlowLocale'
 import useFormRules from '../../composables/useFormRules'
@@ -53,7 +53,7 @@ const props = defineProps<{
 }>()
 const emit = defineEmits<{
   (e: 'update:modelValue', value: FunctionItem): void
-  (e: 'onVueBeforeUnmount'): void
+  (e: 'before-unmount'): void
 }>()
 
 const { getValidI18nText } = useFlowLocale()
@@ -100,6 +100,10 @@ const onSelectChange = ($event: string, $index: number) => {
   validateItem($index)
 }
 defineExpose({ validate })
+
+onBeforeUnmount(() => {
+  emit('before-unmount')
+})
 </script>
 
 <style lang="scss">

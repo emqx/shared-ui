@@ -86,3 +86,12 @@ export const getRuleSelectionAlias = (selection: string): string | undefined => 
 const ruleSelectionWithFunc = /^\w+\((.|\n)+\)$/
 export const judgeRuleSelectionWithFunc = (selection: string): boolean =>
   ruleSelectionWithFunc.test(selection)
+
+export const numToFixed = (number: number, digits = 3): number => parseFloat(number.toFixed(digits))
+/**
+ * will change original arr
+ */
+export const removeFromArr = <T>(arr: Array<T>, index: number): Array<T> => {
+  arr.splice(index, 1)
+  return arr
+}
