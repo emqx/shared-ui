@@ -5,6 +5,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     batch_time: '在较低消息率情况下尝试累积批量输出时的最大等待间隔，以提高资源的利用率。',
     enable_queue: '启用磁盘缓存队列（仅对 egress 方向桥接有用）。',
     health_check_interval: '健康检查间隔。',
+    health_check_interval_jitter:
+      '在健康检查间隔中添加一个均匀的随机延迟，以便使用同一连接器的动作和 Source 在不同时间点开始其健康检查。',
     inflight_window:
       '请求飞行队列窗口大小。当请求模式为异步时，如果需要严格保证来自同一 MQTT 客户端的消息有序，则必须将此值设为 1。',
     query_mode: "请求模式。可选 '同步/异步'，默认为'异步'模式。",

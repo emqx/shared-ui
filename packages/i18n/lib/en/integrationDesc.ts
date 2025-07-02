@@ -7,6 +7,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     enable_queue:
       'Enable disk buffer queue (only applicable for egress bridges).\nWhen Enabled, messages will be buffered on disk when the bridge connection is down.\nWhen disabled the messages are buffered in RAM only.',
     health_check_interval: 'Health check interval.',
+    health_check_interval_jitter:
+      'A uniform random delay to be added to health check interval, so that Actions and Sources from the same Connector start their health checks at different instants.',
     inflight_window:
       'Query inflight window. When query_mode is set to async, this config has to be set to 1 if messages from the same MQTT client have to be strictly ordered.',
     query_mode: "Query mode. Optional 'sync/async', default 'async'.",
