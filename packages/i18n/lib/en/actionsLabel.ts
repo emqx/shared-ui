@@ -246,4 +246,8 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     namespace: 'Namespace',
     table: 'Table',
   },
+  bigquery: {
+    dataset: 'Dataset',
+    table: 'Table',
+  },
 }

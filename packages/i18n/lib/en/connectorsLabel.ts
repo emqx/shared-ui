@@ -37,6 +37,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     request_timeout: 'Request Timeout',
     ipv6_probe: 'IPv6 Probe',
     headers: 'HTTP Headers',
+    service_account_json: 'GCP Service Account Credentials',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -49,7 +50,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     enable_pipelining: 'HTTP Pipelining',
   },
   gcp_pubsub_producer: {
-    service_account_json: 'GCP Service Account Credentials',
     query_mode: 'Query Mode',
     batch_size: 'Batch Size',
   },
@@ -130,7 +130,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     region: 'DynamoDB Region',
   },
   gcp_pubsub_consumer: {
-    service_account_json: 'GCP Service Account Credentials',
     pull_max_messages: 'Maximum Messages to Pull',
   },
   hstreamdb: {

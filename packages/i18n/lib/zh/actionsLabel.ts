@@ -246,4 +246,8 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     namespace: '命名空间',
     table: '表',
   },
+  bigquery: {
+    dataset: '数据集',
+    table: '表',
+  },
 }
