@@ -37,6 +37,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     headers: '请求头',
     request_timeout: '请求超时',
     access_method: '访问模式',
+    service_account_json: 'GCP 服务账户凭证',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -49,7 +50,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     enable_pipelining: 'HTTP 管道',
   },
   gcp_pubsub_producer: {
-    service_account_json: 'GCP 服务账户凭证',
     query_mode: '请求模式',
     batch_size: '最大批量请求大小',
   },
@@ -130,7 +130,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     region: 'DynamoDB 区域',
   },
   gcp_pubsub_consumer: {
-    service_account_json: 'GCP 服务账户凭证',
     pull_max_messages: '拉取的最大消息数',
   },
   hstreamdb: {
