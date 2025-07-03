@@ -7,6 +7,16 @@ import { useGenerateFlowDataUtils } from './composables/useGenerateFlowDataUtils
 import { useHandleFlowDataUtils } from './composables/useHandleFlowDataUtils'
 import { createFunctionForm, createFilterForm } from './composables/useNodeForm'
 import useParseWhere from './composables/useParseWhere'
+import FlowGuide from './form/FlowGuide.vue'
+import FlowEdge from './form/FlowEdge.vue'
+import useFlowGuideNodes, { fallbackEdgeStyle } from './composables/useFlowGuideNodes'
+import useFlowNode, {
+  isNotBridgeSourceTypes,
+  SourceTypeAllMsgsAndEvents,
+  AI_PLACEHOLDER_TYPE,
+} from './composables/useFlowNode'
+import useActionAndSourceStatus from './composables/useActionAndSourceStatus'
+import FlowNode from './form/FlowNode.vue'
 
 interface FlowComponentOptions {
   componentPrefix?: string
@@ -21,6 +31,9 @@ export default {
 
     app.component(getComName('FunctionForm'), FunctionForm)
     app.component(getComName('FilterForm'), FilterForm)
+    app.component(getComName('FlowGuide'), FlowGuide)
+    app.component(getComName('FlowEdge'), FlowEdge)
+    app.component(getComName('FlowNode'), FlowNode)
   },
 }
 
@@ -34,6 +47,16 @@ export {
   useParseWhere,
   FilterForm,
   createFilterForm,
+  FlowGuide,
+  FlowEdge,
+  fallbackEdgeStyle,
+  useFlowGuideNodes,
+  useFlowNode,
+  isNotBridgeSourceTypes,
+  SourceTypeAllMsgsAndEvents,
+  AI_PLACEHOLDER_TYPE,
+  useActionAndSourceStatus,
+  FlowNode,
 }
 
 export * from './types'

@@ -19,6 +19,7 @@ export * from './aiLog/types'
 
 export { default as CustomFormItem } from './common/CustomFormItem.vue'
 export { default as CustomInputPassword } from './common/CustomInputPassword.vue'
+export { default as CustomHeightResizer } from './common/CustomHeightResizer.vue'
 
 export {
   FunctionForm,
@@ -30,5 +31,15 @@ export {
   useParseWhere,
   FilterForm,
   createFilterForm,
+  FlowGuide,
+  FlowEdge,
+  fallbackEdgeStyle,
+  useFlowGuideNodes,
+  useFlowNode,
+  isNotBridgeSourceTypes,
+  SourceTypeAllMsgsAndEvents,
+  AI_PLACEHOLDER_TYPE,
+  useActionAndSourceStatus,
+  FlowNode,
 } from './flow/index'
 export * from './flow/types'

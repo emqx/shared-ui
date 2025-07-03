@@ -13,4 +13,6 @@ export const jaCommon = {
   actions: '操作',
   transform: '変換',
   alias: 'エイリアス',
+  name: '名称',
+  colon: '：',
 }

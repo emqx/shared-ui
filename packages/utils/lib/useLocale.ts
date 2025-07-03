@@ -13,6 +13,9 @@ import {
   zhRuleFunction,
   enRuleFunction,
   jaRuleFunction,
+  zhFlow,
+  enFlow,
+  jaFlow,
 } from '@emqx/shared-ui-i18n'
 import { createI18n } from 'vue-i18n'
 import type { ComposerTranslation } from 'vue-i18n'
@@ -30,6 +33,7 @@ export const useLocale = (
         ruleSQL: enRuleSQL,
         aiLog: enAiLog,
         ruleFunction: enRuleFunction,
+        flow: enFlow,
       },
       zh: {
         streaming: zhStreaming,
@@ -37,6 +41,7 @@ export const useLocale = (
         ruleSQL: zhRuleSQL,
         aiLog: zhAiLog,
         ruleFunction: zhRuleFunction,
+        flow: zhFlow,
       },
       ja: {
         streaming: jaStreaming,
@@ -44,6 +49,7 @@ export const useLocale = (
         ruleSQL: jaRuleSQL,
         aiLog: enAiLog,
         ruleFunction: jaRuleFunction,
+        flow: jaFlow,
       },
     },
   }).global

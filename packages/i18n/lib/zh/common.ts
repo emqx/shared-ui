@@ -13,4 +13,6 @@ export const zhCommon = {
   actions: '操作',
   transform: '转换',
   alias: '别名',
+  name: '名称',
+  colon: '：',
 }
