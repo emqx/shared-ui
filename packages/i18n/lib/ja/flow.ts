@@ -1,0 +1,23 @@
+export const jaFlow = {
+  guideSourceNodeLabel: 'ソース',
+  guideSourceNodeDesc: '複数のノードをドラッグしてメッセージとイベント入力を選択',
+  guideProcessingNodeLabel: '処理（任意）',
+  guideProcessingNodeDesc: 'ノードをドラッグしてデータを変換・フィルター',
+  guideSinkNodeLabel: 'シンク',
+  guideSinkNodeDesc: '複数のノードをドラッグして外部連携にデータを出力',
+  guideFallbackNodeLabel: 'フォールバック（任意）',
+  guideFallbackNodeDesc: 'ノードをドラッグしてフォールバックアクションとして設定します',
+  actionAvailable: '利用可能',
+  actionUnavailable: '利用不可',
+  connecting: '接続中',
+  inconsistent: 'クラスタ内のノードで不一致',
+  disconnected: '切断',
+  message: 'メッセージ',
+  event: 'イベント',
+  dataProcessing: 'データ処理',
+  filter: 'フィルター',
+  consoleOutput: 'Console Output', // TODO: ja
+  republish: '再パブリッシュ（Republish）',
+  condition: '条件',
+  systemPrompt: 'システムメッセージ',
+}

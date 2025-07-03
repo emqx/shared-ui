@@ -13,4 +13,6 @@ export const enCommon = {
   actions: 'Actions',
   transform: 'Transform',
   alias: 'Alias',
+  name: 'Name',
+  colon: ': ',
 }
