@@ -95,3 +95,12 @@ export const removeFromArr = <T>(arr: Array<T>, index: number): Array<T> => {
   arr.splice(index, 1)
   return arr
 }
+
+/**
+ * the title -> The Title
+ */
+export const titleCase = (str: string): string => {
+  return str.replace(/(^[a-z])|(\s[a-z])/g, (a: string) => {
+    return a.toUpperCase()
+  })
+}
