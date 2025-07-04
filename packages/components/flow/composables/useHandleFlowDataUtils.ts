@@ -1,15 +1,14 @@
 import { useRuleFunc, numberArgTypes } from './useRuleFunc'
-import {
-  type FunctionFormType,
-  type FunctionItem,
-  ArgumentType,
-  EditedWay,
+import type {
+  FunctionFormType,
+  FunctionItem,
   FilterFormData,
   FilterFormType,
   FilterItem,
 } from '../types'
+import { ArgumentType, EditedWay } from '@emqx/shared-ui-constants'
 
-export const useHandleFlowDataUtils = (): {
+export default (): {
   getFuncExpressionFromForm: (funcForm: FunctionFormType) => string
   getFuncExpressionFromFuncList: (funcList: Array<FunctionItem>) => string
   getFilterExpressionFromFormData: (filterData: FilterFormData, level?: number) => string

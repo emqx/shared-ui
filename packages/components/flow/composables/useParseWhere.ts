@@ -1,7 +1,7 @@
 import { createRandomString } from '@emqx/shared-ui-utils'
-import { RULE_LOGICAL_OPERATORS } from '@emqx/shared-ui-constants'
+import { FilterLogicalOperator, RULE_LOGICAL_OPERATORS } from '@emqx/shared-ui-constants'
 import { cloneDeep } from 'lodash'
-import { type FilterFormData, type FilterItem, FilterLogicalOperator } from '../types'
+import type { FilterFormData, FilterItem } from '../types'
 
 const parseWhere = (sql: string): FilterFormData | FilterItem => {
   return parseOrCondition(sql.trim())

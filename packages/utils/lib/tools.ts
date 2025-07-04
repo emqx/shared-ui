@@ -1,3 +1,10 @@
+import {
+  aiExpressionPartReg,
+  BridgeType,
+  isForeachReg,
+  RULE_INPUT_BRIDGE_TYPE_PREFIX,
+} from '@emqx/shared-ui-constants'
+
 export const waitAMoment = (ms = 100): Promise<boolean> => {
   return new Promise((resolve) => {
     window.setTimeout(() => {
@@ -104,3 +111,71 @@ export const titleCase = (str: string): string => {
     return a.toUpperCase()
   })
 }
+
+const keyReg = /^(?<type>\w+):(?<name>.+)$/
+/**
+ * for connector, action and bridge
+ */
+export const getTypeAndNameFromKey = (key: string): { type: BridgeType; name: string } => {
+  const matchResult = key.match(keyReg)
+  if (!matchResult) {
+    throw new Error('invalid key')
+  }
+  const { type, name } = matchResult.groups || {}
+  return {
+    type: type as BridgeType,
+    name,
+  }
+}
+
+export const getBridgeIdFromInput = (input: string) =>
+  input.replace(RULE_INPUT_BRIDGE_TYPE_PREFIX, '')
+export const getBridgeTypeFromId = (id: string): string => getTypeAndNameFromKey(id).type
+export const getBridgeNameFromId = (id: string): string => getTypeAndNameFromKey(id).name
+
+/**
+ * Compared with the `getKeywordsFromSQL` below, the difference is that when a value cannot be obtained here, it returns undefined.
+ */
+const notInQuoteReg = /(?:[^"']|"[^"]*"|'[^']*')/
+const normalSQLReg = new RegExp(
+  `^SELECT(?<select>${notInQuoteReg.source}+?)[\\s\\n]FROM(?<from>${notInQuoteReg.source}+)`,
+  'i',
+)
+const withConditionSQLReg = new RegExp(
+  `${normalSQLReg.source}([\\s\\n]WHERE(?<where>${notInQuoteReg.source}+))`,
+  'i',
+)
+export const getKeyPartsFromSQL = (sqlStr: string) => {
+  const sql = sqlStr.trim()
+  let fieldStr = undefined
+  let fromStr = undefined
+  let whereStr = undefined
+  let matchResult = null
+
+  if (isForeachReg.test(sql)) {
+    matchResult = sql.match(/(?<foreach>(.|\n)+)FROM(?<from>(.|\n)+)/)
+  } else {
+    matchResult = sql.match(withConditionSQLReg) || sql.match(normalSQLReg)
+  }
+  if (matchResult) {
+    const { groups } = matchResult
+    const { foreach = '', select = '', from = '', where = '' } = groups || {}
+    fieldStr = foreach ? foreach : select.trim()
+    fromStr = from.trim()
+    if (where) {
+      whereStr = where.trim()
+    }
+  }
+  return {
+    fieldStr,
+    fromStr,
+    whereStr,
+  }
+}
+
+export const isContainsAIExpression = (sql: string) => aiExpressionPartReg.test(sql)
+
+export const getBridgeKey = ({ type, name }: { type: string; name: string } & unknown): string =>
+  `${type}:${name}`
+
+export const checkNeedRequestAPI = (isChanged?: boolean) => isChanged || isChanged === undefined
