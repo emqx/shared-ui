@@ -104,7 +104,7 @@ import {
   ref,
   watch,
 } from 'vue'
-import { correctAliasReg, DEFAULT_SELECT } from '@emqx/shared-ui-constants'
+import { correctAliasReg, DEFAULT_SELECT, EditedWay } from '@emqx/shared-ui-constants'
 import { waitAMoment, createRandomString, trimSpacesAndLFs } from '@emqx/shared-ui-utils'
 import { useRuleFunc } from '../../composables/useRuleFunc'
 import { useFlowLocale } from '../../composables/useFlowLocale'
@@ -113,9 +113,9 @@ import { createFunctionItem } from '../../composables/useNodeForm'
 import FunctionFieldColumnContent from './FunctionFieldColumnContent.vue'
 import FunctionFuncColumnContent from './FunctionFuncColumnContent.vue'
 import FunctionParamsColumnContent from './FunctionParamsColumnContent.vue'
-import { useHandleFlowDataUtils } from '../../composables/useHandleFlowDataUtils'
-import { useGenerateFlowDataUtils } from '../../composables/useGenerateFlowDataUtils'
-import { type FunctionFormType, EditedWay } from '../../types'
+import useHandleFlowDataUtils from '../../composables/useHandleFlowDataUtils'
+import useGenerateFlowDataUtils from '../../composables/useGenerateFlowDataUtils'
+import { type FunctionFormType } from '../../types'
 
 const props = defineProps({
   modelValue: {

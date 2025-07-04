@@ -11,7 +11,7 @@
 import { PropType } from 'vue'
 import { CircleCloseFilled } from '@element-plus/icons-vue'
 import OperatorTag from './OperatorTag.vue'
-import { FilterLogicalOperator } from '../../types'
+import { FilterLogicalOperator } from '@emqx/shared-ui-constants'
 
 defineProps({
   operator: {

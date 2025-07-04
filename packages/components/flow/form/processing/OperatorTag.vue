@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { FilterLogicalOperator } from '../../types'
+import { FilterLogicalOperator } from '@emqx/shared-ui-constants'
 
 defineProps({
   operator: {

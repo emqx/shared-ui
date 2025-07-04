@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
+import { FilterLogicalOperator } from '@emqx/shared-ui-constants'
 import { PropType } from 'vue'
-import { FilterLogicalOperator } from '../../types'
 
 defineProps({
   operator: {

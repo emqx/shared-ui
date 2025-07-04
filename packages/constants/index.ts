@@ -1,2 +1,5 @@
 export * from './constants'
 export * from './enums'
+export * from './regExps'
+export { default as RULE_FIELDS } from './json/ruleField.json'
+export { default as RULE_FUNCS } from './json/ruleFunc.json'

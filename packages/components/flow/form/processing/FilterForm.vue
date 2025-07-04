@@ -108,9 +108,10 @@ import {
   WritableComputedRef,
 } from 'vue'
 import { ElForm, ElFormItem, ElButton } from 'element-plus'
+import { EditedWay, FilterLogicalOperator } from '@emqx/shared-ui-constants'
 import useFormRules from '../../composables/useFormRules'
 import useFilterConnectorInForm from '../../composables/useFilterConnectorInForm'
-import { useHandleFlowDataUtils } from '../../composables/useHandleFlowDataUtils'
+import useHandleFlowDataUtils from '../../composables/useHandleFlowDataUtils'
 import {
   createFilterForm,
   createFilterFormData,
@@ -124,13 +125,7 @@ import FilterItemCom from './FilterItem.vue'
 import FilterItemConnector from './FilterItemConnector.vue'
 import FilterOperatorLine from './FilterOperatorLine.vue'
 import { useFlowLocale } from '../../composables/useFlowLocale'
-import {
-  FilterFormType,
-  FilterFormData,
-  FilterItem,
-  FilterLogicalOperator,
-  EditedWay,
-} from '../../types'
+import type { FilterFormType, FilterFormData, FilterItem } from '../../types'
 
 const FormCom = ref()
 

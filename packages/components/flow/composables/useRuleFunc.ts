@@ -1,7 +1,7 @@
 import { computed } from 'vue'
-import RuleFuncList from '../json/ruleFunc.json'
+import { ArgumentType, RULE_FUNCS } from '@emqx/shared-ui-constants'
 import type { ComputedRef, WritableComputedRef } from 'vue'
-import { type FetchSuggestionsCallback, ArgumentType, FunctionItem } from '../types'
+import type { FetchSuggestionsCallback, FunctionItem, RuleFunc } from '../types'
 import { useFlowLocale } from './useFlowLocale'
 
 export interface ArgItem {
@@ -43,12 +43,14 @@ export const useRuleFunc = (): {
 } => {
   const { getValidI18nText } = useFlowLocale()
 
-  const funcOptList: FuncData = RuleFuncList.map(({ groupLabel, list }) => ({
-    groupLabel,
-    name: getValidI18nText(`ruleFunction.${groupLabel}`, groupLabel),
-    value: groupLabel,
-    list: list.filter((item) => item.args.length) as Array<FuncItem>,
-  }))
+  const funcOptList: FuncData = RULE_FUNCS.map(
+    ({ groupLabel, list }: { groupLabel: string; list: Array<RuleFunc> }) => ({
+      groupLabel,
+      name: getValidI18nText(`ruleFunction.${groupLabel}`, groupLabel),
+      value: groupLabel,
+      list: list.filter((item) => item.args.length) as Array<FuncItem>,
+    }),
+  )
 
   const getFuncItemByName = (name: string): FuncItem | null => {
     for (const { list } of funcOptList) {

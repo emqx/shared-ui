@@ -1,4 +1,4 @@
-import { FlowConnectionStatus } from '../types'
+import { FlowConnectionStatus } from '@emqx/shared-ui-constants'
 import { useFlowLocale } from './useFlowLocale'
 
 export default (): {
