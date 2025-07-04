@@ -1,9 +1,7 @@
-import { Edge, Node } from '@vue-flow/core'
 import { createRandomString } from '@emqx/shared-ui-utils'
-import { NodeType } from '../types'
+import { FALLBACK_EDGE_STYLE, NodeType } from '@emqx/shared-ui-constants'
+import type { Edge, Node } from '@vue-flow/core'
 import { useFlowLocale } from './useFlowLocale'
-
-export const fallbackEdgeStyle = { stroke: '#bbb', strokeDasharray: '5 5' }
 
 export default (): {
   allGuideFlowData: Array<Node | Edge>
@@ -59,7 +57,7 @@ export default (): {
       id: idFallbackEdge,
       source: idSink,
       target: idFallback,
-      style: fallbackEdgeStyle,
+      style: FALLBACK_EDGE_STYLE,
     },
   ]
 

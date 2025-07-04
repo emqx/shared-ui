@@ -36,6 +36,7 @@
 
 <script setup lang="ts">
 import { ElInput, ElSelect, ElOption } from 'element-plus'
+import { ArgumentType } from '@emqx/shared-ui-constants'
 import type { Rules, ValidateError } from 'async-validator'
 import Schema from 'async-validator'
 import { get, pick } from 'lodash'
@@ -44,7 +45,7 @@ import { useFunctionItemData } from '../../composables/useRuleFunc'
 import { useFlowLocale } from '../../composables/useFlowLocale'
 import useFormRules from '../../composables/useFormRules'
 import CustomFormItem from '../../../common/CustomFormItem.vue'
-import { ArgumentType, type FunctionItem } from '../../types'
+import { type FunctionItem } from '../../types'
 
 const props = defineProps<{
   modelValue: FunctionItem

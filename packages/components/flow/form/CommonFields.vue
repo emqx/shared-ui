@@ -13,8 +13,8 @@
 <script setup lang="ts">
 import { ElAutocomplete } from 'element-plus'
 import { computed } from 'vue'
-import RuleFieldList from '../json/ruleField.json'
 import type { FetchSuggestionsCallback } from '../../flow/types'
+import { RULE_FIELDS } from '@emqx/shared-ui-constants'
 
 const props = defineProps({
   modelValue: {
@@ -33,12 +33,12 @@ const inputValue = computed({
   },
 })
 
-const totalList = RuleFieldList.map((value) => ({ value }))
+const totalList = RULE_FIELDS.map((value: string) => ({ value }))
 const getList = (queryString: string, cb: FetchSuggestionsCallback) => {
   if (!queryString) {
     cb(totalList)
   }
-  const ret = totalList.filter(({ value }) => value.includes(queryString))
+  const ret = totalList.filter(({ value }: { value: string }) => value.includes(queryString))
   cb(ret)
 }
 

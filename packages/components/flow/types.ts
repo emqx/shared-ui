@@ -1,21 +1,13 @@
-import type { Position, Edge, Node } from '@vue-flow/core'
-
-export enum FilterLogicalOperator {
-  And = 'and',
-  Or = 'or',
-}
-
-export enum ArgumentType {
-  Number = 'number',
-  Any = 'any',
-  Float = 'float',
-  Integer = 'integer',
-  String = 'string',
-  Enum = 'enum',
-  Object = 'object',
-  Array = 'array',
-  Binary = 'binary',
-}
+import {
+  AIProviderType,
+  EditedWay,
+  FilterLogicalOperator,
+  NodeType,
+  ProcessingType,
+  FallbackActionKind,
+  FlowNodeType,
+} from '@emqx/shared-ui-constants'
+import type { Position, Edge, Node, ElementData, GraphEdge } from '@vue-flow/core'
 
 export type FetchSuggestionsCallback = (result: Array<{ value: string }>) => void
 
@@ -27,11 +19,6 @@ export interface FunctionItem {
     args: Array<string | number>
   }
   alias: string
-}
-
-export enum EditedWay {
-  Form,
-  SQL,
 }
 
 export type FunctionFormType = {
@@ -60,91 +47,6 @@ export interface FilterFormType {
   form: FilterFormData
 }
 
-export enum NodeType {
-  Source,
-  Processing,
-  Sink,
-  Fallback,
-}
-
-export enum FlowNodeType {
-  Input = 'custom_input',
-  Default = 'custom_default',
-  Output = 'custom_output',
-}
-
-export enum BridgeType {
-  Webhook = 'http',
-  MQTT = 'mqtt',
-  InfluxDB = 'influxdb',
-  MySQL = 'mysql',
-  KafkaProducer = 'kafka_producer',
-  KafkaConsumer = 'kafka_consumer',
-  Redis = 'redis',
-  GCPProducer = 'gcp_pubsub_producer',
-  GCPConsumer = 'gcp_pubsub_consumer',
-  MongoDB = 'mongodb',
-  PgSQL = 'pgsql',
-  TimescaleDB = 'timescale',
-  MatrixDB = 'matrix',
-  TDengine = 'tdengine',
-  ClickHouse = 'clickhouse',
-  DynamoDB = 'dynamo',
-  Cassandra = 'cassandra',
-  MicrosoftSQLServer = 'sqlserver',
-  RocketMQ = 'rocketmq',
-  IoTDB = 'iotdb',
-  OpenTSDB = 'opents',
-  OracleDatabase = 'oracle',
-  RabbitMQ = 'rabbitmq',
-  Pulsar = 'pulsar',
-  HStream = 'hstreamdb',
-  AzureEventHubs = 'azure_event_hub_producer',
-  AmazonKinesis = 'kinesis',
-  GreptimeDB = 'greptimedb',
-  Confluent = 'confluent_producer',
-  SysKeeperProxy = 'syskeeper_proxy',
-  SysKeeperForwarder = 'syskeeper_forwarder',
-  Elasticsearch = 'elasticsearch',
-  S3 = 's3',
-  AzureBlobStorage = 'azure_blob_storage',
-  Couchbase = 'couchbase',
-  Datalayers = 'datalayers',
-  Snowflake = 'snowflake',
-  Tablestore = 'tablestore',
-  DiskLog = 'disk_log',
-  S3Tables = 's3tables',
-  Doris = 'doris',
-}
-
-export enum ProcessingType {
-  Function = 'function',
-  AIOpenAI = 'ai-openai',
-  AIAnthropic = 'ai-anthropic',
-  AIGemini = 'ai-gemini',
-  Filter = 'filter',
-}
-
-export enum FrontendSinkType {
-  Republish = 'republish',
-  Console = 'console',
-}
-
-export enum FrontendSourceType {
-  Message = 'message',
-  Event = 'event',
-}
-
-export enum FlowConnectionStatus {
-  Connected = 'connected',
-  Disconnected = 'disconnected',
-  Connecting = 'connecting',
-  // for cluster-aggregated, if nodes are at different statuses
-  Inconsistent = 'inconsistent',
-  // For Bridge, when the bridge resource is requested to be stopped
-  Stopped = 'stopped',
-}
-
 export interface NodeItem {
   name: string
   specificType: string
@@ -156,3 +58,123 @@ export type PositionData =
   | { sourcePosition: Position; targetPosition: Position }
 
 export type FlowData = Array<Node | Edge>
+
+export interface RePub {
+  payload: string
+  topic: string
+  qos: string | number
+  retain: boolean
+  mqtt_properties: Record<string, string>
+  user_properties: string
+  direct_dispatch?: boolean | string
+}
+
+export interface OutputItemObj {
+  function: string
+  args?: RePub
+}
+
+export interface FallbackActionRepublish {
+  kind: FallbackActionKind.Republish
+  args: RePub
+}
+
+export interface FallbackActionReference {
+  kind: FallbackActionKind.Reference
+  type: string
+  name: string
+}
+
+export type FallbackAction = FallbackActionRepublish | FallbackActionReference
+
+/**
+ * Sort by column
+ * ‼️‼️‼️‼️‼️ Note that since the AI part is essentially a function, it is grouped together in the function part
+ */
+export type GroupedNode = {
+  [NodeType.Source]: Array<Node>
+  [ProcessingType.Filter]: Array<Node>
+  [ProcessingType.Function]: Array<Node>
+  [NodeType.Sink]: Array<Node>
+  [NodeType.Fallback]?: Array<Node>
+}
+
+export interface AIProviderForm {
+  api_key: string
+  base_url?: string
+  name: string
+  type: AIProviderType
+}
+
+export interface AnthropicCompletionProfile {
+  anthropic_version?: string
+  /** @minimum 1 */
+  max_tokens?: number
+  model?: string
+  name: string
+  provider_name: string
+  system_prompt?: string
+  type: AIProviderType.Anthropic
+}
+
+export interface OpenAICompletionProfile {
+  model?: string
+  name: string
+  provider_name: string
+  system_prompt?: string
+  type: AIProviderType.OpenAI
+}
+
+export type AICompletionProfile = AnthropicCompletionProfile | OpenAICompletionProfile
+
+export interface RuleFunc {
+  name: string
+  args: Array<{
+    name: string
+    type: string
+    required: boolean
+    default?: any
+    range?: Array<number | null>
+    optionalValues?: Array<string>
+    isReference?: boolean
+  }>
+}
+
+export type FlowDataItemForSubmit<T> = {
+  isCreated: boolean
+  data: T
+  needUpdateByAPI?: boolean
+}
+
+export type BridgeData = FlowDataItemForSubmit<Record<string, any>>
+
+export type ConnectionEdge =
+  | GraphEdge<ElementData>
+  | Pick<GraphEdge<ElementData>, 'source' | 'sourceNode' | 'target' | 'targetNode'>
+
+export interface NodeData {
+  id: string
+  type: FlowNodeType
+  data: {
+    specificType: string
+    isCreated?: boolean
+    isChanged?: boolean
+    /**
+     * This value is true when acting as a fallback for any node
+     */
+    isFallback?: boolean
+    formData: any
+  }
+}
+
+export type EdgeData = Pick<
+  GraphEdge<ElementData>,
+  'source' | 'sourceNode' | 'target' | 'targetNode'
+>
+
+export type NodesAfterGroup = Record<FlowNodeType, Array<NodeData>>
+
+export interface FlowDataMap {
+  nodes: Array<NodeData>
+  edges: Array<EdgeData>
+}

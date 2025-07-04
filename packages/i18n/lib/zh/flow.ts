@@ -20,4 +20,16 @@ export const zhFlow = {
   republish: '消息重发布',
   condition: '个条件',
   systemPrompt: '系统消息',
+  consoleFallbackWrong: 'Console 不可作为备选动作',
+  incorrectConnection: '错误的连线',
+  filterFunctionsWrongOrder: '函数节点必须放置在过滤器节点之前，请调整节点位置。',
+  flowEmptyError: '无法保存，Flow 中需要有至少一个 Sink 节点和一个 Source 节点',
+  flowIntegrityError: '无法保存，Flow 中需要有至少一个 {missing} 节点',
+  isolatedNodeError:
+    'Flow 中有未连接的节点，请先连接或将其删除|Flow 中有未连接的节点，请先连接或将其删除',
+  multipleFlowError: '每次仅允许创建一个 Flow',
+  multipleFallbackWrong: 'Flow 暂不支持编辑多层级备选动作',
+  incorrectInputOutputConnection: '请确认所有 Source 节点均正确连接到同一数据处理节点',
+  incorrectOutputNodeConnection: '请确认所有 Sink 节点均由同一数据处理节点输出',
+  incorrectDefaultNodeConnection: '请确认所有数据处理节点均按照顺序首尾相连',
 }
