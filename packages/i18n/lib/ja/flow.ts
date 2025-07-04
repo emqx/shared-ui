@@ -20,4 +20,20 @@ export const jaFlow = {
   republish: '再パブリッシュ（Republish）',
   condition: '条件',
   systemPrompt: 'システムメッセージ',
+  consoleFallbackWrong: 'Console cannot be used as a fallback action', // TODO: ja
+  incorrectConnection: '不正な接続',
+  filterFunctionsWrongOrder:
+    '関数ノードはフィルターノードより前に配置する必要があります。ノードの位置を調整してください。',
+  flowEmptyError:
+    '保存できません。フローには少なくとも1つのシンクノードと1つのソースノードが必要です。',
+  flowIntegrityError: '保存できません。フローには少なくとも 1 つの{missing}ノードが必要です。',
+  isolatedNodeError: 'フローに未接続のノードがあります。接続するか削除してください。',
+  multipleFlowError: '一度に作成できるフローは1つだけです。',
+  multipleFallbackWrong: 'フローは多段階のフォールバックアクションの編集をサポートしていません',
+  incorrectInputOutputConnection:
+    'すべてのソースノードが同じデータ処理ノードに正しく接続されていることを確認してください',
+  incorrectOutputNodeConnection:
+    'すべてのシンクノードが同じデータ処理ノードから出力されていることを確認してください',
+  incorrectDefaultNodeConnection:
+    'すべてのデータ処理ノードが開始から終了まで順に接続されていることを確認してください',
 }

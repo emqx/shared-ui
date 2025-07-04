@@ -46,7 +46,7 @@ import { Component, computed, PropType } from 'vue'
 import { ElIcon } from 'element-plus'
 import { Plus } from '@element-plus/icons-vue'
 import { Handle, Position, type Node } from '@vue-flow/core'
-import { FlowConnectionStatus, FlowNodeType } from '../types'
+import { FlowConnectionStatus, FlowNodeType } from '@emqx/shared-ui-constants'
 import useFlowNode from '../composables/useFlowNode'
 import useActionAndSourceStatus from '../composables/useActionAndSourceStatus'
 

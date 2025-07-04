@@ -11,7 +11,14 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['vue', 'element-plus', '@emqx/shared-ui-utils', '@vue-flow/core', 'sortablejs'],
+      external: [
+        'vue',
+        'element-plus',
+        '@emqx/shared-ui-utils',
+        '@vue-flow/core',
+        'sortablejs',
+        'elkjs/lib/elk.bundled',
+      ],
       output: {
         globals: {
           vue: 'Vue',
@@ -19,6 +26,7 @@ export default defineConfig({
           '@emqx/shared-ui-utils': 'SharedUIUtils',
           '@vue-flow/core': 'VueFlowCore',
           sortablejs: 'Sortable',
+          'elkjs/lib/elk.bundled': 'ELK',
         },
       },
     },
