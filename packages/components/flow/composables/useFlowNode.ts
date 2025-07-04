@@ -1,33 +1,21 @@
 import { Position, type Node } from '@vue-flow/core'
 import {
+  AI_PLACEHOLDER_TYPE,
   BridgeType,
-  FilterFormData,
-  FilterFormType,
   FlowNodeType,
   FrontendSinkType,
   FrontendSourceType,
-  NodeItem,
+  isNotBridgeSourceTypes,
   NodeType,
-  PositionData,
   ProcessingType,
-} from '../types'
+  SourceTypeAllMsgsAndEvents,
+} from '@emqx/shared-ui-constants'
 import { useFlowLocale } from './useFlowLocale'
-
-export const isNotBridgeSourceTypes = [FrontendSourceType.Event, FrontendSourceType.Message]
-
-/**
- * Cannot be added, only for show webhook
- */
-export const SourceTypeAllMsgsAndEvents = 'all-msgs-and-events'
-
-/**
- * Because the exact type of the ai node needs to be known after the details are fetched,
- * in order to treat the data as an ai node when processing it, assign a placeholder to it first.
- */
-export const AI_PLACEHOLDER_TYPE = 'ai-placeholder'
+import type { FilterFormData, FilterFormType, NodeItem, PositionData } from '../types'
 
 export default (): {
   nodeWidth: number
+  getNodeHeight: (specificType: string) => number
   processingNodeList: Array<NodeItem>
   getNodeClass: (type: NodeType) => string
   getFlowNodeHookPosition: (nodeType: FlowNodeType) => PositionData
@@ -39,7 +27,7 @@ export default (): {
   isAIType: (type: string) => boolean
   isLikeFunctionType: (type: string) => boolean
   getCommonTypeLabel: (specificType: string) => string
-  getNodeInfoFunc: (node: Node, getEventLabel: (event: string) => string) => string
+  getNodeInfoFunc: (node: Node, getEventLabel?: (event: string) => string) => string
 } => {
   const { t } = useFlowLocale()
 
@@ -47,6 +35,13 @@ export default (): {
    * just record, not for setting
    */
   const nodeWidth = 200
+  const getNodeHeight = (specificType: string) => {
+    const list: Array<string> = [ProcessingType.Function, FrontendSinkType.Console]
+    if (list.includes(specificType)) {
+      return 42
+    }
+    return 66
+  }
 
   const nodeClassMap: Record<NodeType, string> = {
     [NodeType.Source]: 'node-source',
@@ -164,7 +159,7 @@ export default (): {
     return `${num} ${t('flow.condition', num)}`
   }
 
-  const getNodeInfoFunc = (node: Node, getEventLabel: (event: string) => string): string => {
+  const getNodeInfoFunc = (node: Node, getEventLabel?: (event: string) => string): string => {
     const { specificType, formData } = node.data
     if (!specificType || !formData) {
       return ''
@@ -176,7 +171,9 @@ export default (): {
       case FrontendSourceType.Message:
         return `${t('common.topic')}${t('common.colon')}${formData.topic}`
       case FrontendSourceType.Event:
-        return `${t('flow.event')}${t('common.colon')}${getEventLabel(formData.event)}`
+        return `${t('flow.event')}${t('common.colon')}${
+          getEventLabel ? getEventLabel(formData.event) : formData.event
+        }`
       case ProcessingType.Function:
         return ''
       case ProcessingType.Filter:
@@ -200,6 +197,7 @@ export default (): {
 
   return {
     nodeWidth,
+    getNodeHeight,
     processingNodeList,
     getNodeClass,
     getFlowNodeHookPosition,
