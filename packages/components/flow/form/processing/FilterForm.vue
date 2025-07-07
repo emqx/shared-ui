@@ -52,7 +52,11 @@
                     :index="index"
                     :subIndex="subIndex"
                     @delete="deleteFilterItem(index, subIndex)"
-                  />
+                  >
+                    <template #deleteIcon>
+                      <slot name="deleteIcon"></slot>
+                    </template>
+                  </FilterItemCom>
                 </div>
               </div>
               <FilterItemCom
@@ -63,12 +67,19 @@
                 :deletable="record.items.length > 1"
                 :class="{ 'can-connect': getCanConnect(index) && showConnector }"
                 @delete="deleteFilterItem(index)"
-              />
+              >
+                <template #deleteIcon>
+                  <slot name="deleteIcon"></slot>
+                </template>
+              </FilterItemCom>
             </template>
           </div>
         </div>
         <el-button link type="primary" @click="addFilterItem">
-          <i class="iconfont icon-add"></i>{{ t('common.add') }}
+          <slot name="addIcon">
+            <el-icon :size="16"><Plus /></el-icon>
+          </slot>
+          {{ t('common.add') }}
         </el-button>
       </el-form>
     </template>
@@ -107,7 +118,8 @@ import {
   watch,
   WritableComputedRef,
 } from 'vue'
-import { ElForm, ElFormItem, ElButton } from 'element-plus'
+import { ElForm, ElFormItem, ElButton, ElIcon } from 'element-plus'
+import { Plus } from '@element-plus/icons-vue'
 import { EditedWay, FilterLogicalOperator } from '@emqx/shared-ui-constants'
 import useFormRules from '../../composables/useFormRules'
 import useFilterConnectorInForm from '../../composables/useFilterConnectorInForm'

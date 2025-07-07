@@ -67,7 +67,7 @@ const handleDel = () => {
     svg {
       cursor: pointer;
       &:hover {
-        color: #5e4eff;
+        color: var(--el-color-primary);
       }
     }
   }

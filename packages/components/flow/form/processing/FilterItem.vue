@@ -11,15 +11,18 @@
     <el-form-item :prop="getFormItemProp('valueForComparison')">
       <el-input v-model="record.valueForComparison" />
     </el-form-item>
-    <el-button link v-show="deletable" :disabled="!deletable" @click="deleteItem">
-      <i class="iconfont icon-delete"></i>
+    <el-button link v-show="deletable" class="btn-del" :disabled="!deletable" @click="deleteItem">
+      <slot name="deleteIcon">
+        <el-icon :size="16" class="icon-del"><Delete /></el-icon>
+      </slot>
     </el-button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { ElButton, ElFormItem, ElInput, ElSelect, ElOption } from 'element-plus'
+import { ElButton, ElFormItem, ElInput, ElSelect, ElOption, ElIcon } from 'element-plus'
+import { Delete } from '@element-plus/icons-vue'
 import { RULE_LOGICAL_OPERATORS } from '@emqx/shared-ui-constants'
 import CommonFields from '../CommonFields.vue'
 
