@@ -34,7 +34,6 @@ const hasNextTarget = computed(() =>
 </script>
 
 <style lang="scss">
-// TODO: modify style variables to match the design system
 @use 'sass:math';
 
 .flow-guide-node {
@@ -44,34 +43,34 @@ const hasNextTarget = computed(() =>
   align-items: center;
   text-align: center;
   // After the fit view, the position of the node on the upper side of the page..
-  padding-bottom: 200px;
+  padding-bottom: 260px;
   $square-size: 60px;
   $node-width: 168px;
   .square {
     width: $square-size;
     height: $square-size;
     margin-bottom: 14px;
-    border: 1px dashed #d0d4dc;
+    border: 1px dashed var(--el-border-color);
     border-radius: 4px;
   }
   .label {
     margin-bottom: 4px;
     font-size: 16px;
     line-height: 22px;
-    color: #343741;
+    color: var(--el-text-color-primary);
   }
   .desc {
     width: $node-width;
     line-height: 22px;
-    color: #707070;
+    color: var(--el-text-color-secondary);
     opacity: 0.6;
   }
   &.is-source {
     .square {
-      border: 2px dashed #707070;
+      border: 2px dashed var(--el-text-color-secondary);
     }
     .label {
-      color: #5e4eff;
+      color: var(--el-color-primary);
     }
     .desc {
       opacity: 1;

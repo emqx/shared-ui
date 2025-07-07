@@ -54,14 +54,24 @@
         </el-table-column>
         <el-table-column v-if="!readonly" :label="t('common.actions')" width="90">
           <template #default="{ $index }">
-            <el-button link :disabled="record.form.length < 2" @click="deleteItem($index)">
-              <i class="iconfont icon-delete"></i>
+            <el-button
+              link
+              class="btn-del"
+              :disabled="record.form.length < 2"
+              @click="deleteItem($index)"
+            >
+              <slot name="deleteIcon">
+                <el-icon :size="16" class="icon-del"><Delete /></el-icon>
+              </slot>
             </el-button>
           </template>
         </el-table-column>
       </el-table>
       <el-button v-if="!readonly" link type="primary" @click="addItem">
-        <i class="iconfont icon-add"></i>{{ t('common.add') }}
+        <slot name="addIcon">
+          <el-icon :size="16"><Plus /></el-icon>
+        </slot>
+        {{ t('common.add') }}
       </el-button>
     </template>
 
@@ -91,7 +101,8 @@
 
 <script setup lang="ts">
 import { get, isFunction, set } from 'lodash'
-import { ElTable, ElTableColumn, ElButton, ElForm, ElFormItem, ElInput } from 'element-plus'
+import { ElTable, ElTableColumn, ElButton, ElForm, ElFormItem, ElInput, ElIcon } from 'element-plus'
+import { Delete, Plus } from '@element-plus/icons-vue'
 import type { Node } from '@vue-flow/core'
 import Schema, { type Rules, type ValidateError } from 'async-validator'
 import {
@@ -301,7 +312,7 @@ defineExpose({ validate })
     display: none;
   }
   .el-table__expanded-cell {
-    background: #f8fafe;
+    background: var(--el-fill-color-light);
     .el-form-item__label {
       padding-right: 16px;
     }
