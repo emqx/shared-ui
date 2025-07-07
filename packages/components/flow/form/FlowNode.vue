@@ -11,7 +11,7 @@
   </Handle>
   <div class="flow-node">
     <img :src="nodeIconSrc" alt="node-img" class="node-icon" :class="iconClass" />
-    <div class="node-bd" :title="data.data.desc">
+    <div class="node-bd" :title="isAINode ? undefined : data.data.desc">
       <p class="label vertical-align-center">
         <span>
           {{ nodeLabel || data.label }}
@@ -21,7 +21,7 @@
           >)
         </span>
       </p>
-      <p class="desc" v-if="!isAIType(data.data.specificType)">
+      <p class="desc" v-if="!isAINode">
         {{ data.data.desc }}
       </p>
       <template v-else-if="data.data.desc">
@@ -106,6 +106,7 @@ const isDisconnectedActionOrSource = computed(() => {
     isActionOrSource && props.data?.data?.formData?.status === FlowConnectionStatus.Disconnected
   return isDisconnected
 })
+const isAINode = computed(() => isAIType(props.data?.data?.specificType))
 </script>
 
 <style lang="scss">

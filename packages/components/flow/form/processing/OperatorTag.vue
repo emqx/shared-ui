@@ -38,7 +38,7 @@ $tag-height: 18px;
   user-select: none;
   line-height: 1;
   text-align: center;
-  color: #5e4eff;
+  color: var(--el-color-primary);
   background-color: #e2fff5;
   cursor: pointer;
   &.disabled {

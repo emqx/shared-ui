@@ -90,7 +90,7 @@ const handleMouseLeave = () => emit('mouse-leave')
   }
   &:hover {
     svg {
-      color: #5e4eff;
+      color: var(--el-color-primary);
     }
   }
 }
