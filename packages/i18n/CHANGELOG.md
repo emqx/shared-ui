@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.49
+
+### Patch Changes
+
+- New config `health_check_interval_jitter`
+
 ## 0.0.48
 
 ### Patch Changes
