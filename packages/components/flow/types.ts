@@ -104,6 +104,12 @@ export interface AIProviderForm {
   base_url?: string
   name: string
   type: AIProviderType
+  transport_options?: {
+    checkout_timeout: string
+    connect_timeout: string
+    max_connections: string
+    recv_timeout: string
+  }
 }
 
 export interface AnthropicCompletionProfile {
