@@ -170,6 +170,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   greptimedb: {
     dbname: 'Database',
+    ttl: 'Time-To-Live (TTL)',
   },
   s3: {
     host: 'Host',

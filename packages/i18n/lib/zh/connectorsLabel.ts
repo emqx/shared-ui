@@ -170,6 +170,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   },
   greptimedb: {
     dbname: '数据库',
+    ttl: '数据保留期限 (TTL)',
   },
   s3: {
     host: '地址',
