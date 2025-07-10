@@ -1,5 +1,13 @@
 # @emqx/shared-ui-utils
 
+## 0.0.19
+
+### Patch Changes
+
+- add shared flow codes
+- Updated dependencies
+  - @emqx/shared-ui-constants@0.0.3
+
 ## 0.0.18
 
 ### Patch Changes
