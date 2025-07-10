@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.51
+
+### Patch Changes
+
+- New parameters in snowflake action
+
 ## 0.0.50
 
 ### Patch Changes
