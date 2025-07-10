@@ -225,6 +225,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     port: 'Proxy Port',
     max_inactive: 'Max Inactive',
     private_key_password: 'Private Key Password',
+    parameters: 'Upload Mode',
   },
   tablestore: {
     storage_model_type: 'Storage Model Type',
