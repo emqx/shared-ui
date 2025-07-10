@@ -498,6 +498,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     precision: 'GreptimeDB time precision.',
     write_syntax:
       "Conf of GreptimeDB gRPC protocol to write data points. Write syntax is a text-based format that provides the measurement, tag set, field set, and timestamp of a data point, and placeholder supported, which is the same as InfluxDB line protocol.\nSee also [InfluxDB 2.3 Line Protocol](https://docs.influxdata.com/influxdb/v2.3/reference/syntax/line-protocol/) and\n[InfluxDB 1.8 Line Protocol](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_tutorial/) <br/>\nTLDR:<br/>\n```\n<measurement>[,<tag_key>=<tag_value>[,<tag_key>=<tag_value>]] <field_key>=<field_value>[,<field_key>=<field_value>] [<timestamp>]\n```\nPlease note that a placeholder for an integer value must be annotated with a suffix `i`. For example `${'{'}payload.int_value{'}'}i`.",
+    ttl: 'The time-to-live setting for automatically created tables in GreptimeDB.',
   },
   syskeeper_proxy: {
     listen: 'The listening address for this Syskeeper proxy server',
