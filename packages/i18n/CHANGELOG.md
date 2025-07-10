@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.50
+
+### Patch Changes
+
+- New config in greptime connector
+
 ## 0.0.49
 
 ### Patch Changes
