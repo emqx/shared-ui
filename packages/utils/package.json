@@ -37,6 +37,7 @@
   "dependencies": {
     "@emqx/shared-ui-constants": "link:../constants",
     "@emqx/shared-ui-i18n": "link:../i18n",
+    "hocon-parser": "^1.0.1",
     "json-bigint": "^1.0.0",
     "papaparse": "^5.4.1",
     "vue": "^3.2.0",
