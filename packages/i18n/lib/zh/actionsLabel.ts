@@ -214,7 +214,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   },
   snowflake: {
     mode: '上传方式',
-    type: '增强类型',
+    type: '聚合上传文件格式',
     private_key: '私钥',
     schema: '模式',
     stage: '存储区',
@@ -246,6 +246,9 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   s3tables: {
     namespace: '命名空间',
     table: '表',
+    container: '数据文件格式',
+    type: '数据文件格式',
+    max_row_group_bytes: 'Parquet 最大行组大小',
   },
   bigquery: {
     dataset: '数据集',
