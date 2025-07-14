@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.52
+
+### Patch Changes
+
+- Correct label in snowflake action and add label in s3 tables action
+
 ## 0.0.51
 
 ### Patch Changes
