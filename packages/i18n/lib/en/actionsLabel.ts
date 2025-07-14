@@ -214,7 +214,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   },
   snowflake: {
     mode: 'Upload Mode',
-    type: 'Aggregation Type',
+    type: 'Aggregation Upload Format',
     private_key: 'Private Key',
     schema: 'Schema',
     stage: 'Stage',
@@ -246,6 +246,9 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   s3tables: {
     namespace: 'Namespace',
     table: 'Table',
+    container: 'Data File Format',
+    type: 'Data File Format',
+    max_row_group_bytes: 'Parquet Max Row Group Bytes',
   },
   bigquery: {
     dataset: 'Dataset',
