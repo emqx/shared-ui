@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.20
+
+### Patch Changes
+
+- Add HOCON parser and formatter
+
 ## 0.0.19
 
 ### Patch Changes
