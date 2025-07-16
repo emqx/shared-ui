@@ -11,6 +11,7 @@ import useActionAndSourceStatus from './composables/useActionAndSourceStatus'
 import FlowNode from './form/FlowNode.vue'
 import useFlowEdge from './composables/useFlowEdge'
 import useFlowEditorDataHandler from './composables/useFlowEditorDataHandler'
+import useEditFlow from './composables/useEditFlow'
 
 interface FlowComponentOptions {
   componentPrefix?: string
@@ -44,6 +45,7 @@ export {
   useNodeForm,
   useFlowEdge,
   useFlowEditorDataHandler,
+  useEditFlow,
 }
 
 export * from './types'
