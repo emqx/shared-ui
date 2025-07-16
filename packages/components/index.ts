@@ -34,5 +34,6 @@ export {
   useNodeForm,
   useFlowEdge,
   useFlowEditorDataHandler,
+  useEditFlow,
 } from './flow/index'
 export * from './flow/types'
