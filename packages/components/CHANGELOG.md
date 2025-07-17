@@ -1,5 +1,11 @@
 # @emqx/shared-ui-components
 
+## 0.0.9
+
+### Patch Changes
+
+- add useEditFlow hook
+
 ## 0.0.8
 
 ### Patch Changes
