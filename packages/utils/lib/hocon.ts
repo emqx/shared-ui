@@ -23,10 +23,13 @@ const formatKey = (key: string): string => {
  * @param data - The object to convert.
  * @returns The HOCON string representation of the object.
  */
-export const objectToHocon = (data: Record<string, any>): string => {
+export const objectToHocon = (data: Record<string, any>, objLevel: number = 0): string => {
   if (isEmptyObj(data)) {
     return '{}'
   }
+
+  const indent = '  '.repeat(objLevel)
+  const nextIndent = '  '.repeat(objLevel + 1)
 
   const getValueString = (value: any, level: number): string => {
     if (typeof value === 'string') {
@@ -43,7 +46,7 @@ export const objectToHocon = (data: Record<string, any>): string => {
       return `[\n${items}\n${'  '.repeat(level)}]`
     }
     if (typeof value === 'object') {
-      return objectToHocon(value)
+      return objectToHocon(value, level)
     }
     return String(value)
   }
@@ -53,11 +56,11 @@ export const objectToHocon = (data: Record<string, any>): string => {
     .map((key) => {
       const value = data[key]
       const formattedKey = formatKey(key)
-      return `  ${formattedKey} = ${getValueString(value, 1)}`
+      return `${nextIndent}${formattedKey} = ${getValueString(value, objLevel + 1)}`
     })
     .join('\n')
 
-  return `{\n${result}\n}`
+  return `{\n${result}\n${indent}}`
 }
 
 /**
