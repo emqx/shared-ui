@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.21
+
+### Patch Changes
+
+- Enhance objectToHocon function to support nested objects with indentation
+
 ## 0.0.20
 
 ### Patch Changes
