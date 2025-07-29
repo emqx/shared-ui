@@ -492,7 +492,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     content:
       "要存储的对象的内容。默认情况下，它是包含所有字段的 JSON 文本格式。支持如 ${'{'}payload{'}'} 的占位符设置。存储格式取决于变量的格式，支持二进制内容。",
     blob: 'Azure Blob Storage blob 名称。',
-    container: 'Azure Blob Storage 容器名称。',
+    parameters_container: 'Azure Blob Storage 容器名称。',
   },
   snowflake: {
     private_key:
