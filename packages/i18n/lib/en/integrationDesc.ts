@@ -545,7 +545,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     time_interval: 'Amount of time events will be aggregated in a single object before uploading.',
     content: 'The content of the object to be uploaded supports placeholders.',
     blob: 'Azure Blob Storage blob name.',
-    container: 'Azure Blob Storage container name.',
+    parameters_container: 'Azure Blob Storage container name.',
   },
   snowflake: {
     private_key:
