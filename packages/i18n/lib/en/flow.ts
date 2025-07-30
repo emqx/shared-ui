@@ -37,4 +37,29 @@ export const enFlow = {
     'Please confirm that all sink nodes are output from the same data processing node',
   incorrectDefaultNodeConnection:
     'Please confirm that all data processing nodes are connected in sequence from start to end',
+  input: 'Input',
+  systemPromptDesc:
+    'System message, used to guide AI models to generate outputs that meet expectations. Example: Add up the values of numeric keys in the input JSON data and output the result, only return the output result.',
+  model: 'Model',
+  maxTokens: 'Max Tokens',
+  anthropicVersion: 'Anthropic Version',
+  apiKey: 'API Key',
+  baseURL: 'Base URL',
+  geminiBaseUrlTips:
+    'This Gemini connection uses an OpenAI-compatible API. Please enter a compatible Base URL.',
+  aiOutputAlias: 'Output Result Alias',
+  aiOutputAliasDesc:
+    'Output result alias, used to reference output results in actions or subsequent processing.',
+  aliasDesc:
+    'If the alias contains characters other than letters, numbers, and underscores, or starts with a number, or is a SQL keyword, please add double quotes to the alias.',
+  connectTimeout: 'Connect Timeout',
+  recvTimeout: 'Receive Timeout',
+  checkoutTimeout: 'Checkout Timeout',
+  maxConn: 'Max Connections',
+  maxConnectionsDesc: 'Maximum number of simultaneous connections to the AI provider.',
+  checkoutTimeoutDesc:
+    'Timeout for the checkout from connection pool for a request to the AI provider.',
+  confirm: 'Confirm',
+  baseURLDesc:
+    'The default value is {url}, or you can use any base URL that works with the {name} API format.',
 }

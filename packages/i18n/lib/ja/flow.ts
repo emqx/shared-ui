@@ -36,4 +36,32 @@ export const jaFlow = {
     'すべてのシンクノードが同じデータ処理ノードから出力されていることを確認してください',
   incorrectDefaultNodeConnection:
     'すべてのデータ処理ノードが開始から終了まで順に接続されていることを確認してください',
+  input: '入力',
+  systemPromptDesc:
+    'システムメッセージ。AI モデルに期待どおりの出力を生成させるために使用します。例：入力 JSON データの数値キーの値を合計し、その結果のみを返す。',
+  model: 'モデル',
+  maxTokens: '最大トークン数',
+  anthropicVersion: 'Anthropic バージョン',
+  apiKey: 'API キー',
+  baseURL: 'ベース URL',
+  // TODO: ja
+  geminiBaseUrlTips:
+    'This Gemini connection uses an OpenAI-compatible API. Please enter a compatible Base URL.',
+  aiOutputAlias: '出力結果のエイリアス',
+  aiOutputAliasDesc:
+    '出力結果のエイリアス。アクションや後続処理で出力結果を参照するために使用します',
+  aliasDesc:
+    'エイリアスに英数字とアンダースコア以外の文字が含まれる場合、数字で始まる場合、または SQL キーワードの場合は、エイリアスを二重引用符で囲んでください',
+  // S - TODO: ja
+  connectTimeout: 'Connect Timeout',
+  recvTimeout: 'Receive Timeout',
+  checkoutTimeout: 'Checkout Timeout',
+  maxConn: 'Max Connections',
+  maxConnectionsDesc: 'Maximum number of simultaneous connections to the AI provider.',
+  checkoutTimeoutDesc:
+    'Timeout for the checkout from connection pool for a request to the AI provider.',
+  // E - TODO: ja
+  confirm: '確認',
+  baseURLDesc:
+    'デフォルト値は {url} です。{name} API 形式と互換性のある任意のベース URL を使用することもできます。',
 }

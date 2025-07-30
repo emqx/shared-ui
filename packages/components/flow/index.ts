@@ -12,6 +12,8 @@ import FlowNode from './form/FlowNode.vue'
 import useFlowEdge from './composables/useFlowEdge'
 import useFlowEditorDataHandler from './composables/useFlowEditorDataHandler'
 import useEditFlow from './composables/useEditFlow'
+import AINodeForm from './form/processing/AINodeForm.vue'
+import AITransportOptions from './form/processing/AITransportOptions.vue'
 
 interface FlowComponentOptions {
   componentPrefix?: string
@@ -38,6 +40,8 @@ export {
   FlowGuide,
   FlowEdge,
   FlowNode,
+  AINodeForm,
+  AITransportOptions,
   useActionAndSourceStatus,
   useFlowGuideNodes,
   useFlowNode,
