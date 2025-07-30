@@ -99,17 +99,20 @@ export type GroupedNode = {
   [NodeType.Fallback]?: Array<Node>
 }
 
+export interface AITransportOptions {
+  checkout_timeout?: string
+  connect_timeout?: string
+  /** @minimum 1 */
+  max_connections?: number
+  recv_timeout?: string
+}
+
 export interface AIProviderForm {
   api_key: string
   base_url?: string
   name: string
   type: AIProviderType
-  transport_options?: {
-    checkout_timeout: string
-    connect_timeout: string
-    max_connections: string
-    recv_timeout: string
-  }
+  transport_options?: AITransportOptions
 }
 
 export interface AnthropicCompletionProfile {
@@ -133,6 +136,13 @@ export interface OpenAICompletionProfile {
 
 export type AICompletionProfile = AnthropicCompletionProfile | OpenAICompletionProfile
 
+type OmitCompletionKeys = 'name' | 'provider_name' | 'type'
+type AICompletion<T> = Omit<T, OmitCompletionKeys>
+type AITotalConfig<T> = AIProviderForm & { input: string; alias: string } & AICompletion<T>
+
+export type AIOpenAIConfig = AITotalConfig<OpenAICompletionProfile>
+export type AIAnthropicConfig = AITotalConfig<AnthropicCompletionProfile>
+export type AIConfig = AIOpenAIConfig | AIAnthropicConfig
 export interface RuleFunc {
   name: string
   args: Array<{

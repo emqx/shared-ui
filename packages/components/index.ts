@@ -20,6 +20,8 @@ export * from './aiLog/types'
 export { default as CustomFormItem } from './common/CustomFormItem.vue'
 export { default as CustomInputPassword } from './common/CustomInputPassword.vue'
 export { default as CustomHeightResizer } from './common/CustomHeightResizer.vue'
+export { default as InputWithOptions } from './common/InputWithOptions.vue'
+export { default as InputWithTextEditDialog } from './common/InputWithTextEditDialog.vue'
 
 export {
   FunctionForm,
@@ -27,6 +29,8 @@ export {
   FlowGuide,
   FlowEdge,
   FlowNode,
+  AINodeForm,
+  AITransportOptions,
   useActionAndSourceStatus,
   useFlowGuideNodes,
   useFlowNode,
