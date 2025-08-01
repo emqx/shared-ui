@@ -1,5 +1,11 @@
 # @emqx/shared-ui-components
 
+## 0.0.10
+
+### Patch Changes
+
+- add shared AI node form
+
 ## 0.0.9
 
 ### Patch Changes
