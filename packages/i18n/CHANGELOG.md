@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.53
+
+### Patch Changes
+
+- add shared AI node form
+
 ## 0.0.52
 
 ### Patch Changes
