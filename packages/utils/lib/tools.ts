@@ -179,3 +179,21 @@ export const getBridgeKey = ({ type, name }: { type: string; name: string } & un
   `${type}:${name}`
 
 export const checkNeedRequestAPI = (isChanged?: boolean) => isChanged || isChanged === undefined
+
+interface SQLKeywords {
+  fieldStr: string
+  fromStr: string
+  whereStr: string
+}
+/**
+ * If there is FOREACH in the SQL statement
+ * put the FOREACH and the following statements into the SELECT
+ */
+export const getKeywordsFromSQL = (sqlStr: string): SQLKeywords => {
+  const { fieldStr = '', fromStr = '', whereStr = '' } = getKeyPartsFromSQL(sqlStr)
+  return {
+    fieldStr,
+    fromStr,
+    whereStr,
+  }
+}
