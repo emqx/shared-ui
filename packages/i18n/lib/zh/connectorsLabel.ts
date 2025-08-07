@@ -38,6 +38,11 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     request_timeout: '请求超时',
     access_method: '访问模式',
     service_account_json: 'GCP 服务账户凭证',
+    account: '账户',
+    private_key_password: '私钥密码',
+    proxy: '代理',
+    host: '代理主机',
+    port: '代理端口',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -184,13 +189,12 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     driver_type: '驱动类型',
   },
   snowflake: {
-    account: '账户',
     dsn: '数据源名称',
-    proxy: '代理',
-    host: '代理主机',
-    port: '代理端口',
     private_key_path: '私钥路径',
-    private_key_password: '私钥密码',
+  },
+  snowflake_streaming: {
+    pipe_user: '管道用户',
+    private_key: '私钥',
   },
   tablestore: {
     endpoint: '端点',

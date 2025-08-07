@@ -51,6 +51,15 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     ipv6_probe: 'Whether to probe for IPv6 support.',
     min_part_size: `The minimum part size for multipart uploads.<br/>Uploaded data will be accumulated in memory until this size is reached.`,
     max_part_size: `The maximum part size for multipart uploads.<br/>S3 uploader won't try to upload parts larger than this size.`,
+    private_key:
+      'The private key configured for the Pipe User. This supports the input formats below:\n- Plain key: Enter the private key contents in PEM format directly as a string value.\n- File Path: Specify the path to a file that contains the private key. Ensure the path starts with <code>file://</code>. The file path must be the same on all nodes in the cluster.',
+    pipe_user:
+      'A username which has a role with permissions over the Pipe to be used. The minimum permissions are `operate` and `monitor`.',
+    proxy: 'Proxy configuration. Only HTTP proxies are currently supported (no HTTPS).',
+    private_key_path:
+      'Full file path to the private key to be used for the ODBC connection. This path must be the same on all nodes of the cluster.',
+    private_key_password:
+      'Password to decrypt the private key. Do not set this value if the private key is not encrypted.',
   },
   mqtt: {
     bridge_mode:
@@ -548,19 +557,14 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     parameters_container: 'Azure Blob Storage container name.',
   },
   snowflake: {
-    private_key:
-      'The private key configured for the Pipe User. This supports the input formats below:\n- Plain key: Enter the private key contents in PEM format directly as a string value.\n- File Path: Specify the path to a file that contains the private key. Ensure the path starts with <code>file://</code>. The file path must be the same on all nodes in the cluster.',
     database: 'Name of the Database that contains the Snowflake resources.',
     schema: 'Name of the Schema that contains the Snowflake resources.',
     stage: "Name of the Stage that'll be used for loading data files into Snowflake.",
     pipe: "Name of the Pipe that'll be used to ingest data into the table.",
-    pipe_user:
-      'A username which has a role with permissions over the Pipe to be used. The minimum permissions are `operate` and `monitor`.',
-    proxy: 'Proxy configuration. Only HTTP proxies are currently supported (no HTTPS).',
-    private_key_path:
-      'Full file path to the private key to be used for the ODBC connection. This path must be the same on all nodes of the cluster.',
-    private_key_password:
-      'Password to decrypt the private key. Do not set this value if the private key is not encrypted.',
+  },
+  snowflake_streaming: {
+    schema: 'Name of the Schema that contains the Snowflake resources.',
+    pipe: "Name of the Pipe that'll be used to ingest data into the table.",
   },
   tablestore: {
     isint:

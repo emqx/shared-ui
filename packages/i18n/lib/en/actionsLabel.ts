@@ -186,6 +186,8 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     send_buffer: 'Send Buffer Size',
     sync_timeout: 'Sync Timeout',
     strategy: 'Produce Strategy',
+    tag: 'Tag',
+    key: 'Key',
   },
   clickhouse: {
     batch_value_separator: 'Batch Value Separator',
@@ -226,6 +228,10 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     max_inactive: 'Max Inactive',
     private_key_password: 'Private Key Password',
     parameters: 'Upload Mode',
+  },
+  snowflake_streaming: {
+    schema: 'Schema',
+    pipe: 'Pipe',
   },
   tablestore: {
     storage_model_type: 'Storage Model Type',

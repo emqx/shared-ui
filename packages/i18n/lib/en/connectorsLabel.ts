@@ -38,6 +38,11 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     ipv6_probe: 'IPv6 Probe',
     headers: 'HTTP Headers',
     service_account_json: 'GCP Service Account Credentials',
+    account: 'Account',
+    private_key_password: 'Private Key Password',
+    proxy: 'Proxy',
+    host: 'Proxy Host',
+    port: 'Proxy Port',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -184,13 +189,12 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     driver_type: 'Driver Type',
   },
   snowflake: {
-    account: 'Account',
     dsn: 'Data Source Name (DSN)',
-    proxy: 'Proxy',
-    host: 'Proxy Host',
-    port: 'Proxy Port',
     private_key_path: 'Private Key Path',
-    private_key_password: 'Private Key Password',
+  },
+  snowflake_streaming: {
+    pipe_user: 'Pipe User',
+    private_key: 'Private Key',
   },
   tablestore: {
     endpoint: 'Endpoint',
