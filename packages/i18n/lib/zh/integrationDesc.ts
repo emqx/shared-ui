@@ -45,6 +45,12 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     ipv6_probe: '是否探测 IPv6 支持。',
     min_part_size: `分块上传的最小分块大小。<br/>上传的数据将在内存中累积，直到达到此大小。`,
     max_part_size: `分块上传的最大分块大小。<br/>S3 上传程序不会尝试上传超过此大小的部分。`,
+    private_key:
+      '为 Pipe User 配置的私钥。支持以下输入格式：\n- 明文密钥：直接以字符串形式输入PEM格式的私钥内容。\n- 文件路径：指定包含私钥的文件路径。确保路径以<code>file://</code>开头。文件路径必须在集群的所有节点上相同。',
+    pipe_user: '具有使用 Pipe 权限的角色的用户名。最低要求的权限是`operate`和`monitor`。',
+    proxy: '代理配置。当前仅支持 HTTP 代理（不支持 HTTPS）。',
+    private_key_path: '用于 ODBC 连接的私钥的完整文件路径。此路径必须在集群的所有节点上保持一致。',
+    private_key_password: '用于解密私钥的密码。如果私钥未加密，请不要设置此值。',
   },
   mqtt: {
     bridge_mode:
@@ -495,16 +501,14 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     parameters_container: 'Azure Blob Storage 容器名称。',
   },
   snowflake: {
-    private_key:
-      '为 Pipe User 配置的私钥。支持以下输入格式：\n- 明文密钥：直接以字符串形式输入PEM格式的私钥内容。\n- 文件路径：指定包含私钥的文件路径。确保路径以<code>file://</code>开头。文件路径必须在集群的所有节点上相同。',
     database: '包含 Snowflake 资源的数据库名称。',
     schema: '包含 Snowflake 资源的模式名称。',
     stage: '用于将数据文件加载到 Snowflake 的 Stage 名称。',
     pipe: '用于将数据摄取到表中的 Pipe 名称。',
-    pipe_user: '具有使用 Pipe 权限的角色的用户名。最低要求的权限是`operate`和`monitor`。',
-    proxy: '代理配置。当前仅支持 HTTP 代理（不支持 HTTPS）。',
-    private_key_path: '用于 ODBC 连接的私钥的完整文件路径。此路径必须在集群的所有节点上保持一致。',
-    private_key_password: '用于解密私钥的密码。如果私钥未加密，请不要设置此值。',
+  },
+  snowflake_streaming: {
+    schema: '包含 Snowflake 资源的模式名称。',
+    pipe: '用于将数据导入表的管道名称。',
   },
   tablestore: {
     isint: '是否尝试将数值写为整数。默认为 false，表示将整数写为浮点数。',

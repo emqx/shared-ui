@@ -186,6 +186,8 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     send_buffer: '发送消息的缓冲区大小',
     sync_timeout: '同步调用超时时间',
     strategy: 'Produce 策略',
+    tag: '标签',
+    key: '索引',
   },
   clickhouse: {
     batch_value_separator: '分隔符',
@@ -226,6 +228,10 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     max_inactive: '最大空闲时间',
     private_key_password: '私钥密码',
     parameters: '上传方式',
+  },
+  snowflake_streaming: {
+    schema: '模式',
+    pipe: '管道',
   },
   tablestore: {
     storage_model_type: '存储模型类型',
