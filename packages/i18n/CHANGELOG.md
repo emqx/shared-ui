@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.54
+
+### Patch Changes
+
+- New type `snowflake_streaming`
+
 ## 0.0.53
 
 ### Patch Changes
