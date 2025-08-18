@@ -149,6 +149,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     precision: 'Datalayers 时间精度。',
     enable_prepared: `启用 Datalayers 连接器的预处理语句。
     注意：此参数仅在 <code>驱动类型</code> 设置为 <code>Arrow Flight</code> 时生效。`,
+    server: '驱动类型为 Arrow Flight 时，默认端口应为 8360',
   },
   confluent_producer: {
     connect_timeout:

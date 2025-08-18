@@ -163,6 +163,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     precision: 'Datalayers time precision.',
     enable_prepared: `Enable prepared statements for the Datalayers connector.
 Note: this parameter only takes effect when the <code>Driver Type</code> set to <code>Arrow Flight</code>.`,
+    server: 'When the driver type is Arrow Flight, the default port should be 8360',
   },
   confluent_producer: {
     connect_timeout:
