@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.55
+
+### Patch Changes
+
+- Adapt new conf in datalayers connector
+
 ## 0.0.54
 
 ### Patch Changes
