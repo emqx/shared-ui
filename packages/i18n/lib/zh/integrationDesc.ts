@@ -147,6 +147,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     write_syntax:
       'Datalayers 采用与 InfluxDB v1 完全兼容的行协议，为用户提供了熟悉且高效的数据写入方式。虽然兼容InfluxDB v1 的语法，但 Datalayers 在底层实现上有其独特之处，以优化性能和适应其特定的存储结构。参考 [InfluxDB Line Protocol](https://docs.datalayers.cn/datalayers/latest/development-guide/writing-with-influxdb-line-protocol.html)',
     precision: 'Datalayers 时间精度。',
+    enable_prepared: `启用 Datalayers 连接器的预处理语句。
+    注意：此参数仅在 <code>驱动类型</code> 设置为 <code>Arrow Flight</code> 时生效。`,
   },
   confluent_producer: {
     connect_timeout:

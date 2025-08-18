@@ -187,6 +187,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   datalayers: {
     driver_type: 'Driver Type',
+    enable_prepared: 'Enable Prepared Statements',
   },
   snowflake: {
     dsn: 'Data Source Name (DSN)',
