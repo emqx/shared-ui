@@ -161,6 +161,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     write_syntax:
       'Datalayers adopts a line protocol fully compatible with InfluxDB v1, providing users with a familiar and efficient method for data ingestion. While compatible with InfluxDB v1 syntax, Datalayers has its unique characteristics in its underlying implementation to optimize performance and adapt to its specific storage structure. For more information, refer to [InfluxDB Line Protocol](https://docs.datalayers.cn/datalayers/latest/development-guide/writing-with-influxdb-line-protocol.html).',
     precision: 'Datalayers time precision.',
+    enable_prepared: `Enable prepared statements for the Datalayers connector.
+Note: this parameter only takes effect when the <code>Driver Type</code> set to <code>Arrow Flight</code>.`,
   },
   confluent_producer: {
     connect_timeout:

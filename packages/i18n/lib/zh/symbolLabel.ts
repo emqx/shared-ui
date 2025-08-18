@@ -67,4 +67,5 @@ export const zhSymbolLabel: Record<string, string> = {
   parameters_streaming_parameters: '流式',
   parameters_aggregation_container_container_parquet: 'Parquet',
   parameters_aggregation_container_container_avro: 'Avro',
+  arrow_flight: 'Arrow Flight',
 }

@@ -187,6 +187,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   },
   datalayers: {
     driver_type: '驱动类型',
+    enable_prepared: '启用预处理语句',
   },
   snowflake: {
     dsn: '数据源名称',
