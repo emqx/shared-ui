@@ -350,7 +350,7 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
     namespace:
       'The namespace field MUST be set if you are using the RocketMQ service in aliyun cloud and also the namespace is enabled, or if you have configured a namespace in your RocketMQ server. For RocketMQ in aliyun cloud, the namespace is the instance ID.',
     strategy:
-      'Producer key dispatch strategy, the default is `roundrobin`, also supports placeholders.',
+      'Producer key dispatch strategy, the default is `roundrobin`, from EMQX 6.0.0, placeholders are not supported.',
   },
   tdengine: {
     server:
