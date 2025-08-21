@@ -146,7 +146,7 @@ export default (): {
   checkFormIsEmpty: (
     type: string,
     form: Record<string, any>,
-    needCheckTypes: Array<string>,
+    needCheckTypes?: Array<string>,
   ) => boolean
 } => {
   const formDataCreatorMap: Record<string, any> = {

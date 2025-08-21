@@ -17,8 +17,12 @@
           {{ nodeLabel || data.label }}
         </span>
         <span class="extra" v-if="isDisconnectedActionOrSource">
-          (<span class="status-label">{{ getActionStatusLabel(data?.data?.formData?.status) }}</span
-          >)
+          (<slot name="label-extra">
+            <span class="status-label">{{
+              getActionStatusLabel(data?.data?.formData?.status)
+            }}</span>
+          </slot>
+          )
         </span>
       </p>
       <p class="desc" v-if="!isAINode">
