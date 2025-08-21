@@ -117,6 +117,10 @@ export enum BridgeType {
   DiskLog = 'disk_log',
   S3Tables = 's3tables',
   Doris = 'doris',
+  BigQuery = 'bigquery',
+  AlloyDB = 'alloydb',
+  CockroachDB = 'cockroachdb',
+  Redshift = 'redshift',
 }
 
 export enum ProcessingType {
