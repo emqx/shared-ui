@@ -23,6 +23,7 @@ export { default as CustomHeightResizer } from './common/CustomHeightResizer.vue
 export { default as InputWithOptions } from './common/InputWithOptions.vue'
 export { default as InputWithTextEditDialog } from './common/InputWithTextEditDialog.vue'
 
+export { default as FlowComponents } from './flow/index'
 export {
   FunctionForm,
   FilterForm,
