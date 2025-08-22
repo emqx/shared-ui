@@ -420,6 +420,8 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
       "The template for formatting the payload of the message before sending it to RabbitMQ. Template placeholders, such as ${'{'}field1.sub_field{'}'}, will be substituted with the respective field's value. When left empty, the entire input message will be used as the payload, formatted as a JSON text. This behavior is equivalent to specifying ${'{'}.{'}'} as the payload template.",
     queue: 'The queue name of the RabbitMQ.',
     no_ack: 'Whether to use no_ack mode when consuming messages from the RabbitMQ.',
+    properties_template:
+      'Template for message properties. See also: https://www.rabbitmq.com/docs/publishers#message-properties',
   },
   pulsar: {
     servers:
