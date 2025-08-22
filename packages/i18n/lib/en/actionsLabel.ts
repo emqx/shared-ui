@@ -160,6 +160,8 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     wait_for_publish_confirmations: 'Wait for Publish Confirmations',
     publish_confirmation_timeout: 'Publish Confirmation Timeout',
     payload_template: 'Payload Template',
+    headers_template: 'Headers Template',
+    properties_template: 'Properties Template',
   },
   pulsar: {
     pulsar_topic: 'Pulsar Topic Name',

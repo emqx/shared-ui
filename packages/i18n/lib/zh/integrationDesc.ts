@@ -376,6 +376,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       "发送消息到 RabbitMQ 之前格式化消息有效载荷的模板。模板占位符（例如 ${'{'}field1.sub_field{'}'} ）将被替换为相应字段的值。如果为空，则整个输入消息将被用作有效载荷，格式化为 JSON 文本。此行为相当于将 ${'{'}.{'}'} 指定为有效载荷模板。",
     queue: 'RabbitMQ 队列名称。',
     no_ack: '在从 RabbitMQ 消费消息时是否使用 `no_ack` 模式。',
+    properties_template:
+      '消息属性模板，可查看: https://www.rabbitmq.com/docs/publishers#message-properties',
   },
   pulsar: {
     servers:
