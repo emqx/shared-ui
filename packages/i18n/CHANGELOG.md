@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.56
+
+### Patch Changes
+
+- New configurations in rabbitmq action
+
 ## 0.0.55
 
 ### Patch Changes
