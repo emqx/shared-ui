@@ -1,5 +1,13 @@
 # @emqx/shared-ui-components
 
+## 0.0.11
+
+### Patch Changes
+
+- Add `label-extra` slot in FlowNode
+- Updated dependencies
+  - @emqx/shared-ui-constants@0.0.4
+
 ## 0.0.10
 
 ### Patch Changes
