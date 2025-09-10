@@ -161,7 +161,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     publish_confirmation_timeout: '发布确认超时时间',
     payload_template: '有效载荷模板',
     headers_template: 'Headers 模板',
-    properties_template: '属性 Template',
+    properties_template: '属性模版',
   },
   pulsar: {
     pulsar_topic: 'Pulsar 主题名称',
