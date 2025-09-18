@@ -1,5 +1,11 @@
 # @emqx/shared-ui-constants
 
+## 0.0.5
+
+### Patch Changes
+
+- Add spb_encode and spb_decode functions to ruleFunc.json
+
 ## 0.0.4
 
 ### Patch Changes
