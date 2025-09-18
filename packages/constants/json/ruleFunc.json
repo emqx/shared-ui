@@ -1072,6 +1072,26 @@
             "required": true
           }
         ]
+      },
+      {
+        "name": "spb_encode",
+        "args": [
+          {
+            "name": "Data",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      {
+        "name": "spb_decode",
+        "args": [
+          {
+            "name": "Data",
+            "type": "string",
+            "required": true
+          }
+        ]
       }
     ]
   },
