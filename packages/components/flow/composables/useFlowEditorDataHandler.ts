@@ -487,10 +487,14 @@ export default (): {
     const aiNodes = nodes.filter((node) => isAIType(node.data.specificType))
     aiNodes.forEach((node) => {
       const { formData, isCreated, isChanged } = node.data
-      const { type, api_key, name, base_url, transport_options, ...rest } = formData
+      const { type, api_key, name, base_url, anthropic_version, transport_options, ...rest } =
+        formData
       const aiProvider: AIProviderForm = { name, type, api_key }
       if (transport_options) {
         aiProvider.transport_options = transport_options
+      }
+      if (anthropic_version) {
+        aiProvider.anthropic_version = anthropic_version
       }
       if (base_url) {
         aiProvider.base_url = base_url

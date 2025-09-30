@@ -113,10 +113,10 @@ export interface AIProviderForm {
   name: string
   type: AIProviderType
   transport_options?: AITransportOptions
+  anthropic_version?: string
 }
 
 export interface AnthropicCompletionProfile {
-  anthropic_version?: string
   /** @minimum 1 */
   max_tokens?: number
   model?: string
