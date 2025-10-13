@@ -113,6 +113,7 @@ export interface AIProviderForm {
   name: string
   type: AIProviderType
   transport_options?: AITransportOptions
+  anthropic_version?: string
 }
 
 export interface AnthropicCompletionProfile {
