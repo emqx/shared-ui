@@ -7,6 +7,7 @@ import {
   ProcessingType,
   RULE_INPUT_BRIDGE_TYPE_PREFIX,
   FallbackActionKind,
+  AIProviderType,
 } from '@emqx/shared-ui-constants'
 import { checkNeedRequestAPI, getBridgeKey } from '@emqx/shared-ui-utils'
 import { Node } from '@vue-flow/core'
@@ -476,7 +477,11 @@ export default (): {
   const getFallbackActionsFromNodes = (nodes: Array<NodeData>) =>
     nodes.map((node) => getFallbackItemDataFromNode(node)).filter(Boolean)
 
-  const getAIProvidersAndCompletionsFromNodes = (nodes: Array<NodeData>) => {
+  const isOlderThanEMQX6 = (emqxVersion: string) => {
+    const majorVersion = emqxVersion.match(/(\d+)\./)?.[1]
+    return majorVersion && parseInt(majorVersion) < 6
+  }
+  const getAIProvidersAndCompletionsFromNodes = (nodes: Array<NodeData>, emqxVersion = '6.0.0') => {
     const ret: {
       aiProviders: Array<FlowDataItemForSubmit<AIProviderForm>>
       aiCompletions: Array<FlowDataItemForSubmit<AICompletionProfile>>
@@ -487,7 +492,8 @@ export default (): {
     const aiNodes = nodes.filter((node) => isAIType(node.data.specificType))
     aiNodes.forEach((node) => {
       const { formData, isCreated, isChanged } = node.data
-      const { type, api_key, name, base_url, transport_options, ...rest } = formData
+      const { type, api_key, name, base_url, transport_options, anthropic_version, ...rest } =
+        formData
       const aiProvider: AIProviderForm = { name, type, api_key }
       if (transport_options) {
         aiProvider.transport_options = transport_options
@@ -496,7 +502,20 @@ export default (): {
         aiProvider.base_url = base_url
       }
 
-      const aiCompletion = { name, type, provider_name: name, ...omit(rest, ['input', 'alias']) }
+      const aiCompletion: AICompletionProfile = {
+        name,
+        type,
+        provider_name: name,
+        ...omit(rest, ['input', 'alias']),
+      }
+
+      if (aiCompletion.type === AIProviderType.Anthropic) {
+        if (isOlderThanEMQX6(emqxVersion)) {
+          aiCompletion.anthropic_version = anthropic_version
+        } else {
+          aiProvider.anthropic_version = anthropic_version
+        }
+      }
 
       ret.aiProviders.push({
         isCreated: isCreated || false,
