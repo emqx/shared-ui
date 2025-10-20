@@ -74,6 +74,7 @@ const separator = new RegExp(
   `(${cloneDeep(RULE_LOGICAL_OPERATORS)
     .sort((a, b) => b.length - a.length)
     .join('|')})`,
+  'i',
 )
 
 const parseCondition = (condition: string): FilterItem | FilterFormData => {
