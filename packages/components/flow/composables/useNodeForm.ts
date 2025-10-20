@@ -28,11 +28,7 @@ export const createFilterItem = (): FilterItem => ({
   valueForComparison: '',
 })
 
-export const createFilterFormData = (): {
-  groupOperator: FilterLogicalOperator
-  id: string
-  items: Array<FilterItem>
-} => ({
+export const createFilterFormData = (): FilterFormData => ({
   groupOperator: FilterLogicalOperator.And,
   id: createRandomString(),
   items: [createFilterItem()],
