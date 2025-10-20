@@ -39,7 +39,12 @@ import type {
   FunctionItem,
   GroupedNode,
 } from '../types'
-import { createEventForm, createFunctionItem, createMessageForm } from './useNodeForm'
+import {
+  createEventForm,
+  createFilterFormData,
+  createFunctionItem,
+  createMessageForm,
+} from './useNodeForm'
 import { useRuleFunc, type ArgItem } from './useRuleFunc'
 import useParseWhere from './useParseWhere'
 import useFlowNode from './useFlowNode'
@@ -54,6 +59,7 @@ export default (): {
   detectInputType: (from: string) => string
   detectFieldsExpressionsEditedWay: (functionForm: Array<FunctionItem>) => EditedWay
   detectWhereDataEditedWay: (filterForm: FilterFormData) => EditedWay
+  detectWhereSqlEditedWay: (whereSql: string) => EditedWay
   generateFunctionFormFromExpression: (expression: string) => Array<FunctionItem> | undefined
   addAIRecordToAINode: (
     node: Node,
@@ -409,13 +415,28 @@ export default (): {
 
   const detectWhereDataEditedWay = (filterForm: FilterFormData) =>
     detectFilterFormLevel(filterForm) > 2 ? EditedWay.SQL : EditedWay.Form
+  const detectWhereSqlEditedWay = (whereSql: string) => {
+    try {
+      const form = generateFilterForm(whereSql)
+      return detectWhereDataEditedWay(form)
+    } catch (error) {
+      return EditedWay.SQL
+    }
+  }
 
   /**
    * generate filter node
    */
   const generateNodeBaseWhereData = (whereStr: string, ruleId: string): Node => {
-    const filterForm = generateFilterForm(whereStr)
-    const editedWay = detectWhereDataEditedWay(filterForm)
+    // !!! If the filter form data cannot be created correctly, it will create an empty form
+    let filterForm = createFilterFormData()
+    let editedWay = EditedWay.Form
+    try {
+      filterForm = generateFilterForm(whereStr)
+      editedWay = detectWhereSqlEditedWay(whereStr)
+    } catch (error) {
+      editedWay = EditedWay.SQL
+    }
     const node = {
       id: `${ProcessingType.Filter}-${ruleId}`,
       ...getTypeCommonData(NodeType.Processing),
@@ -636,6 +657,7 @@ export default (): {
     detectInputType,
     detectFieldsExpressionsEditedWay,
     detectWhereDataEditedWay,
+    detectWhereSqlEditedWay,
     generateFunctionFormFromExpression,
     addAIRecordToAINode,
     generateFallbackEdge,
