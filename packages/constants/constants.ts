@@ -3,7 +3,7 @@ import { BridgeType, FrontendSourceType } from './enums'
 export const STREAMING_MATCH_ALL = '*'
 export const STREAMING_CLUSTER_NAME = 'kafka-cluster'
 export const DEFAULT_SELECT = '*'
-export const RULE_LOGICAL_OPERATORS = ['>', '<', '<=', '>=', '<>', '!=', '=', '=~']
+export const RULE_LOGICAL_OPERATORS = ['>', '<', '<=', '>=', '<>', '!=', '=', '=~', 'in']
 export const GEMINI_DEFAULT_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/openai/'
 export const ANTHROPIC_VERSION_MAP = {
   '2023-06-01': '2023-06-01',
