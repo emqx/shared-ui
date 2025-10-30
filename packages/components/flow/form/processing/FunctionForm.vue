@@ -221,6 +221,7 @@ const rules: Rules = {
       if (source.func.name && !value) {
         errors.push(new Error(t('ruleFunction.aliasRequired')))
       } else if (value && !correctAliasReg.test(value)) {
+        // alias is optional
         errors.push(new Error(t('ruleFunction.aliasFormatError')))
       }
       return errors

@@ -83,6 +83,7 @@ export interface FallbackActionReference {
   kind: FallbackActionKind.Reference
   type: string
   name: string
+  tags?: Array<string>
 }
 
 export type FallbackAction = FallbackActionRepublish | FallbackActionReference

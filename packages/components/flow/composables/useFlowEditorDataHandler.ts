@@ -34,7 +34,10 @@ export default (): {
   getFallbackItemDataFromNode: (node: NodeData | Node) => FallbackAction | undefined
   getFilterStrFromNodes: (nodes: Array<NodeData>) => string
   getBridgesFromNodes: (nodes: Array<NodeData>) => Array<BridgeData>
-  getAIProvidersAndCompletionsFromNodes: (nodes: Array<NodeData>) => {
+  getAIProvidersAndCompletionsFromNodes: (
+    nodes: Array<NodeData>,
+    emqxVersion?: string,
+  ) => {
     aiProviders: Array<FlowDataItemForSubmit<AIProviderForm>>
     aiCompletions: Array<FlowDataItemForSubmit<AICompletionProfile>>
   }
