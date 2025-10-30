@@ -1,6 +1,6 @@
 import { createRandomString } from '@emqx/shared-ui-utils'
 import { FilterLogicalOperator, RULE_LOGICAL_OPERATORS } from '@emqx/shared-ui-constants'
-import { cloneDeep } from 'lodash'
+import { cloneDeep, escapeRegExp } from 'lodash'
 import type { FilterFormData, FilterItem } from '../types'
 
 const parseWhere = (sql: string): FilterFormData | FilterItem => {
@@ -73,6 +73,12 @@ const splitCondition = (sql: string, separator: string) => {
 const separator = new RegExp(
   `(${cloneDeep(RULE_LOGICAL_OPERATORS)
     .sort((a, b) => b.length - a.length)
+    .map((item) => {
+      if (/^\w+$/.test(item)) {
+        return `\\b${escapeRegExp(item)}\\b`
+      }
+      return escapeRegExp(item)
+    })
     .join('|')})`,
   'i',
 )
