@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.57
+
+### Patch Changes
+
+- New configurations in greptime and kafka connector
+
 ## 0.0.56
 
 ### Patch Changes
