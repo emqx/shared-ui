@@ -51,6 +51,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     proxy: '代理配置。当前仅支持 HTTP 代理（不支持 HTTPS）。',
     private_key_path: '用于 ODBC 连接的私钥的完整文件路径。此路径必须在集群的所有节点上保持一致。',
     private_key_password: '用于解密私钥的密码。如果私钥未加密，请不要设置此值。',
+    allow_auto_topic_creation: '是否允许在元数据获取请求时自动创建主题。',
   },
   mqtt: {
     bridge_mode:
@@ -459,6 +460,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     write_syntax:
       "GreptimeDB gRPC 协议写数据点的配置。写语法是一种基于文本的格式，提供数据点的测量、标签集、字段集和时间戳，支持占位符，与 InfluxDB 行协议相同。\n参考 [InfluxDB 2.3 行协议](https://docs.influxdata.com/influxdb/v2.3/reference/syntax/line-protocol/) 和\n[InfluxDB 1.8 行协议](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_tutorial/) <br/>\n简而言之：<br/>\n```\n<measurement>[,<tag_key>=<tag_value>[,<tag_key>=<tag_value>]] <field_key>=<field_value>[,<field_key>=<field_value>] [<timestamp>]\n```\n请注意，整数值的占位符必须使用后缀 `i` 进行注释。例如 `${'{'}payload.int_value{'}'}i`。",
     ttl: 'GreptimeDB 自动创建的表的数据保留期限 (TTL)。',
+    ts_column: '指定查询时将显示的自定义时间戳列名。',
   },
   syskeeper_proxy: {
     listen: 'Syskeeper 代理服务器的监听地址',

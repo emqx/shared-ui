@@ -43,6 +43,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     proxy: 'Proxy',
     host: 'Proxy Host',
     port: 'Proxy Port',
+    allow_auto_topic_creation: 'Allow Auto Topic Creation',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -176,6 +177,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   greptimedb: {
     dbname: 'Database',
     ttl: 'Time-To-Live (TTL)',
+    ts_column: 'Custom Timestamp Column Name',
   },
   s3: {
     host: 'Host',
