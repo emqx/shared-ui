@@ -43,6 +43,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     proxy: '代理',
     host: '代理主机',
     port: '代理端口',
+    allow_auto_topic_creation: '允许自动创建主题',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -176,6 +177,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   greptimedb: {
     dbname: '数据库',
     ttl: '数据保留期限 (TTL)',
+    ts_column: '自定义时间戳列名',
   },
   s3: {
     host: '地址',
