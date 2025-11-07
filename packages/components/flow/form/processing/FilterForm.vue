@@ -339,7 +339,7 @@ const saveConfig = () => {
 
 const { getFilterExpressionFromFormData } = useHandleFlowDataUtils()
 const transformToSqlFormForm = () => {
-  sqlRecord.value.sql = getFilterExpressionFromFormData(record.value) || ''
+  sqlRecord.value = { sql: getFilterExpressionFromFormData(record.value) || '' }
 }
 
 const { generateFilterForm, discardHighLevelCondition } = useParseWhere()
