@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.58
+
+### Patch Changes
+
+- Updated desc and fixed a issue in flow
+
 ## 0.0.57
 
 ### Patch Changes
