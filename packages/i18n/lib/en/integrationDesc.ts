@@ -41,7 +41,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     health_check_topic: 'Topic name used exclusively for more accurate health checks.',
     max_records: `Number of records (events) allowed per each aggregated object. Each aggregated upload will contain no more than that number of events, but may contain less.<br/>If event rate is high enough, there obviously may be more than one aggregated upload during the same time interval. These uploads will have different, but consecutive sequence numbers, which will be a part of S3 object key.`,
     max_linger_time:
-      "Maximum duration for a per-partition producer to wait for messages in order to collect a batch to buffer.<br/>The default value <code>0</code> means no wait. For non-memory buffer mode, it's advised to configure at least <code>5ms</code> for less IOPS.",
+      "Maximum duration for a per-partition producer to wait for messages in order to collect a batch to buffer.<br/>The default value <code>0</code> means no wait. For non-memory buffer mode, it's advised to configure at least <code>5ms</code> for less IOPS. <br/>There is no linger time when writing to memory buffer since EMQX 5.10.2 and 6.0.1.",
     max_linger_bytes:
       'Maximum number of bytes for a per-partition producer to wait for messages in order to collect a batch to buffer.',
     undefined_vars_as_null:
