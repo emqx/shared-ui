@@ -1,5 +1,11 @@
 # @emqx/shared-ui-components
 
+## 0.0.14
+
+### Patch Changes
+
+- Updated desc and fixed a issue in flow
+
 ## 0.0.13
 
 ### Patch Changes
