@@ -45,6 +45,11 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     fallback_actions: '备选动作',
     min_part_size: '最小分块大小',
     max_part_size: '最大分块大小',
+    schema: 'Parquet Schema (Avro)',
+    max_row_group_bytes: 'Parquet 最大行组大小',
+    name: 'Schema 名称',
+    default_compression: 'Parquet 默认压缩算法',
+    def: 'Schema 定义',
   },
   kafka_producer: {
     timestamp: '消息的时间戳',
