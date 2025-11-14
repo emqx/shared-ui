@@ -62,6 +62,13 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Password to decrypt the private key. Do not set this value if the private key is not encrypted.',
     allow_auto_topic_creation:
       'Set to true to allow automatic topic creation with metadata fetch request.',
+    schema: 'The schema to be used for the Parquet files, in Avro format.',
+    max_row_group_bytes:
+      'The size above which row groups are flushed.  The actual triggering of row group flushes uses estimates of the buffered data sizes, since the actual output may differ in size from the raw input data size.',
+    name: 'Avro schema name that lives in Schema Registry.',
+    default_compression:
+      'The default algorithm to use for compressing data pages in Parquet row groups.',
+    def: 'Avro schema definition in JSON format.',
   },
   mqtt: {
     bridge_mode:

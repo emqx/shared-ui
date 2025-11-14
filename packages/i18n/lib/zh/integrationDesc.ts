@@ -52,6 +52,12 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     private_key_path: '用于 ODBC 连接的私钥的完整文件路径。此路径必须在集群的所有节点上保持一致。',
     private_key_password: '用于解密私钥的密码。如果私钥未加密，请不要设置此值。',
     allow_auto_topic_creation: '是否允许在元数据获取请求时自动创建主题。',
+    schema: '用于 Parquet 文件的 Schema，使用 Avro 格式',
+    max_row_group_bytes:
+      '行组大小超过此值时，将刷新行组。 实际触发行组刷新使用缓冲数据大小的估计值，因为实际输出可能与原始输入数据大小不同。',
+    name: 'Schema Registry 中的 Avro Schema 名称。',
+    default_compression: '用于压缩 Parquet 行组中数据页的默认算法。',
+    def: 'JSON 格式的 Avro Schema。',
   },
   mqtt: {
     bridge_mode:

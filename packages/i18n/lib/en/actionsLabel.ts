@@ -45,6 +45,11 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     fallback_actions: 'Fallback Actions',
     min_part_size: 'Min Part Size',
     max_part_size: 'Max Part Size',
+    schema: 'Parquet Schema (Avro)',
+    max_row_group_bytes: 'Parquet Max Row Group Bytes',
+    name: 'Schema Name',
+    default_compression: 'Parquet Default Compression',
+    def: 'Schema Definition',
   },
   kafka_producer: {
     timestamp: 'Message Timestamp',

@@ -66,6 +66,12 @@ export const zhSymbolLabel: Record<string, string> = {
   authentication_msk_iam: 'AWS IAM for MSK',
   parameters_streaming_parameters: '流式',
   parameters_aggregation_container_container_parquet: 'Parquet',
+  parameters_container_container_parquet: 'Parquet',
   parameters_aggregation_container_container_avro: 'Avro',
   arrow_flight: 'Arrow Flight',
+  parameters_aggregation_container_schema_parquet_schema_avro_inline: 'Avro Schema 定义',
+  parameters_container_schema_parquet_schema_avro_inline: 'Avro Schema 定义',
+  parameters_aggregation_container_schema_parquet_schema_avro_ref:
+    'Schema Registry 中已添加的 Avro Schema',
+  parameters_container_schema_parquet_schema_avro_ref: 'Schema Registry 中已添加的 Avro Schema',
 }
