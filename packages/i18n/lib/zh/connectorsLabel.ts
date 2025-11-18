@@ -44,6 +44,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     host: '代理主机',
     port: '代理端口',
     allow_auto_topic_creation: '允许自动创建主题',
+    bucket: 'Bucket',
+    org: '组织',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -92,8 +94,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   },
   influxdb: {
     parameters: 'InfluxDB 版本',
-    bucket: 'Bucket',
-    org: '组织',
   },
   iotdb: {
     base_url: 'IoTDB REST 服务基础 URL',

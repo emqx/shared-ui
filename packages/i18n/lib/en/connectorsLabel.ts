@@ -44,6 +44,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     host: 'Proxy Host',
     port: 'Proxy Port',
     allow_auto_topic_creation: 'Allow Auto Topic Creation',
+    bucket: 'Bucket',
+    org: 'Organization',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -92,8 +94,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   influxdb: {
     parameters: 'Version of InfluxDB',
-    bucket: 'Bucket',
-    org: 'Organization',
   },
   iotdb: {
     base_url: 'IoTDB REST Service Base URL',
