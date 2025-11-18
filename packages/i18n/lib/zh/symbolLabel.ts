@@ -74,4 +74,5 @@ export const zhSymbolLabel: Record<string, string> = {
   parameters_aggregation_container_schema_parquet_schema_avro_ref:
     'Schema Registry 中已添加的 Avro Schema',
   parameters_container_schema_parquet_schema_avro_ref: 'Schema Registry 中已添加的 Avro Schema',
+  influxdb_api_v2: 'Timestream for InfluxDB',
 }

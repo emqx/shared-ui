@@ -74,4 +74,5 @@ export const enSymbolLabel: Record<string, string> = {
   parameters_aggregation_container_schema_parquet_schema_avro_ref:
     'Avro Schema That Lives in Schema Registry',
   parameters_container_schema_parquet_schema_avro_ref: 'Avro Schema That Lives in Schema Registry',
+  influxdb_api_v2: 'Timestream for InfluxDB',
 }

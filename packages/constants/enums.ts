@@ -122,6 +122,7 @@ export enum BridgeType {
   AlloyDB = 'alloydb',
   CockroachDB = 'cockroachdb',
   Redshift = 'redshift',
+  AWSTimestream = 'aws_timestream',
 }
 
 export enum ProcessingType {
