@@ -51,6 +51,12 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     kerberos_principal: 'Kerberos Principal',
     kerberos_keytab_file: 'Kerberos Keytab 文件',
     mechanism: '认证方法',
+    grant_type: 'OAuth 授权类型',
+    endpoint_uri: 'OAuth Token 端点 URI',
+    client_id: 'OAuth 客户端 ID',
+    client_secret: 'OAuth 客户端密钥',
+    scope: 'OAuth 请求范围',
+    extensions: 'SASL 扩展',
   },
   http: {
     url: 'URL',
