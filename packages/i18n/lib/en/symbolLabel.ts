@@ -19,6 +19,7 @@ export const enSymbolLabel: Record<string, string> = {
   authentication_auth_basic: 'Basic auth',
   authentication_auth_token: 'Token',
   authentication_none: 'None',
+  authentication_auth_oauth_client_credentials: 'OAuth',
   parameters_connector_single: 'single',
   parameters_connector_rs: 'rs',
   parameters_connector_sharded: 'sharded',
@@ -75,4 +76,6 @@ export const enSymbolLabel: Record<string, string> = {
     'Avro Schema That Lives in Schema Registry',
   parameters_container_schema_parquet_schema_avro_ref: 'Avro Schema That Lives in Schema Registry',
   influxdb_api_v2: 'Timestream for InfluxDB',
+  oauth: 'OAuth',
+  client_credentials: 'Client Credentials',
 }

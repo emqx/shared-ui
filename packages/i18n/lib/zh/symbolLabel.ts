@@ -19,6 +19,7 @@ export const zhSymbolLabel: Record<string, string> = {
   authentication_auth_basic: '基础认证',
   authentication_auth_token: 'Token',
   authentication_none: '无',
+  authentication_auth_oauth_client_credentials: 'OAuth',
   parameters_connector_single: 'single',
   parameters_connector_rs: 'rs',
   parameters_connector_sharded: 'sharded',
@@ -75,4 +76,6 @@ export const zhSymbolLabel: Record<string, string> = {
     'Schema Registry 中已添加的 Avro Schema',
   parameters_container_schema_parquet_schema_avro_ref: 'Schema Registry 中已添加的 Avro Schema',
   influxdb_api_v2: 'Timestream for InfluxDB',
+  oauth: 'OAuth',
+  client_credentials: '客户端凭证',
 }

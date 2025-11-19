@@ -51,6 +51,12 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     kerberos_principal: 'Kerberos Principal',
     kerberos_keytab_file: 'Kerberos Keytab File',
     mechanism: 'Mechanism',
+    grant_type: 'OAuth Grant Type',
+    endpoint_uri: 'OAuth Token Endpoint URI',
+    client_id: 'OAuth Client ID',
+    client_secret: 'OAuth Client Secret',
+    scope: 'OAuth Request Scope',
+    extensions: 'SASL Extensions',
   },
   http: {
     url: 'URL',
