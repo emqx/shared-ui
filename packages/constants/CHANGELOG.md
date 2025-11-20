@@ -1,5 +1,11 @@
 # @emqx/shared-ui-constants
 
+## 0.0.7
+
+### Patch Changes
+
+- New data integration, new configs in kafka producer and confluent
+
 ## 0.0.6
 
 ### Patch Changes

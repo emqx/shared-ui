@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.59
+
+### Patch Changes
+
+- New data integration, new configs in kafka producer and confluent
+
 ## 0.0.58
 
 ### Patch Changes
