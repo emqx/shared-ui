@@ -46,10 +46,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     allow_auto_topic_creation: 'Allow Auto Topic Creation',
     bucket: 'Bucket',
     org: 'Organization',
-  },
-  kafka_producer: {
-    kerberos_principal: 'Kerberos Principal',
-    kerberos_keytab_file: 'Kerberos Keytab File',
     mechanism: 'Mechanism',
     grant_type: 'OAuth Grant Type',
     endpoint_uri: 'OAuth Token Endpoint URI',
@@ -57,6 +53,10 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     client_secret: 'OAuth Client Secret',
     scope: 'OAuth Request Scope',
     extensions: 'SASL Extensions',
+  },
+  kafka_producer: {
+    kerberos_principal: 'Kerberos Principal',
+    kerberos_keytab_file: 'Kerberos Keytab File',
   },
   http: {
     url: 'URL',
@@ -220,5 +220,9 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   s3tables: {
     s3tables_arn: 'S3Tables ARN',
     s_3_client_transport_options_request_timeout: 'Single Request Timeout',
+  },
+  confluent_producer: {
+    logical_cluster: 'Logical Cluster ID',
+    identity_pool_id: 'Identity Pool ID',
   },
 }
