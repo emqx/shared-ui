@@ -46,10 +46,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     allow_auto_topic_creation: '允许自动创建主题',
     bucket: 'Bucket',
     org: '组织',
-  },
-  kafka_producer: {
-    kerberos_principal: 'Kerberos Principal',
-    kerberos_keytab_file: 'Kerberos Keytab 文件',
     mechanism: '认证方法',
     grant_type: 'OAuth 授权类型',
     endpoint_uri: 'OAuth Token 端点 URI',
@@ -57,6 +53,10 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     client_secret: 'OAuth 客户端密钥',
     scope: 'OAuth 请求范围',
     extensions: 'SASL 扩展',
+  },
+  kafka_producer: {
+    kerberos_principal: 'Kerberos Principal',
+    kerberos_keytab_file: 'Kerberos Keytab 文件',
   },
   http: {
     url: 'URL',
@@ -220,5 +220,9 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   s3tables: {
     s3tables_arn: 'S3Tables 资源名称（ARN）',
     s_3_client_transport_options_request_timeout: '单次请求超时时间',
+  },
+  confluent_producer: {
+    logical_cluster: '逻辑集群 ID',
+    identity_pool_id: '身份池 ID',
   },
 }
