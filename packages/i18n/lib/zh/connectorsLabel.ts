@@ -225,4 +225,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     logical_cluster: '逻辑集群 ID',
     identity_pool_id: '身份池 ID',
   },
+  aws_timestream: {
+    influxdb_type: 'InfluxDB 类型',
+  },
 }
