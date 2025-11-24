@@ -225,4 +225,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     logical_cluster: 'Logical Cluster ID',
     identity_pool_id: 'Identity Pool ID',
   },
+  aws_timestream: {
+    influxdb_type: 'InfluxDB Type',
+  },
 }
