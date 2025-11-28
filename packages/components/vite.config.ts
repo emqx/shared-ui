@@ -15,6 +15,7 @@ export default defineConfig({
         'vue',
         'element-plus',
         '@emqx/shared-ui-utils',
+        '@emqx/shared-ui-constants',
         '@vue-flow/core',
         'sortablejs',
         'elkjs/lib/elk.bundled',

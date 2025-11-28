@@ -47,9 +47,6 @@ importers:
 
   packages/components:
     dependencies:
-      '@emqx/shared-ui-constants':
-        specifier: link:../constants
-        version: link:../constants
       async-validator:
         specifier: ^4.2.5
         version: 4.2.5
@@ -60,6 +57,9 @@ importers:
       '@element-plus/icons-vue':
         specifier: ^2.3.1
         version: 2.3.1(vue@3.5.13(typescript@5.6.3))
+      '@emqx/shared-ui-constants':
+        specifier: link:../constants
+        version: link:../constants
       '@emqx/shared-ui-utils':
         specifier: link:../utils
         version: link:../utils
