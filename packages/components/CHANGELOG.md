@@ -1,5 +1,11 @@
 # @emqx/shared-ui-components
 
+## 0.0.15
+
+### Patch Changes
+
+- Dep of components and label for AWS Timestamp
+
 ## 0.0.14
 
 ### Patch Changes
