@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.61
+
+### Patch Changes
+
+- Label for version 3 on influxdb and aws timestream
+
 ## 0.0.60
 
 ### Patch Changes
