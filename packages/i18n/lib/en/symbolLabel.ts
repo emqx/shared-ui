@@ -28,6 +28,7 @@ export const enSymbolLabel: Record<string, string> = {
   parameters_redis_cluster_connector: 'sharded',
   parameters_connector_influxdb_api_v_1: 'v1',
   parameters_connector_influxdb_api_v_2: 'v2',
+  parameters_connector_influxdb_api_v_3: 'v3',
   parameters_action_update: 'Update',
   parameters_action_delete: 'Delete',
   parameters_action_create: 'Create',
@@ -75,7 +76,8 @@ export const enSymbolLabel: Record<string, string> = {
   parameters_aggregation_container_schema_parquet_schema_avro_ref:
     'Avro Schema That Lives in Schema Registry',
   parameters_container_schema_parquet_schema_avro_ref: 'Avro Schema That Lives in Schema Registry',
-  influxdb_api_v2: 'Timestream for InfluxDB',
+  influxdb_api_v2: 'HTTP API V2 Protocol',
+  influxdb_api_v3: 'HTTP API V3 Protocol',
   oauth: 'OAuth',
   client_credentials: 'Client Credentials',
 }

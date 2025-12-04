@@ -28,6 +28,7 @@ export const zhSymbolLabel: Record<string, string> = {
   parameters_redis_cluster_connector: 'cluster',
   parameters_connector_influxdb_api_v_1: 'v1',
   parameters_connector_influxdb_api_v_2: 'v2',
+  parameters_connector_influxdb_api_v_3: 'v3',
   parameters_action_update: '更新',
   parameters_action_delete: '删除',
   parameters_action_create: '创建',
@@ -75,7 +76,8 @@ export const zhSymbolLabel: Record<string, string> = {
   parameters_aggregation_container_schema_parquet_schema_avro_ref:
     'Schema Registry 中已添加的 Avro Schema',
   parameters_container_schema_parquet_schema_avro_ref: 'Schema Registry 中已添加的 Avro Schema',
-  influxdb_api_v2: 'Timestream for InfluxDB',
+  influxdb_api_v2: 'HTTP API V2 Protocol',
+  influxdb_api_v3: 'HTTP API V3 Protocol',
   oauth: 'OAuth',
   client_credentials: '客户端凭证',
 }
