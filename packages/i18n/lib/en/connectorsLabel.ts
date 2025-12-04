@@ -227,5 +227,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   aws_timestream: {
     influxdb_type: 'InfluxDB Type',
+    parameters: 'Version of InfluxDB',
   },
 }

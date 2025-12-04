@@ -227,5 +227,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   },
   aws_timestream: {
     influxdb_type: 'InfluxDB 类型',
+    parameters: 'InfluxDB 版本',
   },
 }
