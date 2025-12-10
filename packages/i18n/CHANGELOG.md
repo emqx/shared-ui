@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.62
+
+### Patch Changes
+
+- New data integration type EMQX Tables
+
 ## 0.0.61
 
 ### Patch Changes
