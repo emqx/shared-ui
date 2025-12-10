@@ -53,6 +53,9 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     client_secret: 'OAuth Client Secret',
     scope: 'OAuth Request Scope',
     extensions: 'SASL Extensions',
+    dbname: 'Database',
+    ttl: 'Time-To-Live (TTL)',
+    ts_column: 'Custom Timestamp Column Name',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -179,11 +182,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     aws_access_key_id: 'AWS Access Key ID',
     aws_secret_access_key: 'AWS Secret Access Key',
     endpoint: 'Amazon Kinesis Endpoint',
-  },
-  greptimedb: {
-    dbname: 'Database',
-    ttl: 'Time-To-Live (TTL)',
-    ts_column: 'Custom Timestamp Column Name',
   },
   s3: {
     host: 'Host',

@@ -53,6 +53,9 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     client_secret: 'OAuth 客户端密钥',
     scope: 'OAuth 请求范围',
     extensions: 'SASL 扩展',
+    dbname: '数据库',
+    ttl: '数据保留期限 (TTL)',
+    ts_column: '自定义时间戳列名',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -179,11 +182,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     aws_access_key_id: 'AWS 访问密钥 ID',
     aws_secret_access_key: 'AWS 秘密访问密钥',
     endpoint: 'Amazon Kinesis 端点',
-  },
-  greptimedb: {
-    dbname: '数据库',
-    ttl: '数据保留期限 (TTL)',
-    ts_column: '自定义时间戳列名',
   },
   s3: {
     host: '地址',
