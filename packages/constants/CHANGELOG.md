@@ -1,5 +1,11 @@
 # @emqx/shared-ui-constants
 
+## 0.0.8
+
+### Patch Changes
+
+- New data integration type EMQX Tables
+
 ## 0.0.7
 
 ### Patch Changes
