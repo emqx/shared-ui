@@ -1,7 +1,6 @@
 import { type CSSProperties } from 'vue'
 import {
   AIProviderType,
-  BridgeType,
   DEFAULT_SELECT,
   ENCRYPTED_PASSWORD,
   EditedWay,
@@ -15,7 +14,6 @@ import {
   aiExpressionPartReg,
   isForeachReg,
   AI_PLACEHOLDER_TYPE,
-  CONNECTOR_TYPES_WITH_TWO_DIRECTIONS,
   FALLBACK_EDGE_STYLE,
 } from '@emqx/shared-ui-constants'
 import {
@@ -28,6 +26,7 @@ import {
   getBridgeIdFromInput,
   getBridgeNameFromId,
   getKeyPartsFromSQL,
+  createRandomString,
 } from '@emqx/shared-ui-utils'
 import { escapeRegExp, isUndefined, omit } from 'lodash'
 import ELK from 'elkjs/lib/elk.bundled'
@@ -224,17 +223,14 @@ export default (): {
       return acc
     }, [])
   }
-  const generateNodeBaseNormalFieldExpressions = (
-    fieldExpressions: string,
-    ruleId: string,
-  ): Node | undefined => {
+  const generateNodeBaseNormalFieldExpressions = (fieldExpressions: string): Node | undefined => {
     const formData = generateFunctionFormFromExpression(fieldExpressions)
     if (!formData) {
       return
     }
     const editedWay = detectFieldsExpressionsEditedWay(formData)
     const node = {
-      id: `${ProcessingType.Function}-${ruleId}`,
+      id: createRandomString(),
       ...getTypeCommonData(NodeType.Processing),
       label: getCommonTypeLabel(ProcessingType.Function),
       position: { x: 0, y: 0 },
@@ -251,17 +247,14 @@ export default (): {
     node.data.desc = getNodeInfoFunc(node)
     return node
   }
-  const generateNodeBaseAIFieldExpression = (
-    fieldExpression: string,
-    ruleId: string,
-  ): Node | undefined => {
+  const generateNodeBaseAIFieldExpression = (fieldExpression: string): Node | undefined => {
     const match = fieldExpression.match(aiExpressionReg)
     if (!match?.groups) {
       return
     }
     const { name, alias, input } = match.groups
     const node = {
-      id: `${name}-${ruleId}`,
+      id: createRandomString(),
       ...getTypeCommonData(NodeType.Processing),
       label: name,
       position: { x: 0, y: 0 },
@@ -280,7 +273,7 @@ export default (): {
   /**
    * @returns function node and ai nodes
    */
-  const generateNodesBaseFieldsExpressions = (fieldsExpressions: string, ruleId: string) => {
+  const generateNodesBaseFieldsExpressions = (fieldsExpressions: string) => {
     const expressionArr = splitOnComma(fieldsExpressions).map((item) => trimSpacesAndLFs(item))
     const chunkedExpressionArr = chunkExpressionArr(expressionArr)
     const nodes: Array<Node> = []
@@ -289,11 +282,11 @@ export default (): {
       if (isAI) {
         nodes.push(
           ...(expressionArr
-            .map((expression) => generateNodeBaseAIFieldExpression(expression, ruleId))
+            .map((expression) => generateNodeBaseAIFieldExpression(expression))
             .filter(Boolean) as Array<Node>),
         )
       } else {
-        const normalNode = generateNodeBaseNormalFieldExpressions(expressionArr.join(','), ruleId)
+        const normalNode = generateNodeBaseNormalFieldExpressions(expressionArr.join(','))
         if (normalNode) {
           nodes.push(normalNode)
         }
@@ -385,21 +378,10 @@ export default (): {
     return fromArr.reduce((arr: Array<Node>, fromItem): Array<Node> => {
       const type = detectInputType(fromItem)
       const formData = getFormDataByType(type, fromItem)
-      let typeInId = type
-      /**
-       * for prevent display issues in the flow diagram when action and source have the same name
-       */
-      if (CONNECTOR_TYPES_WITH_TWO_DIRECTIONS.includes(type as BridgeType)) {
-        typeInId = `${type}_source`
-      }
-      const id =
-        type === FrontendSourceType.Event || type === FrontendSourceType.Message
-          ? `${typeInId}-${fromItem}`
-          : `${typeInId}-${getBridgeIdFromInput(fromItem)}`
 
       const specificType = getSpecificType(type)
       const node = {
-        id,
+        id: createRandomString(),
         ...getTypeCommonData(NodeType.Source),
         label: getTypeLabel(specificType),
         position: { x: 0, y: 0 },
@@ -427,7 +409,7 @@ export default (): {
   /**
    * generate filter node
    */
-  const generateNodeBaseWhereData = (whereStr: string, ruleId: string): Node => {
+  const generateNodeBaseWhereData = (whereStr: string): Node => {
     // !!! If the filter form data cannot be created correctly, it will create an empty form
     let filterForm = createFilterFormData()
     let editedWay = EditedWay.Form
@@ -438,7 +420,7 @@ export default (): {
       editedWay = EditedWay.SQL
     }
     const node = {
-      id: `${ProcessingType.Filter}-${ruleId}`,
+      id: createRandomString(),
       ...getTypeCommonData(NodeType.Processing),
       label: getCommonTypeLabel(ProcessingType.Filter),
       position: { x: 0, y: 0 },
@@ -475,7 +457,7 @@ export default (): {
     getSourceNodes: () => Array<Node>,
     getSinkNodes: () => Array<Node>,
   ): { nodes: GroupedNode; edges: Edge[] } => {
-    const { from, sql, id } = commonRule
+    const { from, sql } = commonRule
     const nodes: GroupedNode = createInitNodes()
     // If the rule is a webhook and the input is "all messages and events",
     // create an "all messages and events node".
@@ -485,13 +467,13 @@ export default (): {
       nodes[NodeType.Source] = getSourceNodes()
     }
     if (fieldStr !== undefined) {
-      const processingNodes = generateNodesBaseFieldsExpressions(fieldStr, id)
+      const processingNodes = generateNodesBaseFieldsExpressions(fieldStr)
       if (processingNodes) {
         nodes[ProcessingType.Function].push(...processingNodes)
       }
     }
     if (whereStr !== undefined) {
-      nodes[ProcessingType.Filter].push(generateNodeBaseWhereData(whereStr, id))
+      nodes[ProcessingType.Filter].push(generateNodeBaseWhereData(whereStr))
     }
     nodes[NodeType.Sink] = getSinkNodes()
     const edges: Array<Edge> = generateEdgesFromNodes(nodes)
@@ -598,7 +580,7 @@ export default (): {
   /**
    * count nodes position view all flows
    */
-  const countNodesPosition = async (nodes: GroupedNode, edgeArr: Array<Edge>) => {
+  const countComponentNodesPosition = async (nodes: GroupedNode, edgeArr: Array<Edge>) => {
     try {
       const allNodes = Object.values(nodes).flat()
       const { children } = await elk.layout({
@@ -621,6 +603,113 @@ export default (): {
       })
     } catch (error) {
       console.error(error)
+    }
+  }
+
+  const getConnectedComponents = (nodeIds: string[], edges: Array<Edge>): Array<Array<string>> => {
+    const adjacency = new Map<string, Set<string>>()
+    nodeIds.forEach((id) => adjacency.set(id, new Set()))
+    edges.forEach(({ source, target }) => {
+      if (!adjacency.has(source) || !adjacency.has(target)) {
+        return
+      }
+      adjacency.get(source)?.add(target)
+      adjacency.get(target)?.add(source)
+    })
+
+    const visited = new Set<string>()
+    const components: Array<Array<string>> = []
+
+    for (const id of nodeIds) {
+      if (visited.has(id)) {
+        continue
+      }
+      const queue: Array<string> = [id]
+      visited.add(id)
+      const comp: Array<string> = []
+      while (queue.length) {
+        const cur = queue.shift() as string
+        comp.push(cur)
+        const neighbors = adjacency.get(cur)
+        if (!neighbors) {
+          continue
+        }
+        neighbors.forEach((next) => {
+          if (!visited.has(next)) {
+            visited.add(next)
+            queue.push(next)
+          }
+        })
+      }
+      components.push(comp)
+    }
+    return components
+  }
+
+  /**
+   * Objective: Place each flow (connected component) on its own line to avoid mixing.
+   * Method: Split by connected components, run the shared ELK layout for each, and then stack them vertically using y-offsets.
+   */
+  const countNodesPosition = async (nodes: GroupedNode, edgeArr: Array<Edge>) => {
+    const allNodes = Object.values(nodes).flat().filter(Boolean) as Array<Node>
+    if (!allNodes.length) {
+      return
+    }
+
+    const idSet = new Set(allNodes.map(({ id }) => id))
+    const edges = edgeArr.filter(({ source, target }) => idSet.has(source) && idSet.has(target))
+
+    const components = getConnectedComponents([...idSet], edges)
+
+    const rowGap = 20
+    let yOffset = 0
+
+    for (const comp of components) {
+      const compSet = new Set(comp)
+      const compNodes: GroupedNode = {
+        [NodeType.Source]: (nodes[NodeType.Source] ?? []).filter((n) => compSet.has(n.id)),
+        [ProcessingType.Filter]: (nodes[ProcessingType.Filter] ?? []).filter((n) =>
+          compSet.has(n.id),
+        ),
+        [ProcessingType.Function]: (nodes[ProcessingType.Function] ?? []).filter((n) =>
+          compSet.has(n.id),
+        ),
+        [NodeType.Sink]: (nodes[NodeType.Sink] ?? []).filter((n) => compSet.has(n.id)),
+        [NodeType.Fallback]: (nodes[NodeType.Fallback] ?? []).filter((n) => compSet.has(n.id)),
+      }
+      const compEdges = edges.filter(
+        ({ source, target }) => compSet.has(source) && compSet.has(target),
+      )
+
+      await countComponentNodesPosition(compNodes, compEdges)
+
+      const laidOutNodes = Object.values(compNodes).flat().filter(Boolean) as Array<Node>
+      if (!laidOutNodes.length) {
+        continue
+      }
+
+      let minX = Number.POSITIVE_INFINITY
+      let minY = Number.POSITIVE_INFINITY
+      let maxY = Number.NEGATIVE_INFINITY
+
+      laidOutNodes.forEach((node) => {
+        const x = node.position?.x ?? 0
+        const y = node.position?.y ?? 0
+        minX = Math.min(minX, x)
+        minY = Math.min(minY, y)
+        const specificType = node.data?.specificType ?? undefined
+        const h = getNodeHeight(specificType) ?? 66
+        maxY = Math.max(maxY, y + h)
+      })
+
+      laidOutNodes.forEach((node) => {
+        const x = (node.position?.x ?? 0) - (Number.isFinite(minX) ? minX : 0)
+        const y = (node.position?.y ?? 0) - (Number.isFinite(minY) ? minY : 0) + yOffset
+        node.position = { x, y }
+      })
+
+      const compHeight = (Number.isFinite(maxY) ? maxY : 0) - (Number.isFinite(minY) ? minY : 0)
+      yOffset += Math.max(compHeight, 0) + rowGap
     }
   }
 
