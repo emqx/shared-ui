@@ -50,6 +50,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     name: 'Schema 名称',
     default_compression: 'Parquet 默认压缩算法',
     def: 'Schema 定义',
+    table: '表',
   },
   kafka_producer: {
     timestamp: '消息的时间戳',
@@ -108,6 +109,9 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     measurement: '字段',
     data_type: '数据类型',
     value: '值',
+    write_to_table: '写入表',
+    parameters: 'SQL 方言',
+    column_category: '列类别',
   },
   mqtt: {
     topic: '主题',
@@ -217,7 +221,6 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     parameters_aggregation_container: '聚合上传文件格式',
   },
   dynamo: {
-    table: '表',
     hash_key: '哈希键',
     range_key: '范围键',
   },
@@ -258,13 +261,11 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   },
   s3tables: {
     namespace: '命名空间',
-    table: '表',
     container: '数据文件格式',
     type: '数据文件格式',
     max_row_group_bytes: 'Parquet 最大行组大小',
   },
   bigquery: {
     dataset: '数据集',
-    table: '表',
   },
 }
