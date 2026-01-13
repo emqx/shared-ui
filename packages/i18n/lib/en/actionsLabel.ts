@@ -50,6 +50,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     name: 'Schema Name',
     default_compression: 'Parquet Default Compression',
     def: 'Schema Definition',
+    table: 'Table',
   },
   kafka_producer: {
     timestamp: 'Message Timestamp',
@@ -108,6 +109,9 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     measurement: 'Measurement',
     data_type: 'Data Type',
     value: 'Value',
+    parameters: 'SQL Dialect',
+    write_to_table: 'Write to Table',
+    column_category: 'Column Category',
   },
   mqtt: {
     topic: 'Topic',
@@ -217,7 +221,6 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     parameters_aggregation_container: 'Aggregation Upload Format',
   },
   dynamo: {
-    table: 'Table',
     hash_key: 'Hash Key',
     range_key: 'Range Key',
   },
@@ -258,13 +261,11 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   },
   s3tables: {
     namespace: 'Namespace',
-    table: 'Table',
     container: 'Data File Format',
     type: 'Data File Format',
     max_row_group_bytes: 'Parquet Max Row Group Bytes',
   },
   bigquery: {
     dataset: 'Dataset',
-    table: 'Table',
   },
 }

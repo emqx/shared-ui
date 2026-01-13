@@ -351,6 +351,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '应插入此数据的固定设备名称。如果为空，则必须在规则操作中设置，消息本身中设置，或从主题中提取。',
     is_aligned: '是否对齐时间序列',
     recv_timeout: '接收 IoTDB Thrift 服务器的超时时间。',
+    parameters: 'SQL 方言，选择项必须与连接器中的 SQL 方言一致，否则将无法保存数据。',
   },
   opents: {
     server: '服务器的地址。',

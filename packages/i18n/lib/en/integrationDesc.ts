@@ -391,6 +391,8 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
       'A fixed device name this data should be inserted for. If empty it must either be set in the rule action, the message itself, or it will be extracted from the topic.',
     is_aligned: 'Whether to align the timeseries',
     recv_timeout: 'Timeout for receiving from IoTDB Thrift server.',
+    parameters:
+      'SQL Dialect, the selection item must be consistent with the SQL dialect in the connector, otherwise the data cannot be saved.',
   },
   opents: {
     server: 'The URL of OpenTSDB endpoint.',
