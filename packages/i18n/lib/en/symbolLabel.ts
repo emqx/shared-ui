@@ -80,8 +80,8 @@ export const enSymbolLabel: Record<string, string> = {
   influxdb_api_v3: 'HTTP API V3 Protocol',
   oauth: 'OAuth',
   client_credentials: 'Client Credentials',
-  sql_dialect_tree: 'Tree Model',
-  sql_dialect_sql_dialect_table: 'Table Model',
+  sql_sql_dialect_tree: 'Tree Model',
+  sql_sql_dialect_table: 'Table Model',
   parameters_action_parameters_tree: 'Tree Model',
   parameters_action_parameters_table: 'Table Model',
 }

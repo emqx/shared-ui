@@ -80,8 +80,8 @@ export const zhSymbolLabel: Record<string, string> = {
   influxdb_api_v3: 'HTTP API V3 Protocol',
   oauth: 'OAuth',
   client_credentials: '客户端凭证',
-  sql_dialect_tree: '树模型',
-  sql_dialect_sql_dialect_table: '表模型',
+  sql_sql_dialect_tree: '树模型',
+  sql_sql_dialect_table: '表模型',
   parameters_action_parameters_tree: '树模型',
   parameters_action_parameters_table: '表模型',
 }
