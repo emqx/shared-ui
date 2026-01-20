@@ -111,7 +111,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     protocol_version: '协议版本',
     zoneId: '时区 ID',
     recv_timeout: '接收超时',
-    sql_dialect: 'SQL 方言',
+    sql: 'SQL 方言',
+    dialect: 'SQL 方言',
   },
   elasticsearch: {
     server: '服务器地址',

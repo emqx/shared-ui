@@ -111,7 +111,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     protocol_version: 'Protocol Version',
     zoneId: 'Zone ID',
     recv_timeout: 'Receive Timeout',
-    sql_dialect: 'SQL Dialect',
+    sql: 'SQL Dialect',
+    dialect: 'SQL Dialect',
   },
   elasticsearch: {
     server: 'Server',
