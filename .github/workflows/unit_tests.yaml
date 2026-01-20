@@ -18,9 +18,7 @@ jobs:
           node-version: '18.17'
 
       - name: use pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 9
+        uses: pnpm/action-setup@v4
 
       - name: Cache pnpm modules
         uses: actions/cache@v3
