@@ -1,5 +1,12 @@
 # @emqx/shared-ui-components
 
+## 0.0.16
+
+### Patch Changes
+
+- New fields in IoTDB
+  Do not merge same nodes in flow
+
 ## 0.0.15
 
 ### Patch Changes

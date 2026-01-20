@@ -1,5 +1,12 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.63
+
+### Patch Changes
+
+- New fields in IoTDB
+  Do not merge same nodes in flow
+
 ## 0.0.62
 
 ### Patch Changes
