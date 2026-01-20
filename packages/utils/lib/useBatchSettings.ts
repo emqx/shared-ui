@@ -71,6 +71,20 @@ precip,\${payload.precip}i,"${t('datalayersTemplateRemark')}"
 `,
   }
 
+  const iotTableTemplateContent = `Column Category,Timestamp,Measurement,Data Type,Value,Remarks (Optional)
+tag,now,temp,float,\${payload.temp},"${t('iotdbTemplateRemark')}"
+field,now,hum,float,\${payload.hum},
+attribute,now,status,boolean,\${payload.status},
+attribute,now,clientid,text,\${clientid},
+`
+
+  const getTemplateContent = (type: BatchSettingTypes, isTable?: boolean) => {
+    if (type === BatchSettingTypes.IoTDB) {
+      return isTable ? iotTableTemplateContent : templateContentMap[BatchSettingTypes.IoTDB]
+    }
+    return templateContentMap[type]
+  }
+
   /**
    * Processes TDengine data and returns a promise that resolves to a string.
    *
@@ -115,10 +129,17 @@ precip,\${payload.precip}i,"${t('datalayersTemplateRemark')}"
    * @returns {Promise<Array<Record<string, any>>>} - A promise that resolves to an array of records.
    * @throws {Error} - If an invalid data type is encountered.
    */
-  const processIoTDBData = (data: string[][]): Promise<Array<Record<string, any>>> => {
+  const processIoTDBData = (
+    data: string[][],
+    isTable?: boolean,
+  ): Promise<Array<Record<string, any>>> => {
     return new Promise((resolve, reject) => {
       try {
         const validDataTypes = ['boolean', 'int32', 'int64', 'float', 'double', 'text']
+        const validateType = (type: string) => validDataTypes.includes(type)
+        const validColumnCategories = ['tag', 'field', 'attribute']
+        const validateColumnCategory = (category: string) =>
+          validColumnCategories.includes(category)
 
         const result = data
           .slice(1)
@@ -126,9 +147,27 @@ precip,\${payload.precip}i,"${t('datalayersTemplateRemark')}"
             (row) => row.length >= 4 && row.slice(0, 4).every((item) => item && item.trim() !== ''),
           )
           .map((row) => {
+            if (isTable) {
+              const [column_category, timestamp, measurement, data_type, value] = row
+              // Check if data_type is valid
+              if (!validateType(data_type)) {
+                throw new Error(`Invalid data type: ${data_type}`)
+              }
+              // Check if column_category is valid
+              if (!validateColumnCategory(column_category)) {
+                throw new Error(`Invalid column category: ${column_category}`)
+              }
+              return {
+                column_category,
+                timestamp,
+                measurement,
+                data_type,
+                value,
+              }
+            }
             const [timestamp, measurement, data_type, value] = row
             // Check if data_type is valid
-            if (!validDataTypes.includes(data_type)) {
+            if (!validateType(data_type)) {
               throw new Error(`Invalid data type: ${data_type}`)
             }
             return {
@@ -215,6 +254,7 @@ precip,\${payload.precip}i,"${t('datalayersTemplateRemark')}"
   return {
     filenameMap,
     templateContentMap,
+    getTemplateContent,
     handleDownloadTemp,
     readFileAndParse,
     processIoTDBData,
