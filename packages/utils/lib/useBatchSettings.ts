@@ -16,6 +16,8 @@ export const useBatchSettings = (locale: 'zh' | 'en' = 'en') => {
       en: {
         iotdbTemplateRemark:
           'Measurement, Value, and Data Type are required fields. The Data Type can have the optional values boolean, int32, int64, float, double, text.',
+        iotdbTableTemplateRemark:
+          'Column Category, Measurement, Value, and Data Type are required fields. The Column Category can have the optional values tag, field, attribute, and the Data Type can have the optional values boolean, int32, int64, float, double, text.',
         invalidIsCharFlag: 'Invalid Char Value field: {isChar}',
         uploadMaxRowsError:
           'The number of rows in the CSV file exceeds the limit. Up to {max} rows of data are supported except for the header',
@@ -27,6 +29,8 @@ export const useBatchSettings = (locale: 'zh' | 'en' = 'en') => {
       zh: {
         iotdbTemplateRemark:
           '字段、值、数据类型是必填选项，数据类型可选的值为 boolean、int32、int64、float、double、text',
+        iotdbTableTemplateRemark:
+          '列类别、字段、值、数据类型是必填选项，列类别可选的值为 tag、field、attribute，数据类型可选的值为 boolean、int32、int64、float、double、text',
         invalidIsCharFlag: '无效的字符标识符值：{isChar}',
         uploadMaxRowsError: 'CSV 文件行数超过限制，除表头外，最多支持 {max} 行数据',
         influxdbTemplateRemark: '在字段值后追加 i，InfluxDB 则将该数值存储为整数类型。',
@@ -72,9 +76,9 @@ precip,\${payload.precip}i,"${t('datalayersTemplateRemark')}"
   }
 
   const iotTableTemplateContent = `Column Category,Timestamp,Measurement,Data Type,Value,Remarks (Optional)
-tag,now,temp,float,\${payload.temp},"${t('iotdbTemplateRemark')}"
+tag,now,temp,text,\${payload.temp},"${t('iotdbTableTemplateRemark')}"
 field,now,hum,float,\${payload.hum},
-attribute,now,status,boolean,\${payload.status},
+attribute,now,status,text,\${payload.status},
 attribute,now,clientid,text,\${clientid},
 `
 
