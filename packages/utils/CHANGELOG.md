@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.23
+
+### Patch Changes
+
+- Adapt new dialect in IoTDB
+
 ## 0.0.22
 
 ### Patch Changes
