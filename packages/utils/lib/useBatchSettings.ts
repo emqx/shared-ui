@@ -72,10 +72,10 @@ precip,\${payload.precip}i,"${t('datalayersTemplateRemark')}"
   }
 
   const iotTableTemplateContent = `Column Category,Timestamp,Measurement,Data Type,Value,Remarks (Optional)
-tag,now,temp,float,\${payload.temp},"${t('iotdbTemplateRemark')}"
+tag,now,temp,text,\${payload.temp},"${t('iotdbTemplateRemark')}"
 field,now,hum,float,\${payload.hum},
-attribute,now,status,boolean,\${payload.status},
-attribute,now,clientid,text,\${clientid},
+attribute,now,status,string,\${payload.status},
+attribute,now,clientid,string,\${clientid},
 `
 
   const getTemplateContent = (type: BatchSettingTypes, isTable?: boolean) => {
