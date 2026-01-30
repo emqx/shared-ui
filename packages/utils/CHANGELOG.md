@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.24
+
+### Patch Changes
+
+- Correct template for IoTDB table
+
 ## 0.0.23
 
 ### Patch Changes
