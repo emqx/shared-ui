@@ -1092,6 +1092,17 @@
             "required": true
           }
         ]
+      },
+      {
+        "name": "spb_zip_kvs",
+        "args": [
+          {
+            "name": "DecodedSparkplugBMessage",
+            "type": "object",
+            "required": true,
+            "isReference": true
+          }
+        ]
       }
     ]
   },

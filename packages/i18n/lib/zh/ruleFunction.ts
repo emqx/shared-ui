@@ -63,4 +63,5 @@ export const zhRuleFunction = {
   unusedField: '未被使用的字段',
   aliasRequired: '需指定一个别名',
   aliasFormatError: '格式错误的别名',
+  DecodedSparkplugBMessage: '解码后的 Sparkplug B 消息',
 }
