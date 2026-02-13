@@ -63,4 +63,5 @@ export const jaRuleFunction = {
   unusedField: '未使用のフィールド',
   aliasRequired: 'エイリアスを指定する必要があります',
   aliasFormatError: 'エイリアスの形式が正しくありません',
+  DecodedSparkplugBMessage: 'デコードされた Sparkplug B メッセージ',
 }
