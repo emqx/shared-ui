@@ -56,6 +56,15 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     dbname: '数据库',
     ttl: '数据保留期限 (TTL)',
     ts_column: '自定义时间戳列名',
+    clientid_prefix: '客户端 ID 前缀',
+    proto_ver: 'MQTT 协议版本',
+    bridge_mode: '桥接模式',
+    clean_start: '清除会话',
+    keepalive: 'Keepalive',
+    retry_interval: '消息重发间隔',
+    max_inflight: '飞行窗口',
+    static_clientids: '静态客户端 ID 映射表',
+    dsn: '数据源名称',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -118,15 +127,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     server: '服务器地址',
   },
   mqtt: {
-    server: 'MQTT 服务地址',
-    clientid_prefix: '客户端 ID 前缀',
-    proto_ver: 'MQTT 协议版本',
-    bridge_mode: '桥接模式',
-    clean_start: '清除会话',
-    keepalive: 'Keepalive',
-    retry_interval: '消息重发间隔',
-    max_inflight: '飞行窗口',
-    static_clientids: '静态客户端 ID 映射表',
     node: '节点名称',
     ids: '客户端 ID 列表',
   },
@@ -198,7 +198,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     enable_prepared: '启用预处理语句',
   },
   snowflake: {
-    dsn: '数据源名称',
     private_key_path: '私钥路径',
   },
   snowflake_streaming: {
@@ -228,5 +227,9 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   aws_timestream: {
     influxdb_type: 'InfluxDB 类型',
     parameters: 'InfluxDB 版本',
+  },
+  quasardb: {
+    uri: 'URI',
+    cluster_public_key: '集群公钥',
   },
 }

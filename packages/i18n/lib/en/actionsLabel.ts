@@ -51,6 +51,9 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     default_compression: 'Parquet Default Compression',
     def: 'Schema Definition',
     table: 'Table',
+    qos: 'QoS',
+    retain: 'Retain',
+    payload: 'Payload',
   },
   kafka_producer: {
     timestamp: 'Message Timestamp',
@@ -115,9 +118,6 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   },
   mqtt: {
     topic: 'Topic',
-    qos: 'QoS',
-    retain: 'Retain',
-    payload: 'Payload',
   },
   elasticsearch: {
     parameters: 'Action',

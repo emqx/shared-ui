@@ -51,6 +51,9 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     default_compression: 'Parquet 默认压缩算法',
     def: 'Schema 定义',
     table: '表',
+    qos: 'QoS',
+    retain: 'Retain',
+    payload: '消息模版',
   },
   kafka_producer: {
     timestamp: '消息的时间戳',
@@ -115,9 +118,6 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   },
   mqtt: {
     topic: '主题',
-    qos: 'QoS',
-    retain: 'Retain',
-    payload: '消息模版',
   },
   elasticsearch: {
     parameters: '操作',
