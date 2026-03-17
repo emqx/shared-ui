@@ -12,7 +12,11 @@ export const RULE_INPUT_BRIDGE_TYPE_PREFIX = '$bridges/'
 export const AI_FUNCTION_NAME = 'ai_completion'
 export const ENCRYPTED_PASSWORD = '******'
 export const RULE_INPUT_EVENT_PREFIX = '$events/'
-export const CONNECTOR_TYPES_WITH_TWO_DIRECTIONS = [BridgeType.MQTT, BridgeType.RabbitMQ]
+export const CONNECTOR_TYPES_WITH_TWO_DIRECTIONS = [
+  BridgeType.MQTT,
+  BridgeType.RabbitMQ,
+  BridgeType.AzureEventGrid,
+]
 /**
  * Because the exact type of the ai node needs to be known after the details are fetched,
  * in order to treat the data as an ai node when processing it, assign a placeholder to it first.
