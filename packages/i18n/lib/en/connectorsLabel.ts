@@ -56,6 +56,15 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     dbname: 'Database',
     ttl: 'Time-To-Live (TTL)',
     ts_column: 'Custom Timestamp Column Name',
+    clientid_prefix: 'ClientID Prefix',
+    proto_ver: 'MQTT Version',
+    bridge_mode: 'Bridge Mode',
+    clean_start: 'Clean start',
+    keepalive: 'Keepalive',
+    retry_interval: 'Message Retry Interval',
+    max_inflight: 'Max Inflight',
+    static_clientids: 'Static ClientId Entries',
+    dsn: 'Data Source Name (DSN)',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -118,15 +127,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     server: 'Server',
   },
   mqtt: {
-    server: 'MQTT Broker',
-    clientid_prefix: 'ClientID Prefix',
-    proto_ver: 'MQTT Version',
-    bridge_mode: 'Bridge Mode',
-    clean_start: 'Clean start',
-    keepalive: 'Keepalive',
-    retry_interval: 'Message Retry Interval',
-    max_inflight: 'Max Inflight',
-    static_clientids: 'Static ClientId Entries',
     node: 'EMQX Node',
     ids: 'Static Client IDs',
   },
@@ -198,7 +198,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     enable_prepared: 'Enable Prepared Statements',
   },
   snowflake: {
-    dsn: 'Data Source Name (DSN)',
     private_key_path: 'Private Key Path',
   },
   snowflake_streaming: {
@@ -228,5 +227,9 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   aws_timestream: {
     influxdb_type: 'InfluxDB Type',
     parameters: 'Version of InfluxDB',
+  },
+  quasardb: {
+    uri: 'URI',
+    cluster_public_key: 'Cluster Public Key',
   },
 }
