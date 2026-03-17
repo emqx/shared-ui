@@ -119,6 +119,9 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   mqtt: {
     topic: '主题',
   },
+  azure_event_grid: {
+    topic: '主题',
+  },
   elasticsearch: {
     parameters: '操作',
     index: '索引名称',
