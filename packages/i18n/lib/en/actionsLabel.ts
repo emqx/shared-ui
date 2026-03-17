@@ -119,6 +119,9 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   mqtt: {
     topic: 'Topic',
   },
+  azure_event_grid: {
+    topic: 'Topic',
+  },
   elasticsearch: {
     parameters: 'Action',
     index: 'Index Name',
