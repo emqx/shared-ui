@@ -1,5 +1,11 @@
 # @emqx/shared-ui-constants
 
+## 0.0.9
+
+### Patch Changes
+
+- New data integration types: QuasarDB and Azure Event Grid
+
 ## 0.0.8
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.64
+
+### Patch Changes
+
+- New data integration types: QuasarDB and Azure Event Grid
+
 ## 0.0.63
 
 ### Patch Changes
