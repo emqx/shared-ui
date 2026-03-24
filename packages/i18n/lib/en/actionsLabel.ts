@@ -271,4 +271,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   bigquery: {
     dataset: 'Dataset',
   },
+  quasardb: {
+    health_check_table: 'Health Check Table',
+  },
 }

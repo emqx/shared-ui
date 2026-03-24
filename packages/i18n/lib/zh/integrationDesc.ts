@@ -542,4 +542,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     s_3_client_transport_options_request_timeout:
       '向 S3 服务发起单次 HTTP 请求的最大等待时间，超时后会重试或失败。',
   },
+  quasardb: {
+    health_check_table:
+      '在动作健康检查中使用的表名。目前，无法直接从 SQL 中推断表名。如果设置，此值将在 `SHOW TABLE <table>` 语句中用于在动作健康检查期间探测表的存在。',
+  },
 }

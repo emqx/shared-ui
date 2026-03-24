@@ -604,4 +604,8 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
     s_3_client_transport_options_request_timeout:
       'The maximum time allowed for a single HTTP request to the S3 service. If exceeded, the request will be retried or fail.',
   },
+  quasardb: {
+    health_check_table:
+      "Table name to use in Action health checks. Currently, it's not possible to infer the table name directly from the SQL. If set, this value will be used in a `SHOW TABLE <table>` statement to probe the table existence during Action health checks.",
+  },
 }

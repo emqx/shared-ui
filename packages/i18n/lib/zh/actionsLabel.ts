@@ -271,4 +271,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   bigquery: {
     dataset: '数据集',
   },
+  quasardb: {
+    health_check_table: '健康检查表',
+  },
 }
