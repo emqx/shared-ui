@@ -84,4 +84,7 @@ export const zhSymbolLabel: Record<string, string> = {
   sql_sql_dialect_table: '表模型',
   parameters_action_parameters_tree: '树模型',
   parameters_action_parameters_table: '表模型',
+  authentication_auth_service_account_json: '服务账号 JSON',
+  authentication_auth_wif: '工作负载身份联合 (WIF)',
+  oidc_client_credentials: 'OIDC 客户端凭证',
 }

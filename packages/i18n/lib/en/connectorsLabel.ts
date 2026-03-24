@@ -56,6 +56,11 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     dbname: 'Database',
     ttl: 'Time-To-Live (TTL)',
     ts_column: 'Custom Timestamp Column Name',
+    service_account_email: 'Service Account Email',
+    gcp_project_id: 'GCP Project ID',
+    gcp_project_number: 'GCP Project Number',
+    gcp_wif_pool_id: 'Workload Identity Pool ID',
+    gcp_wif_pool_provider_id: 'Workload Identity Provider ID',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -67,6 +72,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     enable_pipelining: 'HTTP Pipelining',
   },
   gcp_pubsub_producer: {
+    authentication_type: 'Authentication Type',
+    authentication_initial_token_type: 'Credential Type',
     query_mode: 'Query Mode',
     batch_size: 'Batch Size',
   },
@@ -147,6 +154,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     region: 'DynamoDB Region',
   },
   gcp_pubsub_consumer: {
+    authentication_type: 'Authentication Type',
+    authentication_initial_token_type: 'Credential Type',
     pull_max_messages: 'Maximum Messages to Pull',
   },
   hstreamdb: {
@@ -228,5 +237,9 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   aws_timestream: {
     influxdb_type: 'InfluxDB Type',
     parameters: 'Version of InfluxDB',
+  },
+  bigquery: {
+    authentication_type: 'Authentication Type',
+    authentication_initial_token_type: 'Credential Type',
   },
 }
