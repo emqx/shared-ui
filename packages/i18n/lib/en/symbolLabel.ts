@@ -84,4 +84,7 @@ export const enSymbolLabel: Record<string, string> = {
   sql_sql_dialect_table: 'Table Model',
   parameters_action_parameters_tree: 'Tree Model',
   parameters_action_parameters_table: 'Table Model',
+  authentication_auth_service_account_json: 'Service Account JSON',
+  authentication_auth_wif: 'Workload Identity Federation (WIF)',
+  oidc_client_credentials: 'OIDC Client Credentials',
 }
