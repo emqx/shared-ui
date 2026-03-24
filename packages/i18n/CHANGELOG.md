@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.65
+
+### Patch Changes
+
+- Update auth config labels for GCP and BigQuery
+
 ## 0.0.64
 
 ### Patch Changes
