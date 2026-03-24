@@ -65,6 +65,11 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     max_inflight: '飞行窗口',
     static_clientids: '静态客户端 ID 映射表',
     dsn: '数据源名称',
+    service_account_email: '服务账号邮箱',
+    gcp_project_id: 'GCP 项目 ID',
+    gcp_project_number: 'GCP 项目编号',
+    gcp_wif_pool_id: '工作负载身份池 ID',
+    gcp_wif_pool_provider_id: '工作负载身份提供商 ID',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
@@ -76,8 +81,10 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     enable_pipelining: 'HTTP 管道',
   },
   gcp_pubsub_producer: {
+    authentication_type: '认证类型',
     query_mode: '请求模式',
     batch_size: '最大批量请求大小',
+    authentication_initial_token_type: '凭证类型',
   },
   azure_event_hub_producer: {
     bootstrap_hosts: '引导主机',
@@ -147,7 +154,9 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     region: 'DynamoDB 区域',
   },
   gcp_pubsub_consumer: {
+    authentication_type: '认证类型',
     pull_max_messages: '拉取的最大消息数',
+    authentication_initial_token_type: '凭证类型',
   },
   hstreamdb: {
     grpc_timeout: 'gRPC 超时',
@@ -231,5 +240,9 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   quasardb: {
     uri: 'URI',
     cluster_public_key: '集群公钥',
+  },
+  bigquery: {
+    authentication_type: '认证类型',
+    authentication_initial_token_type: '凭证类型',
   },
 }
