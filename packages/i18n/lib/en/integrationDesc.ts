@@ -69,6 +69,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     default_compression:
       'The default algorithm to use for compressing data pages in Parquet row groups.',
     def: 'Avro schema definition in JSON format.',
+    audience: 'Specify the `audience` to be provided when requesting the OAuth access token.',
   },
   mqtt: {
     bridge_mode:

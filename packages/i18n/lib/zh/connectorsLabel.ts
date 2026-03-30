@@ -70,6 +70,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     gcp_project_number: 'GCP 项目编号',
     gcp_wif_pool_id: '工作负载身份池 ID',
     gcp_wif_pool_provider_id: '工作负载身份提供商 ID',
+    audience: 'OAuth 请求受众 (Audience)',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
