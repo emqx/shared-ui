@@ -58,6 +58,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     name: 'Schema Registry 中的 Avro Schema 名称。',
     default_compression: '用于压缩 Parquet 行组中数据页的默认算法。',
     def: 'JSON 格式的 Avro Schema。',
+    audience: '指定请求 OAuth 访问令牌时提供的 `audience` 参数。',
   },
   mqtt: {
     bridge_mode:

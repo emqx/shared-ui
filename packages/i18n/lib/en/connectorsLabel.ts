@@ -70,6 +70,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     gcp_project_number: 'GCP Project Number',
     gcp_wif_pool_id: 'Workload Identity Pool ID',
     gcp_wif_pool_provider_id: 'Workload Identity Provider ID',
+    audience: 'OAuth Request Audience',
   },
   kafka_producer: {
     kerberos_principal: 'Kerberos Principal',
