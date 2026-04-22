@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.66
+
+### Patch Changes
+
+- New configurations in GCP, QuasarDB and InfluxDB
+
 ## 0.0.65
 
 ### Patch Changes
