@@ -166,6 +166,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     write_syntax:
       "Conf of InfluxDB line protocol to write data points. It is a text-based format that provides the measurement, tag set, field set, and timestamp of a data point, and placeholder supported. See also [InfluxDB 2.3 Line Protocol](https://docs.influxdata.com/influxdb/v2.3/reference/syntax/line-protocol/) and [InfluxDB 1.8 Line Protocol](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_tutorial/) <br/>TLDR:<br/>```<measurement>[,<tag_key>=<tag_value>[,<tag_key>=<tag_value>]] <field_key>=<field_value>[,<field_key>=<field_value>] [<timestamp>]```<br/>Please note that a placeholder for an integer value must be annotated with a suffix `i`. For example `${'{'}payload.int_value{'}'}i`.",
     precision: 'InfluxDB time precision.',
+    ping_with_auth:
+      'Controls whether EMQX includes connector credentials in /ping health-check requests. Enable this option if your InfluxDB service requires authentication on /ping. The default is false, which preserves the previous behavior and sends /ping without authentication.',
   },
   datalayers: {
     write_syntax:

@@ -150,6 +150,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     write_syntax:
       "使用 InfluxDB API Line Protocol 写入 InfluxDB 的数据，支持占位符，参考 [InfluxDB 2.3 Line Protocol](https://docs.influxdata.com/influxdb/v2.3/reference/syntax/line-protocol/) 及 [InfluxDB 1.8 Line Protocol](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_tutorial/) <br/>TLDR: <br/>```<measurement>[,<tag_key>=<tag_value>[,<tag_key>=<tag_value>]] <field_key>=<field_value>[,<field_key>=<field_value>] [<timestamp>]```<br/>注意，整形数值占位符后需要添加一个字符 `i` 类型标识。例如 `${'{'}payload.int_value{'}'}i`",
     precision: 'InfluxDB 时间精度。',
+    ping_with_auth:
+      '控制 EMQX 在发送 /ping 健康检查请求时是否附带连接器认证信息。如果你的 InfluxDB 服务要求 /ping 也进行认证，请启用此项。默认值为 false，即保持原有行为，不在 /ping 请求中附带认证信息。',
   },
   datalayers: {
     write_syntax:

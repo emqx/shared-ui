@@ -120,6 +120,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   },
   influxdb: {
     parameters: 'Version of InfluxDB',
+    ping_with_auth: 'Ping With Auth',
   },
   iotdb: {
     base_url: 'IoTDB REST Service Base URL',

@@ -120,6 +120,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   },
   influxdb: {
     parameters: 'InfluxDB 版本',
+    ping_with_auth: 'Ping 请求携带认证',
   },
   iotdb: {
     base_url: 'IoTDB REST 服务基础 URL',
