@@ -6,6 +6,7 @@ import {
   FrontendSourceType,
   ProcessingType,
   RULE_INPUT_BRIDGE_TYPE_PREFIX,
+  NEW_RULE_INPUT_SOURCE_TYPE_PREFIX,
   FallbackActionKind,
   AIProviderType,
 } from '@emqx/shared-ui-constants'
@@ -29,7 +30,7 @@ import type {
 import useFlowEdge from './useFlowEdge'
 
 export default (): {
-  getFromDataFromNodes: (nodes: Array<NodeData>) => Array<string>
+  getFromDataFromNodes: (nodes: Array<NodeData>, useNewPrefix?: boolean) => Array<string>
   getFieldsExpressionsFromNode: (nodes: Array<NodeData>, edges: Array<EdgeData>) => string
   getFallbackItemDataFromNode: (node: NodeData | Node) => FallbackAction | undefined
   getFilterStrFromNodes: (nodes: Array<NodeData>) => string
@@ -344,7 +345,7 @@ export default (): {
   const groupNodes = (nodes: Array<NodeData>): NodesAfterGroup =>
     groupBy(nodes, 'type') as NodesAfterGroup
 
-  const getFromDataFromNodes = (nodes: Array<NodeData>): Array<string> => {
+  const getFromDataFromNodes = (nodes: Array<NodeData>, useNewPrefix = false): Array<string> => {
     return nodes.reduce((ret: Array<string>, node) => {
       if (node.type !== FlowNodeType.Input) {
         return ret
@@ -353,7 +354,10 @@ export default (): {
       const isBridge = isBridgerNode(node)
       let data = ''
       if (isBridge) {
-        data = `${RULE_INPUT_BRIDGE_TYPE_PREFIX}${getBridgeKey({
+        const prefix = useNewPrefix
+          ? NEW_RULE_INPUT_SOURCE_TYPE_PREFIX
+          : RULE_INPUT_BRIDGE_TYPE_PREFIX
+        data = `${prefix}${getBridgeKey({
           type: node.data.formData.type,
           name: node.data.formData.name,
         })}`
