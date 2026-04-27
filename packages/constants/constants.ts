@@ -9,6 +9,7 @@ export const ANTHROPIC_VERSION_MAP = {
   '2023-06-01': '2023-06-01',
 }
 export const RULE_INPUT_BRIDGE_TYPE_PREFIX = '$bridges/'
+export const NEW_RULE_INPUT_SOURCE_TYPE_PREFIX = '$sources/'
 export const AI_FUNCTION_NAME = 'ai_completion'
 export const ENCRYPTED_PASSWORD = '******'
 export const RULE_INPUT_EVENT_PREFIX = '$events/'

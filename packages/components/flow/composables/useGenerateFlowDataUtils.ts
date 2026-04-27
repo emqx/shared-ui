@@ -10,6 +10,7 @@ import {
   NodeType,
   ProcessingType,
   RULE_INPUT_BRIDGE_TYPE_PREFIX,
+  NEW_RULE_INPUT_SOURCE_TYPE_PREFIX,
   RULE_INPUT_EVENT_PREFIX,
   aiExpressionPartReg,
   isForeachReg,
@@ -338,7 +339,11 @@ export default (): {
 
   /* SOURCE */
   const eventInputReg = new RegExp(`^${escapeRegExp(RULE_INPUT_EVENT_PREFIX)}`)
-  const bridgeInputReg = new RegExp(`^${escapeRegExp(RULE_INPUT_BRIDGE_TYPE_PREFIX)}`)
+  const bridgeInputReg = new RegExp(
+    `^(${escapeRegExp(RULE_INPUT_BRIDGE_TYPE_PREFIX)}|${escapeRegExp(
+      NEW_RULE_INPUT_SOURCE_TYPE_PREFIX,
+    )})`,
+  )
   /**
    * @returns If the returned type is a bridge type, it is a specific bridge type
    */
@@ -348,7 +353,7 @@ export default (): {
     }
     // now has mqtt & http
     if (bridgeInputReg.test(from)) {
-      return getBridgeTypeFromId(from.replace(RULE_INPUT_BRIDGE_TYPE_PREFIX, ''))
+      return getBridgeTypeFromId(from.replace(bridgeInputReg, ''))
     }
     return FrontendSourceType.Message
   }

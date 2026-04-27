@@ -3,6 +3,7 @@ import {
   BridgeType,
   isForeachReg,
   RULE_INPUT_BRIDGE_TYPE_PREFIX,
+  NEW_RULE_INPUT_SOURCE_TYPE_PREFIX,
 } from '@emqx/shared-ui-constants'
 
 export const waitAMoment = (ms = 100): Promise<boolean> => {
@@ -128,8 +129,18 @@ export const getTypeAndNameFromKey = (key: string): { type: BridgeType; name: st
   }
 }
 
-export const getBridgeIdFromInput = (input: string) =>
-  input.replace(RULE_INPUT_BRIDGE_TYPE_PREFIX, '')
+const escapeRegExp = (str: string) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+// 测试
+console.log(escapeRegExp('[lodash](https://lodash.com/)'))
+// 输出: "\[lodash\]\(https://lodash\.com/\)"
+
+const ruleInputSourceReg = new RegExp(
+  `^(${escapeRegExp(RULE_INPUT_BRIDGE_TYPE_PREFIX)}|${escapeRegExp(
+    NEW_RULE_INPUT_SOURCE_TYPE_PREFIX,
+  )})`,
+)
+export const getBridgeIdFromInput = (input: string) => input.replace(ruleInputSourceReg, '')
 export const getBridgeTypeFromId = (id: string): string => getTypeAndNameFromKey(id).type
 export const getBridgeNameFromId = (id: string): string => getTypeAndNameFromKey(id).name
 
