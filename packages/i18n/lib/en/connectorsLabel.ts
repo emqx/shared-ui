@@ -136,8 +136,11 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     server: 'Server',
   },
   mqtt: {
+    keepalive: 'MQTT Keepalive',
+    tcp_opts_keepalive: 'TCP Keepalive',
     node: 'EMQX Node',
     ids: 'Static Client IDs',
+    buffer: 'TCP Connection Buffer Size',
   },
   cassandra: {
     keyspace: 'Keyspace',
