@@ -136,8 +136,11 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     server: '服务器地址',
   },
   mqtt: {
+    keepalive: 'MQTT Keepalive',
+    tcp_opts_keepalive: 'TCP Keepalive',
     node: '节点名称',
     ids: '客户端 ID 列表',
+    buffer: 'TCP 连接缓冲区大小',
   },
   cassandra: {
     keyspace: 'Keyspace',
