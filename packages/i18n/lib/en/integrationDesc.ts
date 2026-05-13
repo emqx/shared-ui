@@ -12,6 +12,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     inflight_window:
       'Query inflight window. When query_mode is set to async, this config has to be set to 1 if messages from the same MQTT client have to be strictly ordered.',
     query_mode: "Query mode. Optional 'sync/async', default 'async'.",
+    dispatch_strategy:
+      'The strategy for dispatching queries when a query does not set an explicit pick key. The default value <code>per_clientid</code> preserves the existing behavior. Set to <code>random</code> to spread such queries across multiple workers.',
     request_ttl:
       'Starting from the moment when the request enters the buffer, if the request remains in the buffer for the specified time or is sent but does not receive a response or acknowledgement in time, the request is considered expired.',
     start_timeout:

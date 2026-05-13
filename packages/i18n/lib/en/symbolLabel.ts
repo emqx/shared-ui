@@ -1,6 +1,8 @@
 export const enSymbolLabel: Record<string, string> = {
   async: 'Async',
   sync: 'Sync',
+  per_clientid: 'Per Client ID',
+  random: 'Random',
   get: 'GET',
   post: 'POST',
   delete: 'DELETE',

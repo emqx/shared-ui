@@ -1,6 +1,8 @@
 export const zhSymbolLabel: Record<string, string> = {
   async: '异步',
   sync: '同步',
+  per_clientid: '按客户端 ID',
+  random: '随机',
   get: 'GET',
   post: 'POST',
   delete: 'DELETE',
