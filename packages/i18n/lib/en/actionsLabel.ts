@@ -4,6 +4,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     health_check_interval_jitter: 'Health Check Interval Jitter',
     health_check_timeout: 'Health Check Timeout',
     query_mode: 'Query Mode',
+    dispatch_strategy: 'Dispatch Strategy',
     max_retries: 'Max Retries',
     worker_pool_size: 'Buffer Pool Size',
     start_after_created: 'Start After Created',

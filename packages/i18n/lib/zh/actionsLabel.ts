@@ -4,6 +4,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     health_check_timeout: '健康检查超时',
     health_check_interval_jitter: '健康检查间隔抖动',
     query_mode: '请求模式',
+    dispatch_strategy: '调度策略',
     max_retries: '最大重试次数',
     worker_pool_size: '缓存池大小',
     start_after_created: '创建后立即启动',
