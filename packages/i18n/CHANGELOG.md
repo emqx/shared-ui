@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.67
+
+### Patch Changes
+
+- New fields in Redis connector and actions
+
 ## 0.0.66
 
 ### Patch Changes
