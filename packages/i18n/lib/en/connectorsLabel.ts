@@ -98,6 +98,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   redis: {
     parameters: 'Redis Mode',
     sentinel: 'Sentinel Mode',
+    sentinel_username: 'Sentinel Username',
+    sentinel_password: 'Sentinel Password',
   },
   mongodb: {
     parameters: 'MongoDB Mode',

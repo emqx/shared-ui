@@ -309,6 +309,9 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     servers:
       '集群将要连接的节点列表。 节点之间用逗号分隔，如：`Node[,Node].`<br/>每个节点的配置为：将要连接的 IPv4 或 IPv6 地址或主机名。<br/>主机名具有以下形式：`Host[:Port]`。<br/>如果未指定 `[:Port]`，则使用 Redis 默认端口 6379。',
     sentinel: "哨兵模式。当 Redis 服务运行在哨兵模式下，该配置必须设置为 'sentinel'。",
+    sentinel_username:
+      '用于向 Redis Sentinel 进行身份认证的用户名。若 Sentinel 不需要 ACL 用户名认证，请留空。',
+    sentinel_password: '用于向 Redis Sentinel 进行身份认证的密码。若 Sentinel 不需要认证，请留空。',
     command_template:
       "用于推送数据的 Redis 命令模板。 每个列表元素代表一个命令名称或其参数。<br/>例如，要通过键 `msgs` 将消息体推送到 Redis 列表中，数组元素应该是： `rpush`, `msgs`, `${'{'}payload{'}'}`。",
   },

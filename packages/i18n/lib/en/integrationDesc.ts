@@ -346,6 +346,10 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
       'A Node list for Cluster to connect to. The nodes should be separated with commas, such as: `Node[,Node].`<br/>For each Node should be: The IPv4 or IPv6 address or the hostname to connect to.<br/>A host entry has the following form: `Host[:Port]`.<br/>The Redis default port 6379 is used if `[:Port]` is not specified.',
     sentinel:
       "Sentinel mode. Must be set to 'sentinel' when Redis server is running in sentinel mode.",
+    sentinel_username:
+      'Username used to authenticate with Redis Sentinel. Leave it unset when Sentinel does not require ACL username authentication.',
+    sentinel_password:
+      'Password used to authenticate with Redis Sentinel. Leave it unset when Sentinel does not require authentication.',
     command_template:
       "Redis command template used to export messages. Each list element stands for a command name or its argument.<br/>For example, to push payloads in a Redis list by key `msgs`, the elements should be the following:<br/>`rpush`, `msgs`, `${'{'}payload{'}'}`.",
   },

@@ -98,6 +98,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   redis: {
     parameters: '部署模式',
     sentinel: '哨兵模式',
+    sentinel_username: 'Sentinel 用户名',
+    sentinel_password: 'Sentinel 密码',
   },
   mongodb: {
     parameters: '部署模式',
