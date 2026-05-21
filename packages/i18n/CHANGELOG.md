@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.68
+
+### Patch Changes
+
+- New fields in MQTT connector
+
 ## 0.0.67
 
 ### Patch Changes
