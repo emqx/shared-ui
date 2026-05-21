@@ -78,6 +78,10 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '配置 EMQX 节点与静态客户端 ID 的对应关系。当配置了映射关系后，只有在映射中指定的 EMQX 节点才会创建对应的 MQTT 客户端连接。',
     node: "EMQX 的节点名称，例如：<code>emqx{'@'}10.0.0.1</code>",
     ids: '指定给该节点的静态客户端 ID 列表',
+    delay_send:
+      '启用后，EMQX 可能会将较小的 TCP 写入短暂缓存，并合并后一次发送为较大的数据包。适合大量小消息场景，可提升吞吐，但可能增加少量延迟。默认值：<code>false</code>。',
+    active_n:
+      '每个连接在一次批处理中处理的 TCP 入站事件数量。值越大，繁忙连接的吞吐可能越高；值越小，单连接延迟可能更低。默认值：<code>10</code>。',
   },
   http: {
     url: "HTTP 连接器的 URL。<br/>路径中支持占位符，但在主机或端口部分中不能使用占位符。<br/>例如，`http://localhost:9901/${'{'}topic{'}'}` 是允许的，但是 `http://${'{'}host{'}'}:9901/message` 或 `http://localhost:${'{'}port{'}'}/message `不允许。",

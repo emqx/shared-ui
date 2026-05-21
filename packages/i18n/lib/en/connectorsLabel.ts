@@ -143,6 +143,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     node: 'EMQX Node',
     ids: 'Static Client IDs',
     buffer: 'TCP Connection Buffer Size',
+    delay_send: 'Delay Send',
+    active_n: 'Active N',
   },
   cassandra: {
     keyspace: 'Keyspace',
