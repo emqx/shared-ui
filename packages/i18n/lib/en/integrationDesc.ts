@@ -92,6 +92,10 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Entries mapping EMQX node names to static client IDs. If any entries are defined, then only EMQX nodes matching those entries will start MQTT clients with the corresponding clientids.',
     node: "EMQX node name, e.g.: <code>emqx{'@'}10.0.0.1</code>.",
     ids: 'Array of static client IDs assigned to this node.',
+    delay_send:
+      'When enabled, EMQX may briefly buffer small outgoing TCP writes and send them together as larger packets. This can improve throughput when publishing many small messages, but may add a small amount of latency. Default: <code>false</code>.',
+    active_n:
+      'Number of incoming TCP events EMQX processes in one active batch for each connection. A higher value may improve throughput on busy connections; a lower value may reduce per-connection latency. Default: <code>10</code>.',
   },
   http: {
     url: "The URL of the HTTP Connector.<br/>Template with variables is allowed in the path, but variables cannot be used in the host or port part.<br/>For example, `http://localhost:9901/${'{'}topic{'}'}` is allowed, but`http://${'{'}host{'}'}:9901/message` or `http://localhost:${'{'}port{'}'}/message`is not allowed.",

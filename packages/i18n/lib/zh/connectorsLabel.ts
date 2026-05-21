@@ -143,6 +143,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     node: '节点名称',
     ids: '客户端 ID 列表',
     buffer: 'TCP 连接缓冲区大小',
+    delay_send: '延迟发送',
+    active_n: 'TCP 接收批量数',
   },
   cassandra: {
     keyspace: 'Keyspace',
