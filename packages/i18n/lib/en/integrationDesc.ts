@@ -86,6 +86,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       "Message publishing topic, supports using ${'{'}field{'}'} syntax to extract variables and dynamically concatenate the topic.",
     source_topic:
       'Message subscription topics support the use of + and # wildcards. When EMQX is running in cluster mode or the connector is configured with a connection pool, shared subscriptions must be used to avoid message duplication.',
+    retain_as_published:
+      'Whether to set the MQTT 5.0 Retain As Published subscription option on the remote subscription. If enabled, the upstream broker preserves the retain flag on forwarded messages; if disabled, the upstream broker clears it. Only takes effect when the connector uses MQTT 5.0.',
     payload:
       "For example: ${'{'}payload{'}'}, ${'{'}clientid{'}'}, ${'{'}topic{'}'} , ${'{'}username{'}'}, etc. Use fields according to the action requirements of your business and forwards the message as it is if it is empty.Supports reading data using ${'{'}field{'}'} syntax.",
     static_clientids:

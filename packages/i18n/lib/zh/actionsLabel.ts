@@ -119,6 +119,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   },
   mqtt: {
     topic: '主题',
+    retain_as_published: '保留发布时 Retain 标志',
   },
   azure_event_grid: {
     topic: '主题',
