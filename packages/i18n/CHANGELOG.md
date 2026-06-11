@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.69
+
+### Patch Changes
+
+- Correct label in redis and new field in mqtt
+
 ## 0.0.68
 
 ### Patch Changes
