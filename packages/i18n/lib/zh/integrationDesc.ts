@@ -72,6 +72,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     topic: "消息发布主题，支持使用 ${'{'}field{'}'} 语法提取变量动态拼接主题。",
     source_topic:
       '消息订阅主题，支持使用 + 和 # 通配符。当 EMQX 运行在集群模式下或连接器配置了连接池时，为了避免消息重复，必须使用共享订阅。',
+    retain_as_published:
+      '是否在远程订阅中设置 MQTT 5.0 的 Retain As Published 订阅选项。启用后，上游 Broker 会保留转发消息的 retain 标志；关闭后，上游 Broker 会清除该标志。仅当连接器使用 MQTT 5.0 时生效。',
     payload:
       "例如：${'{'}payload{'}'}, ${'{'}clientid{'}'}, ${'{'}topic{'}'}, ${'{'}username{'}'} 等。请根据使用动作的业务需求来选择字段，置空则原样转发消息。支持使用 ${'{'}field{'}'} 语法读取数据。",
     static_clientids:

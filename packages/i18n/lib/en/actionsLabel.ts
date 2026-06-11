@@ -119,6 +119,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   },
   mqtt: {
     topic: 'Topic',
+    retain_as_published: 'Retain As Published',
   },
   azure_event_grid: {
     topic: 'Topic',
