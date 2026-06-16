@@ -73,6 +73,9 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     audience: 'OAuth 请求受众 (Audience)',
   },
   kafka_producer: {
+    authentication_endpoint: 'Roles Anywhere 端点',
+    authentication_region: 'AWS 区域',
+    authentication_type: '认证类型',
     kerberos_principal: 'Kerberos Principal',
     kerberos_keytab_file: 'Kerberos Keytab 文件',
   },
@@ -171,6 +174,9 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     grpc_timeout: 'gRPC 超时',
   },
   kafka_consumer: {
+    authentication_endpoint: 'Roles Anywhere 端点',
+    authentication_region: 'AWS 区域',
+    authentication_type: '认证类型',
     kerberos_principal: 'Kerberos Principal',
     kerberos_keytab_file: 'Kerberos Keytab 文件',
     mechanism: '认证方法',

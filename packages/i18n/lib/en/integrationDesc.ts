@@ -231,6 +231,9 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
     bootstrap_hosts:
       'A comma separated list of Kafka <code>host[:port]</code> endpoints to bootstrap the client. Default port number is 9092.',
     authentication: 'Authentication configs.',
+    authentication_endpoint:
+      'Endpoint where the AWS IAM Roles Anywhere credential process serves its API.',
+    authentication_region: 'AWS region where the MSK cluster is running.',
     connect_timeout:
       'Maximum wait time for TCP connection establishment (including authentication time if enabled).',
     min_metadata_refresh_interval:
@@ -282,6 +285,9 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
   kafka_consumer: {
     bootstrap_hosts:
       'A comma separated list of Kafka <code>host[:port]</code> endpoints to bootstrap the client. Default port number is 9092.',
+    authentication_endpoint:
+      'Endpoint where the AWS IAM Roles Anywhere credential process serves its API.',
+    authentication_region: 'AWS region where the MSK cluster is running.',
     key_encoding_mode:
       'Defines how the key from the Kafka message is encoded before being forwarded via MQTT.<br/><code>none</code> Uses the key from the Kafka message unchanged.  Note: in this case, the key must be a valid UTF-8 string.<br/><code>base64</code> Uses base-64 encoding on the received key.',
     value_encoding_mode:

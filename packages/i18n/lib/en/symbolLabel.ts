@@ -68,6 +68,7 @@ export const enSymbolLabel: Record<string, string> = {
   parameters_aggregation_container_container_csv: 'CSV',
   parameters_container_container_csv: 'CSV',
   authentication_msk_iam: 'AWS IAM for MSK',
+  authentication_auth_msk_iam_roles_anywhere: 'MSK IAM Roles Anywhere',
   parameters_streaming_parameters: 'Streaming',
   parameters_aggregation_container_container_parquet: 'Parquet',
   parameters_container_container_parquet: 'Parquet',

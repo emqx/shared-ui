@@ -210,6 +210,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
   kafka_producer: {
     bootstrap_hosts: '用逗号分隔的 <code>host[:port]</code> 主机列表。默认端口号为 9092。',
     authentication: '认证参数。',
+    authentication_endpoint: 'AWS IAM Roles Anywhere 凭证进程提供 API 的端点。',
+    authentication_region: 'MSK 集群运行所在的 AWS 区域。',
     connect_timeout:
       '建立 TCP 连接时的最大等待时长（若启用认证，这个等待时长也包含完成认证所需时间）。',
     min_metadata_refresh_interval:
@@ -256,6 +258,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
   },
   kafka_consumer: {
     bootstrap_hosts: '用逗号分隔的 <code>host[:port]</code> 主机列表。默认端口号为 9092。',
+    authentication_endpoint: 'AWS IAM Roles Anywhere 凭证进程提供 API 的端点。',
+    authentication_region: 'MSK 集群运行所在的 AWS 区域。',
     key_encoding_mode:
       '通过 MQTT 转发之前，如何处理 Kafka 消息的 Key。<code>none</code> 使用 Kafka 消息中的 Key 原始值，不进行编码。  注意：在这种情况下，Key 必须是一个有效的 UTF-8 字符串。<br/><code>base64</code> 对收到的密钥或值使用 base-64 编码。',
     value_encoding_mode:
