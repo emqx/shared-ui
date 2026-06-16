@@ -61,6 +61,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     default_compression: '用于压缩 Parquet 行组中数据页的默认算法。',
     def: 'JSON 格式的 Avro Schema。',
     audience: '指定请求 OAuth 访问令牌时提供的 `audience` 参数。',
+    authentication:
+      '选择 EMQX 连接 GCP 时使用的认证方式。<br/>- 服务账号 JSON：上传服务账号密钥 JSON 文件。<br/>- 工作负载身份联合 (WIF)：使用外部 OIDC Token 换取 Google 凭证。<br/>- 附加服务账号：使用运行环境绑定的服务账号。',
   },
   mqtt: {
     bridge_mode:
@@ -561,7 +563,6 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '在动作健康检查中使用的表名。目前，无法直接从 SQL 中推断表名。如果设置，此值将在 `SHOW TABLE <table>` 语句中用于在动作健康检查期间探测表的存在。',
   },
   bigtable: {
-    authentication: '用于连接 GCP 的认证方式。',
     authentication_type: '用于连接 GCP 的认证方式。',
     instance_id:
       'Bigtable 实例标识符。请填写 `myinst` 这样的简单 ID，而不是 `projects/.../instances/...` 这样的完整标识符。',

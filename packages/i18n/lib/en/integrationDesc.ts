@@ -72,6 +72,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'The default algorithm to use for compressing data pages in Parquet row groups.',
     def: 'Avro schema definition in JSON format.',
     audience: 'Specify the `audience` to be provided when requesting the OAuth access token.',
+    authentication:
+      'Choose how EMQX authenticates with GCP.<br/>- Service Account JSON: Upload a service account key JSON file.<br/>- Workload Identity Federation (WIF): Exchange an external OIDC token for Google credentials.<br/>- Attached Service Account: Use the service account attached to the runtime environment.',
   },
   mqtt: {
     bridge_mode:
@@ -624,7 +626,6 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
       "Table name to use in Action health checks. Currently, it's not possible to infer the table name directly from the SQL. If set, this value will be used in a `SHOW TABLE <table>` statement to probe the table existence during Action health checks.",
   },
   bigtable: {
-    authentication: 'Authentication method to use with GCP.',
     authentication_type: 'Authentication method to use with GCP.',
     instance_id:
       'Bigtable instance identifier. Use the simple ID such as `myinst`, not the fully qualified `projects/.../instances/...` value.',
