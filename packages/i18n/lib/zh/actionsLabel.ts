@@ -273,6 +273,17 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   bigquery: {
     dataset: '数据集',
   },
+  bigtable: {
+    instance_id: '实例 ID',
+    type: '变更类型',
+    table_id: '表 ID',
+    row_key: '行键',
+    mutations: '变更列表',
+    family_name: '列族',
+    column_qualifier: '列限定符',
+    timestamp_micros: '时间戳（微秒）',
+    value: '值',
+  },
   quasardb: {
     health_check_table: '健康检查表',
   },

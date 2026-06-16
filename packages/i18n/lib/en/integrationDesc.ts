@@ -623,4 +623,19 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
     health_check_table:
       "Table name to use in Action health checks. Currently, it's not possible to infer the table name directly from the SQL. If set, this value will be used in a `SHOW TABLE <table>` statement to probe the table existence during Action health checks.",
   },
+  bigtable: {
+    authentication: 'Authentication method to use with GCP.',
+    authentication_type: 'Authentication method to use with GCP.',
+    instance_id:
+      'Bigtable instance identifier. Use the simple ID such as `myinst`, not the fully qualified `projects/.../instances/...` value.',
+    table_id:
+      'Bigtable table identifier. Use the simple ID such as `mytable`, not the fully qualified `projects/.../instances/.../tables/...` value.',
+    row_key: "Key name that contains the message's row key.",
+    mutations: 'List of cell mutations to apply for a single received message.',
+    type: 'Set Cell mutation.',
+    family_name: "Key name that contains the mutation's column family.",
+    column_qualifier: "Key name that contains the mutation's column qualifier.",
+    timestamp_micros: "Key name that contains the mutation's timestamp in microseconds.",
+    value: "Key name that contains the mutation's value.",
+  },
 }

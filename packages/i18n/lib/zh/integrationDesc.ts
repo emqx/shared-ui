@@ -560,4 +560,19 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     health_check_table:
       '在动作健康检查中使用的表名。目前，无法直接从 SQL 中推断表名。如果设置，此值将在 `SHOW TABLE <table>` 语句中用于在动作健康检查期间探测表的存在。',
   },
+  bigtable: {
+    authentication: '用于连接 GCP 的认证方式。',
+    authentication_type: '用于连接 GCP 的认证方式。',
+    instance_id:
+      'Bigtable 实例标识符。请填写 `myinst` 这样的简单 ID，而不是 `projects/.../instances/...` 这样的完整标识符。',
+    table_id:
+      'Bigtable 表标识符。请填写 `mytable` 这样的简单 ID，而不是 `projects/.../instances/.../tables/...` 这样的完整标识符。',
+    row_key: '包含消息行键的字段名。',
+    mutations: '对单条接收消息执行的单元格变更列表。',
+    type: 'Set Cell 变更。',
+    family_name: '包含变更列族的字段名。',
+    column_qualifier: '包含变更列限定符的字段名。',
+    timestamp_micros: '包含变更时间戳（微秒）的字段名。',
+    value: '包含变更值的字段名。',
+  },
 }

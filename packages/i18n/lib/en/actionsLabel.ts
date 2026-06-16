@@ -273,6 +273,17 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   bigquery: {
     dataset: 'Dataset',
   },
+  bigtable: {
+    instance_id: 'Instance ID',
+    type: 'Mutation Type',
+    table_id: 'Table ID',
+    row_key: 'Row Key',
+    mutations: 'Mutations',
+    family_name: 'Column Family',
+    column_qualifier: 'Column Qualifier',
+    timestamp_micros: 'Timestamp (microseconds)',
+    value: 'Value',
+  },
   quasardb: {
     health_check_table: 'Health Check Table',
   },

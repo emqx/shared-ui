@@ -254,4 +254,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     authentication_type: '认证类型',
     authentication_initial_token_type: '凭证类型',
   },
+  bigtable: {
+    authentication_type: '认证类型',
+    authentication_initial_token_type: '凭证类型',
+  },
 }

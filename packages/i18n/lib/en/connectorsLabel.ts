@@ -254,4 +254,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     authentication_type: 'Authentication Type',
     authentication_initial_token_type: 'Credential Type',
   },
+  bigtable: {
+    authentication_type: 'Authentication Type',
+    authentication_initial_token_type: 'Credential Type',
+  },
 }
