@@ -61,6 +61,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     default_compression: '用于压缩 Parquet 行组中数据页的默认算法。',
     def: 'JSON 格式的 Avro Schema。',
     audience: '指定请求 OAuth 访问令牌时提供的 `audience` 参数。',
+    authentication:
+      '选择 EMQX 连接 GCP 时使用的认证方式。<br/>- 服务账号 JSON：上传服务账号密钥 JSON 文件。<br/>- 工作负载身份联合 (WIF)：使用外部 OIDC Token 换取 Google 凭证。<br/>- 附加服务账号：使用运行环境绑定的服务账号。',
   },
   mqtt: {
     bridge_mode:
@@ -208,6 +210,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
   kafka_producer: {
     bootstrap_hosts: '用逗号分隔的 <code>host[:port]</code> 主机列表。默认端口号为 9092。',
     authentication: '认证参数。',
+    authentication_endpoint: 'AWS IAM Roles Anywhere 凭证进程提供 API 的端点。',
+    authentication_region: 'MSK 集群运行所在的 AWS 区域。',
     connect_timeout:
       '建立 TCP 连接时的最大等待时长（若启用认证，这个等待时长也包含完成认证所需时间）。',
     min_metadata_refresh_interval:
@@ -254,6 +258,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
   },
   kafka_consumer: {
     bootstrap_hosts: '用逗号分隔的 <code>host[:port]</code> 主机列表。默认端口号为 9092。',
+    authentication_endpoint: 'AWS IAM Roles Anywhere 凭证进程提供 API 的端点。',
+    authentication_region: 'MSK 集群运行所在的 AWS 区域。',
     key_encoding_mode:
       '通过 MQTT 转发之前，如何处理 Kafka 消息的 Key。<code>none</code> 使用 Kafka 消息中的 Key 原始值，不进行编码。  注意：在这种情况下，Key 必须是一个有效的 UTF-8 字符串。<br/><code>base64</code> 对收到的密钥或值使用 base-64 编码。',
     value_encoding_mode:
@@ -559,5 +565,19 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
   quasardb: {
     health_check_table:
       '在动作健康检查中使用的表名。目前，无法直接从 SQL 中推断表名。如果设置，此值将在 `SHOW TABLE <table>` 语句中用于在动作健康检查期间探测表的存在。',
+  },
+  bigtable: {
+    authentication_type: '用于连接 GCP 的认证方式。',
+    instance_id:
+      'Bigtable 实例标识符。请填写 `myinst` 这样的简单 ID，而不是 `projects/.../instances/...` 这样的完整标识符。',
+    table_id:
+      'Bigtable 表标识符。请填写 `mytable` 这样的简单 ID，而不是 `projects/.../instances/.../tables/...` 这样的完整标识符。',
+    row_key: '包含消息行键的字段名。',
+    mutations: '对单条接收消息执行的单元格变更列表。',
+    type: 'Set Cell 变更。',
+    family_name: '包含变更列族的字段名。',
+    column_qualifier: '包含变更列限定符的字段名。',
+    timestamp_micros: '包含变更时间戳（微秒）的字段名。',
+    value: '包含变更值的字段名。',
   },
 }

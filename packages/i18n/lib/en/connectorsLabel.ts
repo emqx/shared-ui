@@ -73,6 +73,9 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     audience: 'OAuth Request Audience',
   },
   kafka_producer: {
+    authentication_endpoint: 'Roles Anywhere Endpoint',
+    authentication_region: 'AWS Region',
+    authentication_type: 'Authentication Type',
     kerberos_principal: 'Kerberos Principal',
     kerberos_keytab_file: 'Kerberos Keytab File',
   },
@@ -171,6 +174,9 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     grpc_timeout: 'gRPC Timeout',
   },
   kafka_consumer: {
+    authentication_endpoint: 'Roles Anywhere Endpoint',
+    authentication_region: 'AWS Region',
+    authentication_type: 'Authentication Type',
     kerberos_principal: 'Kerberos Principal',
     kerberos_keytab_file: 'Kerberos Keytab File',
     mechanism: 'Mechanism',
@@ -251,6 +257,10 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     cluster_public_key: 'Cluster Public Key',
   },
   bigquery: {
+    authentication_type: 'Authentication Type',
+    authentication_initial_token_type: 'Credential Type',
+  },
+  bigtable: {
     authentication_type: 'Authentication Type',
     authentication_initial_token_type: 'Credential Type',
   },

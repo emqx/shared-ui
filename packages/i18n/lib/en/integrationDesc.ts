@@ -72,6 +72,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'The default algorithm to use for compressing data pages in Parquet row groups.',
     def: 'Avro schema definition in JSON format.',
     audience: 'Specify the `audience` to be provided when requesting the OAuth access token.',
+    authentication:
+      'Choose how EMQX authenticates with GCP.<br/>- Service Account JSON: Upload a service account key JSON file.<br/>- Workload Identity Federation (WIF): Exchange an external OIDC token for Google credentials.<br/>- Attached Service Account: Use the service account attached to the runtime environment.',
   },
   mqtt: {
     bridge_mode:
@@ -229,6 +231,9 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
     bootstrap_hosts:
       'A comma separated list of Kafka <code>host[:port]</code> endpoints to bootstrap the client. Default port number is 9092.',
     authentication: 'Authentication configs.',
+    authentication_endpoint:
+      'Endpoint where the AWS IAM Roles Anywhere credential process serves its API.',
+    authentication_region: 'AWS region where the MSK cluster is running.',
     connect_timeout:
       'Maximum wait time for TCP connection establishment (including authentication time if enabled).',
     min_metadata_refresh_interval:
@@ -280,6 +285,9 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
   kafka_consumer: {
     bootstrap_hosts:
       'A comma separated list of Kafka <code>host[:port]</code> endpoints to bootstrap the client. Default port number is 9092.',
+    authentication_endpoint:
+      'Endpoint where the AWS IAM Roles Anywhere credential process serves its API.',
+    authentication_region: 'AWS region where the MSK cluster is running.',
     key_encoding_mode:
       'Defines how the key from the Kafka message is encoded before being forwarded via MQTT.<br/><code>none</code> Uses the key from the Kafka message unchanged.  Note: in this case, the key must be a valid UTF-8 string.<br/><code>base64</code> Uses base-64 encoding on the received key.',
     value_encoding_mode:
@@ -622,5 +630,19 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
   quasardb: {
     health_check_table:
       "Table name to use in Action health checks. Currently, it's not possible to infer the table name directly from the SQL. If set, this value will be used in a `SHOW TABLE <table>` statement to probe the table existence during Action health checks.",
+  },
+  bigtable: {
+    authentication_type: 'Authentication method to use with GCP.',
+    instance_id:
+      'Bigtable instance identifier. Use the simple ID such as `myinst`, not the fully qualified `projects/.../instances/...` value.',
+    table_id:
+      'Bigtable table identifier. Use the simple ID such as `mytable`, not the fully qualified `projects/.../instances/.../tables/...` value.',
+    row_key: "Key name that contains the message's row key.",
+    mutations: 'List of cell mutations to apply for a single received message.',
+    type: 'Set Cell mutation.',
+    family_name: "Key name that contains the mutation's column family.",
+    column_qualifier: "Key name that contains the mutation's column qualifier.",
+    timestamp_micros: "Key name that contains the mutation's timestamp in microseconds.",
+    value: "Key name that contains the mutation's value.",
   },
 }

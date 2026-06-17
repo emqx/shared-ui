@@ -68,6 +68,7 @@ export const enSymbolLabel: Record<string, string> = {
   parameters_aggregation_container_container_csv: 'CSV',
   parameters_container_container_csv: 'CSV',
   authentication_msk_iam: 'AWS IAM for MSK',
+  authentication_auth_msk_iam_roles_anywhere: 'MSK IAM Roles Anywhere',
   parameters_streaming_parameters: 'Streaming',
   parameters_aggregation_container_container_parquet: 'Parquet',
   parameters_container_container_parquet: 'Parquet',
@@ -87,6 +88,7 @@ export const enSymbolLabel: Record<string, string> = {
   parameters_action_parameters_tree: 'Tree Model',
   parameters_action_parameters_table: 'Table Model',
   authentication_auth_service_account_json: 'Service Account JSON',
+  authentication_auth_attached_service_account: 'Attached Service Account',
   authentication_auth_wif: 'Workload Identity Federation (WIF)',
   oidc_client_credentials: 'OIDC Client Credentials',
 }

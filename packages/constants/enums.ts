@@ -124,6 +124,7 @@ export enum BridgeType {
   Redshift = 'redshift',
   AWSTimestream = 'aws_timestream',
   EMQXTables = 'emqx_tables',
+  Bigtable = 'bigtable',
   AzureEventGrid = 'azure_event_grid',
   QuasarDB = 'quasardb',
 }

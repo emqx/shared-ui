@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.70
+
+### Patch Changes
+
+- New integration type and some new fields
+
 ## 0.0.69
 
 ### Patch Changes
