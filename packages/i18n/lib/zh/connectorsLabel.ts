@@ -71,6 +71,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     gcp_wif_pool_id: '工作负载身份池 ID',
     gcp_wif_pool_provider_id: '工作负载身份提供商 ID',
     audience: 'OAuth 请求受众 (Audience)',
+    ciphers: '加密套件',
   },
   kafka_producer: {
     authentication_endpoint: 'Roles Anywhere 端点',
