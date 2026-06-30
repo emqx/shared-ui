@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.71
+
+### Patch Changes
+
+- Ciphers in greptimedb
+
 ## 0.0.70
 
 ### Patch Changes
