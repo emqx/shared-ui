@@ -481,6 +481,14 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     partition_key: "与发布的消息关联的 Amazon Kinesis 分区键。支持 ${'{'}var{'}'} 格式的占位符。",
   },
   greptimedb: {
+    ciphers: `此配置保存由逗号分隔的 TLS 密码套件名称。支持的套件如下
+- TLS_AES_256_GCM_SHA384
+- TLS_AES_128_GCM_SHA256
+- TLS_CHACHA20_POLY1305_SHA256
+- TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+- TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+- TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`,
     server: '要连接的 IPv4 或 IPv6 地址或主机名。<br/>\n主机条目的格式为：`Host[:Port]`。',
     dbname: 'GreptimeDB 数据库名称。',
     precision: 'GreptimeDB 时间精度。',

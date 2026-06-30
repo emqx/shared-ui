@@ -71,6 +71,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     gcp_wif_pool_id: 'Workload Identity Pool ID',
     gcp_wif_pool_provider_id: 'Workload Identity Provider ID',
     audience: 'OAuth Request Audience',
+    ciphers: 'Cipher Suites',
   },
   kafka_producer: {
     authentication_endpoint: 'Roles Anywhere Endpoint',

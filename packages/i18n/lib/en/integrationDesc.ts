@@ -549,6 +549,14 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
     ttl: 'The time-to-live setting for automatically created tables in GreptimeDB.',
     ts_column:
       'If defined, specifies a custom timestamp column name that will appear when querying.',
+    ciphers: `This config holds TLS cipher suite names separated by comma. The supported suites are as follows
+- TLS_AES_256_GCM_SHA384
+- TLS_AES_128_GCM_SHA256
+- TLS_CHACHA20_POLY1305_SHA256
+- TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+- TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+- TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`,
   },
   syskeeper_proxy: {
     listen: 'The listening address for this Syskeeper proxy server',
