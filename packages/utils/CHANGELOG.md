@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.25
+
+### Patch Changes
+
+- Process quota in hocon
+
 ## 0.0.24
 
 ### Patch Changes

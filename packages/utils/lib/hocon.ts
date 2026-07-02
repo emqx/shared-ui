@@ -17,6 +17,135 @@ const formatKey = (key: string): string => {
   return `"${escapedKey}"`
 }
 
+const getQuotePlaceholder = (source: string, quoteType: 'single' | 'double') => {
+  let placeholder = `__EMQX_HOCON_${quoteType.toUpperCase()}_QUOTE__`
+  while (source.includes(placeholder)) {
+    placeholder = `_${placeholder}_`
+  }
+  return placeholder
+}
+
+const isOpeningQuote = (source: string, index: number) => {
+  const lineStartIndex =
+    Math.max(source.lastIndexOf('\n', index - 1), source.lastIndexOf('\r', index - 1)) + 1
+
+  if (source.slice(lineStartIndex, index).trim() === '') {
+    return true
+  }
+
+  for (let cursor = index - 1; cursor >= 0; cursor -= 1) {
+    const char = source[cursor]
+    if (/\s/.test(char)) {
+      continue
+    }
+    return ['=', ':', '{', '[', ','].includes(char)
+  }
+
+  return true
+}
+
+const protectNestedQuotes = (source: string) => {
+  const singleQuotePlaceholder = getQuotePlaceholder(source, 'single')
+  const doubleQuotePlaceholder = getQuotePlaceholder(source, 'double')
+  let ret = ''
+  let quote: '"' | "'" | null = null
+  let isTripleDoubleQuote = false
+
+  for (let index = 0; index < source.length; index += 1) {
+    const char = source[index]
+    const nextThreeChars = source.slice(index, index + 3)
+
+    if (!quote) {
+      if (char === '#' || (char === '/' && source[index + 1] === '/')) {
+        const lineEndIndex = source.indexOf('\n', index)
+        if (lineEndIndex === -1) {
+          ret += source.slice(index)
+          break
+        }
+        ret += source.slice(index, lineEndIndex + 1)
+        index = lineEndIndex
+        continue
+      }
+
+      if (nextThreeChars === '"""' && isOpeningQuote(source, index)) {
+        isTripleDoubleQuote = true
+        quote = '"'
+        ret += nextThreeChars
+        index += 2
+        continue
+      }
+      if ((char === '"' || char === "'") && isOpeningQuote(source, index)) {
+        quote = char
+      }
+      ret += char
+      continue
+    }
+
+    if (char === '\\') {
+      ret += char
+      if (index + 1 < source.length) {
+        ret += source[index + 1]
+        index += 1
+      }
+      continue
+    }
+
+    if (quote === '"' && isTripleDoubleQuote && nextThreeChars === '"""') {
+      isTripleDoubleQuote = false
+      quote = null
+      ret += nextThreeChars
+      index += 2
+      continue
+    }
+
+    if (!isTripleDoubleQuote && char === quote) {
+      quote = null
+      ret += char
+      continue
+    }
+
+    if (quote === '"' && char === "'") {
+      ret += singleQuotePlaceholder
+      continue
+    }
+    if (quote === "'" && char === '"') {
+      ret += doubleQuotePlaceholder
+      continue
+    }
+
+    ret += char
+  }
+
+  return {
+    hocon: ret,
+    replacements: {
+      [singleQuotePlaceholder]: "'",
+      [doubleQuotePlaceholder]: '"',
+    },
+  }
+}
+
+const restoreProtectedQuotes = (value: any, replacements: Record<string, string>): any => {
+  if (typeof value === 'string') {
+    return Object.entries(replacements).reduce(
+      (ret, [placeholder, quote]) => ret.split(placeholder).join(quote),
+      value,
+    )
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => restoreProtectedQuotes(item, replacements))
+  }
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value).map(([key, item]) => {
+        const restoredKey = restoreProtectedQuotes(key, replacements)
+        return [restoredKey, restoreProtectedQuotes(item, replacements)]
+      }),
+    )
+  }
+  return value
+}
+
 /**
  * Convert a JavaScript object to a HOCON string.
  * Handles nested objects, arrays, strings, numbers, booleans, and null values.
@@ -75,8 +204,9 @@ export const hoconToObject = (hoconData: string): Record<string, any> => {
     return {}
   }
   try {
-    const parsedData = parseHoconToObject(hoconData)
-    return parsedData
+    const { hocon, replacements } = protectNestedQuotes(hoconData)
+    const parsedData = parseHoconToObject(hocon)
+    return restoreProtectedQuotes(parsedData, replacements)
   } catch (error) {
     throw error
   }

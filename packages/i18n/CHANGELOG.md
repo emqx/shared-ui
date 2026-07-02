@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.72
+
+### Patch Changes
+
+- Correct ciphers position
+
 ## 0.0.71
 
 ### Patch Changes

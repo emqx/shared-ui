@@ -198,6 +198,92 @@ describe('hoconToObject', () => {
     }
     expect(hoconToObject(hocon)).toEqual(expected)
   })
+
+  it('should preserve single quotes inside double-quoted strings', () => {
+    const hocon = `
+      multi_tenancy {
+        allow_only_managed_namespaces = false
+        default_max_sessions = infinity
+        post_auth_tns_expression = "coalesce(client_attrs.tag, 'default')"
+      }
+    `
+    const expected = {
+      multi_tenancy: {
+        allow_only_managed_namespaces: false,
+        default_max_sessions: 'infinity',
+        post_auth_tns_expression: "coalesce(client_attrs.tag, 'default')",
+      },
+    }
+    expect(hoconToObject(hocon)).toEqual(expected)
+  })
+
+  it('should preserve double quotes inside single-quoted strings', () => {
+    const hocon = `
+      expression = 'coalesce(client_attrs.tag, "default")'
+    `
+    const expected = {
+      expression: 'coalesce(client_attrs.tag, "default")',
+    }
+    expect(hoconToObject(hocon)).toEqual(expected)
+  })
+
+  it('should preserve nested quotes recursively', () => {
+    const hocon = `
+      expressions = [
+        "coalesce(client_attrs.tag, 'default')",
+        {
+          fallback = 'coalesce(client_attrs.group, "fallback")'
+        }
+      ]
+    `
+    const expected = {
+      expressions: [
+        "coalesce(client_attrs.tag, 'default')",
+        {
+          fallback: 'coalesce(client_attrs.group, "fallback")',
+        },
+      ],
+    }
+    expect(hoconToObject(hocon)).toEqual(expected)
+  })
+
+  it('should ignore quotes inside line comments when preserving nested quotes', () => {
+    const hocon = `
+      # comment with an unmatched "
+      expression = "coalesce(client_attrs.tag, 'default')"
+      // comment with an unmatched '
+      fallback = 'coalesce(client_attrs.group, "fallback")'
+    `
+    const expected = {
+      expression: "coalesce(client_attrs.tag, 'default')",
+      fallback: 'coalesce(client_attrs.group, "fallback")',
+    }
+    expect(hoconToObject(hocon)).toEqual(expected)
+  })
+
+  it('should preserve nested quotes in quoted keys', () => {
+    const hocon = `
+      "client's.expression" = 'coalesce(client_attrs.tag, "default")'
+    `
+    const expected = {
+      "client's": {
+        expression: 'coalesce(client_attrs.tag, "default")',
+      },
+    }
+    expect(hoconToObject(hocon)).toEqual(expected)
+  })
+
+  it('should not replace user strings that look like quote placeholders', () => {
+    const hocon = `
+      literal = "__EMQX_HOCON_SINGLE_QUOTE__"
+      expression = "coalesce(client_attrs.tag, 'default')"
+    `
+    const expected = {
+      literal: '__EMQX_HOCON_SINGLE_QUOTE__',
+      expression: "coalesce(client_attrs.tag, 'default')",
+    }
+    expect(hoconToObject(hocon)).toEqual(expected)
+  })
 })
 
 describe('objectToHocon and back', () => {
@@ -245,6 +331,17 @@ describe('objectToHocon and back', () => {
       f: 123.45,
       g: { a: 1, b: 'nested' },
       h: [1, 'two', false, null, { i: 3 }],
+    }
+    const hoconString = objectToHocon(obj)
+    const convertedObj = hoconToObject(hoconString)
+    expect(convertedObj).toEqual(obj)
+  })
+
+  it('should round-trip strings containing single quotes', () => {
+    const obj = {
+      multi_tenancy: {
+        post_auth_tns_expression: "coalesce(client_attrs.tag, 'default')",
+      },
     }
     const hoconString = objectToHocon(obj)
     const convertedObj = hoconToObject(hoconString)
