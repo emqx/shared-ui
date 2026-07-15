@@ -1,5 +1,13 @@
 # @emqx/shared-ui-components
 
+## 0.0.17
+
+### Patch Changes
+
+- Adapt new rule input format `$sources/`
+- Updated dependencies
+  - @emqx/shared-ui-constants@0.0.10
+
 ## 0.0.16
 
 ### Patch Changes
