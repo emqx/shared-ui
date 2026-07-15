@@ -28,6 +28,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     url: '服务器地址',
     authentication: '认证',
     disable_prepared_statements: '禁用预处理语句',
+    application_name: '应用名称',
     health_check_topic: '健康检查主题',
     max_inactive: '最大空闲时间',
     token: 'Token',

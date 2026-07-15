@@ -28,6 +28,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     url: 'Server URL',
     authentication: 'Authentication',
     disable_prepared_statements: 'Disable Prepared Statements',
+    application_name: 'Application Name',
     health_check_topic: 'Health Check Topic',
     max_inactive: 'Max Inactive',
     token: 'Token',

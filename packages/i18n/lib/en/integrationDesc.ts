@@ -40,6 +40,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'This setting applies when the buffer mode is configured as <code>memory</code>. EMQX will automatically discard older buffered messages when it encounters high memory pressure. Note: This configuration is effective only on Linux systems.',
     disable_prepared_statements:
       'Disables the usage of prepared statements in the connections. Some endpoints, like PGBouncer or Supabase in Transaction mode, do not support session features such as prepared statements. For such connections, this option should be enabled.',
+    application_name:
+      'The application name to use for PostgreSQL connections. This value appears in PostgreSQL activity views and logs. It must be 1 to 63 bytes long and cannot contain zero bytes.',
     health_check_topic: 'Topic name used exclusively for more accurate health checks.',
     max_records: `Number of records (events) allowed per each aggregated object. Each aggregated upload will contain no more than that number of events, but may contain less.<br/>If event rate is high enough, there obviously may be more than one aggregated upload during the same time interval. These uploads will have different, but consecutive sequence numbers, which will be a part of S3 object key.`,
     max_linger_time:
