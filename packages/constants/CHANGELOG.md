@@ -1,5 +1,11 @@
 # @emqx/shared-ui-constants
 
+## 0.0.10
+
+### Patch Changes
+
+- Adapt new rule input format `$sources/`
+
 ## 0.0.9
 
 ### Patch Changes
