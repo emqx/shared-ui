@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.73
+
+### Patch Changes
+
+- Add OAuth2 client credentials labels and descriptions for HTTP connectors.
+
 ## 0.0.72
 
 ### Patch Changes
