@@ -93,6 +93,14 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     url: "HTTP 连接器的 URL。<br/>路径中支持占位符，但在主机或端口部分中不能使用占位符。<br/>例如，`http://localhost:9901/${'{'}topic{'}'}` 是允许的，但是 `http://${'{'}host{'}'}:9901/message` 或 `http://localhost:${'{'}port{'}'}/message `不允许。",
     body: "例如：${'{'}payload{'}'}, ${'{'}clientid{'}'}, ${'{'}topic{'}'}, ${'{'}username{'}'} 等。请根据使用动作的业务需求来选择字段，置空则原样转发消息。",
     path: "此操作的 URL 路径。<br/>此路径将附加到连接器的 <code>url</code> 配置中，以形成完整的 URL 地址。此选项中允许使用带有变量的模板。 例如，<code>/room/{'{'}$room_no{'}'}</code>",
+    oauth2:
+      '启用 OAuth2 客户端凭证认证。EMQX 会获取并缓存访问令牌，并以 Bearer Token 的形式添加到发出的 HTTP 请求中。',
+    oauth2_token_endpoint: '用于请求访问令牌的 OAuth2 授权服务器端点。',
+    oauth2_client_id: '请求访问令牌时使用的 OAuth2 客户端 ID。',
+    oauth2_client_secret: '请求访问令牌时使用的 OAuth2 客户端密钥。',
+    oauth2_scope: '请求访问令牌时使用的可选 OAuth2 授权范围。',
+    oauth2_timeout: '向 Token 端点发起 HTTP 请求的超时时间。',
+    oauth2_ssl: '连接 OAuth2 Token 端点时使用的 TLS 配置。',
   },
   cassandra: {
     keyspace: '要连接到的 Keyspace 名称。',

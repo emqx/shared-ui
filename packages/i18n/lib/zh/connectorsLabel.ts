@@ -85,6 +85,13 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     url: 'URL',
     headers: '请求头',
     enable_pipelining: 'HTTP 管道',
+    oauth2: 'OAuth2 客户端凭证',
+    oauth2_token_endpoint: 'Token 端点',
+    oauth2_client_id: '客户端 ID',
+    oauth2_client_secret: '客户端密钥',
+    oauth2_scope: '授权范围',
+    oauth2_timeout: 'Token 请求超时',
+    oauth2_ssl: 'Token 端点 TLS',
   },
   gcp_pubsub_producer: {
     authentication_type: '认证类型',

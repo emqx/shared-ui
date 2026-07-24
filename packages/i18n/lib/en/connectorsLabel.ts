@@ -85,6 +85,13 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     url: 'URL',
     headers: 'Headers',
     enable_pipelining: 'HTTP Pipelining',
+    oauth2: 'OAuth2 Client Credentials',
+    oauth2_token_endpoint: 'Token Endpoint',
+    oauth2_client_id: 'Client ID',
+    oauth2_client_secret: 'Client Secret',
+    oauth2_scope: 'Scope',
+    oauth2_timeout: 'Token Request Timeout',
+    oauth2_ssl: 'Token Endpoint TLS',
   },
   gcp_pubsub_producer: {
     authentication_type: 'Authentication Type',
