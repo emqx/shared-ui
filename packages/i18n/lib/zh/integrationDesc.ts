@@ -36,6 +36,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '在缓冲区模式设置为 <code>memory</code> 时适用\n在内存压力较大时，EMQX 将删除旧的缓冲消息。注意：此配置仅适用于 Linux。',
     disable_prepared_statements:
       '在连接中禁用预处理语句。某些端点（如事务模式下的 PGBouncer 或 Supabase）不支持会话功能（如预处理语句）。对于此类连接，应启用此选项。',
+    application_name:
+      '用于 PostgreSQL 连接的应用名称。该值会显示在 PostgreSQL 活动视图和日志中。长度必须为 1 到 63 个字节，且不能包含空字节。',
     health_check_topic: '专用于精确检查健康状态的主题名称。',
     max_records: `每个聚合对象允许的记录（事件）数量。每次聚合上传包含的事件数量不会超过此数值，但可能会更少。<br/>如果事件速率足够高，在同一时间间隔内显然可能会有多个聚合上传。这些上传将具有不同但连续的序列号，这些序列号将是 S3 对象键的一部分。`,
     max_linger_time:
@@ -91,6 +93,14 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     url: "HTTP 连接器的 URL。<br/>路径中支持占位符，但在主机或端口部分中不能使用占位符。<br/>例如，`http://localhost:9901/${'{'}topic{'}'}` 是允许的，但是 `http://${'{'}host{'}'}:9901/message` 或 `http://localhost:${'{'}port{'}'}/message `不允许。",
     body: "例如：${'{'}payload{'}'}, ${'{'}clientid{'}'}, ${'{'}topic{'}'}, ${'{'}username{'}'} 等。请根据使用动作的业务需求来选择字段，置空则原样转发消息。",
     path: "此操作的 URL 路径。<br/>此路径将附加到连接器的 <code>url</code> 配置中，以形成完整的 URL 地址。此选项中允许使用带有变量的模板。 例如，<code>/room/{'{'}$room_no{'}'}</code>",
+    oauth2:
+      '启用 OAuth2 客户端凭证认证。EMQX 会获取并缓存访问令牌，并以 Bearer Token 的形式添加到发出的 HTTP 请求中。',
+    oauth2_token_endpoint: '用于请求访问令牌的 OAuth2 授权服务器端点。',
+    oauth2_client_id: '请求访问令牌时使用的 OAuth2 客户端 ID。',
+    oauth2_client_secret: '请求访问令牌时使用的 OAuth2 客户端密钥。',
+    oauth2_scope: '请求访问令牌时使用的可选 OAuth2 授权范围。',
+    oauth2_timeout: '向 Token 端点发起 HTTP 请求的超时时间。',
+    oauth2_ssl: '连接 OAuth2 Token 端点时使用的 TLS 配置。',
   },
   cassandra: {
     keyspace: '要连接到的 Keyspace 名称。',

@@ -40,6 +40,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'This setting applies when the buffer mode is configured as <code>memory</code>. EMQX will automatically discard older buffered messages when it encounters high memory pressure. Note: This configuration is effective only on Linux systems.',
     disable_prepared_statements:
       'Disables the usage of prepared statements in the connections. Some endpoints, like PGBouncer or Supabase in Transaction mode, do not support session features such as prepared statements. For such connections, this option should be enabled.',
+    application_name:
+      'The application name to use for PostgreSQL connections. This value appears in PostgreSQL activity views and logs. It must be 1 to 63 bytes long and cannot contain zero bytes.',
     health_check_topic: 'Topic name used exclusively for more accurate health checks.',
     max_records: `Number of records (events) allowed per each aggregated object. Each aggregated upload will contain no more than that number of events, but may contain less.<br/>If event rate is high enough, there obviously may be more than one aggregated upload during the same time interval. These uploads will have different, but consecutive sequence numbers, which will be a part of S3 object key.`,
     max_linger_time:
@@ -105,6 +107,15 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     url: "The URL of the HTTP Connector.<br/>Template with variables is allowed in the path, but variables cannot be used in the host or port part.<br/>For example, `http://localhost:9901/${'{'}topic{'}'}` is allowed, but`http://${'{'}host{'}'}:9901/message` or `http://localhost:${'{'}port{'}'}/message`is not allowed.",
     body: "For example: ${'{'}payload{'}'}, ${'{'}clientid{'}'}, ${'{'}topic{'}'} , ${'{'}username{'}'}, etc. Use fields according to the action requirements of your business and forwards the message as it is if it is empty.",
     path: "The URL path for this Action.<br/>This path will be appended to the Connector's <code>url</code> configuration to form the full URL address.Template with variables is allowed in this option. For example, <code>/room/{'{'}$room_no{'}'}</code>",
+    oauth2:
+      'Enable OAuth2 Client Credentials authentication. EMQX requests an access token, caches it, and adds it to outgoing HTTP requests as a Bearer token.',
+    oauth2_token_endpoint:
+      'The OAuth2 authorization server endpoint used to request an access token.',
+    oauth2_client_id: 'The OAuth2 client ID used to request an access token.',
+    oauth2_client_secret: 'The OAuth2 client secret used to request an access token.',
+    oauth2_scope: 'The optional OAuth2 scope requested for the access token.',
+    oauth2_timeout: 'The timeout for the HTTP request to the token endpoint.',
+    oauth2_ssl: 'TLS options used when connecting to the OAuth2 token endpoint.',
   },
   cassandra: {
     keyspace: 'Keyspace name to connect to.',
