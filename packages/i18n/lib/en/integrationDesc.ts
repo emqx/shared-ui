@@ -159,6 +159,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'A positive integer. Whether to send HTTP requests continuously, when set to 1, it means that after each HTTP request is sent, you need to wait for the server to return and then continue to send the next request.',
     service_account_json:
       "JSON containing the GCP Service Account credentials to be used with PubSub.<br/>When a GCP Service Account is created (as described in https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount), you have the option of downloading the credentials in JSON form.  That's the file needed.",
+    ack_deadline:
+      'The approximate amount of time, on a best-effort basis, that PubSub waits for the subscriber to acknowledge receipt before resending the message.',
     pull_max_messages:
       'The maximum number of messages to retrieve from GCP PubSub in a single pull request.\n The actual number may be less than the specified value.',
     connect_timeout: 'The timeout when connecting to the GCP server.',
