@@ -93,6 +93,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   },
   gcp_pubsub_consumer: {
     topic: 'GCP PubSub Topic',
+    ack_deadline: 'Ack Deadline',
   },
   syskeeper_forwarder: {
     target_topic: 'Topic',

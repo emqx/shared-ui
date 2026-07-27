@@ -93,6 +93,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   },
   gcp_pubsub_consumer: {
     topic: 'GCP PubSub 主题',
+    ack_deadline: '消息确认截止时间',
   },
   syskeeper_forwarder: {
     target_topic: '主题',

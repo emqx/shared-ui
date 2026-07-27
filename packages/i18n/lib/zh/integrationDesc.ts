@@ -143,6 +143,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '正整数，设置最大可发送的异步 HTTP 请求数量。当设置为 1 时，表示每次发送完成 HTTP 请求后都需要等待服务器返回，再继续发送下一个请求。',
     service_account_json:
       '包含将与 PubSub 一起使用的 GCP 服务账户凭证的 JSON。<br/>当创建 GCP 服务账户时（如 https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount ），可以选择下载 JSON 形式的凭证，然后在该配置项中使用。',
+    ack_deadline:
+      'PubSub 等待订阅者确认收到消息的大致时长（尽力而为）。超过该时长后，Pub/Sub 将重新发送消息。',
     pull_max_messages:
       '从 GCP PubSub 中在一个拉取请求里检索的最大消息数。\n实际数量可能小于指定的值。',
     connect_timeout: '连接 GCP 服务器的超时时间。',

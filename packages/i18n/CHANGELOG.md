@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.74
+
+### Patch Changes
+
+- Add labels and descriptions for the GCP Pub/Sub consumer acknowledgment deadline.
+
 ## 0.0.73
 
 ### Patch Changes
