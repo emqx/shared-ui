@@ -45,9 +45,9 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     health_check_topic: 'Topic name used exclusively for more accurate health checks.',
     max_records: `Number of records (events) allowed per each aggregated object. Each aggregated upload will contain no more than that number of events, but may contain less.<br/>If event rate is high enough, there obviously may be more than one aggregated upload during the same time interval. These uploads will have different, but consecutive sequence numbers, which will be a part of S3 object key.`,
     max_linger_time:
-      "Maximum duration for a per-partition producer to wait for messages in order to collect a batch to buffer.<br/>The default value <code>0</code> means no wait. For non-memory buffer mode, it's advised to configure at least <code>5ms</code> for less IOPS. <br/>There is no linger time when writing to memory buffer since EMQX 5.10.2 and 6.0.1.",
+      "Maximum duration a per-partition producer waits to accumulate more messages into a larger batch.<br/>The default value <code>0</code> means no wait (messages are sent as soon as they arrive).<br/>The wait ends early as soon as a full batch's worth of data has accumulated, so a busy producer is never delayed.<br/>When buffering to disk, the wait happens before writing to the buffer; configuring at least <code>5ms</code> is advised there to reduce disk IOPS.<br/>Some EMQX versions ignore this setting when memory buffering is used and do not wait. See the version compatibility notes for the affected versions.",
     max_linger_bytes:
-      'Maximum number of bytes for a per-partition producer to wait for messages in order to collect a batch to buffer.',
+      'Maximum number of bytes a per-partition producer accumulates while waiting before it stops waiting and sends the batch.',
     undefined_vars_as_null:
       "When writing to databases, treat undefined variables as NULL.<br/>When this option is enabled, if undefined variables (like `${'{'}var{'}'}`) are used in templates, they will be replaced with `NULL` instead of the string `undefined`. If this option is not enabled (default), the string `undefined` might be inserted.<br/>This option should always be `true` if possible; the default value `false` is only to ensure backward compatibility.",
     max_inactive:
