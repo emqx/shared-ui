@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.75
+
+### Patch Changes
+
+- Add Kafka producer batch age and reconnect delay translations, and clarify batch linger descriptions.
+
 ## 0.0.74
 
 ### Patch Changes
