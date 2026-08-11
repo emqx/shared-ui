@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.26
+
+### Patch Changes
+
+- Externalize shared constants and i18n dependencies so consumers use their installed package versions.
+
 ## 0.0.25
 
 ### Patch Changes
