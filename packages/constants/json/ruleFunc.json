@@ -879,6 +879,46 @@
             "required": true
           }
         ]
+      },
+      {
+        "name": "hash_to_range",
+        "args": [
+          {
+            "name": "Value",
+            "type": "any",
+            "required": true
+          },
+          {
+            "name": "Min",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "Max",
+            "type": "integer",
+            "required": true
+          }
+        ]
+      },
+      {
+        "name": "map_to_range",
+        "args": [
+          {
+            "name": "Value",
+            "type": "any",
+            "required": true
+          },
+          {
+            "name": "Min",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "Max",
+            "type": "integer",
+            "required": true
+          }
+        ]
       }
     ]
   },

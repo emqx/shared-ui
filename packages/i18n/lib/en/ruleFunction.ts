@@ -64,4 +64,6 @@ export const enRuleFunction = {
   aliasRequired: 'Need to specify an alias',
   aliasFormatError: 'Invalid alias format',
   DecodedSparkplugBMessage: 'Decoded Sparkplug B Message',
+  Min: 'Min',
+  Max: 'Max',
 }

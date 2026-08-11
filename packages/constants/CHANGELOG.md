@@ -1,5 +1,11 @@
 # @emqx/shared-ui-constants
 
+## 0.0.11
+
+### Patch Changes
+
+- Add `hash_to_range` and `map_to_range` to the built-in rule SQL function metadata.
+
 ## 0.0.10
 
 ### Patch Changes

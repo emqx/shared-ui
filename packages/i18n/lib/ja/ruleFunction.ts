@@ -64,4 +64,6 @@ export const jaRuleFunction = {
   aliasRequired: 'エイリアスを指定する必要があります',
   aliasFormatError: 'エイリアスの形式が正しくありません',
   DecodedSparkplugBMessage: 'デコードされた Sparkplug B メッセージ',
+  Min: '最小値',
+  Max: '最大値',
 }
