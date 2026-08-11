@@ -64,4 +64,6 @@ export const zhRuleFunction = {
   aliasRequired: '需指定一个别名',
   aliasFormatError: '格式错误的别名',
   DecodedSparkplugBMessage: '解码后的 Sparkplug B 消息',
+  Min: '最小值',
+  Max: '最大值',
 }
