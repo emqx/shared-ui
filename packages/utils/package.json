@@ -1,6 +1,6 @@
 {
   "name": "@emqx/shared-ui-utils",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "homepage": "https://emqx.io",
   "license": "Apache-2.0",
   "repository": {
@@ -35,8 +35,6 @@
     "release": "npm publish"
   },
   "dependencies": {
-    "@emqx/shared-ui-constants": "link:../constants",
-    "@emqx/shared-ui-i18n": "link:../i18n",
     "hocon-parser": "^1.0.1",
     "json-bigint": "^1.0.0",
     "papaparse": "^5.4.1",
@@ -44,7 +42,13 @@
     "vue-i18n": "^9.10.2"
   },
   "devDependencies": {
+    "@emqx/shared-ui-constants": "link:../constants",
+    "@emqx/shared-ui-i18n": "link:../i18n",
     "@types/json-bigint": "^1.0.4",
     "@types/papaparse": "^5.3.14"
+  },
+  "peerDependencies": {
+    "@emqx/shared-ui-constants": "~0.0.11",
+    "@emqx/shared-ui-i18n": "~0.0.76"
   }
 }
