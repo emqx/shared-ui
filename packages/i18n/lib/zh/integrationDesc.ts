@@ -587,6 +587,9 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     health_check_table:
       '在动作健康检查中使用的表名。目前，无法直接从 SQL 中推断表名。如果设置，此值将在 `SHOW TABLE <table>` 语句中用于在动作健康检查期间探测表的存在。',
   },
+  bigquery: {
+    project_id: '如果设置，将覆盖从认证配置中提取的项目 ID。仅应用于当前动作。',
+  },
   bigtable: {
     authentication_type: '用于连接 GCP 的认证方式。',
     instance_id:

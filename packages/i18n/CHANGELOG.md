@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.78
+
+### Patch Changes
+
+- Add the Project ID label and description for BigQuery actions.
+
 ## 0.0.77
 
 ### Patch Changes

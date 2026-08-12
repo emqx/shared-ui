@@ -274,6 +274,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     max_row_group_bytes: 'Parquet Max Row Group Bytes',
   },
   bigquery: {
+    project_id: 'Project ID',
     dataset: 'Dataset',
   },
   bigtable: {

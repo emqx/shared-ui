@@ -274,6 +274,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     max_row_group_bytes: 'Parquet 最大行组大小',
   },
   bigquery: {
+    project_id: '项目 ID',
     dataset: '数据集',
   },
   bigtable: {
