@@ -91,4 +91,7 @@ export const zhSymbolLabel: Record<string, string> = {
   authentication_auth_attached_service_account: '附加服务账号',
   authentication_auth_wif: '工作负载身份联合 (WIF)',
   oidc_client_credentials: 'OIDC 客户端凭证',
+  rotation_period_none: '仅按文件大小轮转',
+  rotation_period_hour: '每小时',
+  rotation_period_day: '每天',
 }

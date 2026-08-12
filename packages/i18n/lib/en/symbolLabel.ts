@@ -91,4 +91,7 @@ export const enSymbolLabel: Record<string, string> = {
   authentication_auth_attached_service_account: 'Attached Service Account',
   authentication_auth_wif: 'Workload Identity Federation (WIF)',
   oidc_client_credentials: 'OIDC Client Credentials',
+  rotation_period_none: 'Size-Based Only',
+  rotation_period_hour: 'Every Hour',
+  rotation_period_day: 'Every Day',
 }

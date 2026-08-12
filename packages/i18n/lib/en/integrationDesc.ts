@@ -628,11 +628,19 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
   },
   disk_log: {
     filepath:
-      "Base file path to the log file to be written to.  Actual log files will have the format `filepath.N`, where `N` is `1..max_file_number`.  The currently used file can be found by taking the file with the most recent modification date.  Note that the directory containing it must also be writable by the EMQX application user, as it'll also contain extra files for internal use (ending in `.siz` and `.idx`).",
+      "Base file path to the log file to be written to. Actual log files will have the format `filepath.N`, where `N` is `1..max_file_number`. When time-based rotation (`rotation.period`) is enabled, the current period's date stamp is additionally inserted before the file extension: with `filepath = /var/log/emqx/mqtt-trace.log`, files are named `mqtt-trace-2026062400.log.N`. The currently used file can be found by taking the file with the most recent modification date. Note that the directory containing it must also be writable by the EMQX application user, as it'll also contain extra files for internal use (ending in `.siz` and `.idx`).",
     max_file_size:
       'Maximum size for the currently active log file.  At least one entry is written to each log, so the final file size may exceed this maximum if a single log entry exceeds this value.',
     max_file_number:
-      'Maximum number of log files to be used.  Once the maximum number of files is reached and a new rotation is required, the oldest such file is truncated and used as the new current file.',
+      "Maximum number of log files to be used. When time-based rotation (`rotation.period`) is enabled, this limit applies to each rotation period's file set separately. Once the maximum number of files is reached and a new rotation is required, the oldest file's contents are discarded, and the file is reused as the new current file.",
+    rotation:
+      "Settings for rotating to a new set of log files at calendar period (day or hour) boundaries, with the period's date encoded in the file names, and for cleaning up files from old periods.",
+    rotation_period:
+      "When Rotation Period is set to **Every Day** (`day`) or **Every Hour** (`hour`), the connector starts a new set of log files at each period boundary, with the period's date stamp (`YYYYMMDDHH`) inserted before the file extension: with `filepath = /var/log/emqx/mqtt-trace.log`, files are named `mqtt-trace-2026062413.log.N` for **Every Hour**, and `mqtt-trace-2026062400.log.N` for **Every Day** (daily stamps always carry a `00` hour, so the file name format stays the same if the period is later changed). The `.N` suffix (`N` is `1..max_file_number`) comes from the underlying wrap log and is always present; each period's file set also includes `.idx` and `.siz` bookkeeping files. Within a period, files still rotate by size (`max_file_size`), so size `max_file_size × max_file_number` for the worst-case period to avoid losing data to within-period wrap-around. The period boundary is detected on the connector's health check tick, so the new period's file appears within `health_check_interval` after the boundary. When set to **Size-Based Only** (`none`, default), only size-based rotation is used.",
+    rotation_retention_period:
+      'How long to keep files from previous rotation periods. After each period rotation, date-stamped log files (including their `.idx` and `.siz` bookkeeping files) from periods older than this are deleted. The default `infinity` keeps them forever. Has no effect when Rotation Period is **Size-Based Only** (`none`).',
+    rotation_timezone:
+      "Timezone used to determine period boundaries and date stamps. `UTC` (default), `local` (the server's local time), or a fixed UTC offset such as `+02:00`.",
     write_mode: 'Whether to write logs synchronously or asynchronously to disk.',
     template: 'Content of the JSON object to be written. Supports templates.',
   },

@@ -248,6 +248,10 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     filepath: 'Log Filepath',
     max_file_size: 'Maximum File Size',
     max_file_number: 'Maximum Number of Files',
+    rotation: 'Time-Based Rotation',
+    rotation_period: 'Rotation Period',
+    rotation_retention_period: 'Retention Period',
+    rotation_timezone: 'Rotation Timezone',
   },
   s3tables: {
     s3tables_arn: 'S3Tables ARN',
