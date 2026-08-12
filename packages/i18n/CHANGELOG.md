@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.77
+
+### Patch Changes
+
+- Add labels and descriptions for Disk Log time-based rotation settings.
+
 ## 0.0.76
 
 ### Patch Changes

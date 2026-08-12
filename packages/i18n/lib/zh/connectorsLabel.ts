@@ -248,6 +248,10 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     filepath: '日志文件路径',
     max_file_size: '最大文件大小',
     max_file_number: '最大文件数量',
+    rotation: '基于时间的轮转',
+    rotation_period: '轮转周期',
+    rotation_retention_period: '保留时间',
+    rotation_timezone: '轮转时区',
   },
   s3tables: {
     s3tables_arn: 'S3Tables 资源名称（ARN）',
