@@ -652,6 +652,10 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
     health_check_table:
       "Table name to use in Action health checks. Currently, it's not possible to infer the table name directly from the SQL. If set, this value will be used in a `SHOW TABLE <table>` statement to probe the table existence during Action health checks.",
   },
+  bigquery: {
+    project_id:
+      'If defined, overrides the project ID extracted from the authentication config. Applies only to this action.',
+  },
   bigtable: {
     authentication_type: 'Authentication method to use with GCP.',
     instance_id:
