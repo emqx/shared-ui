@@ -984,6 +984,26 @@
             "required": true
           }
         ]
+      },
+      {
+        "name": "lz4_compress",
+        "args": [
+          {
+            "name": "Value",
+            "type": "binary",
+            "required": true
+          }
+        ]
+      },
+      {
+        "name": "lz4_uncompress",
+        "args": [
+          {
+            "name": "Value",
+            "type": "binary",
+            "required": true
+          }
+        ]
       }
     ]
   },

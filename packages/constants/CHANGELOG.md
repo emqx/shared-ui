@@ -1,5 +1,11 @@
 # @emqx/shared-ui-constants
 
+## 0.0.12
+
+### Patch Changes
+
+- Add `lz4_compress` and `lz4_uncompress` to the built-in rule SQL function metadata.
+
 ## 0.0.11
 
 ### Patch Changes
