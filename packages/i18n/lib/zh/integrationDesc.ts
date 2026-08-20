@@ -558,6 +558,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     pipe: '用于将数据导入表的管道名称。',
   },
   tablestore: {
+    probe_table_name:
+      '用于健康检查连接性的已有时序表名称。未设置时，健康检查将回退到列出所有时序表。',
     isint: '是否尝试将数值写为整数。默认为 false，表示将整数写为浮点数。',
     isbinary: '是否尝试将二进制值写为二进制类型。默认为 false，表示将二进制值写为字符串。',
   },

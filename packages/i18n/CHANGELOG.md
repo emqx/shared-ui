@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.79
+
+### Patch Changes
+
+- Add the label and description for the Tablestore probe table name.
+
 ## 0.0.78
 
 ### Patch Changes
