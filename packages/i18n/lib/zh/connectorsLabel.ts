@@ -243,6 +243,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     access_key_secret: '访问密钥',
     instance_name: '实例名称',
     storage_model_type: '存储模型类型',
+    probe_table_name: '探测表名称',
   },
   disk_log: {
     filepath: '日志文件路径',

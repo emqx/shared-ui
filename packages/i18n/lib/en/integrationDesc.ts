@@ -621,6 +621,8 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
     pipe: "Name of the Pipe that'll be used to ingest data into the table.",
   },
   tablestore: {
+    probe_table_name:
+      'Name of an existing timeseries table used to probe connectivity for health checks. When unset, the health check falls back to listing all timeseries tables.',
     isint:
       'Whether try to write numeric value as integer. Defaults to false, means that write integers as floats.',
     isbinary:

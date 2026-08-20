@@ -243,6 +243,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     access_key_secret: 'Access Key Secret',
     instance_name: 'Instance Name',
     storage_model_type: 'Storage Model Type',
+    probe_table_name: 'Probe Table Name',
   },
   disk_log: {
     filepath: 'Log Filepath',
