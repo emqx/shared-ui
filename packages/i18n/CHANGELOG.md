@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.80
+
+### Patch Changes
+
+- Reuse common TCP connector labels and add the TCP keepalive label for Azure Event Grid.
+
 ## 0.0.79
 
 ### Patch Changes

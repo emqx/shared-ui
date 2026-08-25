@@ -73,6 +73,9 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     gcp_wif_pool_provider_id: 'Workload Identity Provider ID',
     audience: 'OAuth Request Audience',
     ciphers: 'Cipher Suites',
+    buffer: 'TCP Connection Buffer Size',
+    delay_send: 'Delay Send',
+    active_n: 'Active N',
   },
   kafka_producer: {
     authentication_endpoint: 'Roles Anywhere Endpoint',
@@ -154,9 +157,6 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     tcp_opts_keepalive: 'TCP Keepalive',
     node: 'EMQX Node',
     ids: 'Static Client IDs',
-    buffer: 'TCP Connection Buffer Size',
-    delay_send: 'Delay Send',
-    active_n: 'Active N',
   },
   cassandra: {
     keyspace: 'Keyspace',
@@ -277,5 +277,8 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   bigtable: {
     authentication_type: 'Authentication Type',
     authentication_initial_token_type: 'Credential Type',
+  },
+  azure_event_grid: {
+    tcp_opts_keepalive: 'TCP Keepalive',
   },
 }
