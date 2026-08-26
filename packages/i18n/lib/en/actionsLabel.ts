@@ -56,6 +56,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     table: 'Table',
     qos: 'QoS',
     retain: 'Retain',
+    retain_as_published: 'Retain As Published',
     payload: 'Payload',
   },
   kafka_producer: {
@@ -122,7 +123,6 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   },
   mqtt: {
     topic: 'Topic',
-    retain_as_published: 'Retain As Published',
   },
   azure_event_grid: {
     topic: 'Topic',

@@ -73,6 +73,9 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     gcp_wif_pool_provider_id: '工作负载身份提供商 ID',
     audience: 'OAuth 请求受众 (Audience)',
     ciphers: '加密套件',
+    buffer: 'TCP 连接缓冲区大小',
+    delay_send: '延迟发送',
+    active_n: 'TCP 接收批量数',
   },
   kafka_producer: {
     authentication_endpoint: 'Roles Anywhere 端点',
@@ -154,9 +157,6 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     tcp_opts_keepalive: 'TCP Keepalive',
     node: '节点名称',
     ids: '客户端 ID 列表',
-    buffer: 'TCP 连接缓冲区大小',
-    delay_send: '延迟发送',
-    active_n: 'TCP 接收批量数',
   },
   cassandra: {
     keyspace: 'Keyspace',
@@ -277,5 +277,8 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   bigtable: {
     authentication_type: '认证类型',
     authentication_initial_token_type: '凭证类型',
+  },
+  azure_event_grid: {
+    tcp_opts_keepalive: 'TCP Keepalive',
   },
 }
