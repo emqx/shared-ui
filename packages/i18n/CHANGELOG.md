@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.81
+
+### Patch Changes
+
+- Add rule-function parameter labels for `maptab_lookup`.
+
 ## 0.0.80
 
 ### Patch Changes
