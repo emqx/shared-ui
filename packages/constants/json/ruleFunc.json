@@ -761,6 +761,37 @@
     ]
   },
   {
+    "groupLabel": "mappingTableFunc",
+    "list": [
+      {
+        "name": "maptab_lookup",
+        "args": [
+          {
+            "name": "Table",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "Key",
+            "type": "any",
+            "required": true,
+            "isReference": true
+          },
+          {
+            "name": "FieldOrDefaultRow",
+            "type": "any",
+            "required": false
+          },
+          {
+            "name": "DefaultValue",
+            "type": "any",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  {
     "groupLabel": "arrFunc",
     "list": [
       {

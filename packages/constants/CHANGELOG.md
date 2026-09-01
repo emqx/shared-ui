@@ -1,5 +1,11 @@
 # @emqx/shared-ui-constants
 
+## 0.0.13
+
+### Patch Changes
+
+- Add `maptab_lookup` to the built-in rule SQL function metadata.
+
 ## 0.0.12
 
 ### Patch Changes
