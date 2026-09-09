@@ -194,6 +194,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     access_key: 'AccessKey',
     secret_key: 'SecretKey',
     security_token: 'Security Token',
+    rocketmq_namespace: 'RocketMQ Namespace',
     namespace: 'Namespace',
   },
   sqlserver: {

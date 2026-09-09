@@ -354,6 +354,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     sync_timeout: 'RocketMQ 驱动同步调用的超时时间。',
     namespace:
       '如果你正在使用阿里云的 RocketMQ 服务并且启用了命名空间，或者你在你自己的 RocketMQ 服务里配置了命名空间，那么你必须配置命名空间字段。对于阿里云的 RocketMQ 服务来说，命名空间就是实例 ID。',
+    rocketmq_namespace:
+      'RocketMQ 服务中配置的命名空间。使用已启用命名空间的阿里云 RocketMQ 时，请填写实例 ID。',
     strategy: '生产者密钥分派策略，默认为 `roundrobin`，从 EMQX 6.0.0 版本后不支持占位符。',
   },
   tdengine: {
