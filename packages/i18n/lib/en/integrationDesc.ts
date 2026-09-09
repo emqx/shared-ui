@@ -394,6 +394,8 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
     sync_timeout: 'Timeout of RocketMQ driver synchronous call.',
     namespace:
       'The namespace field MUST be set if you are using the RocketMQ service in aliyun cloud and also the namespace is enabled, or if you have configured a namespace in your RocketMQ server. For RocketMQ in aliyun cloud, the namespace is the instance ID.',
+    rocketmq_namespace:
+      'The namespace configured in RocketMQ. For Alibaba Cloud RocketMQ with namespaces enabled, enter the instance ID.',
     strategy:
       'Producer key dispatch strategy, the default is `roundrobin`, from EMQX 6.0.0, placeholders are not supported.',
   },

@@ -194,6 +194,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     access_key: 'AccessKey',
     secret_key: 'SecretKey',
     security_token: '安全令牌',
+    rocketmq_namespace: 'RocketMQ 命名空间',
     namespace: '命名空间',
   },
   sqlserver: {

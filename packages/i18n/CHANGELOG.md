@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.82
+
+### Patch Changes
+
+- Add English and Chinese labels and descriptions for `rocketmq_namespace`, clarify its distinction from the EMQX namespace, and retain the legacy `namespace` translations.
+
 ## 0.0.81
 
 ### Patch Changes
