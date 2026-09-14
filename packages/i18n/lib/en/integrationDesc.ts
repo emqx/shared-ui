@@ -34,6 +34,8 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     recbuf: 'Fine tune the socket receive buffer. The default value is tuned for high throughput.',
     nodelay:
       'When set to `true`, TCP buffer is sent as soon as possible. Otherwise, the OS kernel may buffer small TCP packets for a while (40 ms by default).',
+    ip_family:
+      'The IP address family used to connect to Kafka brokers.<br/>- <code>auto</code> (default): Connect to an IP address using its own family. For a hostname, try IPv4 first, then IPv6 if IPv4 fails.<br/>- <code>ipv4</code>: Connect over IPv4 only.<br/>- <code>ipv6</code>: Connect over IPv6 only.',
     pool_type: 'The type of the pool. Can be one of `random`, `hash`.',
     max_retries: 'Max retry times if an error occurs when sending a request.',
     memory_overload_protection:

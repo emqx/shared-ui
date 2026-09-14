@@ -94,4 +94,7 @@ export const enSymbolLabel: Record<string, string> = {
   rotation_period_none: 'Size-Based Only',
   rotation_period_hour: 'Every Hour',
   rotation_period_day: 'Every Day',
+  auto: 'Auto',
+  ipv4: 'IPv4',
+  ipv6: 'IPv6',
 }

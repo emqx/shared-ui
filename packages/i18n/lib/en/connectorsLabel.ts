@@ -8,6 +8,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     sndbuf: 'Socket Send Buffer Size',
     recbuf: 'Socket Receive Buffer Size',
     nodelay: 'No Delay',
+    ip_family: 'IP Family',
     username: 'Username',
     password: 'Password',
     pool_size: 'Connection Pool Size',

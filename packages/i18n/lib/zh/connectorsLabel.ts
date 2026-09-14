@@ -8,6 +8,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     sndbuf: 'Socket 发送缓存大小',
     recbuf: 'Socket 收包缓存大小',
     nodelay: '是否关闭延迟发送',
+    ip_family: 'IP 地址族',
     username: '用户名',
     password: '密码',
     pool_size: '连接池大小',

@@ -30,6 +30,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     recbuf: 'TCP socket 的收包缓存调优。默认值是针对高吞吐量的一个推荐值。',
     nodelay:
       '设置 `true` 让系统内核立即发送。否则当需要发送的内容很少时，可能会有一定延迟（默认 40 毫秒）。',
+    ip_family:
+      '连接 Kafka Broker 时使用的 IP 地址族。<br/>- <code>自动</code>（默认）：使用 IP 地址自身的地址族连接；对于主机名，先尝试 IPv4，失败后再尝试 IPv6。<br/>- <code>IPv4</code>：仅通过 IPv4 连接。<br/>- <code>IPv6</code>：仅通过 IPv6 连接。',
     pool_type: '连接池的类型。可以是`random`、`hash`之一。',
     max_retries: '请求出错时的最大重试次数。',
     memory_overload_protection:
