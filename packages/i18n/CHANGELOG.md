@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.83
+
+### Patch Changes
+
+- Add English and Chinese labels and descriptions for Kafka `ip_family`, including Auto, IPv4, and IPv6 option labels.
+
 ## 0.0.82
 
 ### Patch Changes

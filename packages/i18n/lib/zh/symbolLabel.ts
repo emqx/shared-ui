@@ -94,4 +94,7 @@ export const zhSymbolLabel: Record<string, string> = {
   rotation_period_none: '仅按文件大小轮转',
   rotation_period_hour: '每小时',
   rotation_period_day: '每天',
+  auto: '自动',
+  ipv4: 'IPv4',
+  ipv6: 'IPv6',
 }
