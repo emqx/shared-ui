@@ -137,8 +137,10 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       "Template, the default value is empty. When this value is empty the whole message will be stored in the database.<br/>The template can be any valid JSON with placeholders and make sure all keys for table are here, example:<br/>  `{'{'}\"id\" : \"${'{'}id{'}'}\", \"clientid\" : \"${'{'}clientid{'}'}\", \"data\" : \"${'{'}payload.data{'}'}\"{'}'}`",
     url: 'The url of DynamoDB endpoint.',
     table: 'DynamoDB Table.',
-    aws_access_key_id: 'Access Key ID for connecting to DynamoDB.',
-    aws_secret_access_key: 'AWS Secret Access Key for connecting to DynamoDB.',
+    aws_access_key_id:
+      'AWS Access Key ID for connecting to DynamoDB.<br/>In EMQX versions that support IAM role authentication, leave both the Access Key ID and Secret Access Key blank to use temporary credentials from the EC2 instance role or ECS task role of the EMQX runtime environment. To use explicit credentials, provide both fields.<br/>Versions without this feature still require both credentials. Refer to the version compatibility notes for supported versions.',
+    aws_secret_access_key:
+      'AWS Secret Access Key for connecting to DynamoDB.<br/>In EMQX versions that support IAM role authentication, leave both the Access Key ID and Secret Access Key blank to use temporary credentials from the EC2 instance role or ECS task role of the EMQX runtime environment. To use explicit credentials, provide both fields.<br/>Versions without this feature still require both credentials. Refer to the version compatibility notes for supported versions.',
     region: 'Region of the AWS dynamo',
   },
   gcp_pubsub_producer: {
