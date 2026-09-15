@@ -123,8 +123,10 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       "模板，默认值为空。当此值为空时，整个消息将存储在数据库中。<br/>模板可以是任何带有占位符的有效 JSON，并确保表中所有的键都在这里，例如：<br/>  `{'{'}\"id\" : \"${'{'}id{'}'}\", \"clientid\" : \"${'{'}clientid{'}'}\", \"data\" : \"${'{'}payload.data{'}'}\"{'}'}`",
     url: 'DynamoDB 的地址。',
     table: 'DynamoDB 的表。',
-    aws_access_key_id: 'DynamoDB 的访问 ID。',
-    aws_secret_access_key: 'DynamoDB 的访问密钥。',
+    aws_access_key_id:
+      '用于连接 DynamoDB 的 AWS 访问密钥 ID。<br/>在支持 IAM Role 认证的 EMQX 版本中，访问密钥 ID 和秘密访问密钥均留空时，将使用 EMQX 运行环境的 EC2 实例角色或 ECS 任务角色提供的临时凭据。手动配置凭据时，必须同时填写这两个字段。<br/>不支持此功能的版本仍需填写两项凭据。具体支持版本请参阅版本兼容性说明。',
+    aws_secret_access_key:
+      '用于连接 DynamoDB 的 AWS 秘密访问密钥。<br/>在支持 IAM Role 认证的 EMQX 版本中，访问密钥 ID 和秘密访问密钥均留空时，将使用 EMQX 运行环境的 EC2 实例角色或 ECS 任务角色提供的临时凭据。手动配置凭据时，必须同时填写这两个字段。<br/>不支持此功能的版本仍需填写两项凭据。具体支持版本请参阅版本兼容性说明。',
     region: 'AWS DynamoDB 所在的区域',
   },
   gcp_pubsub_producer: {
