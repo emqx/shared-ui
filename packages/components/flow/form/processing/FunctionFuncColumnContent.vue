@@ -24,6 +24,7 @@ const props = defineProps<{
   modelValue: FunctionItem
   readonly: boolean
   availableFields: Array<string>
+  emqxVersion?: number
 }>()
 
 const emit = defineEmits<{ (e: 'update:modelValue', value: FunctionItem): void }>()

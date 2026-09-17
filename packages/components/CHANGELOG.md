@@ -1,5 +1,14 @@
 # @emqx/shared-ui-components
 
+## 0.0.18
+
+### Patch Changes
+
+- Filter Flow processing functions by EMQX version while preserving saved function expressions.
+- Updated dependencies
+  - @emqx/shared-ui-constants@0.0.14
+  - @emqx/shared-ui-utils@0.0.27
+
 ## 0.0.17
 
 ### Patch Changes

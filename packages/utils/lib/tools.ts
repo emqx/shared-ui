@@ -131,10 +131,6 @@ export const getTypeAndNameFromKey = (key: string): { type: BridgeType; name: st
 
 const escapeRegExp = (str: string) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
-// 测试
-console.log(escapeRegExp('[lodash](https://lodash.com/)'))
-// 输出: "\[lodash\]\(https://lodash\.com/\)"
-
 const ruleInputSourceReg = new RegExp(
   `^(${escapeRegExp(RULE_INPUT_BRIDGE_TYPE_PREFIX)}|${escapeRegExp(
     NEW_RULE_INPUT_SOURCE_TYPE_PREFIX,

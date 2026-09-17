@@ -55,7 +55,9 @@ interface CommonRule {
   id: string
 }
 
-export default (): {
+export default (
+  emqxVersion?: number,
+): {
   detectInputType: (from: string) => string
   detectFieldsExpressionsEditedWay: (functionForm: Array<FunctionItem>) => EditedWay
   detectWhereDataEditedWay: (filterForm: FilterFormData) => EditedWay
@@ -90,7 +92,7 @@ export default (): {
     edges: Edge[]
   }
 } => {
-  const { getFuncGroupByName, getFuncItemByName, getArgIndex } = useRuleFunc()
+  const { getFuncGroupByName, getFuncItemByName, getArgIndex } = useRuleFunc(emqxVersion)
   const { detectFilterFormLevel, generateFilterForm } = useParseWhere()
   const {
     nodeWidth,

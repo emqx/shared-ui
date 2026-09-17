@@ -1,6 +1,6 @@
 {
   "name": "@emqx/shared-ui-components",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "homepage": "https://emqx.io",
   "license": "Apache-2.0",
   "repository": {
@@ -30,6 +30,7 @@
     "dev": "vite",
     "build": "vue-tsc && vite build && vue-tsc --declaration",
     "preview": "vite preview",
+    "test": "vitest run",
     "version:patch": "npm version patch",
     "version:minor": "npm version minor",
     "version:major": "npm version major",
@@ -61,8 +62,8 @@
   },
   "peerDependencies": {
     "@element-plus/icons-vue": "^2.3.1",
-    "@emqx/shared-ui-utils": "link:../utils",
-    "@emqx/shared-ui-constants": "link:../constants",
+    "@emqx/shared-ui-utils": ">=0.0.27 <0.1.0",
+    "@emqx/shared-ui-constants": ">=0.0.14 <0.1.0",
     "@vue-flow/core": "~1.42.5",
     "element-plus": "^2.3.0",
     "elkjs": "^0.10.0",

@@ -47,6 +47,10 @@ export enum QoSLevel {
   QoS2,
 }
 
+export enum EMQXVersion {
+  'v6.3.0' = 6.3,
+}
+
 export enum FilterLogicalOperator {
   And = 'and',
   Or = 'or',
