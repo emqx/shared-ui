@@ -29,7 +29,11 @@
         </el-table-column>
         <el-table-column :label="t('common.transform')" prop="func.name">
           <template #default="{ $index }">
-            <FunctionFuncColumnContent v-model="record.form[$index]" v-bind="columnContentProps" />
+            <FunctionFuncColumnContent
+              v-model="record.form[$index]"
+              v-bind="columnContentProps"
+              :emqx-version="emqxVersion"
+            />
           </template>
         </el-table-column>
         <el-table-column prop="alias" width="150">
@@ -144,6 +148,7 @@ const props = defineProps({
     type: Array as PropType<Array<string>>,
     default: () => [],
   },
+  emqxVersion: Number,
   monacoComponent: {
     type: Object as PropType<Component>,
     required: true,
@@ -158,8 +163,8 @@ const emit = defineEmits(['update:modelValue'])
 
 const { t } = useFlowLocale()
 
-const { getFuncExpressionFromFuncList } = useHandleFlowDataUtils()
-const { generateFunctionFormFromExpression } = useGenerateFlowDataUtils()
+const { getFuncExpressionFromFuncList } = useHandleFlowDataUtils(props.emqxVersion)
+const { generateFunctionFormFromExpression } = useGenerateFlowDataUtils(props.emqxVersion)
 
 const FormCom = ref()
 const FormComArr: Array<any> = []
@@ -187,7 +192,7 @@ const deleteItem = (index: number) => {
   record.value.form.splice(index, 1)
 }
 
-const { getFuncItemByName } = useRuleFunc()
+const { getFuncItemByName } = useRuleFunc(props.emqxVersion)
 const expandRowKeys = computed(() => {
   return record.value.form
     .filter(({ func }) => {

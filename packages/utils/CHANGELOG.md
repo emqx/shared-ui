@@ -1,5 +1,11 @@
 # @emqx/shared-ui-utils
 
+## 0.0.27
+
+### Patch Changes
+
+- Accept compatible shared constants and i18n releases and remove import-time debug output.
+
 ## 0.0.26
 
 ### Patch Changes

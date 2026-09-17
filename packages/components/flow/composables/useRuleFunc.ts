@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import { ArgumentType, RULE_FUNCS } from '@emqx/shared-ui-constants'
+import { ArgumentType, EMQXVersion, RULE_FUNCS } from '@emqx/shared-ui-constants'
 import type { ComputedRef, WritableComputedRef } from 'vue'
 import type { FetchSuggestionsCallback, FunctionItem, RuleFunc } from '../types'
 import { useFlowLocale } from './useFlowLocale'
@@ -34,29 +34,49 @@ interface GroupFuncData {
 }
 
 type FuncData = Array<GroupFuncData>
+type RuleFuncGroup = { groupLabel: string; list: Array<RuleFunc> }
 
-export const useRuleFunc = (): {
+const RULE_FUNCS_ADDED_BY_VERSION: Record<number, Array<string>> = {
+  [EMQXVersion['v6.3.0']]: [
+    'hash_to_range',
+    'map_to_range',
+    'lz4_compress',
+    'lz4_uncompress',
+    'maptab_lookup',
+  ],
+}
+
+export const useRuleFunc = (
+  emqxVersion?: number,
+): {
   funcOptList: FuncData
   getFuncItemByName: (name: string) => FuncItem | null
   getFuncGroupByName: (name: string) => string | null
   getArgIndex: (func: FuncItem, groupLabel: string) => number
 } => {
   const { getValidI18nText } = useFlowLocale()
+  const unsupportedRuleFuncs = new Set(
+    Object.entries(RULE_FUNCS_ADDED_BY_VERSION)
+      .filter(([version]) => emqxVersion !== undefined && emqxVersion < Number(version))
+      .flatMap(([, funcNames]) => funcNames),
+  )
 
-  const funcOptList: FuncData = RULE_FUNCS.map(
-    ({ groupLabel, list }: { groupLabel: string; list: Array<RuleFunc> }) => ({
+  const funcOptList: FuncData = (RULE_FUNCS as Array<RuleFuncGroup>)
+    .map(({ groupLabel, list }) => ({
       groupLabel,
       name: getValidI18nText(`ruleFunction.${groupLabel}`, groupLabel),
       value: groupLabel,
-      list: list.filter((item) => item.args.length) as Array<FuncItem>,
-    }),
-  )
+      list: list.filter(
+        ({ name, args }) => args.length && !unsupportedRuleFuncs.has(name),
+      ) as Array<FuncItem>,
+    }))
+    .filter(({ list }) => list.length)
 
   const getFuncItemByName = (name: string): FuncItem | null => {
-    for (const { list } of funcOptList) {
+    for (const { list } of RULE_FUNCS as Array<RuleFuncGroup>) {
       for (const item of list) {
         if (item.name === name) {
-          return item
+          return item as FuncItem
         }
       }
     }
@@ -64,7 +84,7 @@ export const useRuleFunc = (): {
   }
 
   const getFuncGroupByName = (name: string): string | null => {
-    for (const { groupLabel, list } of funcOptList) {
+    for (const { groupLabel, list } of RULE_FUNCS as Array<RuleFuncGroup>) {
       for (const item of list) {
         if (item.name === name) {
           return groupLabel
@@ -114,6 +134,7 @@ type FunctionItemProps = Readonly<{
   modelValue: FunctionItem
   readonly: boolean
   availableFields: Array<string>
+  emqxVersion?: number
 }>
 export const useFunctionItemData = (
   props: FunctionItemProps,
@@ -127,7 +148,9 @@ export const useFunctionItemData = (
   handleSelectFunc: (funcName: string) => void
   handleArgChanged: (val: string, index: number, type: ArgumentType) => void
 } => {
-  const { funcOptList, getFuncItemByName, getFuncGroupByName, getArgIndex } = useRuleFunc()
+  const { funcOptList, getFuncItemByName, getFuncGroupByName, getArgIndex } = useRuleFunc(
+    props.emqxVersion,
+  )
 
   const record = computed<FunctionItem>({
     get() {

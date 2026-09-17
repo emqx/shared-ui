@@ -8,14 +8,16 @@ import type {
 } from '../types'
 import { ArgumentType, EditedWay } from '@emqx/shared-ui-constants'
 
-export default (): {
+export default (
+  emqxVersion?: number,
+): {
   getFuncExpressionFromForm: (funcForm: FunctionFormType) => string
   getFuncExpressionFromFuncList: (funcList: Array<FunctionItem>) => string
   getFilterExpressionFromFormData: (filterData: FilterFormData, level?: number) => string
   getFilterExpressionFromForm: (filterData: FilterFormType, level?: number) => string
 } => {
   /* FUNCTION */
-  const { getFuncItemByName } = useRuleFunc()
+  const { getFuncItemByName } = useRuleFunc(emqxVersion)
   const getExpressionFromFunctionItem = (
     {
       name,

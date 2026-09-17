@@ -1,5 +1,11 @@
 # @emqx/shared-ui-constants
 
+## 0.0.14
+
+### Patch Changes
+
+- Add the EMQX 6.3 version constant for Flow function availability.
+
 ## 0.0.13
 
 ### Patch Changes
