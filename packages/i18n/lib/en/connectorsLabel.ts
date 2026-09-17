@@ -283,4 +283,13 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   azure_event_grid: {
     tcp_opts_keepalive: 'TCP Keepalive',
   },
+  dameng: {
+    dsn: 'ODBC DSN',
+    server: 'Server Host',
+    port: 'Server Port',
+    driver: 'ODBC Driver',
+    charset: 'Charset',
+    ssl_path: 'SSL Certificate Directory',
+    ssl_pwd: 'SSL Certificate Password',
+  },
 }

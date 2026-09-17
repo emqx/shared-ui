@@ -98,6 +98,7 @@ export enum BridgeType {
   IoTDB = 'iotdb',
   OpenTSDB = 'opents',
   OracleDatabase = 'oracle',
+  Dameng = 'dameng',
   RabbitMQ = 'rabbitmq',
   Pulsar = 'pulsar',
   HStream = 'hstreamdb',

@@ -686,4 +686,20 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
 - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`,
   },
+  dameng: {
+    dsn: 'ODBC data source name in odbc.ini. When set, server, port, driver and charset are ignored. Leave username and password empty to use the DSN credentials.',
+    server:
+      'IP address or hostname of the Dameng DM8 server, optionally with a port (host:port). Required unless an ODBC DSN is set.',
+    port: 'Dameng DM8 server port, used when the server address does not contain a port. Ignored when an ODBC DSN is set.',
+    driver:
+      'ODBC driver registered in odbcinst.ini, such as DM8 ODBC DRIVER, or the absolute path to the driver library on the EMQX node. Ignored when an ODBC DSN is set.',
+    username:
+      'Defaults to SYSDBA without an ODBC DSN. With a DSN, leave empty to use the username configured in the DSN.',
+    charset: 'Character set passed to the ODBC connection. Ignored when an ODBC DSN is set.',
+    ssl_path:
+      'Directory on each EMQX node containing ca-cert.pem and, for mutual TLS, client-cert.pem and client-key.pem. Required only when encryption is enabled on the DM8 server. The DM8 ODBC driver loads these files and handles TLS.',
+    ssl_pwd:
+      'Password for the encrypted client private key in the SSL certificate directory. Leave empty if the key is not encrypted.',
+    sql: 'INSERT SQL template with an explicit target column list and placeholders in VALUES. Only INSERT statements are supported. Values are bound as query parameters for single and batched writes; do not manually quote or escape placeholders.',
+  },
 }
