@@ -283,4 +283,13 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   azure_event_grid: {
     tcp_opts_keepalive: 'TCP Keepalive',
   },
+  dameng: {
+    dsn: 'ODBC DSN',
+    server: '服务器地址',
+    port: '服务器端口',
+    driver: 'ODBC 驱动',
+    charset: '字符集',
+    ssl_path: 'SSL 证书目录',
+    ssl_pwd: 'SSL 证书密码',
+  },
 }

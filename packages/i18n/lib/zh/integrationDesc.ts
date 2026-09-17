@@ -622,4 +622,17 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
 - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`,
   },
+  dameng: {
+    dsn: 'odbc.ini 中配置的 ODBC 数据源名称。设置后将忽略服务器地址、端口、驱动和字符集；用户名和密码留空时使用 DSN 中的凭据。',
+    server: '达梦 DM8 服务器的 IP 地址或主机名，可包含端口（host:port）。未设置 ODBC DSN 时必填。',
+    port: '达梦 DM8 服务器端口，在服务器地址未包含端口时使用。设置 ODBC DSN 后忽略此项。',
+    driver:
+      'odbcinst.ini 中注册的 ODBC 驱动名称（例如 DM8 ODBC DRIVER），或 EMQX 节点上驱动库的绝对路径。设置 ODBC DSN 后忽略此项。',
+    username: '未设置 ODBC DSN 时默认为 SYSDBA；设置 DSN 时留空可使用 DSN 中配置的用户名。',
+    charset: '传递给 ODBC 连接的字符集。设置 ODBC DSN 后忽略此项。',
+    ssl_path:
+      '每个 EMQX 节点上的证书目录，包含 ca-cert.pem；双向 TLS 还需 client-cert.pem 和 client-key.pem。仅在 DM8 服务器启用加密时需要，由 DM8 ODBC 驱动读取文件并完成 TLS 握手。',
+    ssl_pwd: 'SSL 证书目录中客户端加密私钥的密码；私钥未加密时可留空。',
+    sql: '仅支持 INSERT SQL 模板，必须明确列出目标列，并在 VALUES 中使用占位符。单条与批量写入均使用参数绑定，请勿手动给占位符加引号或转义。',
+  },
 }
