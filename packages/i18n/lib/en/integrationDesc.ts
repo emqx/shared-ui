@@ -704,4 +704,32 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
       'Password for the encrypted client private key in the SSL certificate directory. Leave empty if the key is not encrypted.',
     sql: 'INSERT SQL template with an explicit target column list and placeholders in VALUES. Only INSERT statements are supported. Values are bound as query parameters for single and batched writes; do not manually quote or escape placeholders.',
   },
+  zerobus: {
+    zerobus_endpoint:
+      'Endpoint for the Databricks Zerobus ingestion service. The port number must be specified.',
+    authentication:
+      'OAuth 2.0 client credentials used to authenticate with the Databricks workspace.',
+    workspace_id: 'ID of the Databricks workspace used by Zerobus.',
+    workspace_url:
+      'URL of the Databricks workspace. EMQX uses it to construct the authentication endpoint.',
+    client_id: 'OAuth client ID used to authenticate with the workspace.',
+    client_secret: 'OAuth client secret used to authenticate with the workspace.',
+    authentication_timeout: 'Timeout for requesting an authentication token.',
+    authentication_ssl: 'TLS settings for the authentication endpoint.',
+    ssl: 'TLS settings for the Zerobus ingestion connection.',
+    transport:
+      'Transport used to connect to Zerobus. gRPC supports JSON and Protobuf records; REST supports JSON only.',
+    transport_connect_timeout: 'Timeout when establishing a connection to Zerobus.',
+    transport_pool_size: 'Number of connections in the Zerobus connection pool.',
+    transport_pipelining:
+      'Maximum number of HTTP requests that can be sent without waiting for responses on a REST connection.',
+    transport_max_inactive: 'Maximum time a REST connection can remain idle before it is closed.',
+    catalog: 'Name of the catalog containing the destination table.',
+    schema: 'Name of the schema containing the destination table.',
+    table: 'Name of the destination table in Databricks.',
+    record:
+      'Record format sent to Zerobus. REST transport supports JSON only. Protobuf requires a schema registered in Schema Registry.',
+    schema_name: 'Name of the Protobuf schema in EMQX Schema Registry.',
+    message_type: 'Protobuf message type used to encode the data.',
+  },
 }

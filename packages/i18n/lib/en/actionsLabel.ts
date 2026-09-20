@@ -291,4 +291,13 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
   quasardb: {
     health_check_table: 'Health Check Table',
   },
+  zerobus: {
+    catalog: 'Catalog',
+    schema: 'Schema',
+    table: 'Table',
+    record: 'Record Type',
+    parameters_record_type: 'Record Type',
+    schema_name: 'Protobuf Schema Name',
+    message_type: 'Protobuf Message Type',
+  },
 }

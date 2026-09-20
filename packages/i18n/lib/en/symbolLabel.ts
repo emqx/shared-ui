@@ -97,4 +97,8 @@ export const enSymbolLabel: Record<string, string> = {
   auto: 'Auto',
   ipv4: 'IPv4',
   ipv6: 'IPv6',
+  transport_transport_grpc: 'gRPC',
+  transport_transport_rest: 'REST',
+  parameters_record_record_json: 'JSON',
+  parameters_record_record_proto: 'Protobuf',
 }

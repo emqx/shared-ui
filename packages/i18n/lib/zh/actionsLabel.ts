@@ -291,4 +291,13 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
   quasardb: {
     health_check_table: '健康检查表',
   },
+  zerobus: {
+    catalog: '目录',
+    schema: '模式',
+    table: '表',
+    record: '记录类型',
+    parameters_record_type: '记录类型',
+    schema_name: 'Protobuf Schema 名称',
+    message_type: 'Protobuf 消息类型',
+  },
 }
