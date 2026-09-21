@@ -15,7 +15,7 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     dispatch_strategy:
       'The strategy for dispatching queries when a query does not set an explicit pick key. The default value <code>per_clientid</code> preserves the existing behavior. Set to <code>random</code> to spread such queries across multiple workers.',
     request_ttl:
-      'Starting from the moment when the request enters the buffer, if the request remains in the buffer for the specified time or is sent but does not receive a response or acknowledgement in time, the request is considered expired.',
+      'Starting from the moment when the request enters the buffer, if the request remains in the buffer for the specified time or is sent but does not receive a response or acknowledgement in time, the request is considered expired.<br/>Messages are not attempted to be sent while the connector is disconnected. If Request TTL is shorter than the health check timeout (<code>health_check_timeout</code>) plus the time needed to reestablish the connection, messages queued as the connector becomes disconnected can expire before the connection is reestablished.<br/>It is recommended to set Request TTL greater than the health check timeout, with an additional margin for connection establishment.',
     start_timeout:
       'Time interval to wait for an auto-started resource to become healthy before responding resource creation requests.',
     worker_pool_size:
