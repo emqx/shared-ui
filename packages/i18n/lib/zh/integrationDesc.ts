@@ -13,7 +13,7 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     dispatch_strategy:
       '当请求未显式设置 pick key 时的分发策略。默认值 <code>按客户端 ID</code> 保持现有行为；设置为 <code>随机</code> 时，此类请求会随机分散到多个 worker。',
     request_ttl:
-      '从请求进入缓冲区开始计时，如果请求在规定的时间内仍停留在缓冲区内或者已发送但未能及时收到响应或确认，该请求将被视为过期。',
+      '从请求进入缓冲区开始计时，如果请求在规定的时间内仍停留在缓冲区内或者已发送但未能及时收到响应或确认，该请求将被视为过期。<br/>连接器断开连接期间，不会尝试发送消息。如果请求超期小于健康检查超时时间（<code>health_check_timeout</code>）与连接重建耗时之和，连接器断开时排队的消息可能在连接恢复前过期。<br/>建议将请求超期设置为大于健康检查超时时间，并为连接建立预留额外时间。',
     start_timeout: '在回复资源创建请求前等待资源进入健康状态的时间。',
     worker_pool_size:
       '缓存队列 worker 数量。仅对 egress 类型的桥接有意义。当桥接仅有 ingress 方向时，可设置为 0，否则必须大于 0。',
