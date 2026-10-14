@@ -58,6 +58,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     retain: 'Retain',
     retain_as_published: 'Retain As Published',
     payload: 'Payload',
+    ack_deadline: 'Ack Deadline',
   },
   kafka_producer: {
     timestamp: 'Message Timestamp',
@@ -94,9 +95,12 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     ordering_key_template: 'Ordering Key template',
     payload_template: 'Payload Template',
   },
+  gcp_pubsub_consumer_grpc: {
+    topic: 'GCP PubSub Topic',
+    max_outstanding_messages: 'Max Outstanding Messages',
+  },
   gcp_pubsub_consumer: {
     topic: 'GCP PubSub Topic',
-    ack_deadline: 'Ack Deadline',
   },
   syskeeper_forwarder: {
     target_topic: 'Topic',
