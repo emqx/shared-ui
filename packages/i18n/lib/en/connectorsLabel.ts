@@ -97,6 +97,10 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     oauth2_timeout: 'Token Request Timeout',
     oauth2_ssl: 'Token Endpoint TLS',
   },
+  gcp_pubsub_consumer_grpc: {
+    authentication_type: 'Authentication Type',
+    authentication_initial_token_type: 'Credential Type',
+  },
   gcp_pubsub_producer: {
     authentication_type: 'Authentication Type',
     authentication_initial_token_type: 'Credential Type',

@@ -58,6 +58,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     retain: 'Retain',
     retain_as_published: '保留发布时 Retain 标志',
     payload: '消息模版',
+    ack_deadline: '消息确认截止时间',
   },
   kafka_producer: {
     timestamp: '消息的时间戳',
@@ -94,9 +95,12 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     ordering_key_template: '排序键模板',
     payload_template: 'HTTP 请求消息体模板',
   },
+  gcp_pubsub_consumer_grpc: {
+    topic: 'GCP PubSub 主题',
+    max_outstanding_messages: '最大未确认消息数',
+  },
   gcp_pubsub_consumer: {
     topic: 'GCP PubSub 主题',
-    ack_deadline: '消息确认截止时间',
   },
   syskeeper_forwarder: {
     target_topic: '主题',

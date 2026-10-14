@@ -89,6 +89,7 @@ export enum BridgeType {
   Redis = 'redis',
   GCPProducer = 'gcp_pubsub_producer',
   GCPConsumer = 'gcp_pubsub_consumer',
+  GCPConsumerGRPC = 'gcp_pubsub_consumer_grpc',
   MongoDB = 'mongodb',
   PgSQL = 'pgsql',
   TimescaleDB = 'timescale',

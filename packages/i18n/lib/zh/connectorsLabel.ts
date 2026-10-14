@@ -97,6 +97,10 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     oauth2_timeout: 'Token 请求超时',
     oauth2_ssl: 'Token 端点 TLS',
   },
+  gcp_pubsub_consumer_grpc: {
+    authentication_type: '认证方式',
+    authentication_initial_token_type: '凭证类型',
+  },
   gcp_pubsub_producer: {
     authentication_type: '认证类型',
     query_mode: '请求模式',

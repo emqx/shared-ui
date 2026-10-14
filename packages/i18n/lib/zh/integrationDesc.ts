@@ -68,6 +68,10 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     audience: '指定请求 OAuth 访问令牌时提供的 `audience` 参数。',
     authentication:
       '选择 EMQX 连接 GCP 时使用的认证方式。<br/>- 服务账号 JSON：上传服务账号密钥 JSON 文件。<br/>- 工作负载身份联合 (WIF)：使用外部 OIDC Token 换取 Google 凭证。<br/>- 附加服务账号：使用运行环境绑定的服务账号。',
+    service_account_json:
+      '包含将与 PubSub 一起使用的 GCP 服务账户凭证的 JSON。<br/>当创建 GCP 服务账户时（如 https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount ），可以选择下载 JSON 形式的凭证，然后在该配置项中使用。',
+    ack_deadline:
+      'PubSub 等待订阅者确认收到消息的大致时长（尽力而为）。超过该时长后，Pub/Sub 将重新发送消息。',
   },
   mqtt: {
     bridge_mode:
@@ -133,8 +137,6 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     pipelining:
       '正整数，设置最大可发送的异步 HTTP 请求数量。当设置为 1 时，表示每次发送完成 HTTP 请求后都需要等待服务器返回，再继续发送下一个请求。',
     connect_timeout: '连接 GCP 服务器的超时时间。',
-    service_account_json:
-      '包含将与 PubSub 一起使用的 GCP 服务账户凭证的 JSON。<br/>当创建 GCP 服务账户时（如 https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount ），可以选择下载 JSON 形式的凭证，然后在该配置项中使用。',
     pubsub_topic: '要发布消息的 GCP PubSub 主题。',
     payload_template: '用于格式化外发信息的模板。 如果未定义，将以 JSON 格式发送所有可用的上下文。',
     attributes_template:
@@ -142,14 +144,18 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     ordering_key_template:
       '用于格式化消息排序键的模板。未定义的值将被渲染为空字符串。如果此值为空，则不会将其添加到消息中。',
   },
+  gcp_pubsub_consumer_grpc: {
+    authentication_initial_token_type:
+      '工作负载身份联合（WIF）获取初始 OIDC 令牌时使用的凭证类型。',
+    connect_timeout: '建立 GCP PubSub gRPC 连接的超时时间。',
+    topic: '要消费的 GCP PubSub 主题。',
+    max_outstanding_messages:
+      '已发送给客户端但尚未处理并确认的最大消息数。达到上限时，PubSub 暂停发送消息；未确认消息数低于上限后恢复发送。设置为 0 表示不限制，默认 100。',
+  },
   gcp_pubsub_consumer: {
     topic: '要消费的 GCP PubSub 主题。',
     pipelining:
       '正整数，设置最大可发送的异步 HTTP 请求数量。当设置为 1 时，表示每次发送完成 HTTP 请求后都需要等待服务器返回，再继续发送下一个请求。',
-    service_account_json:
-      '包含将与 PubSub 一起使用的 GCP 服务账户凭证的 JSON。<br/>当创建 GCP 服务账户时（如 https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount ），可以选择下载 JSON 形式的凭证，然后在该配置项中使用。',
-    ack_deadline:
-      'PubSub 等待订阅者确认收到消息的大致时长（尽力而为）。超过该时长后，Pub/Sub 将重新发送消息。',
     pull_max_messages:
       '从 GCP PubSub 中在一个拉取请求里检索的最大消息数。\n实际数量可能小于指定的值。',
     connect_timeout: '连接 GCP 服务器的超时时间。',

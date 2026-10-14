@@ -78,6 +78,10 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     audience: 'Specify the `audience` to be provided when requesting the OAuth access token.',
     authentication:
       'Choose how EMQX authenticates with GCP.<br/>- Service Account JSON: Upload a service account key JSON file.<br/>- Workload Identity Federation (WIF): Exchange an external OIDC token for Google credentials.<br/>- Attached Service Account: Use the service account attached to the runtime environment.',
+    service_account_json:
+      "JSON containing the GCP Service Account credentials to be used with PubSub.<br/>When a GCP Service Account is created (as described in https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount), you have the option of downloading the credentials in JSON form.  That's the file needed.",
+    ack_deadline:
+      'The approximate amount of time, on a best-effort basis, that PubSub waits for the subscriber to acknowledge receipt before resending the message.',
   },
   mqtt: {
     bridge_mode:
@@ -147,8 +151,6 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     pipelining:
       'A positive integer. Whether to send HTTP requests continuously, when set to 1, it means that after each HTTP request is sent, you need to wait for the server to return and then continue to send the next request.',
     connect_timeout: 'The timeout when connecting to the GCP server.',
-    service_account_json:
-      "JSON containing the GCP Service Account credentials to be used with PubSub.<br/>When a GCP Service Account is created (as described in https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount), you have the option of downloading the credentials in JSON form.  That's the file needed.",
     pubsub_topic: 'The GCP PubSub topic to publish messages to.',
     payload_template:
       'The template for formatting the outgoing messages.  If undefined, will send all the available context in JSON format.',
@@ -157,14 +159,18 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
     ordering_key_template:
       "The template for formatting the outgoing message ordering key.  Undefined values will be rendered as empty string values.  This value will not be added to the message if it's empty.",
   },
+  gcp_pubsub_consumer_grpc: {
+    authentication_initial_token_type:
+      'Credential type used to obtain the initial OIDC token for Workload Identity Federation.',
+    connect_timeout: 'Timeout when establishing a gRPC connection to GCP PubSub.',
+    topic: 'GCP PubSub topic to consume from.',
+    max_outstanding_messages:
+      'Maximum number of messages sent to the client that have not yet been processed and acknowledged. PubSub pauses delivery when this limit is reached and resumes when the number falls below the limit. Set to 0 for no limit. The default is 100.',
+  },
   gcp_pubsub_consumer: {
     topic: 'GCP PubSub topic to consume from.',
     pipelining:
       'A positive integer. Whether to send HTTP requests continuously, when set to 1, it means that after each HTTP request is sent, you need to wait for the server to return and then continue to send the next request.',
-    service_account_json:
-      "JSON containing the GCP Service Account credentials to be used with PubSub.<br/>When a GCP Service Account is created (as described in https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount), you have the option of downloading the credentials in JSON form.  That's the file needed.",
-    ack_deadline:
-      'The approximate amount of time, on a best-effort basis, that PubSub waits for the subscriber to acknowledge receipt before resending the message.',
     pull_max_messages:
       'The maximum number of messages to retrieve from GCP PubSub in a single pull request.\n The actual number may be less than the specified value.',
     connect_timeout: 'The timeout when connecting to the GCP server.',
