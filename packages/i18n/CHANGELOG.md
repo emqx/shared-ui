@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.84
+
+### Patch Changes
+
+- Add Dameng, Zerobus, and GCP PubSub gRPC consumer types and translations, and clarify DynamoDB authentication and Request TTL descriptions.
+
 ## 0.0.83
 
 ### Patch Changes
