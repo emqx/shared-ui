@@ -607,6 +607,8 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
       'Treat the update operation as an insert operation when the document to be updated does not exist, and insert the provided document as a new document.',
   },
   s3: {
+    region:
+      'The region used to sign requests to the S3 endpoint, for example `us-west-2`. An explicit value takes precedence over the region inferred from the endpoint host. Leave empty to infer the region from the host, with `us-east-1` as the fallback when no region can be inferred. Set this field for custom endpoint hosts that do not contain the intended region.',
     acl: 'The Access Control List (ACL) to use for the uploaded objects.',
     content: 'The content of the object to be uploaded supports placeholders.',
     bucket:

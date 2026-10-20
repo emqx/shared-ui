@@ -227,6 +227,7 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
   s3: {
     host: '地址',
     port: '端口',
+    region: '签名区域',
   },
   azure_blob_storage: {
     account_name: '账户名称',
