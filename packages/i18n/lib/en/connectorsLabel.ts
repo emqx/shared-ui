@@ -227,6 +227,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
   s3: {
     host: 'Host',
     port: 'Port',
+    region: 'Signing Region',
   },
   azure_blob_storage: {
     account_name: 'Account Name',
