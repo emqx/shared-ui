@@ -1,5 +1,5 @@
 import { inject } from 'vue'
-import { useLocale } from '@emqx/shared-ui-utils'
+import { useLocale, type SharedLocaleMessages } from '@emqx/shared-ui-utils'
 
 export const useFlowLocale = (): {
   locale: string
@@ -7,7 +7,8 @@ export const useFlowLocale = (): {
   getValidI18nText: (i18nKeypath: string, placeholder: string) => string
 } => {
   const locale = inject('flowLocale', 'en')
-  const { t, te } = useLocale(locale)
+  const messages = inject<SharedLocaleMessages | undefined>('flowLocaleMessages', undefined)
+  const { t, te } = useLocale(locale, messages)
 
   const getValidI18nText = (i18nKeypath: string, placeholder: string) => {
     return te(i18nKeypath) ? t(i18nKeypath) : placeholder

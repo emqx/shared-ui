@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.85
+
+### Patch Changes
+
+- Add optional Traditional Chinese dictionaries for integration schemas, rule SQL, rule functions, and Flow. Support injected locale messages in Flow components and utilities, with English fallback when Traditional Chinese resources are absent. Include S3 signing region labels and descriptions in the i18n release.
+
 ## 0.0.84
 
 ### Patch Changes

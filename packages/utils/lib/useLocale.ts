@@ -18,15 +18,24 @@ import {
   jaFlow,
 } from '@emqx/shared-ui-i18n'
 import { createI18n } from 'vue-i18n'
-import type { ComposerTranslation } from 'vue-i18n'
+import type { ComposerTranslation, DefineLocaleMessage } from 'vue-i18n'
+
+export type SharedLocaleMessages = DefineLocaleMessage
 
 export const useLocale = (
   locale: string,
-): { t: ComposerTranslation; te: (str: string) => boolean } => {
-  const { t, te } = createI18n({
-    mode: 'composition',
+  localeMessages?: SharedLocaleMessages,
+): {
+  t: ComposerTranslation<Record<string, SharedLocaleMessages>, string>
+  te: (str: string) => boolean
+} => {
+  const { t, te, mergeLocaleMessage } = createI18n({
+    legacy: false,
+    // An explicit chain prevents zh-TW from implicitly falling back to zh.
+    fallbackLocale: { 'zh-TW': ['en'], default: ['en'] },
     locale,
     messages: {
+      'zh-TW': {},
       en: {
         streaming: enStreaming,
         common: enCommon,
@@ -51,8 +60,12 @@ export const useLocale = (
         ruleFunction: jaRuleFunction,
         flow: jaFlow,
       },
-    },
+    } as Record<string, SharedLocaleMessages>,
   }).global
+
+  if (localeMessages) {
+    mergeLocaleMessage(locale, localeMessages)
+  }
 
   return {
     t,
