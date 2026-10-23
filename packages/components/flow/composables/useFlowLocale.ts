@@ -11,7 +11,7 @@ export const useFlowLocale = (): {
   const { t, te } = useLocale(locale, messages)
 
   const getValidI18nText = (i18nKeypath: string, placeholder: string) => {
-    return te(i18nKeypath) ? t(i18nKeypath) : placeholder
+    return te(i18nKeypath) || te(i18nKeypath, 'en') ? t(i18nKeypath) : placeholder
   }
 
   return {

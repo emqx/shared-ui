@@ -58,4 +58,26 @@ describe('Flow locale injection', () => {
     app.mount(host)
     expect(host.textContent).toBe(expected)
   })
+
+  it.each([undefined, { ruleFunction: { String: '字串' } }])(
+    'uses English for missing labels with optional messages %j',
+    (messages) => {
+      host = document.createElement('div')
+      app = createApp({
+        setup() {
+          const { getValidI18nText } = useFlowLocale()
+          expect(getValidI18nText('ruleFunction.mathFunc', 'mathFunc')).toBe(
+            'Mathematical Functions',
+          )
+          expect(getValidI18nText('ruleFunction.String', 'String')).toBe(
+            messages ? '字串' : 'String',
+          )
+          expect(getValidI18nText('ruleFunction.unknown', 'custom label')).toBe('custom label')
+          return () => h('p')
+        },
+      })
+      app.use(FlowLocalePlugin, { locale: 'zh-TW', messages })
+      app.mount(host)
+    },
+  )
 })
