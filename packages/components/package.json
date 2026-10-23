@@ -1,6 +1,6 @@
 {
   "name": "@emqx/shared-ui-components",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "homepage": "https://emqx.io",
   "license": "Apache-2.0",
   "repository": {
@@ -62,7 +62,7 @@
   },
   "peerDependencies": {
     "@element-plus/icons-vue": "^2.3.1",
-    "@emqx/shared-ui-utils": ">=0.0.27 <0.1.0",
+    "@emqx/shared-ui-utils": ">=0.0.28 <0.1.0",
     "@emqx/shared-ui-constants": ">=0.0.14 <0.1.0",
     "@vue-flow/core": "~1.42.5",
     "element-plus": "^2.3.0",

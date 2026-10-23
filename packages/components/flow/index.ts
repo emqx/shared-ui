@@ -1,3 +1,4 @@
+import { installFlowLocale, type FlowLocaleOptions } from './composables/installFlowLocale'
 import { App } from 'vue'
 import FunctionForm from './form/processing/FunctionForm.vue'
 import FilterForm from './form/processing/FilterForm.vue'
@@ -15,16 +16,15 @@ import useEditFlow from './composables/useEditFlow'
 import AINodeForm from './form/processing/AINodeForm.vue'
 import AITransportOptions from './form/processing/AITransportOptions.vue'
 
-interface FlowComponentOptions {
+interface FlowComponentOptions extends FlowLocaleOptions {
   componentPrefix?: string
-  locale?: 'zh' | 'en' | 'ja'
 }
 
 export default {
   install(app: App, options: FlowComponentOptions = { locale: 'en' }): void {
     const getComName = (rawName: string) => `${options.componentPrefix ?? ''}${rawName}`
 
-    app.provide('flowLocale', options.locale)
+    installFlowLocale(app, options)
 
     app.component(getComName('FunctionForm'), FunctionForm)
     app.component(getComName('FilterForm'), FilterForm)

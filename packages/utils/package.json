@@ -1,6 +1,6 @@
 {
   "name": "@emqx/shared-ui-utils",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "homepage": "https://emqx.io",
   "license": "Apache-2.0",
   "repository": {
@@ -49,6 +49,6 @@
   },
   "peerDependencies": {
     "@emqx/shared-ui-constants": ">=0.0.11 <0.1.0",
-    "@emqx/shared-ui-i18n": ">=0.0.76 <0.1.0"
+    "@emqx/shared-ui-i18n": ">=0.0.85 <0.1.0"
   }
 }
