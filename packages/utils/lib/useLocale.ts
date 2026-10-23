@@ -27,40 +27,43 @@ export const useLocale = (
   localeMessages?: SharedLocaleMessages,
 ): {
   t: ComposerTranslation<Record<string, SharedLocaleMessages>, string>
-  te: (str: string) => boolean
+  te: (str: string, locale?: string) => boolean
 } => {
   const { t, te, mergeLocaleMessage } = createI18n({
     legacy: false,
     // An explicit chain prevents zh-TW from implicitly falling back to zh.
     fallbackLocale: { 'zh-TW': ['en'], default: ['en'] },
     locale,
-    messages: {
-      'zh-TW': {},
-      en: {
-        streaming: enStreaming,
-        common: enCommon,
-        ruleSQL: enRuleSQL,
-        aiLog: enAiLog,
-        ruleFunction: enRuleFunction,
-        flow: enFlow,
-      },
-      zh: {
-        streaming: zhStreaming,
-        common: zhCommon,
-        ruleSQL: zhRuleSQL,
-        aiLog: zhAiLog,
-        ruleFunction: zhRuleFunction,
-        flow: zhFlow,
-      },
-      ja: {
-        streaming: jaStreaming,
-        common: jaCommon,
-        ruleSQL: jaRuleSQL,
-        aiLog: enAiLog,
-        ruleFunction: jaRuleFunction,
-        flow: jaFlow,
-      },
-    } as Record<string, SharedLocaleMessages>,
+    // Built-in dictionaries contain plain string data; give every instance its own copy.
+    messages: JSON.parse(
+      JSON.stringify({
+        'zh-TW': {},
+        en: {
+          streaming: enStreaming,
+          common: enCommon,
+          ruleSQL: enRuleSQL,
+          aiLog: enAiLog,
+          ruleFunction: enRuleFunction,
+          flow: enFlow,
+        },
+        zh: {
+          streaming: zhStreaming,
+          common: zhCommon,
+          ruleSQL: zhRuleSQL,
+          aiLog: zhAiLog,
+          ruleFunction: zhRuleFunction,
+          flow: zhFlow,
+        },
+        ja: {
+          streaming: jaStreaming,
+          common: jaCommon,
+          ruleSQL: jaRuleSQL,
+          aiLog: enAiLog,
+          ruleFunction: jaRuleFunction,
+          flow: jaFlow,
+        },
+      }),
+    ) as Record<string, SharedLocaleMessages>,
   }).global
 
   if (localeMessages) {
