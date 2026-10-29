@@ -136,7 +136,36 @@ export interface OpenAICompletionProfile {
   type: AIProviderType.OpenAI
 }
 
-export type AICompletionProfile = AnthropicCompletionProfile | OpenAICompletionProfile
+export enum DecisionQuestionType {
+  Predicate = 'predicate',
+  Choice = 'choice',
+  Score = 'score',
+}
+
+export interface DecisionChoiceOption {
+  value: string | boolean
+  description?: string
+}
+export interface DecisionScoreLevel {
+  label: string
+  description?: string
+}
+export type DecisionQuestion = { name: string; instructions: string } & (
+  | { type: `${DecisionQuestionType.Predicate}` }
+  | { type: `${DecisionQuestionType.Choice}`; choices: DecisionChoiceOption[] }
+  | { type: `${DecisionQuestionType.Score}`; levels: DecisionScoreLevel[] }
+)
+export interface OpenAIDecisionsCompletionProfile {
+  name: string
+  provider_name: string
+  type: AIProviderType.OpenAIDecisions
+  model?: string
+  questions: DecisionQuestion[]
+}
+export type AICompletionProfile =
+  | AnthropicCompletionProfile
+  | OpenAICompletionProfile
+  | OpenAIDecisionsCompletionProfile
 
 type OmitCompletionKeys = 'name' | 'provider_name' | 'type'
 type AICompletion<T> = Omit<T, OmitCompletionKeys>
@@ -144,7 +173,8 @@ type AITotalConfig<T> = AIProviderForm & { input: string; alias: string } & AICo
 
 export type AIOpenAIConfig = AITotalConfig<OpenAICompletionProfile>
 export type AIAnthropicConfig = AITotalConfig<AnthropicCompletionProfile>
-export type AIConfig = AIOpenAIConfig | AIAnthropicConfig
+export type AIDecisionsConfig = AITotalConfig<OpenAIDecisionsCompletionProfile>
+export type AIConfig = AIOpenAIConfig | AIAnthropicConfig | AIDecisionsConfig
 export interface RuleFunc {
   name: string
   args: Array<{

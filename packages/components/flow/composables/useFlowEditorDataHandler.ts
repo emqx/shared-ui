@@ -499,9 +499,21 @@ export default (): {
     const aiNodes = nodes.filter((node) => isAIType(node.data.specificType))
     aiNodes.forEach((node) => {
       const { formData, isCreated, isChanged } = node.data
-      const { type, api_key, name, base_url, transport_options, anthropic_version, ...rest } =
-        formData
-      const aiProvider: AIProviderForm = { name, type, api_key }
+      const {
+        type,
+        api_key,
+        name,
+        base_url,
+        transport_options,
+        anthropic_version,
+        provider_name,
+        ...rest
+      } = formData
+      const aiProvider: AIProviderForm = {
+        name: type === AIProviderType.OpenAIDecisions ? provider_name || name : name,
+        type,
+        api_key,
+      }
       if (transport_options) {
         aiProvider.transport_options = transport_options
       }
@@ -512,8 +524,13 @@ export default (): {
       const aiCompletion: AICompletionProfile = {
         name,
         type,
-        provider_name: name,
-        ...omit(rest, ['input', 'alias']),
+        provider_name: provider_name || name,
+        ...omit(
+          rest,
+          type === AIProviderType.OpenAIDecisions
+            ? ['input', 'alias', 'system_prompt', 'max_tokens']
+            : ['input', 'alias'],
+        ),
       }
 
       if (aiCompletion.type === AIProviderType.Anthropic) {

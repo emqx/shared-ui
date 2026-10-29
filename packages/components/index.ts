@@ -31,6 +31,7 @@ export {
   FlowEdge,
   FlowNode,
   AINodeForm,
+  DecisionQuestionsEditor,
   AITransportOptions,
   useActionAndSourceStatus,
   useFlowGuideNodes,
@@ -40,5 +41,6 @@ export {
   useFlowEdge,
   useFlowEditorDataHandler,
   useEditFlow,
+  validateDecisionQuestions,
 } from './flow/index'
 export * from './flow/types'

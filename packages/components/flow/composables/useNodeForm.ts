@@ -8,8 +8,10 @@ import {
   FrontendSourceType,
   GEMINI_DEFAULT_BASE_URL,
   ProcessingType,
+  OptionalProcessingType,
 } from '@emqx/shared-ui-constants'
-import { isObject } from 'lodash'
+import { isObject, omit } from 'lodash'
+import { DecisionQuestionType } from '../types'
 import type {
   FunctionItem,
   FunctionFormType,
@@ -17,6 +19,7 @@ import type {
   FilterFormType,
   FilterFormData,
   OutputItemObj,
+  DecisionQuestion,
 } from '../types'
 
 export const createMessageForm = (topic = ''): { topic: string } => ({ topic })
@@ -68,6 +71,29 @@ export const createAIOpenAIForm = () => ({
   model: 'gpt-4o',
   ...createAICommonForm(),
 })
+export const createDecisionQuestion = (
+  type: DecisionQuestion['type'] = DecisionQuestionType.Predicate,
+): DecisionQuestion => {
+  const common = { name: '', instructions: '' }
+  switch (type) {
+    case DecisionQuestionType.Choice:
+      return { ...common, type, choices: [{ value: '' }] }
+    case DecisionQuestionType.Score:
+      return { ...common, type, levels: [{ label: '' }] }
+    default:
+      return { ...common, type: DecisionQuestionType.Predicate }
+  }
+}
+
+export const createAIDecisionsForm = () => {
+  const common = omit(createAICommonForm(), ['system_prompt'])
+  return {
+    ...common,
+    type: AIProviderType.OpenAIDecisions,
+    model: 'gpt-6-luna',
+    questions: [createDecisionQuestion()],
+  }
+}
 export const createAIAnthropicForm = () => ({
   type: AIProviderType.Anthropic,
   model: 'claude-3-5-sonnet-20240620',
@@ -153,6 +179,7 @@ export default (): {
     [FrontendSinkType.Republish]: createRePubForm,
     [FrontendSinkType.Console]: createConsoleForm,
     [ProcessingType.AIOpenAI]: createAIOpenAIForm,
+    [OptionalProcessingType.AIOpenAIDecisions]: createAIDecisionsForm,
     [ProcessingType.AIAnthropic]: createAIAnthropicForm,
     [ProcessingType.AIGemini]: createAIGeminiForm,
   }

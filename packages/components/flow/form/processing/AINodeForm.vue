@@ -3,6 +3,7 @@
     ref="FormCom"
     label-width="164px"
     class="provider-form"
+    :class="{ 'is-decisions': modelValue.type === AIProviderType.OpenAIDecisions }"
     label-position="right"
     :rules="rules"
     :model="record"
@@ -17,7 +18,13 @@
         popper-class="is-wider"
       />
     </CustomFormItem>
-    <CustomFormItem prop="system_prompt" :readonly="readonly">
+    <DecisionQuestionsEditor
+      v-if="isDecisionsProfile(record)"
+      v-model="record.questions"
+      :tip-component="tipComponent"
+      :readonly="readonly"
+    />
+    <CustomFormItem v-else prop="system_prompt" :readonly="readonly">
       <template #label>
         {{ t('flow.systemPrompt') }}
         <component :is="tipComponent" :content="t('flow.systemPromptDesc')" />
@@ -79,10 +86,12 @@ import { ElForm, ElAutocomplete, ElSelect, ElOption, ElInput, type FormRules } f
 import {
   GEMINI_DEFAULT_BASE_URL,
   ProcessingType,
+  OptionalProcessingType,
   ANTHROPIC_VERSION_MAP,
   AIProviderType,
 } from '@emqx/shared-ui-constants'
 import { Component, computed, ref } from 'vue'
+import DecisionQuestionsEditor from './DecisionQuestionsEditor.vue'
 import aiModels from './aiModels.json'
 import { useFlowLocale } from '../../composables/useFlowLocale'
 import useFlowNode from '../../composables/useFlowNode'
@@ -91,9 +100,9 @@ import CustomInputPassword from '../../../common/CustomInputPassword.vue'
 import InputWithOptions from '../../../common/InputWithOptions.vue'
 import InputWithTextEditDialog from '../../../common/InputWithTextEditDialog.vue'
 import type { Node } from '@vue-flow/core'
-import type { AIAnthropicConfig, AIConfig } from '../../types'
+import type { AIAnthropicConfig, AIConfig, AIDecisionsConfig } from '../../types'
 
-const defaultModelOptsMap = new Map([
+const defaultModelOptsMap = new Map<ProcessingType | OptionalProcessingType, string[]>([
   [ProcessingType.AIOpenAI, aiModels.openai],
   [ProcessingType.AIAnthropic, aiModels.anthropic],
   [ProcessingType.AIGemini, aiModels.gemini],
@@ -101,13 +110,13 @@ const defaultModelOptsMap = new Map([
 
 const props = defineProps<{
   modelValue: AIConfig
-  nodeSpecificType: ProcessingType
+  nodeSpecificType: ProcessingType | OptionalProcessingType
   readonly: boolean
   availableFields: Array<{ value: string }>
   rules: FormRules
   inputNumberComponent: Component
   tipComponent: Component
-  modelOptsMap?: Map<ProcessingType, Array<string>>
+  modelOptsMap?: Map<ProcessingType | OptionalProcessingType, Array<string>>
   nodes?: Array<Node>
 }>()
 const emit = defineEmits<{
@@ -135,6 +144,9 @@ const getFieldList = (queryString: string, cb: any) => {
   const ret = props.availableFields.filter(({ value }) => value.includes(queryString))
   cb(ret)
 }
+
+const isDecisionsProfile = (profile: AIConfig): profile is AIDecisionsConfig =>
+  profile.type === AIProviderType.OpenAIDecisions
 
 const anthropicVersionOpts = Object.values(ANTHROPIC_VERSION_MAP)
 
@@ -166,10 +178,20 @@ const baseUrlProxy = computed({
     }
   },
 })
-const defaultBaseURL = computed(() =>
-  isGemini.value ? GEMINI_DEFAULT_BASE_URL : `https://api.${props.modelValue.type}.com/v1`,
-)
+const defaultBaseURL = computed(() => {
+  if (isGemini.value) {
+    return GEMINI_DEFAULT_BASE_URL
+  }
+  const providerType = isDecisionsProfile(record.value) ? AIProviderType.OpenAI : record.value.type
+  return `https://api.${providerType}.com/v1`
+})
 const title = computed(() => getCommonTypeLabel(props.nodeSpecificType))
 
 defineExpose({ validate: () => FormCom.value.validate(), defaultBaseURL })
 </script>
+
+<style scoped>
+.provider-form.is-decisions {
+  max-width: none;
+}
+</style>
