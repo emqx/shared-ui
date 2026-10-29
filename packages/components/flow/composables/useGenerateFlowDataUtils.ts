@@ -9,6 +9,7 @@ import {
   GEMINI_DEFAULT_BASE_URL,
   NodeType,
   ProcessingType,
+  OptionalProcessingType,
   RULE_INPUT_BRIDGE_TYPE_PREFIX,
   NEW_RULE_INPUT_SOURCE_TYPE_PREFIX,
   RULE_INPUT_EVENT_PREFIX,
@@ -298,8 +299,9 @@ export default (
     return nodes
   }
 
-  const aiNodeSpecificTypeMap = new Map([
+  const aiNodeSpecificTypeMap = new Map<AIProviderType, ProcessingType | OptionalProcessingType>([
     [AIProviderType.OpenAI, ProcessingType.AIOpenAI],
+    [AIProviderType.OpenAIDecisions, OptionalProcessingType.AIOpenAIDecisions],
     [AIProviderType.Anthropic, ProcessingType.AIAnthropic],
   ])
 
@@ -330,7 +332,10 @@ export default (
       node.data.formData = {
         ...node.data.formData,
         ...provider,
-        ...omit(completion, ['name', 'type']),
+        ...omit(
+          completion,
+          provider.type === AIProviderType.OpenAIDecisions ? ['type'] : ['name', 'type'],
+        ),
         api_key: ENCRYPTED_PASSWORD,
       }
       node.data.isCreated = true
@@ -737,7 +742,7 @@ export default (
 
   const isRemovedAINode = (node: Node) => {
     if (isAIType(node.data.specificType)) {
-      return !node.data.formData.system_prompt
+      return !node.data.formData.provider_name
     }
     return false
   }

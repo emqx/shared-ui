@@ -13,6 +13,8 @@ import FlowNode from './form/FlowNode.vue'
 import useFlowEdge from './composables/useFlowEdge'
 import useFlowEditorDataHandler from './composables/useFlowEditorDataHandler'
 import useEditFlow from './composables/useEditFlow'
+import { validateDecisionQuestions } from './composables/decisionQuestions'
+import DecisionQuestionsEditor from './form/processing/DecisionQuestionsEditor.vue'
 import AINodeForm from './form/processing/AINodeForm.vue'
 import AITransportOptions from './form/processing/AITransportOptions.vue'
 
@@ -41,6 +43,7 @@ export {
   FlowEdge,
   FlowNode,
   AINodeForm,
+  DecisionQuestionsEditor,
   AITransportOptions,
   useActionAndSourceStatus,
   useFlowGuideNodes,
@@ -50,6 +53,7 @@ export {
   useFlowEdge,
   useFlowEditorDataHandler,
   useEditFlow,
+  validateDecisionQuestions,
 }
 
 export * from './types'

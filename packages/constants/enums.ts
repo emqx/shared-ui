@@ -144,6 +144,10 @@ export enum ProcessingType {
   Filter = 'filter',
 }
 
+export enum OptionalProcessingType {
+  AIOpenAIDecisions = 'ai-openai-decisions',
+}
+
 export enum FrontendSinkType {
   Republish = 'republish',
   Console = 'console',
@@ -166,6 +170,7 @@ export enum FlowConnectionStatus {
 
 export enum AIProviderType {
   OpenAI = 'openai',
+  OpenAIDecisions = 'openai_decisions',
   Anthropic = 'anthropic',
 }
 

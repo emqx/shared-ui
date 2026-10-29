@@ -8,12 +8,20 @@ import {
   isNotBridgeSourceTypes,
   NodeType,
   ProcessingType,
+  OptionalProcessingType,
   SourceTypeAllMsgsAndEvents,
 } from '@emqx/shared-ui-constants'
 import { useFlowLocale } from './useFlowLocale'
 import type { FilterFormData, FilterFormType, NodeItem, PositionData } from '../types'
 
-export default (): {
+export interface FlowNodeOptions {
+  /** Additional processing nodes to expose. Existing consumers keep the default list. */
+  additionalProcessingTypes?: Array<ProcessingType | OptionalProcessingType>
+}
+
+export default (
+  options: FlowNodeOptions = {},
+): {
   nodeWidth: number
   getNodeHeight: (specificType: string) => number
   processingNodeList: Array<NodeItem>
@@ -82,6 +90,7 @@ export default (): {
     [ProcessingType.Function]: t('flow.dataProcessing'),
     [ProcessingType.Filter]: t('flow.filter'),
     [ProcessingType.AIOpenAI]: 'OpenAI',
+    [OptionalProcessingType.AIOpenAIDecisions]: 'OpenAI Decisions',
     [ProcessingType.AIAnthropic]: 'Anthropic',
     [ProcessingType.AIGemini]: 'Gemini',
     [FrontendSinkType.Console]: t('flow.consoleOutput'),
@@ -130,9 +139,13 @@ export default (): {
     return fallbackActions.length > 0
   }
 
+  const processingTypes: Array<string> = [
+    ...Object.values(ProcessingType),
+    ...Object.values(OptionalProcessingType),
+  ]
   const isNotBridgeTypes: Array<string> = [
     ...isNotBridgeSourceTypes,
-    ...Object.values(ProcessingType),
+    ...processingTypes,
     FrontendSinkType.Republish,
     FrontendSinkType.Console,
   ]
@@ -141,12 +154,11 @@ export default (): {
     return !isNotBridgeTypes.includes(type) && isBridge
   }
 
-  const defaultTypesNotAI = [ProcessingType.Filter, ProcessingType.Function]
+  const defaultTypesNotAI: Array<string> = [ProcessingType.Filter, ProcessingType.Function]
   const isAIType = (type: string) => {
     return (
       type === AI_PLACEHOLDER_TYPE ||
-      (Object.values(ProcessingType).includes(type as ProcessingType) &&
-        !defaultTypesNotAI.includes(type as ProcessingType))
+      (processingTypes.includes(type) && !defaultTypesNotAI.includes(type))
     )
   }
 
@@ -163,6 +175,11 @@ export default (): {
     const { specificType, formData } = node.data
     if (!specificType || !formData) {
       return ''
+    }
+    if (specificType === OptionalProcessingType.AIOpenAIDecisions) {
+      return (formData.questions ?? [])
+        .map((question: { name: string }) => question.name)
+        .join(', ')
     }
     if (isAIType(specificType)) {
       return `${t('flow.systemPrompt')}${t('common.colon')}${formData.system_prompt}`
@@ -191,9 +208,18 @@ export default (): {
     name: getCommonTypeLabel(type),
     specificType: type,
   })
-  const processingNodeList: Array<NodeItem> = Object.values(ProcessingType).map(
-    generateProcessingNodeByType,
-  )
+  const processingNodeTypes: Array<ProcessingType | OptionalProcessingType> =
+    Object.values(ProcessingType)
+  if (options.additionalProcessingTypes?.includes(OptionalProcessingType.AIOpenAIDecisions)) {
+    processingNodeTypes.splice(
+      processingNodeTypes.indexOf(ProcessingType.AIOpenAI) + 1,
+      0,
+      OptionalProcessingType.AIOpenAIDecisions,
+    )
+  }
+  const processingNodeList: Array<NodeItem> = [
+    ...new Set([...processingNodeTypes, ...(options.additionalProcessingTypes ?? [])]),
+  ].map(generateProcessingNodeByType)
 
   return {
     nodeWidth,
