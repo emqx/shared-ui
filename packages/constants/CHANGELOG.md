@@ -1,5 +1,11 @@
 # @emqx/shared-ui-constants
 
+## 0.0.16
+
+### Patch Changes
+
+- Add the optional OpenAI Decisions processing type and provider type while preserving the existing processing type enum.
+
 ## 0.0.15
 
 ### Patch Changes

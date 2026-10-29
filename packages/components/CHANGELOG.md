@@ -1,5 +1,14 @@
 # @emqx/shared-ui-components
 
+## 0.0.20
+
+### Patch Changes
+
+- Add opt-in OpenAI Decisions nodes with predicate, choice, and score question editing, validation, and output guidance. Preserve separate Decisions profile and provider names.
+- Updated dependencies
+  - @emqx/shared-ui-constants@0.0.16
+  - @emqx/shared-ui-i18n@0.0.86
+
 ## 0.0.19
 
 ### Patch Changes
