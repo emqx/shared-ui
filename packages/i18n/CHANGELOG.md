@@ -1,5 +1,11 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.86
+
+### Patch Changes
+
+- Add English, Simplified Chinese, Traditional Chinese, and Japanese translations for OpenAI Decisions question editing and validation.
+
 ## 0.0.85
 
 ### Patch Changes

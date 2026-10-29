@@ -1,6 +1,6 @@
 {
   "name": "@emqx/shared-ui-components",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "homepage": "https://emqx.io",
   "license": "Apache-2.0",
   "repository": {
@@ -44,6 +44,7 @@
     "@element-plus/icons-vue": "^2.3.1",
     "@emqx/shared-ui-utils": "link:../utils",
     "@emqx/shared-ui-constants": "link:../constants",
+    "@emqx/shared-ui-i18n": "link:../i18n",
     "@types/lodash": "^4.17.19",
     "@types/sortablejs": "^1.15.8",
     "@vitejs/plugin-vue": "^5.0.0",
