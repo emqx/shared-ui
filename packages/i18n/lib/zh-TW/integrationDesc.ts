@@ -98,6 +98,13 @@ export const zhTWIntegrationDesc: Record<string, Record<string, string>> = {
       '每個連線在一次批處理中處理的 TCP 入站事件數量。值越大，繁忙連線的吞吐可能越高；值越小，單連線延遲可能更低。預設值：<code>10</code>。',
   },
   http: {
+    active_health_check_timeout: '啟用主動 HTTP 健康檢查時，連接器健康檢查逾時必須為有限值。',
+    active_health_check_enable:
+      '傳送 HTTP 請求檢查目標端點。僅完整的 2xx 回應表示成功，不跟隨重新導向。檢查失敗會使連接器及關聯動作無法使用。使用連接器的 TLS、OAuth2 和靜態請求標頭，以及 resource_opts.health_check_interval 和有限的 resource_opts.health_check_timeout。預設停用。',
+    active_health_check_method:
+      '健康檢查的 HTTP 方法。支援 GET 和 HEAD，預設為 GET，不傳送請求本文。',
+    active_health_check_path:
+      '相對於伺服器根目錄的健康檢查路徑，例如 /health?full=1。取代連接器 URL 中的路徑。必須以 / 開頭，不能包含主機、片段或範本變數。啟用時必填。',
     url: "HTTP 連接器的 URL。<br/>路徑中支援佔位符，但在主機或連接埠部分中不能使用佔位符。<br/>例如，`http://localhost:9901/${'{'}topic{'}'}` 是允許的，但是 `http://${'{'}host{'}'}:9901/message` 或 `http://localhost:${'{'}port{'}'}/message `不允許。",
     body: "例如：${'{'}payload{'}'}, ${'{'}clientid{'}'}, ${'{'}topic{'}'}, ${'{'}username{'}'} 等。請根據使用動作的業務需求來選擇欄位，置空則原樣轉發訊息。",
     path: "此操作的 URL 路徑。<br/>此路徑將附加到連接器的 <code>url</code> 設定中，以形成完整的 URL 地址。此選項中允許使用帶有變數的模板。 例如，<code>/room/{'{'}$room_no{'}'}</code>",
