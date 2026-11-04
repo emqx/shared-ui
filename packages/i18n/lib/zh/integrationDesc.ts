@@ -97,6 +97,13 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
       '每个连接在一次批处理中处理的 TCP 入站事件数量。值越大，繁忙连接的吞吐可能越高；值越小，单连接延迟可能更低。默认值：<code>10</code>。',
   },
   http: {
+    active_health_check_timeout: '开启主动 HTTP 健康检查时，连接器健康检查超时必须为有限值。',
+    active_health_check_enable:
+      '发送 HTTP 请求检查目标端点。仅完整的 2xx 响应表示成功，不跟随重定向。检查失败会使连接器及关联动作不可用。使用连接器的 TLS、OAuth2 和静态请求头，以及 resource_opts.health_check_interval 和有限的 resource_opts.health_check_timeout。默认关闭。',
+    active_health_check_method:
+      '健康检查的 HTTP 方法。支持 GET 和 HEAD，默认为 GET，不发送请求体。',
+    active_health_check_path:
+      '相对于服务器根目录的健康检查路径，例如 /health?full=1。替换连接器 URL 中的路径。必须以 / 开头，不能包含主机、片段或模板变量。开启时必填。',
     url: "HTTP 连接器的 URL。<br/>路径中支持占位符，但在主机或端口部分中不能使用占位符。<br/>例如，`http://localhost:9901/${'{'}topic{'}'}` 是允许的，但是 `http://${'{'}host{'}'}:9901/message` 或 `http://localhost:${'{'}port{'}'}/message `不允许。",
     body: "例如：${'{'}payload{'}'}, ${'{'}clientid{'}'}, ${'{'}topic{'}'}, ${'{'}username{'}'} 等。请根据使用动作的业务需求来选择字段，置空则原样转发消息。",
     path: "此操作的 URL 路径。<br/>此路径将附加到连接器的 <code>url</code> 配置中，以形成完整的 URL 地址。此选项中允许使用带有变量的模板。 例如，<code>/room/{'{'}$room_no{'}'}</code>",

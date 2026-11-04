@@ -110,6 +110,14 @@ export const enIntegrationDesc: Record<string, Record<string, string>> = {
       'Number of incoming TCP events EMQX processes in one active batch for each connection. A higher value may improve throughput on busy connections; a lower value may reduce per-connection latency. Default: <code>10</code>.',
   },
   http: {
+    active_health_check_timeout:
+      'The Connector health check timeout must be finite when active HTTP health checks are enabled.',
+    active_health_check_enable:
+      'Send HTTP requests to check the endpoint. Only complete 2xx responses succeed; redirects are not followed. A failed check makes the Connector and its Actions unavailable. Uses the Connector TLS, OAuth2 and static headers. Uses resource_opts.health_check_interval and a finite resource_opts.health_check_timeout. Disabled by default.',
+    active_health_check_method:
+      'HTTP method for the health check. Supports GET and HEAD; defaults to GET. No request body is sent.',
+    active_health_check_path:
+      'Health check path relative to the server root, for example /health?full=1. Replaces the path in the Connector URL. Must start with / and contain no host, fragment or template variables. Required when enabled.',
     url: "The URL of the HTTP Connector.<br/>Template with variables is allowed in the path, but variables cannot be used in the host or port part.<br/>For example, `http://localhost:9901/${'{'}topic{'}'}` is allowed, but`http://${'{'}host{'}'}:9901/message` or `http://localhost:${'{'}port{'}'}/message`is not allowed.",
     body: "For example: ${'{'}payload{'}'}, ${'{'}clientid{'}'}, ${'{'}topic{'}'} , ${'{'}username{'}'}, etc. Use fields according to the action requirements of your business and forwards the message as it is if it is empty.",
     path: "The URL path for this Action.<br/>This path will be appended to the Connector's <code>url</code> configuration to form the full URL address.Template with variables is allowed in this option. For example, <code>/room/{'{'}$room_no{'}'}</code>",

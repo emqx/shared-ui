@@ -86,6 +86,7 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     kerberos_keytab_file: 'Kerberos Keytab File',
   },
   http: {
+    active_health_check_enable: 'Active HTTP Health Check',
     url: 'URL',
     headers: 'Headers',
     enable_pipelining: 'HTTP Pipelining',

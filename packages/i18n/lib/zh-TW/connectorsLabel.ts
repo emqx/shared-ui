@@ -86,6 +86,7 @@ export const zhTWConnectorsLabel: Record<string, Record<string, string>> = {
     kerberos_keytab_file: 'Kerberos Keytab 檔案',
   },
   http: {
+    active_health_check_enable: '主動 HTTP 健康檢查',
     url: 'URL',
     headers: '請求標頭',
     enable_pipelining: 'HTTP 管道',
