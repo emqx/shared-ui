@@ -664,4 +664,37 @@ export const zhTWIntegrationDesc: Record<string, Record<string, string>> = {
     schema_name: 'EMQX Schema Registry 中的 Protobuf Schema 名稱。',
     message_type: '編碼資料時使用的 Protobuf 訊息類型。',
   },
+  nats: {
+    servers:
+      '以逗號分隔的 NATS 容錯移轉伺服器清單，格式為 <code>host[:port]</code>，預設連接埠為 <code>4222</code>。連線依序嘗試各伺服器，此清單不會分攤訊息發布負載。',
+    pool_size:
+      '連線池中的 NATS 連線數。所有連線共用伺服器清單、驗證和 TLS 設定。增大連線池不會將連線平均分配到各伺服器。',
+    connect_timeout: '建立連線所允許的最長時間，包括 NATS 協定交握和驗證。',
+    authentication:
+      '無需驗證時使用 <code>none</code>，或選擇 <code>user_password</code>、<code>token</code>、<code>nkey</code>、<code>jwt</code>。',
+    mechanism: '連線至 NATS 伺服器使用的驗證機制。',
+    username: 'NATS 伺服器中設定的使用者名稱，用於 <code>user_password</code> 驗證。',
+    password: 'NATS 伺服器中設定的密碼，用於 <code>user_password</code> 驗證，以秘密值儲存。',
+    token: 'NATS 伺服器中設定的驗證 Token，以秘密值儲存。',
+    nkey_seed: '用於簽署伺服器 nonce 的完整使用者 NKey 種子，不能填寫公開金鑰。以秘密值儲存。',
+    credentials_file_content:
+      'NATS <code>.creds</code> 檔案的完整內容，包括使用者 JWT 和 NKey 種子。請填寫檔案內容，而非檔案路徑。以秘密值儲存。',
+    tls_handshake:
+      '僅在啟用 TLS 時生效。<code>starttls</code>（預設）先透過 TCP 接收 NATS <code>INFO</code> 框架，再升級至 TLS。<code>first</code> 在交換 NATS 協定資料之前進行 TLS 交握，要求伺服器設定為 TLS-first。',
+    ssl: 'NATS 連線的 TLS 設定，預設啟用 TLS。連線至不支援 TLS 的伺服器時，請設定 <code>ssl.enable = false</code>。',
+    subject:
+      '訊息發布的目標 NATS subject，支援 EMQX 範本，例如 <code>events.${.topic}</code>。轉譯結果必須是合法的 NATS 發布 subject。',
+    payload_template:
+      '發布訊息的內容範本，預設為 <code>${.payload}</code>。使用 <code>${.}</code> 可將完整規則輸入序列化為訊息內容。',
+    headers:
+      'NATS 訊息標頭鍵值範本清單，名稱和值均支援 EMQX 範本。伺服器未宣告支援訊息標頭時，攜帶訊息標頭的發布操作會失敗。',
+    key: '用於轉譯 NATS 訊息標頭名稱的範本。',
+    value: '用於轉譯 NATS 訊息標頭值的範本。',
+    delivery_mode:
+      '<code>core</code>（預設）透過 Core NATS 發布，並透過 flush 屏障確認處理完成。<code>jetstream</code> 等待每則訊息的 PubAck，且要求 <code>resource_opts.batch_size = 1</code>。',
+    msg_id_template:
+      '選用的 JetStream 訊息 ID 範本，用於伺服器端重複訊息偵測。留空時，EMQX 不傳送 <code>Nats-Msg-Id</code>。在 Core 模式下不生效。',
+    batch_size:
+      '每個批次的最大訊息數。Core 模式支援批次發布，JetStream 模式要求 <code>resource_opts.batch_size = 1</code>。',
+  },
 }

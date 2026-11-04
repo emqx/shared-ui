@@ -80,6 +80,7 @@ export enum FlowNodeType {
 }
 
 export enum BridgeType {
+  NATS = 'nats',
   Webhook = 'http',
   MQTT = 'mqtt',
   InfluxDB = 'influxdb',

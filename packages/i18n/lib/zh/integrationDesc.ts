@@ -666,4 +666,37 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
     schema_name: 'EMQX Schema Registry 中的 Protobuf Schema 名称。',
     message_type: '编码数据时使用的 Protobuf 消息类型。',
   },
+  nats: {
+    servers:
+      '以逗号分隔的 NATS 故障转移服务器列表，格式为 <code>host[:port]</code>，默认端口为 <code>4222</code>。连接按顺序尝试各服务器，此列表不用于分摊消息发布负载。',
+    pool_size:
+      '连接池中的 NATS 连接数。所有连接共用服务器列表、认证和 TLS 配置。增大连接池不会将连接均匀分配到各服务器。',
+    connect_timeout: '建立连接所允许的最长时间，包括 NATS 协议握手和认证。',
+    authentication:
+      '无需认证时使用 <code>none</code>，或选择 <code>user_password</code>、<code>token</code>、<code>nkey</code>、<code>jwt</code>。',
+    mechanism: '连接 NATS 服务器使用的认证机制。',
+    username: 'NATS 服务器中配置的用户名，用于 <code>user_password</code> 认证。',
+    password: 'NATS 服务器中配置的密码，用于 <code>user_password</code> 认证，以秘密值存储。',
+    token: 'NATS 服务器中配置的认证 Token，以秘密值存储。',
+    nkey_seed: '用于签署服务器 nonce 的完整用户 NKey 种子，不能填写公钥。以秘密值存储。',
+    credentials_file_content:
+      'NATS <code>.creds</code> 文件的完整内容，包括用户 JWT 和 NKey 种子。请填写文件内容，而非文件路径。以秘密值存储。',
+    tls_handshake:
+      '仅在启用 TLS 时生效。<code>starttls</code>（默认）先通过 TCP 接收 NATS <code>INFO</code> 帧，再升级到 TLS。<code>first</code> 在交换 NATS 协议数据之前进行 TLS 握手，要求服务器配置为 TLS-first。',
+    ssl: 'NATS 连接的 TLS 配置，默认启用 TLS。连接不支持 TLS 的服务器时，请设置 <code>ssl.enable = false</code>。',
+    subject:
+      '消息发布的目标 NATS subject，支持 EMQX 模板，例如 <code>events.${.topic}</code>。渲染结果必须是合法的 NATS 发布 subject。',
+    payload_template:
+      '发布消息的内容模板，默认为 <code>${.payload}</code>。使用 <code>${.}</code> 可将完整规则输入序列化为消息内容。',
+    headers:
+      'NATS 消息头键值模板列表，名称和值均支持 EMQX 模板。服务器未声明支持消息头时，携带消息头的发布操作会失败。',
+    key: '用于渲染 NATS 消息头名称的模板。',
+    value: '用于渲染 NATS 消息头值的模板。',
+    delivery_mode:
+      '<code>core</code>（默认）通过 Core NATS 发布，并通过 flush 屏障确认处理完成。<code>jetstream</code> 等待每条消息的 PubAck，且要求 <code>resource_opts.batch_size = 1</code>。',
+    msg_id_template:
+      '可选的 JetStream 消息 ID 模板，用于服务器端重复消息检测。留空时，EMQX 不发送 <code>Nats-Msg-Id</code>。在 Core 模式下不生效。',
+    batch_size:
+      '每个批次的最大消息数。Core 模式支持批量发布，JetStream 模式要求 <code>resource_opts.batch_size = 1</code>。',
+  },
 }

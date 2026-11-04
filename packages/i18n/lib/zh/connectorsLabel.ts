@@ -315,4 +315,17 @@ export const zhConnectorsLabel: Record<string, Record<string, string>> = {
     transport_max_inactive: '最大空闲时间',
     ssl: 'Zerobus TLS',
   },
+  nats: {
+    servers: '服务器地址',
+    pool_size: '连接池大小',
+    connect_timeout: '连接超时',
+    authentication: '认证方式',
+    mechanism: '认证机制',
+    username: '用户名',
+    password: '密码',
+    token: 'Token',
+    nkey_seed: 'NKey 种子',
+    credentials_file_content: '凭据文件内容',
+    tls_handshake: 'TLS 握手方式',
+  },
 }

@@ -304,4 +304,13 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     schema_name: 'Protobuf Schema Name',
     message_type: 'Protobuf Message Type',
   },
+  nats: {
+    subject: 'Subject',
+    payload_template: 'Payload Template',
+    headers: 'Headers',
+    key: 'Header Key',
+    value: 'Header Value',
+    delivery_mode: 'Delivery Mode',
+    msg_id_template: 'Message ID Template',
+  },
 }

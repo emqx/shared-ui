@@ -300,4 +300,13 @@ export const zhTWActionsLabel: Record<string, Record<string, string>> = {
     schema_name: 'Protobuf Schema 名稱',
     message_type: 'Protobuf 訊息類型',
   },
+  nats: {
+    subject: 'Subject',
+    payload_template: '訊息範本',
+    headers: '訊息標頭',
+    key: '訊息標頭名稱',
+    value: '訊息標頭值',
+    delivery_mode: '投遞模式',
+    msg_id_template: '訊息 ID 範本',
+  },
 }
