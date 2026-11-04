@@ -740,4 +740,41 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
     schema_name: 'Name of the Protobuf schema in EMQX Schema Registry.',
     message_type: 'Protobuf message type used to encode the data.',
   },
+  nats: {
+    servers:
+      'Comma-separated failover list of NATS servers in <code>host[:port]</code> format. The default port is <code>4222</code>. Connections try the servers in order; this list does not distribute publishing load across servers.',
+    pool_size:
+      'Number of NATS connections in the pool. All connections share the same server list, authentication and TLS settings. Increasing the pool size does not distribute connections evenly across servers.',
+    connect_timeout:
+      'Maximum time allowed to establish a connection, including the NATS protocol handshake and authentication.',
+    authentication:
+      'Use <code>none</code> for no authentication, or select <code>user_password</code>, <code>token</code>, <code>nkey</code> or <code>jwt</code>.',
+    mechanism: 'Authentication mechanism used to connect to the NATS server.',
+    username:
+      'Username configured on the NATS server. Used with <code>user_password</code> authentication.',
+    password:
+      'Password configured on the NATS server. Used with <code>user_password</code> authentication. Stored as a secret.',
+    token: 'Authentication token configured on the NATS server. Stored as a secret.',
+    nkey_seed:
+      'Complete user NKey seed used to sign the server nonce, rather than the public key. Stored as a secret.',
+    credentials_file_content:
+      'Complete contents of a NATS <code>.creds</code> file, including the user JWT and NKey seed. Supply the file contents, not a file path. Stored as a secret.',
+    tls_handshake:
+      'Applies when TLS is enabled. <code>starttls</code> (default) receives the NATS <code>INFO</code> frame over TCP before upgrading to TLS. <code>first</code> starts TLS before exchanging NATS protocol data and requires a server configured for TLS-first.',
+    ssl: 'TLS settings for the NATS connection. TLS is enabled by default. Set <code>ssl.enable = false</code> when connecting to a server without TLS.',
+    subject:
+      'NATS subject to publish to. Supports EMQX templates, for example <code>events.${.topic}</code>. The rendered subject must be a valid NATS publish subject.',
+    payload_template:
+      'Template for the published payload. Defaults to <code>${.payload}</code>. Use <code>${.}</code> to serialize the complete rule input.',
+    headers:
+      'List of NATS header key/value templates. Both keys and values support EMQX templates. Publishing with headers fails if the server does not advertise header support.',
+    key: 'Template used to render the NATS header name.',
+    value: 'Template used to render the NATS header value.',
+    delivery_mode:
+      '<code>core</code> (default) publishes through Core NATS and confirms processing with a flush barrier. <code>jetstream</code> waits for a PubAck for each message and requires <code>resource_opts.batch_size = 1</code>.',
+    msg_id_template:
+      'Optional template for the JetStream message ID used for server-side duplicate detection. When empty, EMQX does not send <code>Nats-Msg-Id</code>. Has no effect in Core mode.',
+    batch_size:
+      'Maximum number of messages in a batch. Core mode supports batching. JetStream mode requires <code>resource_opts.batch_size = 1</code>.',
+  },
 }

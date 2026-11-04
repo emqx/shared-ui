@@ -315,4 +315,17 @@ export const zhTWConnectorsLabel: Record<string, Record<string, string>> = {
     transport_max_inactive: '最長空閒時間',
     ssl: 'Zerobus TLS',
   },
+  nats: {
+    servers: '伺服器位址',
+    pool_size: '連線池大小',
+    connect_timeout: '連線逾時',
+    authentication: '驗證方式',
+    mechanism: '驗證機制',
+    username: '使用者名稱',
+    password: '密碼',
+    token: 'Token',
+    nkey_seed: 'NKey 種子',
+    credentials_file_content: '認證檔案內容',
+    tls_handshake: 'TLS 交握方式',
+  },
 }

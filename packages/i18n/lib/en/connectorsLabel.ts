@@ -315,4 +315,17 @@ export const enConnectorsLabel: Record<string, Record<string, string>> = {
     transport_max_inactive: 'Maximum Inactivity',
     ssl: 'Zerobus TLS',
   },
+  nats: {
+    servers: 'Servers',
+    pool_size: 'Connection Pool Size',
+    connect_timeout: 'Connect Timeout',
+    authentication: 'Authentication',
+    mechanism: 'Authentication Mechanism',
+    username: 'Username',
+    password: 'Password',
+    token: 'Token',
+    nkey_seed: 'NKey Seed',
+    credentials_file_content: 'Credentials File Content',
+    tls_handshake: 'TLS Handshake',
+  },
 }

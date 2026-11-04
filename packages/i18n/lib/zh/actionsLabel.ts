@@ -304,4 +304,13 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     schema_name: 'Protobuf Schema 名称',
     message_type: 'Protobuf 消息类型',
   },
+  nats: {
+    subject: 'Subject',
+    payload_template: '消息模板',
+    headers: '消息头',
+    key: '消息头名称',
+    value: '消息头值',
+    delivery_mode: '投递模式',
+    msg_id_template: '消息 ID 模板',
+  },
 }
