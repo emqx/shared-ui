@@ -10,6 +10,14 @@ Our objective is to abstract common UI components, utilities, and theming variab
 
 Components from `@emqx/shared-ui` can be easily integrated into EMQX Dashboard, EMQX Cloud, or any other EMQX web applications, ensuring a coherent look and feel while allowing customization as needed.
 
+`@emqx/shared-ui-utils` requires Node.js 22 or later for installation and builds
+because its Vue I18n dependency requires it. `@emqx/shared-ui-components` requires
+Vue `^3.5.42` and Element Plus `^2.11.1`, in addition to its other peer dependencies.
+
+When calling `useLocale` translations with `escapeParameter: true`, named parameters
+must be own enumerable properties. Pass inherited fields or prototype getters explicitly,
+for example `{ name: person.name }`; they are ignored when passing `person` directly.
+
 ## 🚀 Packages
 
 Currently, `@emqx/shared-ui` includes the following packages:
@@ -45,6 +53,10 @@ git push origin 0.0.7-utils
 ```
 
 ## 📝 Development Guide
+
+Use Node.js 22 LTS (22.23.4 or later on the 22.x line) or Node.js 24 LTS
+(24.22.2 or later on the 24.x line), and pnpm 12.15.0, as declared in `package.json`.
+`.nvmrc` selects 24.22.2.
 
 To run the development environment:
 

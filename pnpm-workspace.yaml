@@ -1,2 +1,10 @@
 packages:
   - 'packages/*'
+
+overrides:
+  'minimatch@>=9 <11': '^11.0.5'
+
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  vue-demi: true

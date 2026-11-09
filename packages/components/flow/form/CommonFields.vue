@@ -42,7 +42,7 @@ const getList = (queryString: string, cb: FetchSuggestionsCallback) => {
   cb(ret)
 }
 
-const handleChange = (val: string) => {
-  emit('change', val)
+const handleChange = (val: string | number) => {
+  emit('change', String(val))
 }
 </script>

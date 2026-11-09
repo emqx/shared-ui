@@ -1,5 +1,20 @@
 # @emqx/shared-ui-components
 
+## 0.0.21
+
+### Patch Changes
+
+- Update development Tailwind CSS to 3.4.19 and refresh vulnerable tooling dependencies while preserving the existing Tailwind peer range.
+
+- Upgrade Vue I18n to fix translation escaping vulnerabilities, Vue to fix an SSR XSS vulnerability, and Lodash to fix prototype pollution vulnerabilities. Require patched Vue and Element Plus peers in components.
+
+  `@emqx/shared-ui-utils` now requires Node.js 22 or later because the patched Vue I18n dependency requires it. `@emqx/shared-ui-components` now requires Vue `^3.5.42` and Element Plus `^2.11.1`.
+
+  When using `useLocale` translations with `escapeParameter: true`, supply named parameters as own enumerable properties. Pass inherited fields or prototype getters explicitly, for example `{ name: person.name }`.
+
+- Updated dependencies
+  - @emqx/shared-ui-utils@0.0.29
+
 ## 0.0.20
 
 ### Patch Changes

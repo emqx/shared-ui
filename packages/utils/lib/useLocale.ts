@@ -72,6 +72,7 @@ export const useLocale = (
 
   return {
     t,
-    te,
+    // Keep locale-only lookup; I18n 11 otherwise searches the fallback chain.
+    te: (key, targetLocale = locale) => te(key, targetLocale),
   }
 }

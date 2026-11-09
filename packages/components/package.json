@@ -1,6 +1,6 @@
 {
   "name": "@emqx/shared-ui-components",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "homepage": "https://emqx.io",
   "license": "Apache-2.0",
   "repository": {
@@ -38,39 +38,39 @@
   },
   "dependencies": {
     "async-validator": "^4.2.5",
-    "lodash": "^4.17"
+    "lodash": "^4.18.1"
   },
   "devDependencies": {
     "@element-plus/icons-vue": "^2.3.1",
-    "@emqx/shared-ui-utils": "link:../utils",
-    "@emqx/shared-ui-constants": "link:../constants",
-    "@emqx/shared-ui-i18n": "link:../i18n",
+    "@emqx/shared-ui-utils": "workspace:*",
+    "@emqx/shared-ui-constants": "workspace:*",
+    "@emqx/shared-ui-i18n": "workspace:*",
     "@types/lodash": "^4.17.19",
     "@types/sortablejs": "^1.15.8",
-    "@vitejs/plugin-vue": "^5.0.0",
+    "@vitejs/plugin-vue": "^5.2.4",
     "@vue-flow/core": "~1.42.5",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
-    "element-plus": "^2.3.0",
+    "element-plus": "^2.11.1",
     "elkjs": "^0.10.0",
     "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.89.2",
     "sortablejs": "^1.15.6",
-    "tailwindcss": "^3.4",
+    "tailwindcss": "^3.4.19",
     "typescript": "~5.6.0",
-    "vue": "^3.2.0",
+    "vue": "^3.5.42",
     "vue-tsc": "~2.0.0"
   },
   "peerDependencies": {
     "@element-plus/icons-vue": "^2.3.1",
-    "@emqx/shared-ui-utils": ">=0.0.28 <0.1.0",
+    "@emqx/shared-ui-utils": "~0.0.29",
     "@emqx/shared-ui-constants": ">=0.0.16 <0.1.0",
     "@emqx/shared-ui-i18n": ">=0.0.86 <0.1.0",
     "@vue-flow/core": "~1.42.5",
-    "element-plus": "^2.3.0",
+    "element-plus": "^2.11.1",
     "elkjs": "^0.10.0",
     "sortablejs": "^1.15.6",
     "tailwindcss": "^3.4",
-    "vue": "^3.2.0"
+    "vue": "^3.5.42"
   }
 }
