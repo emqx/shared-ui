@@ -7,7 +7,7 @@
       clearable
       class="common-fields"
       popper-class="is-wider"
-      @change="handleFieldChanged($event)"
+      @change="handleFieldChanged(String($event))"
       @blur="handleBlur($event)"
       @select="handleFieldChanged($event.value)"
     />

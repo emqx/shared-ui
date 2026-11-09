@@ -9,6 +9,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'index.ts'),
       name: '@emqx/shared-ui-components',
       fileName: 'index',
+      cssFileName: 'style',
     },
     rollupOptions: {
       external: [
