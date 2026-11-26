@@ -313,4 +313,7 @@ export const zhActionsLabel: Record<string, Record<string, string>> = {
     delivery_mode: '投递模式',
     msg_id_template: '消息 ID 模板',
   },
+  emqx_tables: {
+    field_types: '字段类型',
+  },
 }

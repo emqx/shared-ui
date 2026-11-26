@@ -633,6 +633,8 @@ export const zhTWIntegrationDesc: Record<string, Record<string, string>> = {
   emqx_tables: {
     ciphers:
       '此設定儲存由逗號分隔的 TLS 密碼套件名稱。支援的套件如下\n- TLS_AES_256_GCM_SHA384\n- TLS_AES_128_GCM_SHA256\n- TLS_CHACHA20_POLY1305_SHA256\n- TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384\n- TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256\n- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\n- TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256',
+    field_types:
+      '以鍵值對形式為寫入 EMQX Tables 的欄位明確指定資料類型，鍵為欄位名稱，值為目標資料類型。',
   },
   dameng: {
     dsn: 'odbc.ini 中設定的 ODBC 資料來源名稱。設定後將忽略伺服器地址、連接埠、驅動和字元集；使用者名稱和密碼留空時使用 DSN 中的憑據。',

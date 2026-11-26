@@ -1,5 +1,13 @@
 # @emqx/shared-ui-i18n
 
+## 0.0.87
+
+### Patch Changes
+
+- Add English, Simplified Chinese, and Traditional Chinese labels and descriptions for the EMQX Tables `field_types` action setting.
+- Add NATS connector and action translations.
+- Add translations for HTTP connector active health checks.
+
 ## 0.0.86
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @emqx/shared-ui-constants
 
+## 0.0.17
+
+### Patch Changes
+
+- Add `BridgeType.NATS` for the NATS data integration.
+
 ## 0.0.16
 
 ### Patch Changes
