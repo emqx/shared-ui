@@ -309,4 +309,7 @@ export const zhTWActionsLabel: Record<string, Record<string, string>> = {
     delivery_mode: '投遞模式',
     msg_id_template: '訊息 ID 範本',
   },
+  emqx_tables: {
+    field_types: '欄位類型',
+  },
 }

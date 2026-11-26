@@ -703,6 +703,8 @@ Note: this parameter only takes effect when the <code>Driver Type</code> set to 
 - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
 - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`,
+    field_types:
+      'Specify explicit data types for fields written to EMQX Tables as key-value pairs mapping field names to target data types.',
   },
   dameng: {
     dsn: 'ODBC data source name in odbc.ini. When set, server, port, driver and charset are ignored. Leave username and password empty to use the DSN credentials.',

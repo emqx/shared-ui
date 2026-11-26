@@ -636,6 +636,8 @@ export const zhIntegrationDesc: Record<string, Record<string, string>> = {
 - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
 - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`,
+    field_types:
+      '以键值对形式为写入 EMQX Tables 的字段显式指定数据类型，键为字段名，值为目标数据类型。',
   },
   dameng: {
     dsn: 'odbc.ini 中配置的 ODBC 数据源名称。设置后将忽略服务器地址、端口、驱动和字符集；用户名和密码留空时使用 DSN 中的凭据。',

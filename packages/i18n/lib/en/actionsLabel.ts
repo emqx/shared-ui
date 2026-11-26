@@ -313,4 +313,7 @@ export const enActionsLabel: Record<string, Record<string, string>> = {
     delivery_mode: 'Delivery Mode',
     msg_id_template: 'Message ID Template',
   },
+  emqx_tables: {
+    field_types: 'Field Types',
+  },
 }
